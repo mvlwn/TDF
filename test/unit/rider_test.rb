@@ -23,4 +23,9 @@ class RiderTest < ActiveSupport::TestCase
     assert_match Rider.teams.join(" "), "Rabobank"
   end
   
+  test "Parsing riders" do
+        
+  end
+  
+  
 end

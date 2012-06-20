@@ -1,11 +1,19 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+gesink:
+  team: rabobank
+  number: 11
+  ad_code: 100
+  ad_role: k
+  first_name: Robert
+  last_name: Gesink
+  value: 28
+  points: 0
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+hoogerland:
+  team: rabobank
+  number: 45
+  ad_code: 101
+  ad_role: h
+  first_name: Johnny
+  last_name: Hoogerland
+  value: 14
+  points: 0

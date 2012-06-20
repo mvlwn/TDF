@@ -4,8 +4,13 @@ class CreateScores < ActiveRecord::Migration
       t.integer :rider_id
       t.integer :stage_id
       t.integer :category
+      t.integer :ranking
       t.integer :points
       t.timestamps
     end
+
+    add_index(:scores, :rider_id)
+    add_index(:scores, :stage_id)
+    add_index(:scores, :category)
   end
 end

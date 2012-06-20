@@ -1,9 +1,9 @@
-class PlayerRider < ActiveRecord::Base
+class Rider < ActiveRecord::Base
+
+  belongs_to :team
+  has_many :scores
   
-  belongs_to :player
-  belongs_to :rider
-  
-  validates :number, :name, :team, :presence => true
+  validates :number, :name, :team_id, :presence => true
 
   def name
     first_name.to_s + ' ' + last_name.to_s

@@ -12,18 +12,19 @@ class RiderTextParser
     require 'csv'
     @riders = []
     CSV.parse(@input, :col_sep => "\t", :headers => true) do |row|
-      @riders << build_rider(row)
+      @riders << build_rider_and_team(row)
     end
   end
 
   # 200	Jean-Christophe 	Peraud 	AG2R La Mondiale	K	15
-  def build_rider(data)
+  def build_rider_and_team(data)
+    team = Team.find_or_create_by_name(data[3])
     Rider.create(
-      :code => data[0],
+      :ad_code => data[0],
       :first_name => data[1],
       :last_name => data[2],
-      :team_name => data[3],
-      :position => data[4],
+      :team => team,
+      :ad_role => data[4],
       :value => data[5]
     )
   end

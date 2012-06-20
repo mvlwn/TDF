@@ -14,9 +14,10 @@ class RiderTextParserTest < ActiveSupport::TestCase
     assert parser.input == @text
   end
   
-  test "creating without input should read default file" do
-    parser = RiderTextParser.new
-    assert_not_nil parser.input
+  test "no argument break the parser" do
+    assert_raise do
+      RiderTextParser.new
+    end
   end
 
   test "parse input and extract riders" do
@@ -25,6 +26,5 @@ class RiderTextParserTest < ActiveSupport::TestCase
     assert parser.riders.is_a?(Array), "riders should be an Array"
     assert parser.riders.count == 2, "there should be only 2 riders"
   end
-  
-  
+
 end

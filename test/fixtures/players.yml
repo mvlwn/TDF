@@ -1,12 +1,10 @@
 
 martijn:
-  id: 1
   name: Martijn van Leeuwen
   team_name: Tijn's Toerders
   points: 0
 
 bastiaan:
-  id: 2
   name: Bastiaan Langeveld
   team_name: GoGesink
   points: 0

@@ -1,0 +1,28 @@
+<h1>Deelnemers</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Naam</th>
+    <th>Team</th>
+    <th>Renners</th>
+    <th>Punten</th>
+    <th>Budget</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @players.each do |player| %>
+  <tr>
+    <td><%= link_to player.name, player_path(player) %></td>
+    <td><%= player.team_name %></td>
+    <td><%= player.riders.count %></td>
+    <td><%= player.points %></td>
+    <td><%= number_to_currency player.riders.sum(:price) * 10000, :unit => "€" %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div>
+  <%= link_to "Nieuwe deelnemer", new_player_path %>
+</div>

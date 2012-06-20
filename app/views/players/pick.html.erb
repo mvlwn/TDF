@@ -1,0 +1,19 @@
+<h1>Kies renners</h1>
+<%= form_tag @player, :method => :put do |form| %>
+  <div id="pick-riders">
+    <% @riders.each do |rider| %>
+      <div class="rider" data-id="<%= rider.id %>" data-price="<%= rider.price %>">
+        <span class="checkbox">
+          <%= check_box_tag "player[rider_ids][]", rider.id, @player_rider_ids.include?(rider.id) %>
+        </span>
+        <span class="name"><%= rider.name %></span>
+        <span class="team_name"><%= rider.team_name %></span>
+        <span class="price"><%= rider.price %></span>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= submit_tag "Opslaan" %>
+    <%= link_to "Annuleren", player_path() %>
+  </div>
+<% end %>

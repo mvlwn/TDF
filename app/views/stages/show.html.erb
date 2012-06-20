@@ -1,0 +1,42 @@
+<h1>Etappe <%= @stage.number %> <%= @stage.name %></h1>
+
+<table>
+  <tr>
+    <th>Omschrijving</th>
+    <td><%= @stage.description %></td>
+  </tr>
+  <tr>
+    <th>Afstand</th>
+    <td><%= @stage.distance %></td>
+  </tr>
+  <tr>
+    <th>Punten</th>
+    <td><%= @stage.points %></td>
+  </tr>
+</table>
+
+<div>
+  <%= link_to "wijzig", edit_stage_path(@stage) %>
+  <%= link_to "alle etappes", stages_path %>
+</div>
+
+<% if @stage.scores.any? -%>
+
+  <h2>Scores</h2>
+
+  <% if @stage.yellow_scores.any? %>
+    <h3>Algemeen klassement</h3>
+    <%= render :partial => "scores", :locals => {:scores => ScoreDecorator.decorate(@stage.yellow_scores) } %>
+  <% end %>
+
+  <% if @stage.green_scores.any? %>
+    <h3>Punten klassement</h3>
+    <%= render :partial => "scores", :locals => {:scores => ScoreDecorator.decorate(@stage.green_scores) } %>
+  <% end %>
+
+  <% if @stage.dotted_scores.any? %>
+    <h3>Bergklassement</h3>
+    <%= render :partial => "scores", :locals => {:scores => ScoreDecorator.decorate(@stage.dotted_scores) } %>
+  <% end %>
+
+<% end -%>

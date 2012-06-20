@@ -1,0 +1,12 @@
+<h1>Wijzig deelnemer</h1>
+
+<%= form_for @player do |form| %>
+
+  <%= render form %>
+
+  <div>
+    <%= form.submit "Opslaan" %>
+    <%= link_to "Annuleren", player_path(@player) %>
+  </div>
+
+<% end %>

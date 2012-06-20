@@ -19,14 +19,18 @@ class RiderTextParser
   # 200	Jean-Christophe 	Peraud 	AG2R La Mondiale	K	15
   def build_rider_and_team(data)
     team = Team.find_or_create_by_name(data[3])
-    Rider.create(
-      :ad_code => data[0],
-      :first_name => data[1],
-      :last_name => data[2],
-      :team => team,
-      :ad_role => data[4],
-      :value => data[5]
-    )
+    if data[4] != "P" # Filter ploegleiders
+      rider = Rider.find_or_create_by_ad_code(data[0])
+      unless rider.update_attributes(
+            :first_name => data[1],
+            :last_name => data[2],
+            :team => team,
+            :ad_role => data[4],
+            :price => data[5]
+          )
+        raise ActiveRecord::RecordInvalid.new(rider.errors.full_messages.join(", "))
+      end
+    end
   end
 
   def validate_input(text)

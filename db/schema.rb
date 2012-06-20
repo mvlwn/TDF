@@ -37,20 +37,24 @@ ActiveRecord::Schema.define(:version => 20120620074313) do
     t.integer  "team_id"
     t.string   "team_name"
     t.integer  "number"
-    t.integer  "ad_code"
+    t.integer  "ad_code",                       :null => false
     t.string   "ad_role"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.integer  "value"
-    t.integer  "points"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "first_name",                    :null => false
+    t.string   "last_name",                     :null => false
+    t.integer  "price",                         :null => false
+    t.integer  "points",     :default => 0
+    t.boolean  "confirmed",  :default => false
+    t.boolean  "rejected",   :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
+  add_index "riders", ["ad_code"], :name => "index_riders_on_ad_code"
   add_index "riders", ["number"], :name => "index_riders_on_number"
   add_index "riders", ["team_id"], :name => "index_riders_on_team_id"
 
   create_table "scores", :force => true do |t|
+    t.integer  "number"
     t.integer  "rider_id"
     t.integer  "stage_id"
     t.integer  "category"
@@ -61,15 +65,21 @@ ActiveRecord::Schema.define(:version => 20120620074313) do
   end
 
   add_index "scores", ["category"], :name => "index_scores_on_category"
+  add_index "scores", ["number"], :name => "index_scores_on_number"
   add_index "scores", ["rider_id"], :name => "index_scores_on_rider_id"
   add_index "scores", ["stage_id"], :name => "index_scores_on_stage_id"
 
   create_table "stages", :force => true do |t|
     t.integer  "number"
     t.string   "name"
-    t.string   "ridden_on"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "description"
+    t.float    "distance"
+    t.date     "ridden_on"
+    t.text     "yellow_results"
+    t.text     "green_results"
+    t.text     "dotted_results"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   add_index "stages", ["number"], :name => "index_stages_on_number"

@@ -1,0 +1,32 @@
+<h1><%= @player.team_name %></h1>
+
+<table>
+  <tr>
+    <th>Manager</th>
+    <td><%= @player.name %></td>
+  </tr>
+  <tr>
+    <th>Punten behaald</th>
+    <td><%= @player.points %></td>
+  </tr>
+  <tr>
+    <th>Geselecteerd</th>
+    <td><%= @player.riders.count %> renners</td>
+  </tr>
+  <tr>
+    <th>Uitgegeven</th>
+    <td><%= @player.riders.sum(:price) %></td>
+  </tr>
+</table>
+
+
+<% if @player.riders.any? %>
+<h2>Het team bestaat uit</h2>
+<%= render :partial => "riders/list", :locals => { :riders => RiderDecorator.decorate(@player.riders) } %>
+<% end %>
+
+<div>
+  <%= link_to "wijzig", edit_player_path(@player) %>
+  <%= link_to "kies renners", pick_player_path(@player) %>
+  <%= link_to "alle deelnemers", players_path %>
+</div>

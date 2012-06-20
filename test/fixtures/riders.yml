@@ -2,18 +2,18 @@ gesink:
   team: rabobank
   number: 11
   ad_code: 100
-  ad_role: k
+  ad_role: K
   first_name: Robert
   last_name: Gesink
-  value: 28
+  price: 28
   points: 0
 
 hoogerland:
-  team: rabobank
+  team: vacansoleil
   number: 45
   ad_code: 101
-  ad_role: h
+  ad_role: H
   first_name: Johnny
   last_name: Hoogerland
-  value: 14
+  price: 14
   points: 0

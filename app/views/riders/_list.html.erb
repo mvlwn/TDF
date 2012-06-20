@@ -1,0 +1,28 @@
+<table>
+  <thead>
+  <tr>
+    <th>Nr</th>
+    <th>Naam</th>
+    <th>Rol</th>
+    <th>Team</th>
+    <th>Bevestigd</th>
+    <th>Afgemeld</th>
+    <th>Waarde</th>
+    <th>Punten</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% riders.each do |rider| %>
+  <tr>
+    <td><%= rider.number %></td>
+    <td><%= link_to rider.name, rider_path(rider) %></td>
+    <td><%= rider.ad_role %></td>
+    <td><%= rider.team_name %></td>
+    <td><%= link_to rider.confirmed.to_s, toggle_rider_path(rider, :field => "confirmed"), :method => :put %></td>
+    <td><%= link_to rider.rejected.to_s, toggle_rider_path(rider, :field => "rejected"), :method => :put %></td>
+    <td><%= rider.price %></td>
+    <td><%= rider.points %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

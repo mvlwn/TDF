@@ -1,0 +1,29 @@
+
+
+<h1>Etappes</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>nummer</th>
+    <th>van > naar</th>
+    <th>datum</th>
+    <th>omschrijving</th>
+    <th>afstand</th>
+    <th>uitslagen?</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @stages.each do |stage| %>
+  <tr>
+    <td><%= stage.number %></td>
+    <td><%= stage.name %></td>
+    <td><%= stage.ridden_on %></td>
+    <td><%= stage.description %></td>
+    <td><%= stage.distance %></td>
+    <td><%= stage.has_results? %></td>
+    <td><%= link_to "Bekijk", stage_path(stage) %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

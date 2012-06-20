@@ -1,9 +1,5 @@
-class Team
-  include Mongoid::Document
+class Team < ActiveRecord::Base
   
-  field :name
-  key :name
+  has_many :riders
 
-  references_many :riders
-  
 end

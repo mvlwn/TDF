@@ -1,11 +1,9 @@
 class RiderTextParser
-  
-  DEFAULT_INPUT_FILE = Rails.root.join("vendor", "files", "rma_rennerslijst_2012_NL.txt")
-  
+    
   attr_accessor :input
   attr_reader :riders
   
-  def initialize(input = File.new(DEFAULT_INPUT_FILE, 'r').read)
+  def initialize(input)
     validate_input(input)
     @input = input
   end

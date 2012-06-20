@@ -1,7 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Emanuel', :city => cities.first)
+
+# Read a txt file with seed and create riders and teams
+riders_file = Rails.root.join("vendor", "files", "rma_rennerslijst_2012_NL.txt")
+RiderTextParser.new.parse(File.new(riders_file, 'r').read)

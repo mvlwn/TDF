@@ -23,7 +23,7 @@ class Rider
   end
 
   def stage_points(stage)
-    stage.sprint_points.select{|sprint|}
+    
   end
   
 end

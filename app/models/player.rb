@@ -6,10 +6,11 @@ class Player < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :team_name, :email, :password, :password_confirmation, :remember_me
 
   BUDGET = 100
-  MAX_RIDERS = 10
+  BUDGET_MULTIPLIER = 10000
+  MAX_RIDERS = 9
 
   has_many :player_riders
   has_many :riders, :through => :player_riders
@@ -19,6 +20,12 @@ class Player < ActiveRecord::Base
 
   def stage_points(stage)
     riders.joins(:scores).where("scores.stage_id" => stage.id).sum("scores.points")
+  end
+
+  def points_till_stage(stage)
+    riders.
+      joins(:scores, "INNER JOIN stages ON scores.stage_id = stages.id").
+      where(["SELECT stages.number <= ?", stage.number]).sum("scores.points")
   end
 
   def budget
@@ -48,6 +55,10 @@ class Player < ActiveRecord::Base
 
   def team_ready?
     MAX_RIDERS == riders.count && budget >= 0
+  end
+
+  def ranking
+    Player.order("points DESC").select(:id).collect(&:id).index(id) + 1
   end
 
 end

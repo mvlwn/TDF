@@ -1,0 +1,23 @@
+nl:
+  activerecord:
+    models:
+      player: deelnemer
+      player_rider: gekozen renner
+      rider: renner
+      score:
+        one: uitslag
+        other: uitslagen
+      stage: etappe
+      team: team
+    attributes:
+      player:
+        name: Naam
+        team_name: Teamnaam
+        email: E-mail
+        points: Punten
+        password: Wachtwoord
+        password_confirmation: Bevestiging wachtwoord
+
+
+
+

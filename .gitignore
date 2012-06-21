@@ -20,5 +20,7 @@
 
 # Workstation hidden folders
 .idea
+.rvmrc
+.powrc
 .DS_Store
 .rbenv-version

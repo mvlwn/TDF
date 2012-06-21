@@ -1,0 +1,32 @@
+<h1>Punten per etappe per speler</h1>
+
+<table class="table table-condensed table-small">
+  <thead>
+  <tr>
+    <th>Etappe/Team</th>
+    <th></th>
+    <th></th>
+    <% @stages.each do |stage| %>
+      <th><%= stage.number %></th>
+    <% end %>
+  </tr>
+  </thead>
+  <tbody>
+  <% @players.each do |player| %>
+  <tr>
+    <td><%= player.points %></td>
+    <td><%= player.ranking %></td>
+    <td><%= player.team_name %></td>
+    <% @stages.each do |stage| %>
+      <th>
+        <%# if stage.winner == player %>
+          <!--<div class="badge badge-success"><%#= player.stage_points(stage) %></div>-->
+        <%# else  %>
+          <%= player.stage_points(stage) %>
+        <%# end %>
+        </th>
+    <% end %>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

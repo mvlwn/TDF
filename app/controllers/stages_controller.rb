@@ -21,4 +21,9 @@ class StagesController < ApplicationController
     end
   end
 
+  def player_points
+    @stages = Stage.all
+    @players = Player.all
+  end
+
 end

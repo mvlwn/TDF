@@ -54,4 +54,8 @@ class Stage < ActiveRecord::Base
     end
   end
 
+  def winner
+    Player.first
+  end
+
 end

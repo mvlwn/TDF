@@ -1,0 +1,458 @@
+Code	Voornaam	Naam	Ploeg	Type	Waarde
+100	Vincent	Lavenu	AG2R La Mondiale	P	18
+200	Jean-Christophe 	Peraud 	AG2R La Mondiale	K	15
+201	Nicolas 	Roche 	AG2R La Mondiale	K	14
+300	Maxime 	Bouet 	AG2R La Mondiale	B	8
+301	Hubert 	Dupont 	AG2R La Mondiale	B	9
+302	Martin 	Elmiger 	AG2R La Mondiale	B	10
+303	John 	Gadret 	AG2R La Mondiale	B	13
+304	Blel 	Kadri 	AG2R La Mondiale	B	10
+305	Lloyd 	Mondory 	AG2R La Mondiale	B	12
+306	Rinaldo 	Nocentini 	AG2R La Mondiale	B	12
+307	Christophe 	Riblon 	AG2R La Mondiale	B	12
+500	Manuel 	Belletti 	AG2R La Mondiale	H	7
+501	Julien 	Berard 	AG2R La Mondiale	H	5
+502	Guillaume 	Bonnafond 	AG2R La Mondiale	H	5
+503	Jimmy 	Casper 	AG2R La Mondiale	H	7
+504	Mikael 	Cherel 	AG2R La Mondiale	H	6
+505	Ben 	Gastauer 	AG2R La Mondiale	H	5
+506	Gregor 	Gazvoda 	AG2R La Mondiale	H	4
+507	Sylvain 	Georges 	AG2R La Mondiale	H	6
+508	Kristof 	Goddaert 	AG2R La Mondiale	H	8
+509	Sébastien 	Hinault 	AG2R La Mondiale	H	9
+510	Steve 	Houanard 	AG2R La Mondiale	H	5
+511	Romain 	Lemarchand 	AG2R La Mondiale	H	5
+512	Sébastien 	Minard 	AG2R La Mondiale	H	6
+513	Matteo 	Montaguti 	AG2R La Mondiale	H	5
+514	Mathieu 	Perget 	AG2R La Mondiale	H	6
+515	Anthony 	Ravard 	AG2R La Mondiale	H	8
+516	Boris 	Shpilevsky 	AG2R La Mondiale	H	5
+517	Amir 	Zargari 	AG2R La Mondiale	H	5
+518	Romain 	Bardet 	AG2R La Mondiale	H	5
+101	Giuseppe	Martinelli	Astana Pro Team	P	20
+202	Janez 	Brajkovic 	Astana Pro Team	K	16
+203	Roman 	Kreuziger 	Astana Pro Team	K	17
+308	Enrico 	Gasparotto 	Astana Pro Team	B	10
+309	Maxim 	Iglinskiy 	Astana Pro Team	B	11
+310	Robert 	Kiserlovski 	Astana Pro Team	B	13
+311	Alexandr 	Vinokurov 	Astana Pro Team	B	11
+519	Assan 	Bazayev 	Astana Pro Team	H	6
+520	Borut 	Bozic 	Astana Pro Team	H	8
+521	Alexsandr 	Dyachenko 	Astana Pro Team	H	5
+522	Dmitriy 	Fofonov 	Astana Pro Team	H	5
+523	Francesco 	Gavazzi 	Astana Pro Team	H	8
+524	Andriy 	Grivko 	Astana Pro Team	H	6
+525	Dmitriy 	Gruzdev 	Astana Pro Team	H	5
+526	Jacopo 	Guarnieri 	Astana Pro Team	H	7
+527	Valentin 	Iglinskiy 	Astana Pro Team	H	5
+528	Tanel 	Kangert 	Astana Pro Team	H	6
+529	Andrey 	Kashechkin 	Astana Pro Team	H	6
+530	Carl Wilhelm	Kessiakoff Fredrik	Astana Pro Team	H	7
+531	Dmitriy 	Muravyev 	Astana Pro Team	H	7
+532	Yevgeniy 	Nepomnyachshiy 	Astana Pro Team	H	5
+533	Evgeny 	Petrov 	Astana Pro Team	H	6
+534	Simone 	Ponzi 	Astana Pro Team	H	7
+535	Sergey 	Renev 	Astana Pro Team	H	5
+536	Kevin 	Seeldraeyers 	Astana Pro Team	H	8
+537	Egor 	Silin 	Astana Pro Team	H	6
+538	Paolo 	Tiralongo 	Astana Pro Team	H	9
+539	Andrey 	Zeits 	Astana Pro Team	H	5
+204	Cadel 	Evans 	BMC Racing Team	K	32
+205	Philippe 	Gilbert 	BMC Racing Team	K	30
+315	Tejay 	Van Garderen	BMC Racing Team	B	16
+542	Marcus 	Burghardt 	BMC Racing Team	H	6
+543	Stephen 	Cummings 	BMC Racing Team	H	6
+545	George 	Hincapie 	BMC Racing Team	H	8
+548	Amaël 	Moinard 	BMC Racing Team	H	6
+550	Manuel 	Quinziato 	BMC Racing Team	H	8
+553	Michael 	SchÄr 	BMC Racing Team	H	6
+118	Alain	Deloeuil	Cofidis, Le Credit En Ligne	P	18
+397	Rémy 	Di Gregorio	Cofidis, Le Credit En Ligne	B	11
+398	Samuel 	Dumoulin 	Cofidis, Le Credit En Ligne	B	14
+399	David 	Moncoutie 	Cofidis, Le Credit En Ligne	B	12
+400	Rein 	Taaramae 	Cofidis, Le Credit En Ligne	B	15
+878	Yohan 	Bagot 	Cofidis, Le Credit En Ligne	H	5
+879	Florent 	Barle 	Cofidis, Le Credit En Ligne	H	5
+880	Mickaël 	Buffaz 	Cofidis, Le Credit En Ligne	H	7
+881	Edwig 	Cammaerts 	Cofidis, Le Credit En Ligne	H	5
+882	Jean-Eudes 	Demaret 	Cofidis, Le Credit En Ligne	H	5
+883	Leonardo Fabio	Duque 	Cofidis, Le Credit En Ligne	H	9
+884	Nicolas 	Edet 	Cofidis, Le Credit En Ligne	H	5
+885	Julien 	Fouchard 	Cofidis, Le Credit En Ligne	H	5
+886	Egoitz 	Garcia Echeguibel	Cofidis, Le Credit En Ligne	H	5
+887	Jan 	Ghyselinck 	Cofidis, Le Credit En Ligne	H	5
+888	Arnaud 	Labbe 	Cofidis, Le Credit En Ligne	H	5
+889	Luis Angel	Mate Mardones	Cofidis, Le Credit En Ligne	H	5
+890	Rudy 	Molard 	Cofidis, Le Credit En Ligne	H	5
+891	Damien 	Monier 	Cofidis, Le Credit En Ligne	H	6
+892	Aleksejs 	Saramotins 	Cofidis, Le Credit En Ligne	H	6
+893	Nico 	Sijmens 	Cofidis, Le Credit En Ligne	H	7
+894	Tristan 	Valentin 	Cofidis, Le Credit En Ligne	H	7
+895	Nicolas 	Vogondy 	Cofidis, Le Credit En Ligne	H	7
+896	Romain 	Zingle 	Cofidis, Le Credit En Ligne	H	7
+897	Adrien 	Petit 	Cofidis, Le Credit En Ligne	H	7
+207	Samuel 	Sanchez Gonzalez	Euskaltel – Euskadi	K	25
+318	Mikel 	Astarloza Chaurreau	Euskaltel – Euskadi	B	10
+319	Egoi	Martinez de Esteban	Euskaltel – Euskadi	B	10
+321	Amets 	Txurruka 	Euskaltel – Euskadi	B	11
+558	Jorge 	Azanza Soto	Euskaltel – Euskadi	H	5
+562	Gorka 	Izaguirre Insausti	Euskaltel – Euskadi	H	5
+566	Ruben 	Perez Moreno	Euskaltel – Euskadi	H	7
+569	Pablo 	Urtasun Perez	Euskaltel – Euskadi	H	6
+571	Gorka 	Verdugo Marcotegui	Euskaltel – Euskadi	H	8
+104	Marc	Madiot	FDJ-Big Mat	P	18
+208	Sandy 	Casar 	FDJ-Big Mat	K	16
+209	Thibaut 	Pinot 	FDJ-Big Mat	K	15
+322	Pierrick 	Fedrigo 	FDJ-Big Mat	B	13
+323	Yauheni 	Hutarovich 	FDJ-Big Mat	B	14
+324	Arnold 	Jeannesson 	FDJ-Big Mat	B	13
+325	Anthony 	Roux 	FDJ-Big Mat	B	10
+575	William 	Bonnet 	FDJ-Big Mat	H	9
+576	David 	Boucher 	FDJ-Big Mat	H	5
+577	Steve 	Chainel 	FDJ-Big Mat	H	8
+578	Mickael 	Delage 	FDJ-Big Mat	H	7
+579	Arnaud 	Gerard 	FDJ-Big Mat	H	5
+580	Anthony 	Geslin 	FDJ-Big Mat	H	6
+581	Matthieu 	Ladagnous 	FDJ-Big Mat	H	6
+582	Francis 	Mourey 	FDJ-Big Mat	H	6
+583	Yoann 	Offredo 	FDJ-Big Mat	H	6
+584	Rémi 	Pauriol 	FDJ-Big Mat	H	7
+585	Cédric 	Pineau 	FDJ-Big Mat	H	5
+586	Gabriel 	Rasch 	FDJ-Big Mat	H	5
+587	Dominique 	Rollin 	FDJ-Big Mat	H	6
+588	Jérémy 	Roy 	FDJ-Big Mat	H	8
+589	Geoffrey 	Soupe 	FDJ-Big Mat	H	6
+590	Benoît 	Vaugrenard 	FDJ-Big Mat	H	7
+591	Jussi 	Veikkanen 	FDJ-Big Mat	H	5
+592	Arthur 	Vichot 	FDJ-Big Mat	H	5
+593	Nacer 	Bouhanni 	FDJ-Big Mat	H	7
+594	Arnaud 	Courteille 	FDJ-Big Mat	H	5
+595	Arnaud 	Demare 	FDJ-Big Mat	H	8
+596	Kenny 	Elissonde 	FDJ-Big Mat	H	5
+105	Jonathan	Vaughters	Garmin – Barracuda	P	26
+210	Tyler 	Farrar 	Garmin – Barracuda	K	26
+211	Ryder 	Hesjedal 	Garmin – Barracuda	K	23
+326	Thomas 	Danielson 	Garmin – Barracuda	B	15
+327	Heinrich 	Haussler 	Garmin – Barracuda	B	17
+328	Daniel 	Martin 	Garmin – Barracuda	B	16
+329	David 	Millar 	Garmin – Barracuda	B	16
+330	Christian 	Vandevelde 	Garmin – Barracuda	B	14
+331	Sep 	Vanmarcke 	Garmin – Barracuda	B	14
+597	Jack 	Bauer 	Garmin – Barracuda	H	5
+598	Thomas 	Dekker 	Garmin – Barracuda	H	6
+599	Koldo 	Fernandez 	Garmin – Barracuda	H	8
+600	Murilo Antonio	Fischer 	Garmin – Barracuda	H	7
+601	Nathan 	Haas 	Garmin – Barracuda	H	5
+602	Alex 	Howes 	Garmin – Barracuda	H	5
+603	Robert 	Hunter 	Garmin – Barracuda	H	8
+604	Andreas 	Klier 	Garmin – Barracuda	H	5
+605	Michel 	Kreder 	Garmin – Barracuda	H	5
+606	Christophe 	Le Mevel	Garmin – Barracuda	H	6
+607	Martijn 	Maaskant 	Garmin – Barracuda	H	5
+608	Ramunas 	Navardauskas 	Garmin – Barracuda	H	7
+609	Thomas 	Peterson 	Garmin – Barracuda	H	5
+610	Alex 	Rasmussen 	Garmin – Barracuda	H	7
+611	Sébastien 	Rosseler 	Garmin – Barracuda	H	6
+612	Peter 	Stetina 	Garmin – Barracuda	H	7
+613	Andrew 	Talansky 	Garmin – Barracuda	H	8
+614	Johan 	Van Summeren	Garmin – Barracuda	H	7
+615	Fabian 	Wegmann 	Garmin – Barracuda	H	7
+616	David 	Zabriskie 	Garmin – Barracuda	H	9
+617	Raymond 	Kreder 	Garmin – Barracuda	H	5
+618	Jacob 	Rathe 	Garmin – Barracuda	H	5
+212	Denis 	Menchov 	Katusha Team	K	25
+332	Oscar 	Freire Gomez	Katusha Team	B	19
+621	Giampaolo 	Caruso 	Katusha Team	H	7
+623	Vladimir 	Gusev 	Katusha Team	H	7
+624	Juan 	Horrach Rippoll	Katusha Team	H	6
+637	Yury 	Trofimov 	Katusha Team	H	7
+633	Luca 	Paolini 	Katusha Team	H	8
+640	Eduard 	Vorganov 	Katusha Team	H	7
+631	Aliaksandr 	Kuschynski 	Katusha Team	H	6
+107	Roberto	Damiani	Lampre – ISD	P	18
+214	Alessandro 	Petacchi 	Lampre – ISD	K	24
+215	Michele 	Scarponi 	Lampre – ISD	K	23
+336	Grega 	Bole 	Lampre – ISD	B	14
+337	Damiano 	Cunego 	Lampre – ISD	B	20
+338	Adriano 	Malori 	Lampre – ISD	B	12
+339	Przemyslaw 	Niemiec 	Lampre – ISD	B	12
+340	Diego 	Ulissi 	Lampre – ISD	B	13
+642	Winner 	Anacona Gomez	Lampre – ISD	H	8
+643	Leonardo 	Bertagnolli 	Lampre – ISD	H	7
+644	Matteo 	Bono 	Lampre – ISD	H	7
+645	Vitaliy 	Buts 	Lampre – ISD	H	6
+646	Davide 	Cimolai 	Lampre – ISD	H	5
+647	Massimo 	Graziato 	Lampre – ISD	H	5
+648	Danilo 	Hondo 	Lampre – ISD	H	7
+649	Denys 	Kostyuk 	Lampre – ISD	H	5
+650	Dmytro 	Krivtsov 	Lampre – ISD	H	5
+651	Yuriy 	Krivtsov 	Lampre – ISD	H	5
+652	Oleksandr 	Kvachuk 	Lampre – ISD	H	6
+653	Matthew 	Lloyd 	Lampre – ISD	H	6
+654	Marco 	Marzano 	Lampre – ISD	H	7
+655	Manuele 	Mori 	Lampre – ISD	H	7
+656	Daniele 	Pietropolli 	Lampre – ISD	H	7
+657	Morris 	Possoni 	Lampre – ISD	H	7
+658	Daniele 	Righi 	Lampre – ISD	H	6
+659	Oleksandr 	Sheydyk 	Lampre – ISD	H	5
+660	Alessandro 	Spezialetti 	Lampre – ISD	H	6
+661	Simone 	Stortoni 	Lampre – ISD	H	6
+662	Davide 	Vigano 	Lampre – ISD	H	7
+108	Marco 	Scirea	Liquigas-Cannondale	P	22
+216	Vincenzo 	Nibali 	Liquigas-Cannondale	K	26
+217	Peter 	Sagan 	Liquigas-Cannondale	K	30
+341	Ivan 	Basso 	Liquigas-Cannondale	B	20
+342	Eros 	Capecchi 	Liquigas-Cannondale	B	13
+343	Daniel 	Oss 	Liquigas-Cannondale	B	13
+344	Sylvester 	Szmyd 	Liquigas-Cannondale	B	14
+345	Elia 	Viviani 	Liquigas-Cannondale	B	13
+663	Valerio 	Agnoli 	Liquigas-Cannondale	H	8
+664	Stefano 	Agostini 	Liquigas-Cannondale	H	5
+665	Maciej 	Bodnar 	Liquigas-Cannondale	H	7
+666	Federico 	Canuti 	Liquigas-Cannondale	H	5
+667	Damiano 	Caruso 	Liquigas-Cannondale	H	8
+668	Mauro 	Da Dalto	Liquigas-Cannondale	H	5
+669	Tiziano 	Dall\'antonia 	Liquigas-Cannondale	H	5
+670	Timothy 	Duggan 	Liquigas-Cannondale	H	7
+671	Edward 	King 	Liquigas-Cannondale	H	5
+672	Kristijan 	Koren 	Liquigas-Cannondale	H	7
+673	Paolo 	Longo Borghini	Liquigas-Cannondale	H	5
+674	Alan 	Marangoni 	Liquigas-Cannondale	H	5
+675	Dominik 	Nerz 	Liquigas-Cannondale	H	5
+676	Maciej 	Paterski 	Liquigas-Cannondale	H	6
+677	Daniele 	Ratto 	Liquigas-Cannondale	H	5
+678	Fabio 	Sabatini 	Liquigas-Cannondale	H	7
+679	Juraj 	Sagan 	Liquigas-Cannondale	H	5
+680	Cristiano 	Salerno 	Liquigas-Cannondale	H	5
+681	Cayetano José	Sarmiento Tunarrosa	Liquigas-Cannondale	H	7
+682	Alessandro 	Vanotti 	Liquigas-Cannondale	H	6
+683	Moreno 	Moser 	Liquigas-Cannondale	H	8
+218	André 	Greipel 	Lotto Belisol Team	K	27
+219	Jurgen 	Van Den Broeck	Lotto Belisol Team	K	27
+350	Jelle 	Vanendert 	Lotto Belisol Team	B	20
+687	Francis 	De Greef	Lotto Belisol Team	H	7
+349	Jurgen 	Roelandts 	Lotto Belisol Team	B	15
+696	Marcel 	Sieberg 	Lotto Belisol Team	H	8
+346	Lars Ytting	Bak 	Lotto Belisol Team	B	13
+690	Adam 	Hansen 	Lotto Belisol Team	H	6
+691	Greg 	Henderson 	Lotto Belisol Team	H	8
+220	Alejandro 	Valverde Belmonte	Movistar Team	K	28
+351	David 	Arroyo Duran	Movistar Team	B	13
+352	Juan Jose	Cobo Acebo	Movistar Team	B	15
+353	Rui Alberto	Faria Da Costa	Movistar Team	B	14
+354	Vasili 	Kiryienka 	Movistar Team	B	12
+355	Jose Joaquin	Rojas Gil	Movistar Team	B	20
+356	Francisco José	Ventoso Alberdi	Movistar Team	B	15
+357	Giovanni 	Visconti 	Movistar Team	B	14
+705	Andrey 	Amador Bakkazakova	Movistar Team	H	8
+706	Marzio 	Bruseghin 	Movistar Team	H	6
+707	Jonathan	Castroviejo Nicolas	Movistar Team	H	6
+708	Imanol 	Erviti Ollo	Movistar Team	H	5
+709	José Ivan	Gutierrez Palacios	Movistar Team	H	7
+710	José 	Herrada Lopez	Movistar Team	H	5
+711	Benat 	Intxausti Elorriaga	Movistar Team	H	8
+712	Javier 	Iriarte 	Movistar Team	H	5
+713	Vladimir 	Karpets 	Movistar Team	H	5
+714	Ignatas 	Konovalovas 	Movistar Team	H	7
+715	Pablo 	Lastras Garcia	Movistar Team	H	9
+716	David 	Lopez Garcia	Movistar Team	H	7
+717	Angel 	Madrazo Ruiz	Movistar Team	H	6
+718	Javier 	Moreno Bazan	Movistar Team	H	8
+719	Sergio 	Pardilla Bellon	Movistar Team	H	8
+720	Ruben 	Plaza Molina	Movistar Team	H	8
+721	Branislau 	Samoilau 	Movistar Team	H	6
+722	Jesus 	Herrada Lopez	Movistar Team	H	5
+723	Nairo Alexander	Quintana Rojas	Movistar Team	H	8
+724	Enrique 	Sanz 	Movistar Team	H	5
+222	Tony 	Martin 	Omega Pharma-Quickstep	K	25
+358	Sylvain 	Chavanel 	Omega Pharma-Quickstep	B	18
+359	Kevin 	De Weert	Omega Pharma-Quickstep	B	13
+360	Levi 	Leipheimer 	Omega Pharma-Quickstep	B	20
+727	Dario 	Cataldo 	Omega Pharma-Quickstep	H	9
+729	Gerald 	Ciolek 	Omega Pharma-Quickstep	H	9
+730	Dries 	Devenyns 	Omega Pharma-Quickstep	H	8
+732	Bert 	Grabsch 	Omega Pharma-Quickstep	H	6
+736	Jérôme 	Pineau 	Omega Pharma-Quickstep	H	6
+738	Gert 	Steegmans 	Omega Pharma-Quickstep	H	8
+739	Stijn 	Vandenbergh 	Omega Pharma-Quickstep	H	7
+741	Martin 	Velits 	Omega Pharma-Quickstep	H	5
+744	Matteo 	Trentin 	Omega Pharma-Quickstep	H	7
+223	Matthew Harley	Goss 	Orica Greenedge	K	25
+364	Michael 	Albasini 	Orica Greenedge	B	16
+365	Allan 	Davis 	Orica Greenedge	B	11
+366	Simon 	Gerrans 	Orica Greenedge	B	17
+367	Sebastian 	Langeveld 	Orica Greenedge	B	12
+368	Cameron 	Meyer 	Orica Greenedge	B	11
+369	Pieter 	Weening 	Orica Greenedge	B	13
+747	Fumiyuki 	Beppu 	Orica Greenedge	H	6
+748	Sam 	Bewley 	Orica Greenedge	H	6
+749	Jack 	Bobridge 	Orica Greenedge	H	9
+750	Simon 	Clarke 	Orica Greenedge	H	6
+751	Baden 	Cooke 	Orica Greenedge	H	7
+752	Julian 	Dean 	Orica Greenedge	H	8
+753	Mitchell 	Docker 	Orica Greenedge	H	5
+754	Leigh 	Howard 	Orica Greenedge	H	7
+755	Daryl 	Impey 	Orica Greenedge	H	5
+756	Jens 	Keukeleire 	Orica Greenedge	H	7
+757	Aidis 	Kruopis 	Orica Greenedge	H	6
+758	Brett 	Lancaster 	Orica Greenedge	H	5
+759	Christian 	Meier 	Orica Greenedge	H	5
+760	Travis 	Meyer 	Orica Greenedge	H	5
+761	Jens 	Mouris 	Orica Greenedge	H	7
+762	Stuart 	O\'grady 	Orica Greenedge	H	6
+763	Wesley 	Sulzberger 	Orica Greenedge	H	5
+764	Daniel 	Teklehaimanot 	Orica Greenedge	H	5
+765	Svein 	Tuft 	Orica Greenedge	H	7
+766	Tomas 	Vaitkus 	Orica Greenedge	H	8
+767	Matthew 	Wilson 	Orica Greenedge	H	5
+768	Luke 	Durbridge 	Orica Greenedge	H	6
+769	Michael 	Hepburn 	Orica Greenedge	H	6
+224	Robert 	Gesink 	Rabobank Cycling Team	K	25
+372	Steven 	Kruijswijk 	Rabobank Cycling Team	B	15
+373	Bauke 	Mollema 	Rabobank Cycling Team	B	18
+374	Luis Leon	Sanchez Gil	Rabobank Cycling Team	B	16
+780	Mark 	Renshaw 	Rabobank Cycling Team	H	9
+781	Bram 	Tankink 	Rabobank Cycling Team	H	7
+782	Laurens 	Ten Dam	Rabobank Cycling Team	H	7
+783	Maarten 	Tjallingii 	Rabobank Cycling Team	H	7
+787	Maarten 	Wynants 	Rabobank Cycling Team	H	7
+226	Frank 	Schleck 	Radioshack-Nissan	K	28
+377	Fabian 	Cancellara 	Radioshack-Nissan	B	20
+379	Christopher 	Horner 	Radioshack-Nissan	B	15
+380	Andreas 	KlÖden 	Radioshack-Nissan	B	17
+793	Tony 	Gallopin 	Radioshack-Nissan	H	7
+799	Maxime 	Monfort 	Radioshack-Nissan	H	9
+800	Yaroslav 	Popovych 	Radioshack-Nissan	H	7
+807	Jens 	Voigt 	Radioshack-Nissan	H	6
+810	Haimar 	Zubeldia Agirre	Radioshack-Nissan	H	7
+401	Jerome 	Coppel 	Saur – Sojasun	B	18
+402	Jimmy 	Engoulvent 	Saur – Sojasun	B	13
+403	Jonathan 	Hivert 	Saur – Sojasun	B	12
+404	Julien 	Simon 	Saur – Sojasun	B	12
+898	Cyril 	Bessy 	Saur – Sojasun	H	6
+899	Arnaud 	Coyot 	Saur – Sojasun	H	7
+900	Anthony 	Delaplace 	Saur – Sojasun	H	7
+901	Brice 	Feillu 	Saur – Sojasun	H	6
+902	Jérémie 	Galland 	Saur – Sojasun	H	5
+903	Fabrice 	Jeandesboz 	Saur – Sojasun	H	6
+904	Christophe 	Laborie 	Saur – Sojasun	H	5
+905	David 	Lelay 	Saur – Sojasun	H	5
+906	Cyril 	Lemoine 	Saur – Sojasun	H	7
+907	Guillaume 	Levarlet 	Saur – Sojasun	H	5
+908	Laurent 	Mangel 	Saur – Sojasun	H	5
+909	Jean Marc	Marino 	Saur – Sojasun	H	5
+910	Rony 	Martias 	Saur – Sojasun	H	5
+911	Maxime 	Mederel 	Saur – Sojasun	H	5
+912	Jean-Lou 	Paiani 	Saur – Sojasun	H	5
+913	Stéphane 	Poulhies 	Saur – Sojasun	H	5
+914	Paul 	Poux 	Saur – Sojasun	H	5
+915	Yannick 	Talabardon 	Saur – Sojasun	H	7
+916	Etienne 	Tortelier 	Saur – Sojasun	H	5
+115	Steven 	De Jongh	Sky Procycling	P	32
+227	Mark 	Cavendish 	Sky Procycling	K	31
+228	Bradley 	Wiggins 	Sky Procycling	K	30
+381	Edvald 	Boasson Hagen	Sky Procycling	B	20
+382	Christopher 	Froome 	Sky Procycling	B	14
+383	Richie 	Porte 	Sky Procycling	B	15
+384	Michael 	Rogers 	Sky Procycling	B	15
+385	Geraint 	Thomas 	Sky Procycling	B	14
+386	Rigoberto 	Uran Uran	Sky Procycling	B	14
+813	Davide 	Appollonio 	Sky Procycling	H	6
+814	Michael 	Barry 	Sky Procycling	H	5
+815	Alex 	Dowsett 	Sky Procycling	H	5
+816	Bernhard 	Eisel 	Sky Procycling	H	7
+817	Juan Antonio	Flecha Giannoni	Sky Procycling	H	7
+818	Mathew 	Hayman 	Sky Procycling	H	7
+819	Sergio Luis	Henao Montoya	Sky Procycling	H	7
+820	Jeremy 	Hunt 	Sky Procycling	H	7
+821	Peter 	Kennaugh 	Sky Procycling	H	7
+822	Christian 	Knees 	Sky Procycling	H	7
+823	Thomas 	LÖvkvist 	Sky Procycling	H	7
+824	Lars Petter	Nordhaug 	Sky Procycling	H	7
+825	Danny 	Pate 	Sky Procycling	H	6
+826	Salvatore 	Puccio 	Sky Procycling	H	5
+827	Kanstantsin 	Sivtsov 	Sky Procycling	H	9
+828	Ian 	Stannard 	Sky Procycling	H	7
+829	Christopher 	Sutton 	Sky Procycling	H	6
+830	Ben 	Swift 	Sky Procycling	H	7
+831	Xabier 	Zandio Echaide	Sky Procycling	H	7
+832	Luke 	Rowe 	Sky Procycling	H	5
+230	Marcel 	Kittel 	Team Argos – Shimano	K	23
+405	Koen 	De Kort	Team Argos – Shimano	B	12
+407	Tom 	Veelers 	Team Argos – Shimano	B	10
+920	Johannes 	FrÖhlinger 	Team Argos – Shimano	H	5
+922	Patrick 	Gretsch 	Team Argos – Shimano	H	7
+923	Yann 	Huguet 	Team Argos – Shimano	H	5
+924	Thierry 	Hupond 	Team Argos – Shimano	H	5
+929	Matthieu 	Sprick 	Team Argos – Shimano	H	5
+931	Albert 	Timmer 	Team Argos – Shimano	H	7
+121	Jean-Rene	Bernaudeau 	Team Europcar	P	18
+231	Thomas 	Voeckler 	Team Europcar	K	21
+409	Cyril 	Gautier 	Team Europcar	B	12
+410	Christophe 	Kern 	Team Europcar	B	12
+411	Pierre 	Rolland 	Team Europcar	B	18
+412	Sébastien 	Turgot 	Team Europcar	B	12
+937	Yukiya 	Arashiro 	Team Europcar	H	7
+938	Giovanni 	Bernaudeau 	Team Europcar	H	6
+939	Franck 	Bouyer 	Team Europcar	H	5
+940	Anthony 	Charteau 	Team Europcar	H	8
+941	Sébastien 	Chavanel 	Team Europcar	H	8
+942	Rafaa 	Chtioui 	Team Europcar	H	7
+943	Mathieu 	Claude 	Team Europcar	H	5
+944	Damien 	Gaudin 	Team Europcar	H	7
+945	Yohann 	Gene 	Team Europcar	H	6
+946	Saïd 	Haddou 	Team Europcar	H	7
+947	Tony 	Hurel 	Team Europcar	H	5
+948	Vincent 	Jerome 	Team Europcar	H	5
+949	Davide 	Malacarne 	Team Europcar	H	7
+950	Alexandre 	Pichot 	Team Europcar	H	5
+951	Perrig 	Quemeneur 	Team Europcar	H	5
+952	Kévin 	Reza 	Team Europcar	H	5
+953	Bjorn 	Thurau 	Team Europcar	H	7
+954	David 	Veilleux 	Team Europcar	H	5
+955	Jerome 	Cousin 	Team Europcar	H	5
+956	Matteo 	Pelucchi 	Team Europcar	H	5
+957	Angelo 	Tulik 	Team Europcar	H	5
+116	Bjarne	Riis	Team Saxo Bank	P	17
+387	Juan José	Haedo 	Team Saxo Bank	B	15
+388	Daniel 	Navarro Garcia	Team Saxo Bank	B	13
+389	Nick 	Nuyens 	Team Saxo Bank	B	14
+390	Chris Anker	SÖrensen 	Team Saxo Bank	B	14
+833	Manuele 	Boaro 	Team Saxo Bank	H	7
+834	Jonathan 	Cantwell 	Team Saxo Bank	H	5
+835	Mads 	Christensen 	Team Saxo Bank	H	6
+836	Volodymir 	Gustov 	Team Saxo Bank	H	7
+837	Lucas Sebastian	Haedo 	Team Saxo Bank	H	6
+838	Jesus 	Hernandez Blazquez	Team Saxo Bank	H	7
+839	Jonas Aaen	JÖrgensen 	Team Saxo Bank	H	6
+840	Christopher 	Juul Jensen	Team Saxo Bank	H	5
+841	Kasper 	Klostergaard Larsen	Team Saxo Bank	H	6
+842	Karsten 	Kroon 	Team Saxo Bank	H	8
+843	Anders 	Lund 	Team Saxo Bank	H	7
+844	Ran 	Margaliot 	Team Saxo Bank	H	5
+845	Jaroslaw 	Marycz 	Team Saxo Bank	H	7
+846	Takashi 	Miyazawa 	Team Saxo Bank	H	5
+847	Michael 	Morkov 	Team Saxo Bank	H	8
+848	Benjamin 	Noval Gonzalez	Team Saxo Bank	H	7
+849	Miguel Moreira	Paulinho Sergio	Team Saxo Bank	H	7
+850	Bruno 	Pires 	Team Saxo Bank	H	7
+851	Luke 	Roberts 	Team Saxo Bank	H	6
+852	Nicki 	SÖrensen 	Team Saxo Bank	H	8
+853	David 	Tanner 	Team Saxo Bank	H	6
+854	Matteo 	Tosatto 	Team Saxo Bank	H	8
+855	Troels Ronning	Vinther 	Team Saxo Bank	H	5
+856	Rafal 	Majka 	Team Saxo Bank	H	7
+229	Lieuwe 	Westra 	Vacansoleil-DCM Pro Cycling	K	23
+392	Romain 	Feillu 	Vacansoleil-DCM Pro Cycling	B	15
+393	Johnny 	Hoogerland 	Vacansoleil-DCM Pro Cycling	B	14
+395	Marco 	Marcato 	Vacansoleil-DCM Pro Cycling	B	14
+396	Wouter 	Poels 	Vacansoleil-DCM Pro Cycling	B	15
+857	Kris 	Boeckmans 	Vacansoleil-DCM Pro Cycling	H	9
+860	Stijn 	Devolder 	Vacansoleil-DCM Pro Cycling	H	7
+863	Gustav 	Larsson 	Vacansoleil-DCM Pro Cycling	H	8
+864	Pim 	Ligthart 	Vacansoleil-DCM Pro Cycling	H	9
+866	Tomasz 	Marczynski 	Vacansoleil-DCM Pro Cycling	H	5
+872	Rob 	Ruijgh 	Vacansoleil-DCM Pro Cycling	H	8
+874	Rafael 	Valls Ferri	Vacansoleil-DCM Pro Cycling	H	6
+875	Kenny Robert	Van Hummel	Vacansoleil-DCM Pro Cycling	H	8
+876	Frederik 	Veuchelen 	Vacansoleil-DCM Pro Cycling	H	7

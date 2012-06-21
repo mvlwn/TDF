@@ -1,12 +1,13 @@
-<table>
+<% team = true unless defined?(team) %>
+<table class="table table-condensed">
   <thead>
   <tr>
     <th>Nr</th>
     <th>Naam</th>
     <th>Rol</th>
-    <th>Team</th>
-    <th>Bevestigd</th>
-    <th>Afgemeld</th>
+    <% if team %><th>Team</th><% end %>
+    <th class="center">Bevestigd</th>
+    <th class="center">Afgemeld</th>
     <th>Waarde</th>
     <th>Punten</th>
   </tr>
@@ -14,14 +15,14 @@
   <tbody>
   <% riders.each do |rider| %>
   <tr>
-    <td><%= rider.number %></td>
-    <td><%= link_to rider.name, rider_path(rider) %></td>
-    <td><%= rider.ad_role %></td>
-    <td><%= rider.team_name %></td>
-    <td><%= link_to rider.confirmed.to_s, toggle_rider_path(rider, :field => "confirmed"), :method => :put %></td>
-    <td><%= link_to rider.rejected.to_s, toggle_rider_path(rider, :field => "rejected"), :method => :put %></td>
-    <td><%= rider.price %></td>
-    <td><%= rider.points %></td>
+    <td width="5%"><%= rider.number %></td>
+    <td width="25%"><%= link_to rider.name, rider_path(rider) %></td>
+    <td width="5%"><%= rider.ad_role %></td>
+    <% if team %><td width="15%"><%= rider.team_name %></td><% end %>
+    <td width="5%" class="center"><%= rider.toggle_boolean(:confirmed) %></td>
+    <td width="5%" class="center"><%= rider.toggle_boolean(:rejected) %></td>
+    <td width="15%"><%= rider.price %></td>
+    <td width="5%"><%= rider.points %></td>
   </tr>
   <% end %>
   </tbody>

@@ -5,8 +5,8 @@
   <%= render form %>
 
   <div>
-    <%= form.submit "Opslaan" %>
-    <%= link_to "Annuleren", player_path(@player) %>
+    <%= form.submit "Opslaan", :class => "btn btn-primary" %>
+    <%= link_to "Annuleren", player_path(@player), :class => "btn" %>
   </div>
 
 <% end %>

@@ -21,6 +21,7 @@ group :test do
 end
 
 gem 'jquery-rails'
+gem 'twitter-bootstrap-rails'
 gem 'draper'
 
 # To use ActiveModel has_secure_password

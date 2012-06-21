@@ -1,0 +1,28 @@
+<h1>Punten van <%= @player.team_name %></h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>rit</th>
+    <th>datum</th>
+    <th>van > naar</th>
+    <th>type</th>
+    <th>punten</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @stages.each do |stage| %>
+    <tr>
+      <td><%= stage.number %></td>
+      <td><%= stage.ridden_on %></td>
+      <td><%= stage.name %></td>
+      <td><%= stage.description %></td>
+      <td><%= @player.stage_points(stage) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div class="well">
+  <%= link_to "Terug naar profiel", player_path(@player), :class => "btn" %>
+</div>

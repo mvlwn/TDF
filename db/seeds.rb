@@ -1,8 +1,11 @@
 # encoding: utf-8
-# Read a txt file with seed and create riders and teams
-riders_file = Rails.root.join("vendor", "files", "rma_rennerslijst_2012_NL.txt")
+
+# Create Teams and Riders
+# Read a txt file with riders in tab delimited text format
+riders_file = Rails.root.join("vendor", "files", "riders.txt")
 RiderTextParser.new(File.new(riders_file, 'r').read).parse
 
+# Create Stages
 Stage.create([
   {:number => 0,  :name => "Proloog Liège > Liège",                       :ridden_on => "2012-06-30", :description => "Proloog",         :distance => "6.4"},
   {:number => 1,  :name => "Liège > Seraing",                             :ridden_on => "2012-07-01", :description => "Vlak",            :distance => "198"},
@@ -26,3 +29,6 @@ Stage.create([
   {:number => 19, :name => "Bonneval > Chartres",                         :ridden_on => "2012-07-21", :description => "Tijdrit",         :distance => "53.5"},
   {:number => 20, :name => "Rambouillet > Paris Champs-Élysées",          :ridden_on => "2012-07-22", :description => "Vlak",            :distance => "120"}
 ])
+
+#
+

@@ -1,32 +1,31 @@
 <h1><%= @player.team_name %></h1>
 
-<table>
+<table class="table table-bordered">
   <tr>
-    <th>Manager</th>
-    <td><%= @player.name %></td>
+    <th width="25%">Manager</th>
+    <td width="75%"><%= @player.name %></td>
   </tr>
   <tr>
-    <th>Punten behaald</th>
-    <td><%= @player.points %></td>
+    <th>Punten</th>
+    <td><%= link_to @player.points.to_i, points_player_path(@player) %></td>
   </tr>
   <tr>
     <th>Geselecteerd</th>
-    <td><%= @player.riders.count %> renners</td>
+    <td><%= @player.riders_count_badge %> <%= link_to "renners", riders_player_path(@player) %></td>
   </tr>
   <tr>
     <th>Uitgegeven</th>
-    <td><%= @player.riders.sum(:price) %></td>
+    <td><%= @player.expenses %></td>
+  </tr>
+  <tr>
+    <th>Overig budget</th>
+    <td><%= @player.budget %></td>
   </tr>
 </table>
 
 
-<% if @player.riders.any? %>
-<h2>Het team bestaat uit</h2>
-<%= render :partial => "riders/list", :locals => { :riders => RiderDecorator.decorate(@player.riders) } %>
-<% end %>
-
-<div>
-  <%= link_to "wijzig", edit_player_path(@player) %>
-  <%= link_to "kies renners", pick_player_path(@player) %>
-  <%= link_to "alle deelnemers", players_path %>
+<div class="well">
+  <%= link_to "Wijzig", edit_player_path(@player), :class => "btn" %>
+  <%= link_to "Kies renners", pick_player_path(@player), :class => "btn" %>
+  <%= link_to "Alle deelnemers", players_path, :class => "btn" %>
 </div>

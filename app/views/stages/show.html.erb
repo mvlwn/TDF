@@ -1,23 +1,25 @@
 <h1>Etappe <%= @stage.number %> <%= @stage.name %></h1>
+<div>&nbsp;</div>
+<div class="row">
+  <table class="table span5">
+    <tr>
+      <th>Omschrijving</th>
+      <td><%= @stage.description %></td>
+    </tr>
+    <tr>
+      <th>Afstand</th>
+      <td><%= @stage.distance %></td>
+    </tr>
+    <tr>
+      <th>Totaal aantal punten</th>
+      <td><%= @stage.points %></td>
+    </tr>
+  </table>
+</div>
 
-<table>
-  <tr>
-    <th>Omschrijving</th>
-    <td><%= @stage.description %></td>
-  </tr>
-  <tr>
-    <th>Afstand</th>
-    <td><%= @stage.distance %></td>
-  </tr>
-  <tr>
-    <th>Punten</th>
-    <td><%= @stage.points %></td>
-  </tr>
-</table>
-
-<div>
-  <%= link_to "wijzig", edit_stage_path(@stage) %>
-  <%= link_to "alle etappes", stages_path %>
+<div class="well">
+  <%= link_to "Wijzig", edit_stage_path(@stage), :class => "btn" %>
+  <%= link_to "Etappeoverzicht", stages_path, :class => "btn" %>
 </div>
 
 <% if @stage.scores.any? -%>

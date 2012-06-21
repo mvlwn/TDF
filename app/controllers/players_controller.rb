@@ -1,11 +1,11 @@
 class PlayersController < ApplicationController
 
   def index
-    @players = Player.all
+    @players = PlayerDecorator.decorate(Player.all)
   end
 
   def show
-    @player = Player.find(params[:id])
+    @player = PlayerDecorator.decorate(Player.find(params[:id]))
   end
 
   def new
@@ -40,10 +40,67 @@ class PlayersController < ApplicationController
     redirect_to players_path, :notice => "Speler verwijderd"
   end
 
+  def points
+    @player = PlayerDecorator.decorate(Player.find(params[:id]))
+    @stages = StageDecorator.decorate(Stage.all)
+  end
+
+  def riders
+    @player = PlayerDecorator.decorate(Player.find(params[:id]))
+  end
+
   def pick
+    @player = PlayerDecorator.decorate(Player.find(params[:id]))
+    @search = false
+    @riders = RiderDecorator.decorate(filter_riders(@player.available_riders))
+  end
+
+  def select_rider
     @player = Player.find(params[:id])
-    @player_rider_ids = @player.rider_ids
-    @riders = RiderDecorator.decorate(Rider.all)
+    @rider = Rider.find(params[:rider_id])
+    if @player.riders << @rider
+      redirect_to pick_player_path(@player), :notice => "Renner toegevoegd"
+    else
+      redirect_to pick_player_path(@player), :error => "Renner kon niet worden toegevoegd"
+    end
+  end
+
+  def deselect_rider
+    @player = Player.find(params[:id])
+    @rider = Rider.find(params[:rider_id])
+    if @player.riders.delete(@rider)
+      redirect_to pick_player_path(@player), :notice => "Renner verwijderd"
+    else
+      redirect_to pick_player_path(@player), :error => "Renner kon niet worden verwijderd"
+    end
+  end
+
+  private
+
+  def filter_riders(riders)
+
+    if params[:name].present?
+      riders = riders.where(["CONCAT(first_name, ' ', last_name) LIKE ?", "%#{params[:name]}%"])
+      @search = true
+    end
+
+    if params[:team_id].present?
+      riders = riders.where(:team_id => params[:team_id])
+      @search = true
+    end
+
+    if params[:price_from].present?
+      riders = riders.where(["price >= ?", params[:price_from]])
+      @search = true
+    end
+
+    if params[:price_to].present?
+      riders = riders.where(["price <= ?", params[:price_to]])
+      @search = true
+    end
+
+    riders
+
   end
 
 end

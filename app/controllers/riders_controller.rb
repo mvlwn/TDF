@@ -1,7 +1,7 @@
 class RidersController < ApplicationController
 
   def index
-    @riders = RiderDecorator.decorate(Rider.all)
+    @teams = TeamDecorator.decorate(Team.all)
   end
 
   def show
@@ -24,15 +24,9 @@ class RidersController < ApplicationController
   def toggle
     @rider = Rider.find(params[:id])
     if @rider.toggle!(params[:field])
-      redirect_to riders_path(), :notice => "Renner opgeslagen"
+      redirect_to :back, :notice => "Renner opgeslagen"
     else
-      redirect_to riders_path(), :error => "Renner kon niet worden opgeslagen"
+      redirect_to :back, :error => "Renner kon niet worden opgeslagen"
     end
   end
-
-
-
-
-
-
 end

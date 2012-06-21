@@ -4,6 +4,11 @@ TDF::Application.routes.draw do
   resources :players do
     member do
       get :pick
+      post :pick, :action => "search_and_pick"
+      get :points
+      get :riders
+      delete :rider, :action => "deselect_rider"
+      put :rider, :action => "select_rider"
     end
   end
   resources :riders do

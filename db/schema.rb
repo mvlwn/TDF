@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120620074313) do
+ActiveRecord::Schema.define(:version => 20120621151420) do
 
   create_table "player_riders", :force => true do |t|
     t.integer  "player_id"
@@ -27,11 +27,23 @@ ActiveRecord::Schema.define(:version => 20120620074313) do
     t.string   "name"
     t.string   "team_name"
     t.integer  "points"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
 
+  add_index "players", ["email"], :name => "index_players_on_email", :unique => true
   add_index "players", ["points"], :name => "index_players_on_points"
+  add_index "players", ["reset_password_token"], :name => "index_players_on_reset_password_token", :unique => true
 
   create_table "riders", :force => true do |t|
     t.integer  "team_id"

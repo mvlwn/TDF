@@ -1,6 +1,6 @@
 class SummaryController < ApplicationController
 
-  def index
+  def show
     @players = Player.all
     @riders_count = Rider.count
     @stages = Stage.order("id")

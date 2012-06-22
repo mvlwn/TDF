@@ -17,6 +17,7 @@ nl:
         points: Punten
         password: Wachtwoord
         password_confirmation: Bevestiging wachtwoord
+        remember_me: Onthoud mij
 
 
 

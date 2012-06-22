@@ -5,6 +5,7 @@ TDF::Application.routes.draw do
       get :player_points
     end
   end
+
   resources :players do
     member do
       get :pick
@@ -15,6 +16,8 @@ TDF::Application.routes.draw do
       put :rider, :action => "select_rider"
     end
   end
+
+  resources :player_teams, :only => [:index, :show, :edit, :update]
 
   resources :teams
   resources :riders do

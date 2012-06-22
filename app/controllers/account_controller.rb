@@ -3,7 +3,7 @@ class AccountController < ApplicationController
   before_filter :authenticate_player!
 
   def show
-    @player = current_player
+    @player = PlayerDecorator.decorate(current_player)
   end
 
 end

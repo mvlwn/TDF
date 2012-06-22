@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+  <tr>
+    <th width="25%">Manager</th>
+    <td width="75%"><%= player.name %></td>
+  </tr>
+  <tr>
+    <th>Punten</th>
+    <td><%= player.points.to_i %></td>
+  </tr>
+  <tr>
+    <th>Geselecteerd</th>
+    <td><%= player.riders_count_badge %></td>
+  </tr>
+  <tr>
+    <th>Uitgegeven</th>
+    <td><%= player.expenses %></td>
+  </tr>
+  <tr>
+    <th>Overig budget</th>
+    <td><%= player.budget %></td>
+  </tr>
+  <tr>
+    <th>Geld overgemaakt</th>
+    <td><%= player.paid %></td>
+  </tr>
+</table>

@@ -1,27 +1,7 @@
 <h1><%= @player.team_name %></h1>
 
-<table class="table table-bordered">
-  <tr>
-    <th width="25%">Manager</th>
-    <td width="75%"><%= @player.name %></td>
-  </tr>
-  <tr>
-    <th>Punten</th>
-    <td><%= link_to @player.points.to_i, points_player_path(@player) %></td>
-  </tr>
-  <tr>
-    <th>Geselecteerd</th>
-    <td><%= @player.riders_count_badge %> <%= link_to "renners", riders_player_path(@player) %></td>
-  </tr>
-  <tr>
-    <th>Uitgegeven</th>
-    <td><%= @player.expenses %></td>
-  </tr>
-  <tr>
-    <th>Overig budget</th>
-    <td><%= @player.budget %></td>
-  </tr>
-</table>
+<%= render :partial => "players/shared/information", :locals => {:player => @player} %>
+
 
 
 <div class="well">

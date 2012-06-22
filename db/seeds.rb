@@ -30,5 +30,19 @@ Stage.create([
   {:number => 20, :name => "Rambouillet > Paris Champs-Élysées",          :ridden_on => "2012-07-22", :description => "Vlak",            :distance => "120"}
 ])
 
-#
+Player.create({
+  :name => "Martijn van Leeuwen",
+  :team_name => "Tijn's Toerders",
+  :email => "mail@martijnvanleeuwen.nl",
+  :password => "toerdepoele",
+  :password_confirmation => "toerdepoele"
+})
+
+Player.create({
+  :name => "Bastiaan Langeveld",
+  :team_name => "GoGesink",
+  :email => "bezlangeveld@hotmail.com",
+  :password => "toerdepoele",
+  :password_confirmatino => "toerdepoele"
+})
 

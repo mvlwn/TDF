@@ -1,3 +1,11 @@
 <h1>Mijn account</h1>
 
-<%= link_to "Afmelden", destroy_player_session_path, :method => :delete %>
+<%= render :partial => "players/shared/information", :locals => {:player => @player} %>
+
+<h2>Mijn team</h2>
+
+
+<div class="well">
+  <%= link_to "Wijzig team", player_team_path(@player), :class => "btn" %>
+  <%= link_to "Afmelden", destroy_player_session_path, :class => "btn btn-inverse", :method => :delete %>
+</div>

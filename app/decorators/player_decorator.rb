@@ -13,7 +13,11 @@ class PlayerDecorator < Draper::Base
 
   def riders_count_badge
     badge_class = team_ready? ? "badge-success" : "badge-warning"
-    h.content_tag("span", player.riders.count, :class => "badge #{badge_class}")
+    h.content_tag("span", player.riders.count.to_s + " renners", :class => "badge #{badge_class}")
+  end
+
+  def paid
+    h.bool_icon model.paid
   end
 
 end

@@ -2,9 +2,13 @@
 martijn:
   name: Martijn van Leeuwen
   team_name: Tijn's Toerders
+  email: mail@martijnvanleeuwen.nl
+  encrypted_password: toerdepoele
   points: 0
 
 bastiaan:
   name: Bastiaan Langeveld
   team_name: GoGesink
+  email: bezlangeveld@hotmail.om
+  encrypted_password: toerdepoele
   points: 0

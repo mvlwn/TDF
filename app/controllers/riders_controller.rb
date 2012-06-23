@@ -1,7 +1,9 @@
 class RidersController < ApplicationController
 
+  load_and_authorize_resource
+
   def index
-    @teams = TeamDecorator.decorate(Team.all)
+    @riders = RiderDecorator.decorate(Rider.filter_riders(Rider.order(riders_sort_order), params).page(params[:page]))
   end
 
   def show
@@ -9,11 +11,9 @@ class RidersController < ApplicationController
   end
 
   def edit
-    @rider = Rider.find(params[:id])
   end
 
   def update
-    @rider = Rider.find(params[:id])
     if @rider.update_attributes(params[:rider])
       redirect_to rider_path(@rider), :notice => "Renner opgeslagen"
     else
@@ -21,12 +21,4 @@ class RidersController < ApplicationController
     end
   end
 
-  def toggle
-    @rider = Rider.find(params[:id])
-    if @rider.toggle!(params[:field])
-      redirect_to :back, :notice => "Renner opgeslagen"
-    else
-      redirect_to :back, :error => "Renner kon niet worden opgeslagen"
-    end
-  end
 end

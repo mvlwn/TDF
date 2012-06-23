@@ -11,13 +11,20 @@ nl:
       team: team
     attributes:
       player:
-        name: Naam
+        name: Manager naam
         team_name: Teamnaam
         email: E-mail
         points: Punten
         password: Wachtwoord
         password_confirmation: Bevestiging wachtwoord
         remember_me: Onthoud mij
+      rider:
+        name: Naam
+        first_name: Voornaam
+        last_name: Achternaam
+        nummer: Nummer
+        team: Team
+        price: Prijs
 
 
 

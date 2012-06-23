@@ -9,8 +9,15 @@
   <tbody>
   <% @teams.each do |team| %>
   <tr>
-    <td><%= team.name %></td>
+    <td><%= link_to team.name, team_path(team) %></td>
   </tr>
   <% end %>
   </tbody>
 </table>
+
+<% if can? :create, Team %>
+	<div class="well">
+		<%= link_to "Nieuw team", new_team_path, :class => "btn" %>
+	</div>
+<% end %>
+

@@ -1,8 +1,23 @@
 source 'https://rubygems.org'
 
+# Base
 gem 'rails', '3.2.6'
 gem 'mysql2'
 gem 'json'
+
+# ActiveRecord
+gem 'kaminari'
+
+# Javascript && CSS
+gem 'jquery-rails'
+gem 'twitter-bootstrap-rails'
+
+# Decorator Pattern
+gem 'draper'
+
+# Authorization
+gem 'devise'
+gem 'cancan'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -19,12 +34,6 @@ group :test do
 	gem 'simplecov'
   gem 'ruby-prof'
 end
-
-gem 'jquery-rails'
-gem 'twitter-bootstrap-rails'
-gem 'draper'
-gem 'devise'
-gem 'cancan'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

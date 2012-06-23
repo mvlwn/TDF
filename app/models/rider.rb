@@ -38,5 +38,30 @@ class Rider < ActiveRecord::Base
       self.team_name = self.team.name
     end
   end
+
+  def self.filter_riders(riders, params)
+    if params[:name].present?
+      riders = riders.where(["CONCAT(first_name, ' ', last_name) LIKE ?", "%#{params[:name]}%"])
+      @search = true
+    end
+
+    if params[:team_id].present?
+      riders = riders.where(:team_id => params[:team_id])
+      @search = true
+    end
+
+    if params[:price_from].present?
+      riders = riders.where(["price >= ?", params[:price_from]])
+      @search = true
+    end
+
+    if params[:price_to].present?
+      riders = riders.where(["price <= ?", params[:price_to]])
+      @search = true
+    end
+
+    riders
+
+  end
   
 end

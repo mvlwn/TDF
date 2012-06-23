@@ -1,7 +1,13 @@
 class TeamsController < ApplicationController
 
+  load_and_authorize_resource
+
   def index
-    @teams = Team.all
+  end
+
+  def show
+    @team = TeamDecorator.decorate(@team)
+    @riders = RiderDecorator.decorate(@team.riders.order(riders_sort_order))
   end
 
 end

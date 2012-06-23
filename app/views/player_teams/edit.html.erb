@@ -1,0 +1,41 @@
+<h1>Wijzig je team</h1>
+
+<% if @player.team_ready? %>
+  <div class="alert alert-success">
+    Het team is klaar voor de tour!
+  </div>
+<% else %>
+  <div class="alert alert-warning">
+    Het team is nog niet gereed, kies <%= Player::MAX_RIDERS %> renners en besteed maximaal <%= number_to_euro Player::BUDGET * 100000 %>.
+  </div>
+<% end %>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Uitgegeven</th>
+    <td><%= @player.expenses %></td>
+    <th>Budget</th>
+    <td><%= @player.budget %></td>
+  </tr>
+  <tr>
+    <th>Gekozen</th>
+    <td><%= @player.riders.count %></td>
+    <th>Te kiezen</th>
+    <td><%= @player.riders_to_pick %></td>
+  </tr>
+</table>
+
+
+<h2>Renners in team</h2>
+<%= render :partial => "riders", :locals => {:riders => @player_riders, :selected => true} %>
+
+<% if @player.can_pick_riders? %>
+	<h2>Te kiezen renners</h2>
+	<%= render :partial => "riders/find_form" %>
+	<%= render :partial => "riders", :locals => {:riders => @riders, :selected => false} %>
+	<%= paginate @riders %>
+<% end %>
+
+<div class="well clear">
+  <%= link_to "Terug", player_path(@player), :class => "btn" %>
+</div>

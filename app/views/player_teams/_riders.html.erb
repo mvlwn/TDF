@@ -1,0 +1,47 @@
+<% if riders.any? %>
+	<table class="table">
+			<thead>
+			<tr>
+				<th width="5%"><%= link_to_sortable "Nr", :number %></th>
+				<th width="25%">
+					<%= link_to_sortable "Voornaam", :first_name %> -
+					<%= link_to_sortable "Achternaam", :last_name %>
+				</th>
+				<th width="25%"><%= link_to_sortable "Team", :team_name %></th>
+				<th width="25%"class="right"><%= link_to_sortable "Prijs", :price %></th>
+				<th width="20%"></th>
+			</tr>
+			</thead>
+			<tbody>
+			<% riders.each do |rider| %>
+			<tr>
+				<td><%= rider.number %></td>
+				<td><%= rider.name %></td>
+				<td><%= rider.team_name %></td>
+				<td class="right"><%= rider.price %></td>
+				<% if selected -%>
+					<td class="center">
+						<%= link_to content_tag("i", "", :class => "icon-minus"),
+												rider_player_team_path(@player, :rider_id => rider.id),
+												:method => :delete,
+												:class => "btn btn-danger btn-mini",
+												:title => "Haal renner uit team" %>
+					</td>
+				<% else -%>
+					<td class="center">
+						<% if @player.can_pick_riders? %>
+							<%= link_to content_tag("i", "", :class => "icon-plus"),
+													rider_player_team_path(@player, :rider_id => rider.id),
+													:method => :post,
+													:class => "btn btn-primary btn-mini",
+													:title => "Kies renner" %>
+						<% end %>
+					</td>
+				<% end -%>
+			</tr>
+			<% end %>
+			</tbody>
+		</table>
+<% else %>
+	<div class="alert alert-info">Er zijn geen renners gevonden</div>
+<% end %>

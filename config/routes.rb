@@ -8,16 +8,17 @@ TDF::Application.routes.draw do
 
   resources :players do
     member do
-      get :pick
-      post :pick, :action => "search_and_pick"
       get :points
       get :riders
-      delete :rider, :action => "deselect_rider"
-      put :rider, :action => "select_rider"
     end
   end
 
-  resources :player_teams, :only => [:index, :show, :edit, :update]
+  resources :player_teams, :only => [:show, :edit, :update] do
+    member do
+      post :rider, :action => "add_rider"
+      delete :rider, :action => "remove_rider"
+    end
+  end
 
   resources :teams
   resources :riders do

@@ -2,6 +2,11 @@
 
 <%= form_for @rider do |form| %>
 
+	<div>
+   <%= form.label :number %>
+   <%= form.text_field :number, :class => "input-small" %>
+ </div>
+
   <div>
     <%= form.label :first_name %>
     <%= form.text_field :first_name %>
@@ -17,19 +22,15 @@
     <%= form.collection_select :team_id, Team.select("id, name"), :id, :name %>
   </div>
 
-  <div>
-    <%= form.label :number %>
-    <%= form.text_field :number %>
-  </div>
 
   <div>
     <%= form.label :price %>
     <%= form.text_field :price %>
   </div>
 
-  <div>
-    <%= form.submit "Opslaan" %>
-    <%= link_to "Annuleren", rider_path(@rider) %>
+  <div class="well">
+    <%= form.submit "Opslaan", :class => "btn btn-primary" %>
+    <%= link_to "Annuleren", rider_path(@rider), :class => "btn" %>
   </div>
 
 <% end %>

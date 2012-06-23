@@ -1,5 +1,9 @@
 <h1>Renners</h1>
-<% @teams.each do |team| %>
-  <div><%= team.name %></div>
-  <%= render :partial => "riders/list", :locals => { :riders => team.riders, :teams => false }%>
-<% end %>
+
+<%= render :partial => "riders/find_form" %>
+
+<%= paginate @riders %>
+
+<%= render :partial => "riders/list", :locals => { :riders => @riders, :teams => false } %>
+
+<%= paginate @riders %>

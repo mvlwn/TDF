@@ -2,10 +2,8 @@
 
 <%= render :partial => "players/shared/information", :locals => {:player => @player} %>
 
-
-
 <div class="well">
   <%= link_to "Wijzig", edit_player_path(@player), :class => "btn" %>
-  <%= link_to "Kies renners", pick_player_path(@player), :class => "btn" %>
+  <%= link_to "Kies renners", edit_player_team_path(@player), :class => "btn" %>
   <%= link_to "Alle deelnemers", players_path, :class => "btn" %>
 </div>

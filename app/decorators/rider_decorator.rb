@@ -14,12 +14,12 @@ class RiderDecorator < Draper::Base
     model.ad_role
   end
 
-  def team_name
-    h.truncate(model.team_name, :length => 20)
-  end
-
-  def toggle_boolean(field)
-    h.link_to h.bool_icon(model.send(field)), h.toggle_rider_path(model, :field => field), :method => :put
+  def team_name(view_mode = :normal, options = {})
+    if view_mode.to_sym == :truncate
+      h.truncate(model.team_name, :length => (options.delete(:length) || 20))
+    else
+      model.team_name
+    end
   end
 
 end

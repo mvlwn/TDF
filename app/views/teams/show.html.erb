@@ -1,0 +1,10 @@
+<h1>Team <%= @team.name %></h1>
+
+<%= render :partial => "riders/list", :locals => {:riders => @riders} %>
+
+<div class="well">
+	<% if can? :edit, Team  %>
+		<%= link_to "Wijzig", edit_team_path(@team), :class => "btn" %>
+	<% end  %>
+	<%= link_to "Alle teams", teams_path, :class => "btn" %>
+</div>

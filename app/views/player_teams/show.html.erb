@@ -1,0 +1,8 @@
+<h1>De renners van <%= @player.team_name %></h1>
+
+<%= render :partial => "riders/list", :locals => {:riders => @riders } %>
+
+<div class="well">
+	<% if can? :edit, Player %><%= link_to "Wijzig team", edit_player_team_path(@player), :class => "btn" %><% end %>
+	<%= link_to "Alle deelnemers", players_path, :class => "btn" %>
+</div>

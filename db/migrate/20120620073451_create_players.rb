@@ -1,10 +1,13 @@
 class CreatePlayers < ActiveRecord::Migration
   def change
     create_table :players do |t|
-      t.string :name
-      t.string :team_name
-      t.integer :points
-      t.boolean :paid
+      t.string :name,               :null => false, :default => ""
+      t.string :team_name,          :null => false, :default => ""
+      t.integer :points,            :null => false, :default => 0
+      t.boolean :paid,              :null => false, :default => false
+
+      # CanCan
+      t.boolean :admin,             :null => false, :default => false
 
       # Devise
 
@@ -25,8 +28,6 @@ class CreatePlayers < ActiveRecord::Migration
       t.datetime :last_sign_in_at
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
-
-
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at

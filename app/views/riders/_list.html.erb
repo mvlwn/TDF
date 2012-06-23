@@ -1,15 +1,12 @@
-<% team = true unless defined?(team) %>
+<% if riders.any? %>
 <table class="table table-condensed">
   <thead>
   <tr>
-    <th>Nr</th>
-    <th>Naam</th>
-    <th>Rol</th>
-    <% if team %><th>Team</th><% end %>
-    <th class="center">Bevestigd</th>
-    <th class="center">Afgemeld</th>
-    <th>Waarde</th>
-    <th>Punten</th>
+    <th><%= link_to_sortable "Nr", :number %></th>
+    <th><%= link_to_sortable "Voornaam", :first_name %> - <%= link_to_sortable "Achternaam", :last_name %></th>
+		<th><%= link_to_sortable "Team", :team_name %></th>
+    <th><%= link_to_sortable "Prijs", :price %></th>
+    <th class="center"><%= link_to_sortable "Punten", :points %></th>
   </tr>
   </thead>
   <tbody>
@@ -17,13 +14,13 @@
   <tr>
     <td width="5%"><%= rider.number %></td>
     <td width="25%"><%= link_to rider.name, rider_path(rider) %></td>
-    <td width="5%"><%= rider.ad_role %></td>
-    <% if team %><td width="15%"><%= rider.team_name %></td><% end %>
-    <td width="5%" class="center"><%= rider.toggle_boolean(:confirmed) %></td>
-    <td width="5%" class="center"><%= rider.toggle_boolean(:rejected) %></td>
+		<td width="15%"><%= link_to rider.team_name, team_path(rider.team_id) %></td>
     <td width="15%"><%= rider.price %></td>
-    <td width="5%"><%= rider.points %></td>
+    <td width="5%" class="center"><%= rider.points %></td>
   </tr>
   <% end %>
   </tbody>
 </table>
+<% else %>
+	<div class="alert alert-info">Er zijn geen renners gevonden</div>
+<% end %>

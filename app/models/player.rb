@@ -9,14 +9,16 @@ class Player < ActiveRecord::Base
   attr_accessible :name, :team_name, :email, :password, :password_confirmation, :remember_me
 
   BUDGET = 100
-  BUDGET_MULTIPLIER = 10000
+  BUDGET_MULTIPLIER = 100000
   MAX_RIDERS = 9
+  MAX_EDIT_TIME = DateTime.new(2012,6,30.5)
 
   has_many :player_riders
   has_many :riders, :through => :player_riders
   has_many :scores, :through => :riders
 
   validates :name, :team_name, :presence => true, :uniqueness => true
+
 
   def stage_points(stage)
     riders.joins(:scores).where("scores.stage_id" => stage.id).sum("scores.points")
@@ -45,7 +47,6 @@ class Player < ActiveRecord::Base
   end
 
   def available_riders
-    return [] unless can_pick_riders?
     _riders = Rider.where(["price < ?", budget])
     if riders.count > 0
       _riders = _riders.where(["riders.id NOT IN (?)", rider_ids])

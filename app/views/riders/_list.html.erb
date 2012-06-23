@@ -12,7 +12,7 @@
   <tbody>
   <% riders.each do |rider| %>
   <tr>
-    <td width="5%"><%= rider.number %></td>
+    <td width="2%"><%= rider.number %></td>
     <td width="25%"><%= link_to rider.name, rider_path(rider) %></td>
 		<td width="15%"><%= link_to rider.team_name, team_path(rider.team_id) %></td>
     <td width="15%"><%= rider.price %></td>

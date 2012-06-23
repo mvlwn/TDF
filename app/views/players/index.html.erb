@@ -9,23 +9,25 @@
     <th class="center">Renners</th>
     <th class="center">Punten</th>
     <th>Uitgegeven</th>
-		<% if can? :edit, Player %>
+		<% if current_player.admin? %>
+      <th class="center">Betaald</th>
 			<th class="center">Admin</th>
 		<% end %>
   </tr>
   </thead>
   <tbody>
-  <% @players.each do |p| %>
+  <% @players.each do |player| %>
   <tr>
-    <td><%= p.link_to %> <%= can? :edit, Player %></td>
-    <td><%= p.name_with_badge %></td>
+    <td><%= player.link_to %></td>
+    <td><%= player.name_with_badge %></td>
     <td class="center">
-      <%= p.riders_count_badge %>
+      <%= player.riders_count_badge %>
     </td>
-    <td class="center"><%= p.points %></td>
-    <td><%= p.expenses %></td>
-		<% if can? :edit, Player %>
-			<td class="center"><%= bool_icon p.admin? %></td>
+    <td class="center"><%= player.points %></td>
+    <td><%= player.expenses %></td>
+		<% if current_player.admin? %>
+      <td class="center"><%= bool_icon player.paid? %></td>
+			<td class="center"><%= bool_icon player.admin? %></td>
 		<% end %>
   </tr>
   <% end %>

@@ -29,7 +29,7 @@ class PlayerDecorator < Draper::Base
   end
 
   def link_to
-    if h.can? :edit, Player
+    if h.can? :edit, player
       h.link_to model.team_name, h.player_path(player)
     else
       model.team_name

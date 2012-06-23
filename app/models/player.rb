@@ -27,7 +27,8 @@ class Player < ActiveRecord::Base
   def points_till_stage(stage)
     riders.
       joins(:scores, "INNER JOIN stages ON scores.stage_id = stages.id").
-      where(["SELECT stages.number <= ?", stage.number]).sum("scores.points")
+      where(["SELECT stages.number <= ?", stage.number]).
+      sum("scores.points")
   end
 
   def budget

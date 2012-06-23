@@ -1,2 +1,4 @@
-
-<p>&copy; Toerdepoele 2008 - 2012</p>
+<div class="row">
+  <div class="span10">&copy; Toerdepoele 2008 - 2012</div>
+  <div class="span2"><% if player_signed_in? %><%= link_to "Afmelden", destroy_player_session_path, :method => :delete %><% end %></div>
+</div>

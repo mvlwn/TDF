@@ -10,10 +10,16 @@
       <div class="container nav-collapse">
         <ul class="nav">
           <li><%= link_to "Overzicht", summary_path %></li>
-          <li><%= link_to "Mijn poele", account_path %></li>
+          <% if player_signed_in? %>
+            <li><%= link_to "Mijn poele", account_path %></li>
+          <% else %>
+            <li><%= link_to "Aanmelden", account_path %></li>
+          <% end %>
           <li><%= link_to "Etappes", stages_path %></li>
           <li><%= link_to "Renners", riders_path %></li>
+          <% if player_signed_in? %>
           <li><%= link_to "Deelnemers", players_path %></li>
+          <% end %>
           <li><%= link_to "Reglement", rules_path %></li>
         </ul>
       </div><!--/.nav-collapse -->

@@ -10,6 +10,8 @@
 		Je hebt nog geen renners geselecteerd voor je team.
 		<% if can? :edit, Player %><%= link_to "Je kan deze hier selecteren", edit_player_team_path(@player) %>.<% end %>
 	</div>
+<% else %>
+  <%= render :partial => "riders/list", :locals => {:riders => @riders} %>
 <% end %>
 
 <div class="well">

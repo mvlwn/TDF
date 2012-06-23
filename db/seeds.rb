@@ -49,11 +49,3 @@ player = Player.create({
 })
 
 player.update_attribute(:admin, true)
-
-Player.create({
-  :name => "Guest",
-  :team_name => "Guest",
-  :email => "guest@toerdepoele.nl",
-  :password => "toerdepoele",
-  :password_confirmation => "toerdepoele"
-})

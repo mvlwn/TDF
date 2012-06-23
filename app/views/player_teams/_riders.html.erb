@@ -1,5 +1,5 @@
 <% if riders.any? %>
-	<table class="table">
+	<table class="table table-condensed">
 			<thead>
 			<tr>
 				<th width="5%"><%= link_to_sortable "Nr", :number %></th>
@@ -8,7 +8,7 @@
 					<%= link_to_sortable "Achternaam", :last_name %>
 				</th>
 				<th width="25%"><%= link_to_sortable "Team", :team_name %></th>
-				<th width="25%"class="right"><%= link_to_sortable "Prijs", :price %></th>
+				<th width="25%"><%= link_to_sortable "Prijs", :price %></th>
 				<th width="20%"></th>
 			</tr>
 			</thead>
@@ -18,7 +18,7 @@
 				<td><%= rider.number %></td>
 				<td><%= rider.name %></td>
 				<td><%= rider.team_name %></td>
-				<td class="right"><%= rider.price %></td>
+				<td><%= rider.price %></td>
 				<% if selected -%>
 					<td class="center">
 						<%= link_to content_tag("i", "", :class => "icon-minus"),

@@ -7,6 +7,9 @@
 # Ignore database.yml
 /config/database.yml
 
+# Ignore capistrano deployment
+/config/deploy.rb
+
 # Ignore bundler config
 /.bundle
 

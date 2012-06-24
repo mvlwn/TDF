@@ -47,8 +47,12 @@ class Player < ActiveRecord::Base
     MAX_RIDERS > riders.count
   end
 
+  def can_pick_rider?(rider)
+    can_pick_riders? && rider.price <= budget
+  end
+
   def available_riders
-    _riders = Rider.where(["price < ?", budget])
+    _riders = Rider.where(["price <= ?", budget])
     if riders.count > 0
       _riders = _riders.where(["riders.id NOT IN (?)", rider_ids])
     end

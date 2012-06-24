@@ -29,7 +29,7 @@
 					</td>
 				<% else -%>
 					<td class="center">
-						<% if @player.can_pick_riders? %>
+						<% if @player.can_pick_rider?(rider) %>
 							<%= link_to content_tag("i", "", :class => "icon-plus"),
 													rider_player_team_path(@player, :rider_id => rider.id),
 													:method => :post,

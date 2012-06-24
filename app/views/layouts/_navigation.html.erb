@@ -6,15 +6,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="#">Toerdepoele 2012</a>
+      <a class="brand" href="<%= url_for summary_path %>">Toerdepoele 2012</a>
       <div class="container nav-collapse">
         <ul class="nav">
           <li><%= link_to "Overzicht", summary_path %></li>
-          <% if player_signed_in? %>
-            <li><%= link_to "Mijn poele", account_path %></li>
-          <% else %>
-            <li><%= link_to "Aanmelden", account_path %></li>
-          <% end %>
+          <li><%= link_to "Mijn poele", account_path %></li>
           <li><%= link_to "Etappes", stages_path %></li>
           <li><%= link_to "Renners", riders_path %></li>
           <% if player_signed_in? %>

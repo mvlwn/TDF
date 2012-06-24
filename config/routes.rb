@@ -1,39 +1,71 @@
 TDF::Application.routes.draw do
 
-  resources :stages, :only => [:index, :show, :edit, :update] do
+  resources :stages,
+            :path => "etappes",
+            :only => [:index, :show, :edit, :update],
+            :path_names => {
+              :index => 'overzicht',
+              :show => 'bekijk',
+              :edit => 'wijzig',
+              :player_points => 'punten'
+            } do
     collection do
       get :player_points
     end
   end
 
-  resources :players do
+  resources :players,
+            :path => "deelnemers",
+            :path_names => {
+              :index => 'overzicht',
+              :edit => 'wijzig',
+              :create => 'maak',
+              :points => 'punten',
+              :riders => 'renners'
+            } do
     member do
       get :points
       get :riders
     end
   end
 
-  resources :player_teams, :only => [:show, :edit, :update] do
+  resources :player_teams,
+            :only => [:show, :edit, :update],
+            :path => 'teams_van_deelnemers',
+            :path_names => {
+              :edit => 'wijzig'
+            } do
     member do
-      post :rider, :action => "add_rider"
-      delete :rider, :action => "remove_rider"
+      post :rider, :action => "add_rider", :path => "voeg_renner_toe"
+      delete :rider, :action => "remove_rider", :path => "verwijder_renner"
     end
   end
 
   resources :teams
-  resources :riders do
+  resources :riders, :path => "wielrenners" do
     member do
       put :toggle
     end
   end
 
-  match "/rules" => "rules#show", :as => "rules"
-  resources :score
+  match "/rules" => "rules#show", :as => "rules", :path => 'spelregels'
 
-  resource :summary, :only => "show", :controller => "summary"
+  resources :score, :path => 'uitslagen'
 
-  resource :account, :only => "show", :controller => "account"
-  devise_for :players, :path => "account" #, :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
+  resource :summary, :only => "show", :controller => "summary", :path => 'overzicht'
+
+  resource :account, :only => "show", :controller => "account", :path => 'mijnpoele'
+  devise_for :players,
+             :path => "mijnpoele",
+             :path_names => {
+               :sign_in => 'inloggen',
+               :sign_out => 'uitloggen',
+               :password => 'wachtwoord',
+               :confirmation => 'bevestigen',
+               :unlock => 'unblock',
+               :registration => 'registreren',
+               :sign_up => 'aanmelden'
+             }
 
   root :to => 'summary#show'
 

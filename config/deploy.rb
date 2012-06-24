@@ -60,7 +60,7 @@ namespace :db do
       adapter: mysql2
       socket: /tmp/mysql.sock
       username: #{db_name}
-      password: #{password}
+      password: #{db_password}
 
     development:
       database: #{db_name}
@@ -88,7 +88,7 @@ end
 namespace :bundler do
   task :create_symlink, :roles => :app do
     shared_dir = File.join(shared_path, 'bundle')
-    release_dir = File.join(current_release, '.bundle')
+    release_dir = File.join(current_release, 'vendor/bundle')
     run("mkdir -p #{shared_dir} && ln -s #{shared_dir} #{release_dir}")
   end
 

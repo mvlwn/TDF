@@ -36,8 +36,8 @@ TDF::Application.routes.draw do
               :edit => 'wijzig'
             } do
     member do
-      post :rider, :action => "add_rider", :path => "voeg_renner_toe"
-      delete :rider, :action => "remove_rider", :path => "verwijder_renner"
+      post :rider, :action => "add_rider"
+      delete :rider, :action => "remove_rider"
     end
   end
 

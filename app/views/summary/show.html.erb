@@ -2,5 +2,28 @@
 
 <p>Het is weer zo ver, de Tour de France is weer bijna begonnen. Natuurlijk is er dan ook Toerdepoele, de leukste wielerpoule van Nederland</p>
 
-<p>Heb je je al ingeschreven? <%= link_to "Log dan hier in", account_path, :class => "btn btn-primary" %>
+<p>Handige links</p>
+<ul>
+  <li><%= link_to "Bekijk hier de etappes", stages_path %></li>
+  <li><%= link_to "Bekijk hier alle renners", riders_path %></li>
+  <li><%= link_to "Bekijk hier de spelregels en de puntentelling", rules_path %></li>
+</ul>
+
+<p>Meer informatie volgt snel, vragen of opmerkingen? Mail ons op info @ toerdepoele.nl</p>
+
+<% if player_signed_in? %>
+
+  <% if current_player.team_ready? %>
+    <div class="alert alert-success">
+      Je team is klaar voor de tour!
+    </div>
+  <% else %>
+    <div class="alert alert-warning">
+      Je team is nog niet gereed, kies <%= Player::MAX_RIDERS %> renners en besteed maximaal <%= number_to_euro Player::BUDGET * 100000 %>.
+    </div>
+  <% end %>
+  <%= link_to "Ga naar je poele", account_path, :class => "btn" %>
+<% else %>
+  <p>Heb je je al ingeschreven? <%= link_to "Log dan hier in", account_path, :class => "btn btn-primary" %>
   Nog niet ingeschreven? <%= link_to "Meld je hier aan", new_player_registration_path, :class => "btn btn-success" %></p>
+<% end %>

@@ -7,6 +7,7 @@
 		<th><%= link_to_sortable "Team", :team_name %></th>
     <th><%= link_to_sortable "Prijs", :price %></th>
     <th class="center"><%= link_to_sortable "Punten", :points %></th>
+    <% if can? :destroy, Rider %><th></th><% end %>
   </tr>
   </thead>
   <tbody>
@@ -17,6 +18,13 @@
 		<td width="15%"><%= link_to rider.team_name, team_path(rider.team_id) %></td>
     <td width="15%"><%= rider.price %></td>
     <td width="5%" class="center"><%= rider.points %></td>
+    <% if can? :destroy, rider -%>
+      <td>
+        <%= link_to content_tag("i", "", :class => "icon-remove icon-white"),
+                    rider_path(rider),
+                    {:method => :delete, :class => "btn btn-mini btn-danger", :confirm => "Weet je het zeker?"} %>
+      </td>
+    <% end -%>
   </tr>
   <% end %>
   </tbody>

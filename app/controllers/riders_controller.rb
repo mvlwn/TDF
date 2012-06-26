@@ -32,4 +32,10 @@ class RidersController < ApplicationController
     end
   end
 
+  def destroy
+    @rider.destroy
+    flash[:notice] = "Renner verwijderd"
+    respond_with(@rider)
+  end
+
 end

@@ -1,4 +1,4 @@
-<h2>Wijzig renner</h2>
+<h1>Nieuwe renner</h1>
 
 <%= form_for @rider do |form| %>
 
@@ -6,7 +6,7 @@
 
   <div class="well">
     <%= form.submit "Opslaan", :class => "btn btn-primary" %>
-    <%= link_to "Annuleren", rider_path(@rider), :class => "btn" %>
+    <%= link_to "Annuleren", riders_path(), :class => "btn" %>
   </div>
 
 <% end %>

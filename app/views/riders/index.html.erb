@@ -7,3 +7,9 @@
 <%= render :partial => "riders/list", :locals => { :riders => @riders, :teams => false } %>
 
 <%= paginate @riders %>
+
+<% if can? :create, Rider %>
+  <div class="well">
+    <%= link_to "Nieuwe renner", new_rider_path, :class => "btn" %>
+  </div>
+<% end %>

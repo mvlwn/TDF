@@ -5,9 +5,10 @@ class Rider < ActiveRecord::Base
   has_many :player_riders
   has_many :players, :through => :player_riders
   
-  validates :ad_code, :ad_role, :first_name, :last_name, :team_id, :presence => true
+  validates :first_name, :last_name, :team_id, :price, :presence => true
 
   before_create :update_team_name
+  before_create :set_ad_code
   before_update :handle_number_update
   after_update :update_player_points, :update_team_name
 
@@ -36,6 +37,12 @@ class Rider < ActiveRecord::Base
   def update_team_name
     if team_id_changed?
       self.team_name = self.team.name
+    end
+  end
+
+  def set_ad_code
+    if self.ad_code.blank?
+      self.ad_code = self.class.maximum(:ad_code) + 1
     end
   end
 

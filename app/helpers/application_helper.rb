@@ -16,4 +16,23 @@ module ApplicationHelper
     messages.join("\n").html_safe
   end
 
+  def error_messages_for(model)
+    return "" if model.errors.empty?
+
+    messages = model.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
+    sentence = I18n.t("errors.template.header",
+                      :count => model.errors.count,
+                      :model => model.class.model_name.human.capitalize)
+
+    html = <<-HTML
+    <div class="alert alert-warning">
+      <h3>#{sentence}</h3>
+      <p>#{I18n.t("errors.template.body")}</p>
+      <ul>#{messages}</ul>
+    </div>
+    HTML
+
+    html.html_safe
+  end
+
 end

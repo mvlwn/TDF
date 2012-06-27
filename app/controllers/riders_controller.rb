@@ -35,7 +35,7 @@ class RidersController < ApplicationController
   def destroy
     @rider.destroy
     flash[:notice] = "Renner verwijderd"
-    respond_with(@rider)
+    redirect_to :back
   end
 
 end

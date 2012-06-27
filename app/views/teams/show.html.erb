@@ -1,5 +1,7 @@
 <h1>Team <%= @team.name %></h1>
 
+<p>Het team heeft een totaalbudget van <%= @team.budget %></p>
+
 <%= render :partial => "riders/list", :locals => {:riders => @riders} %>
 
 <div class="well">

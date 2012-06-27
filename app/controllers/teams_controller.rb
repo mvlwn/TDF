@@ -3,6 +3,7 @@ class TeamsController < ApplicationController
   load_and_authorize_resource
 
   def index
+    @teams = TeamDecorator.decorate(@teams)
   end
 
   def show

@@ -9,4 +9,8 @@ class Team < ActiveRecord::Base
     riders.update_all("team_name = '#{name}'")
   end
 
+  def budget
+    riders.sum(:price)
+  end
+
 end

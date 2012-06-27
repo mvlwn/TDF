@@ -10,6 +10,7 @@
   <% @teams.each do |team| %>
   <tr>
     <td><%= link_to team.name, team_path(team) %></td>
+    <td><%= team.budget %></td>
   </tr>
   <% end %>
   </tbody>

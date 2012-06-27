@@ -7,6 +7,7 @@
 <% else %>
   <div class="alert alert-warning">
     Het team is nog niet gereed, kies <%= Player::MAX_RIDERS %> renners en besteed maximaal <%= number_to_euro Player::BUDGET * 100000 %>.
+		Bekijk <%= link_to "de regels en de puntentelling", rules_path %> hier.
   </div>
 <% end %>
 

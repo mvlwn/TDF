@@ -1,4 +1,4 @@
-<table class="table table-bordered">
+<table class="table">
   <tr>
     <th width="25%">Manager</th>
     <td width="75%"><%= player.name %></td>
@@ -21,6 +21,11 @@
   </tr>
   <tr>
     <th>Geld overgemaakt</th>
-    <td><%= player.paid %></td>
+    <td>
+			<%= player.paid %>
+			<% unless player.paid? %>
+				<span class="alert alert-small alert-warning">Het bedrag van €5,- kan overgemaakt worden naar rekeningnummer 155086073 t.n.v. B. Langeveld </span>
+			<% end %>
+		</td>
   </tr>
 </table>

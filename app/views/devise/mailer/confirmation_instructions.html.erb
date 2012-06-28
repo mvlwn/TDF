@@ -1,5 +1,5 @@
-<p>Welkom <%= @resource.email %>!</p>
+<p>Welkom <%= @resource.name %>,</p>
 
 <p>Bevestig je email door op deze link te klikken:</p>
 
-<p><%= link_to 'bevestig mijn account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+<p><%= link_to 'Bevestig mijn account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>

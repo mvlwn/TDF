@@ -1,4 +1,4 @@
-<h1>Renners van <%= @player.team_name %></h1>
+<%= content_for(:title, "Renners van #{@player.team_name}") %>
 <% if @player.riders.any? %>
   <%= render :partial => "riders/list", :locals => { :riders => RiderDecorator.decorate(@player.riders) } %>
 <% else %>

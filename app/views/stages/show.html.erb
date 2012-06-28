@@ -1,4 +1,4 @@
-<h1>Etappe <%= @stage.number %> <%= @stage.name %></h1>
+<%= content_for(:title, "Etappe <%= @stage.number %> <%= @stage.name %>") %>
 
 <table class="table">
 	<tr>

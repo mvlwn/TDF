@@ -14,6 +14,18 @@ class Rider < ActiveRecord::Base
 
   scope :active, where(:rejected => false)
 
+  def self.riders_picked
+    Rider.joins(:player_riders).group(:rider_id).count(:rider_id).size
+  end
+  
+  def self.most_popular_rider
+    Rider.select("riders.*").joins(:player_riders).group("riders.id").order("COUNT(rider_id) DESC").first
+  end
+  
+  def self.most_popular_rider_picked
+    most_popular_rider.player_riders.count
+  end
+
   def stage_points(stage)
     scores.where(:stage_id => stage.id).sum(:points)
   end

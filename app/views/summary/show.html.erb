@@ -9,8 +9,12 @@
   </tr>
   <tr>
     <th>Aantal renners gekozen</th>
-    <td><%= Rider.joins(:player_riders).count(:id) %></td>
+    <td><%= Rider.riders_picked %></td>
   </tr>
+	<tr>
+		<th>Populairste renner gekozen</th>
+		<td><%= Rider.most_popular_rider_picked %></td>
+	</tr>
 </table>
 
 <p>Het is weer zo ver, de Tour de France is weer bijna begonnen. Natuurlijk is er dan ook Toerdepoele, de leukste wielerpoule van Nederland</p>

@@ -14,4 +14,13 @@
 
 footer{
   margin: 25px 0;
+	
+	.copyright{
+		float: left;
+	}
+	
+	.options, .fb-like, .twitter-share, .signoff{
+		float: right;
+	}
+	
 }

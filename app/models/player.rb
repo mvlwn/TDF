@@ -48,7 +48,7 @@ class Player < ActiveRecord::Base
   end
 
   def can_pick_rider?(rider)
-    can_pick_riders? && rider.price.to_i <= budget.to_i
+    can_pick_riders? && rider.price.to_i <= budget.to_i && !rider_ids.include?(rider.id)
   end
 
   def available_riders

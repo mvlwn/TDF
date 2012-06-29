@@ -7,7 +7,7 @@ class Rider < ActiveRecord::Base
   
   validates :first_name, :last_name, :team_id, :price, :presence => true
 
-  before_create :update_team_name
+  before_save :update_team_name
   before_create :set_ad_code
   before_update :handle_number_update
   after_update :update_player_points, :update_team_name

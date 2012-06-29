@@ -1,4 +1,4 @@
-<h1><%= @player.team_name %></h1>
+<%= content_for(:title, "#{@player.team_name}") %>
 <h2>Mijn gegevens</h2>
 
 <%= render  :partial => "players/shared/information", :locals => {:player => @player} %>
@@ -8,13 +8,14 @@
 <% unless @player.riders.any? %>
 	<div class="alert alert-warning">
 		Je hebt nog geen renners geselecteerd voor je team.
-		<% if can? :edit, Player %><%= link_to "Je kan deze hier selecteren", edit_player_team_path(@player) %>.<% end %>
+		<% if can? :edit, @player %><%= link_to "Je kan deze hier selecteren", edit_player_team_path(@player) %>.<% end %>
 	</div>
 <% else %>
   <%= render :partial => "riders/list", :locals => {:riders => @riders} %>
 <% end %>
 
 <div class="well">
-  <% if can? :edit, Player %><%= link_to "Wijzig team", edit_player_team_path(@player), :class => "btn" %><% end %>
+  <% if can? :edit, @player %><%= link_to "Wijzig team", edit_player_path(@player), :class => "btn" %><% end %>
+  <% if can? :edit, @player %><%= link_to "Kies renners", edit_player_team_path(@player), :class => "btn" %><% end %>
   <%= link_to "Afmelden", destroy_player_session_path, :class => "btn btn-inverse", :method => :delete %>
 </div>

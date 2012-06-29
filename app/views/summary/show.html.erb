@@ -1,4 +1,17 @@
-<h1>Welkom bij Toerdepoele!</h1>
+<%= content_for(:title, "Welkom bij Toerdepoele!") %>
+
+<h2>Statistieken</h2>
+
+<table class="table table-bordered">
+  <tr>
+    <th width="45%">Aantal deelnemers</th>
+    <td width="55%"><%= Player.count %></td>
+  </tr>
+  <tr>
+    <th>Aantal renners gekozen</th>
+    <td><%= Rider.joins(:player_riders).count(:id) %></td>
+  </tr>
+</table>
 
 <p>Het is weer zo ver, de Tour de France is weer bijna begonnen. Natuurlijk is er dan ook Toerdepoele, de leukste wielerpoule van Nederland</p>
 

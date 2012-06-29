@@ -1,10 +1,10 @@
-<h1>Wijzig deelnemer</h1>
+<%= content_for(:title, "Wijzig deelnemer") %>
 
 <%= form_for @player do |form| %>
 
   <%= render form %>
 
-  <div>
+  <div class="well">
     <%= form.submit "Opslaan", :class => "btn btn-primary" %>
     <%= link_to "Annuleren", player_path(@player), :class => "btn" %>
   </div>

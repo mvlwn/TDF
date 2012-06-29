@@ -10,7 +10,11 @@
   <%= form.text_field :team_name %>
 </div>
 
+<% if can? :create, Player %>
 <div>
-  <%= form.label :paid %>
-  <%= form.check_box :paid %>
+  <%= form.label :paid do %>
+    <%= form.check_box :paid %>
+    Betaald
+  <% end %>
 </div>
+<% end %>

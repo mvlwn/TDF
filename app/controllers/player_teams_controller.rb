@@ -11,7 +11,9 @@ class PlayerTeamsController < ApplicationController
 
   def edit
     @player = PlayerDecorator.decorate(@player)
-    @riders = RiderDecorator.decorate(Rider.filter_riders(@player.available_riders.order(riders_sort_order).page(params[:page]), params))
+    all_riders = Rider.active.order(riders_sort_order).page(params[:page])
+    riders = Rider.filter_riders(all_riders, params)
+    @riders = RiderDecorator.decorate(riders)
     @player_riders = RiderDecorator.decorate(@player.riders.order(riders_sort_order))
   end
 
@@ -20,10 +22,12 @@ class PlayerTeamsController < ApplicationController
 
   def add_rider
     @rider = Rider.find(params[:rider_id])
-    if @player.riders << @rider
+    begin
+      @player.riders << @rider
       redirect_to :back, :notice => "Renner toegevoegd"
-    else
-      redirect_to :back, :error => "Renner kon niet worden toegevoegd"
+    rescue
+      flash[:error] = "Renner kon niet worden toegevoegd"
+      redirect_to :back
     end
   end
 

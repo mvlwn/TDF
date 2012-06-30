@@ -26,6 +26,7 @@ TDF::Application.routes.draw do
     member do
       get :points
       get :riders
+      put :toggle
     end
   end
 

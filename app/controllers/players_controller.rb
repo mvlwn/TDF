@@ -51,4 +51,11 @@ class PlayersController < ApplicationController
     @player = PlayerDecorator.decorate(@player)
   end
 
+  def toggle
+    @player.toggle(params[:attribute])
+    @player.save
+    flash[:notice] = "Deelnemer aangepast"
+    redirect_to :back
+  end
+
 end

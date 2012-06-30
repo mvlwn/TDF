@@ -28,12 +28,37 @@ class PlayerDecorator < Draper::Base
     h.bool_icon model.paid
   end
 
+  def paid
+    h.bool_icon model.paid
+  end
+
+  def paid
+    h.bool_icon model.paid
+  end
+
   def link_to
     if h.can? :show, player
       h.link_to model.team_name, h.player_path(player)
     else
       model.team_name
     end
+  end
+
+  def toggle_disabled
+    h.link_to(
+      h.bool_icon(!player.disabled?),
+      h.toggle_player_path(player, :attribute => :disabled),
+      :method => :put,
+      :confirm => "Weet je het zeker? Alle renners zullen uit het team verdwijnen"
+    )
+  end
+
+  def toggle_paid
+    h.link_to(
+      h.bool_icon(!player.paid),
+      h.toggle_player_path(player, :attribute => :paid),
+      :method => :put
+    )
   end
 
 end

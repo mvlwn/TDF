@@ -21,6 +21,8 @@ class Player < ActiveRecord::Base
 
   scope :active, where(:disabled => false)
 
+  after_update :clear_team_if_disabled
+
   def stage_points(stage)
     riders.joins(:scores).where("scores.stage_id" => stage.id).sum("scores.points")
   end
@@ -66,6 +68,12 @@ class Player < ActiveRecord::Base
 
   def ranking
     Player.order("points DESC").select(:id).collect(&:id).index(id) + 1
+  end
+
+  def clear_team_if_disabled
+    if self.disabled?
+      player_riders.destroy_all
+    end
   end
 
 end

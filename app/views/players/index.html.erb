@@ -11,6 +11,7 @@
     <th>Uitgegeven</th>
 		<% if current_player.admin? %>
       <th>E-mail</th>
+      <th class="center">Actief</th>
       <th class="center">Betaald</th>
 			<th class="center">Admin</th>
 		<% end %>
@@ -28,6 +29,7 @@
     <td><%= player.expenses %></td>
 		<% if current_player.admin? %>
       <td><%= player.email %></td>
+      <td class="center"><%= bool_icon !player.disabled? %></td>
       <td class="center"><%= bool_icon player.paid? %></td>
 			<td class="center"><%= bool_icon player.admin? %></td>
 		<% end %>

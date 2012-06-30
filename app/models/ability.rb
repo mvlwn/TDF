@@ -20,7 +20,7 @@ class Ability
         can [:show, :read], Player do |p|
           Time.now() > Player::MAX_EDIT_TIME
         end
-        cannot :edit, :add_rider, :remove_rider do |p|
+        cannot [:edit, :add_rider, :remove_rider], Player do |p|
           Time.now() > Player::MAX_EDIT_TIME
         end
         can [:show, :edit, :update, :add_rider, :remove_rider], Player do |p|

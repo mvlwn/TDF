@@ -6,12 +6,12 @@ class Player < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :team_name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :team_name, :email, :password, :password_confirmation, :remember_me, :disabled, :paid
 
   BUDGET = 100
   BUDGET_MULTIPLIER = 100000
   MAX_RIDERS = 9
-  MAX_EDIT_TIME = DateTime.new(2012,6,30.5)
+  MAX_EDIT_TIME = Time.parse("30-06-2012 14:00")
 
   has_many :player_riders
   has_many :riders, :through => :player_riders
@@ -19,6 +19,7 @@ class Player < ActiveRecord::Base
 
   validates :name, :team_name, :presence => true, :uniqueness => true
 
+  scope :active, where(:disabled => false)
 
   def stage_points(stage)
     riders.joins(:scores).where("scores.stage_id" => stage.id).sum("scores.points")

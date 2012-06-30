@@ -1,6 +1,8 @@
 <%= content_for(:title, "#{@player.team_name}") %>
-
+<h2>Informatie</h2>
 <%= render :partial => "players/shared/information", :locals => {:player => @player} %>
+<h2>Team</h2>
+<%= render :partial => "riders/list", :locals => {:riders => @player.riders} %>
 
 <div class="well">
   <% if can? :edit, @player %>

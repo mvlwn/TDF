@@ -11,10 +11,16 @@
 </div>
 
 <% if can? :create, Player %>
-<div>
-  <%= form.label :paid do %>
-    <%= form.check_box :paid %>
-    Betaald
-  <% end %>
-</div>
+  <div>
+    <%= form.label :paid do %>
+      <%= form.check_box :paid %>
+      Betaald
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :disabld do %>
+      <%= form.check_box :disabled %>
+      Inactief
+    <% end %>
+  </div>
 <% end %>

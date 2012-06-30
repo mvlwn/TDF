@@ -3,7 +3,7 @@ class PlayersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @players = PlayerDecorator.decorate(Player.page(params[:page]))
+    @players = PlayerDecorator.decorate(Player.active.page(params[:page]))
   end
 
   def show

@@ -17,11 +17,14 @@ class Ability
       can :read, Team
       unless player.new_record?
         can :index, Player
-        can :show, Player do |p|
-          DateTime.now() > Player::MAX_EDIT_TIME
+        can [:show, :read], Player do |p|
+          Time.now() > Player::MAX_EDIT_TIME
+        end
+        cannot :edit, :add_rider, :remove_rider do |p|
+          Time.now() > Player::MAX_EDIT_TIME
         end
         can [:show, :edit, :update, :add_rider, :remove_rider], Player do |p|
-          player.try(:id) == p.id && DateTime.now() < Player::MAX_EDIT_TIME
+          player.try(:id) == p.id && Time.now() < Player::MAX_EDIT_TIME
         end
       end
     end

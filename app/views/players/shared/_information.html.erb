@@ -19,6 +19,7 @@
     <th>Uitgegeven</th>
     <td><%= player.expenses %></td>
   </tr>
+  <% if player == current_player %>
   <tr>
     <th>Geld overgemaakt</th>
     <td>
@@ -28,4 +29,5 @@
 			<% end %>
 		</td>
   </tr>
+  <% end %>
 </table>

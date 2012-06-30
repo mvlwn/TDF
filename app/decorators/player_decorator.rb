@@ -55,7 +55,7 @@ class PlayerDecorator < Draper::Base
 
   def toggle_paid
     h.link_to(
-      h.bool_icon(!player.paid),
+      h.bool_icon(player.paid),
       h.toggle_player_path(player, :attribute => :paid),
       :method => :put
     )

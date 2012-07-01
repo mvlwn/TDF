@@ -6,7 +6,7 @@ class StagesController < ApplicationController
 
   def show
     @stage = StageDecorator.decorate(Stage.find(params[:id]))
-    @players = PlayerDecorator.decorate(sort_player_by_stage_points(Player.active))
+    @sorted_players = sort_players_by_stage_points(PlayerDecorator.decorate(Player.active), @stage)
   end
 
   def edit
@@ -29,8 +29,8 @@ class StagesController < ApplicationController
 
   private
 
-  def sort_players_by_stage_points(players)
-
+  def sort_players_by_stage_points(players, stage)
+    players.collect{ |p| [p.stage_points(stage), p] }.sort_by{ |sp| sp[0] }
   end
 
 end

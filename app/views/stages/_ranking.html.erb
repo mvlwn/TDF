@@ -8,11 +8,13 @@
   </thead>
   <tbody>
 	<% i = 0 %>
-  <% @players.each do |player| %>
+  <% @sorted_players.each do |sorted_player| %>
+    <% stage_points = sorted_player[0] %>
+    <% player = sorted_player[1] %>
     <tr>
 			<td><%= i += 1 %></td>
       <td><%= player.team_name %></td>
-			<td><%= player.stage_points(@stage) %></td>
+			<td><%= stage_points %></td>
     </tr>
   <% end %>
   </tbody>

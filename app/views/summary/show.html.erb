@@ -12,8 +12,8 @@
     <td><%= Rider.riders_picked %></td>
   </tr>
 	<tr>
-		<th>Populairste renner gekozen</th>
-		<td><%= Rider.most_popular_rider_picked %></td>
+		<th>Populairste renner</th>
+		<td><%= RiderDecorator.decorate(Rider.most_popular_rider).name %>, <%= Rider.most_popular_rider_picked %>x</td>
 	</tr>
 </table>
 

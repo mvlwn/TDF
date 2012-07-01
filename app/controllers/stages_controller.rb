@@ -30,7 +30,7 @@ class StagesController < ApplicationController
   private
 
   def sort_players_by_stage_points(players, stage)
-    players.collect{ |p| [p.stage_points(stage), p] }.sort_by{ |sp| sp[0] }
+    players.collect{ |p| [p.stage_points(stage), p] }.sort_by{ |sp| sp[0] }.reverse
   end
 
 end

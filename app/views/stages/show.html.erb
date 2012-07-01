@@ -24,6 +24,9 @@
 
 <% if @stage.scores.any? -%>
 
+	<h2>Dagklassement</h2>
+	<%= render :partial => "ranking" %>
+
   <h2>Scores</h2>
 
   <% if @stage.yellow_scores.any? %>

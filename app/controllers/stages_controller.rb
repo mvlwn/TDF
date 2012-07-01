@@ -6,6 +6,7 @@ class StagesController < ApplicationController
 
   def show
     @stage = StageDecorator.decorate(Stage.find(params[:id]))
+    @players = PlayerDecorator.decorate(Player.active)
   end
 
   def edit

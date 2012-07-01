@@ -23,6 +23,15 @@ class Player < ActiveRecord::Base
 
   after_update :clear_team_if_disabled
 
+  def self.stage_points(stage)
+    Player.
+      joins(:riders, :scores).
+      select("players.id, players.team_name, SUM(scores.points) AS stage_points").
+      where(["scores.stage_id = ?", stage.id]).
+      group("players.id").
+      order("SUM(scores.points) DESC")
+  end
+
   def stage_points(stage)
     riders.joins(:scores).where("scores.stage_id" => stage.id).sum("scores.points")
   end

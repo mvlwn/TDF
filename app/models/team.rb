@@ -1,6 +1,8 @@
 class Team < ActiveRecord::Base
-  
+
   has_many :riders
+
+  accepts_nested_attributes_for :riders
 
   after_update :update_rider_team_name
 

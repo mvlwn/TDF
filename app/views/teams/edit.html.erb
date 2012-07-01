@@ -1,0 +1,12 @@
+<h2>Wijzig team</h2>
+
+<%= form_for @team do |form| %>
+
+  <%= render form %>
+
+  <div class="well">
+    <%= form.submit "Opslaan", :class => "btn btn-primary" %>
+    <%= link_to "Annuleren", rider_path(@team), :class => "btn" %>
+  </div>
+
+<% end %>

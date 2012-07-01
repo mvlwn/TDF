@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def riders_sort_column
-    Rider.column_names.include?(params[:sort]) ? params[:sort] : "number, id"
+    Rider.column_names.include?(params[:sort]) ? params[:sort] : "number ASC, id"
   end
 
   def riders_sort_direction

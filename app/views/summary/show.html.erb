@@ -17,6 +17,28 @@
 	</tr>
 </table>
 
+<h2>De stand</h2>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th width="5%">#</th>
+    <th>Team</th>
+    <th width="10%">Punten</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% i = 0 %>
+  <% @players.each do |player| %>
+    <tr>
+      <td><%= i += 1%></td>
+      <td><%= player.team_name %></td>
+      <td><%= player.points %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
 <p>Het is weer zo ver, de Tour de France is weer bijna begonnen. Natuurlijk is er dan ook Toerdepoele, de leukste wielerpoule van Nederland</p>
 
 <p>Handige links</p>

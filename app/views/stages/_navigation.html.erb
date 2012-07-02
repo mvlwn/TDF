@@ -2,4 +2,5 @@
 	<% @stages.each do |stage| %>
 		<li<% if stage == @stage %> class="active"<% end %>><%= link_to stage.number, stage_path(stage) %></li>
 	<% end %>
+	<li<% if @stage.nil? %> class="active"<% end %>><%= link_to "Etappeoverzicht", stages_path %></li>
 </ul>

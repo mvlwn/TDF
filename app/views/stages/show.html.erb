@@ -4,12 +4,11 @@
 
 <%= render :partial => "stage_information" %>
 
+<% if can? :edit, Team %>
 <div class="well">
-	<% if can? :edit, Team %>
-  	<%= link_to "Wijzig", edit_stage_path(@stage), :class => "btn" %>
-	<% end %>
-  <%= link_to "Etappeoverzicht", stages_path, :class => "btn" %>
+  <%= link_to "Wijzig", edit_stage_path(@stage), :class => "btn" %>
 </div>
+<% end %>
 
 <div class="row">
 	<div class="span6">

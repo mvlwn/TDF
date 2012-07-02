@@ -27,11 +27,11 @@
     <div class="row">
       <div class="span6">
         <h3 id="player_ranking">De ploegen</h3>
-        <%= render :partial => "shared/player_ranking", :locals => {:players => @players, :stage => false} %>
+        <%= render :partial => "shared/player_ranking", :locals => {:players => @players, :stage => false, :overall => true} %>
       </div>
       <div class="span6">
         <h3 id="rider_ranking">De renners</h3>
-        <%= render :partial => "shared/rider_ranking", :locals => {:riders => @riders, :stage => false} %>
+        <%= render :partial => "shared/rider_ranking", :locals => {:riders => @riders, :stage => false, :overall => true} %>
       </div>
     </div>
     <div class="clear"><%= link_to "Bekijk het klassement", rankings_path(:player_id => @player.id), :class => "btn btn-primary" %></div>

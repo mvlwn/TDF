@@ -21,6 +21,9 @@
 /tmp
 /coverage
 
+# Ignore assets
+/public/assets
+
 # Workstation hidden folders
 .idea
 .rvmrc

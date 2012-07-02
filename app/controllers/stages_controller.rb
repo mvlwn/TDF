@@ -7,10 +7,9 @@ class StagesController < ApplicationController
   def show
     @stages = StageDecorator.decorate(Stage.order(:number))
     @stage = StageDecorator.decorate(Stage.find(params[:id]))
-    players = Player.active
-    riders = Rider.active
-    @sorted_players = sort_players_by_stage_points(PlayerDecorator.decorate(players), @stage)
-    @sorted_riders = sort_riders_by_stage_points(RiderDecorator.decorate(riders), @stage)
+
+    @sorted_players = sort_players_by_stage_points(PlayerDecorator.decorate(Player.active), @stage)
+    @sorted_riders = sort_riders_by_stage_points(RiderDecorator.decorate(Rider.active), @stage)
     @player = PlayerDecorator.decorate(Player.find_by_id(params[:player_id]) || current_player || @sorted_players.first[1])
   end
 
@@ -30,16 +29,6 @@ class StagesController < ApplicationController
   def player_points
     @stages = Stage.all
     @players = Player.all
-  end
-
-  private
-
-  def sort_players_by_stage_points(players, stage)
-    players.collect{ |p| [p.stage_points(stage), p] }.sort_by{ |sp| sp[0] }.reverse
-  end
-
-  def sort_riders_by_stage_points(riders, stage)
-    riders.collect{ |r| [r.stage_points(stage) ,r] }.select{ |rp| rp[0].to_i > 0 }.sort_by{ |rp| rp[0] }.reverse
   end
 
 

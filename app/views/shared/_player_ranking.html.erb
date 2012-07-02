@@ -1,0 +1,31 @@
+<table class="table table-condensed table-striped">
+  <thead>
+  <tr>
+    <th width="5%"></th>
+    <th width="65%">Team</th>
+    <th width="20%">Punten</th>
+    <th width="10%"></th>
+		<th width="10%"></th>
+  </tr>
+  </thead>
+  <tbody>
+	<% i = 0 %>
+  <% players.each do |player| %>
+    <% points = player.sorted_points || player.points %>
+    <tr>
+			<td><%= i += 1 %></td>
+      <td><%= player.link_to %> <%= player.you_badge %></td>
+			<td>
+        <%= points %>
+        <% unless stage %>
+        <span class="quiet small">+<%= points - player.points_till_stage(@stage.previous) %></span>
+        <% end %>
+      </td>
+      <td></td>
+			<td class="center">
+        <%= link_to_player_result(player, @player, stage) %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -33,12 +33,21 @@ class ApplicationController < ActionController::Base
     ActionMailer::Base.default_url_options = {:host => request.host_with_port}
   end
 
-  def badge(content, type, show_badge = false)
-    if show_badge
-      content_tag("span", content, :class => "badge badge-#{type}")
-    else
-      content
+  private
+
+  def sort_players_by_stage_points(players, stage)
+    players.each do |player|
+      player.sorted_points = player.stage_points(stage)
     end
+    players.sort_by{ |player| player.sorted_points }.reverse
   end
+
+  def sort_riders_by_stage_points(riders, stage)
+    riders.each do |rider|
+      rider.sorted_points = rider.stage_points(stage)
+    end
+    riders.select{ |rider| rider.sorted_points > 0 }.sort_by{ |rider| rider.sorted_points }.reverse
+  end
+
 
 end

@@ -9,13 +9,11 @@
   </thead>
   <tbody>
 	<% i = 0 %>
-  <% @sorted_riders.each do |sorted_rider| %>
-    <% stage_points = sorted_rider[0] %>
-    <% rider = sorted_rider[1] %>
+  <% riders.each do |rider| %>
     <tr>
 			<td><%= i += 1 %></td>
       <td><%= rider.link_to %></td>
-			<td class="center"><%= stage_points %></td>
+			<td class="center"><%= rider.sorted_points  || rider.points %></td>
 			<td class="center"><%= rider.team_badge(@player) %></td>
     </tr>
   <% end %>

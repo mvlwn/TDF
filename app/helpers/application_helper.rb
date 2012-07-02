@@ -1,12 +1,41 @@
 # encoding: utf-8
 module ApplicationHelper
 
+  def controller?(*names)
+    names.include?(params[:controller])
+  end
+
+  def link_to_player_result(player, selected_player, stage = nil)
+    if player == selected_player
+      badge, text = ' badge-success', 'Getoond'
+    else
+      badge, text = '', 'Bekijk'
+    end
+
+    if params[:controller] == "summary"
+      path = summary_path(:player_id => player.id, :anchor => "ranking")
+    elsif params[:controller] == "rankings"
+      path = rankings_path(:player_id => player.id, :anchor => "player_ranking")
+    else
+      path = stage_path(stage, :player_id => player.id, :anchor => "player_ranking")
+    end
+    link_to text, path, :class => "badge #{badge}"
+  end
+
   def number_to_euro(number)
     number_to_currency(number.to_f, :unit => "€ ", :precision => 0, :separator => ".")
   end
 
   def bool_icon(bool)
     content_tag("i", "", :class => (bool ? "icon-ok" : "icon-remove"))
+  end
+
+  def badge(content, type, show_badge = false)
+    if show_badge
+      content_tag("span", content, :class => "badge badge-#{type}")
+    else
+      content
+    end
   end
 
   def flash_messages

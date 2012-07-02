@@ -1,68 +1,40 @@
 <%= content_for(:title, "Welkom bij Toerdepoele!") %>
 
-<h2>Statistieken</h2>
-
-<table class="table table-bordered">
-  <tr>
-    <th width="45%">Aantal deelnemers</th>
-    <td width="55%"><%= Player.active.count %></td>
-  </tr>
-  <tr>
-    <th>Aantal renners gekozen</th>
-    <td><%= Rider.riders_picked %></td>
-  </tr>
-	<tr>
-		<th>Populairste renner</th>
-		<td><%= RiderDecorator.decorate(Rider.most_popular_rider).name %>, <%= Rider.most_popular_rider_picked %>x</td>
-	</tr>
-</table>
-
-<h2>De stand</h2>
-<table class="table table-bordered">
-  <thead>
-  <tr>
-    <th width="5%">#</th>
-    <th>Team</th>
-    <th width="10%">Punten</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% i = 0 %>
-  <% @players.each do |player| %>
-    <tr>
-      <td><%= i += 1%></td>
-      <td><%= player.team_name %></td>
-      <td><%= player.points %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
-
-<p>Het is weer zo ver, de Tour de France is weer bijna begonnen. Natuurlijk is er dan ook Toerdepoele, de leukste wielerpoule van Nederland</p>
-
-<p>Handige links</p>
-<ul>
-  <li><%= link_to "Bekijk hier de etappes", stages_path %></li>
-  <li><%= link_to "Bekijk hier alle renners", riders_path %></li>
-  <li><%= link_to "Bekijk hier de spelregels en de puntentelling", rules_path %></li>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#stage_ranking" data-toggle="tab">Dagklassement etappe <%= @stage.number %></a></li>
+  <li><a href="#overall_ranking" data-toggle="tab">Algemeen klassement</a></li>
 </ul>
 
-<p>Meer informatie volgt snel, vragen of opmerkingen? Mail ons op info @ toerdepoele.nl</p>
+<div class="tab-content">
 
-<% if player_signed_in? %>
+  <div class="tab-pane active" id="stage_ranking">
+    <h2>Dagklassement Top 10</h2>
+    <div class="row">
+      <div class="span6">
+        <h3 id="player_ranking">De ploegen</h3>
+        <%= render :partial => "shared/player_ranking", :locals => {:players => @stage_players, :stage => false} %>
+      </div>
+      <div class="span6">
+        <h3 id="rider_ranking">De renners</h3>
+        <%= render :partial => "shared/rider_ranking", :locals => {:riders => @stage_riders, :stage => false} %>
+      </div>
+    </div>
+    <div class="clear"><%= link_to "Bekijk alle uitslagen van de laatste etappe", stage_path(@stage, :player_id => @player.id), :class => "btn btn-primary" %></div>
+  </div>
 
-  <% if current_player.team_ready? %>
-    <div class="alert alert-success">
-      Je team is klaar voor de tour!
+  <div class="tab-pane" id="overall_ranking">
+    <h2>Algemeen klassement top 10</h2>
+    <div class="row">
+      <div class="span6">
+        <h3 id="player_ranking">De ploegen</h3>
+        <%= render :partial => "shared/player_ranking", :locals => {:players => @players, :stage => false} %>
+      </div>
+      <div class="span6">
+        <h3 id="rider_ranking">De renners</h3>
+        <%= render :partial => "shared/rider_ranking", :locals => {:riders => @riders, :stage => false} %>
+      </div>
     </div>
-  <% else %>
-    <div class="alert alert-warning">
-      Je team is nog niet gereed, kies <%= Player::MAX_RIDERS %> renners en besteed maximaal <%= number_to_euro Player::BUDGET * 100000 %>.
-    </div>
-  <% end %>
-  <%= link_to "Ga naar je poele", account_path, :class => "btn" %>
-<% else %>
-  <p>Heb je je al ingeschreven? <%= link_to "Log dan hier in", account_path, :class => "btn btn-primary" %>
-  Nog niet ingeschreven? <%= link_to "Meld je hier aan", new_player_registration_path, :class => "btn btn-success" %></p>
-<% end %>
+    <div class="clear"><%= link_to "Bekijk het klassement", rankings_path(:player_id => @player.id), :class => "btn btn-primary" %></div>
+  </div>
+
+</div>

@@ -7,6 +7,7 @@ class Player < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :team_name, :email, :password, :password_confirmation, :remember_me, :disabled, :paid
+  attr_accessor :sorted_points
 
   BUDGET = 100
   BUDGET_MULTIPLIER = 100000

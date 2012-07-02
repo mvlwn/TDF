@@ -1,9 +1,20 @@
 class SummaryController < ApplicationController
 
   def show
-    @players = Player.active.order("points DESC")
     @riders_count = Rider.count
-    @stages = Stage.order("id")
+    @stages = StageDecorator.decorate(Stage.order("id"))
+
+    # Stage results
+    @stage = StageDecorator.decorate(Stage.last_stage)
+    @stage_players = sort_players_by_stage_points(PlayerDecorator.decorate(Player.active), @stage).shift(10)
+    @stage_riders = sort_riders_by_stage_points(RiderDecorator.decorate(Rider.active), @stage).shift(10)
+
+    # Overall results
+    @players = PlayerDecorator.decorate(Player.active.order("points DESC").limit(10))
+    @riders = RiderDecorator.decorate(Rider.active.order("points DESC").limit(10))
+
+    # Selected player
+    @player = PlayerDecorator.decorate(Player.find_by_id(params[:player_id]) || current_player || @sorted_players.first[1])
   end
 
 end

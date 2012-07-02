@@ -6,6 +6,26 @@ class Stage < ActiveRecord::Base
 
   after_save :handle_results
 
+  def self.last_stage
+    where("yellow_results IS NOT NULL").order("number DESC").first
+  end
+
+  def previous
+    if number == self.class.minimum(:number)
+      self
+    else
+      self.class.where(:number => number - 1).first
+    end
+  end
+
+  def next
+    if number == self.class.maximum(:number)
+      self
+    else
+      self.class.where(:number => number + 1).first
+    end
+  end
+
   def yellow_scores
     scores.where(:category => Score::YELLOW_CATEGORY_ID)
   end

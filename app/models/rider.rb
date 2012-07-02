@@ -1,5 +1,7 @@
 class Rider < ActiveRecord::Base
 
+  attr_accessor :sorted_points
+
   belongs_to :team
   has_many :scores
   has_many :player_riders

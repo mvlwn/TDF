@@ -12,6 +12,14 @@
  *= require_tree .
  */
 
+.quiet{
+  color: #aaa;
+}
+
+.small{
+  font-size: 11px;
+}
+
 footer{
   margin: 25px 0;
 	

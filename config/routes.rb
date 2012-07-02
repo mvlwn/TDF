@@ -51,7 +51,7 @@ TDF::Application.routes.draw do
 
   match "/rules" => "rules#show", :as => "rules", :path => 'spelregels'
 
-  resources :score, :path => 'uitslagen'
+  resources :rankings, :path => 'uitslagen'
 
   resource :summary, :only => "show", :controller => "summary", :path => 'overzicht'
 

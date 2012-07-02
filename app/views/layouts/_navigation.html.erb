@@ -9,14 +9,14 @@
       <a class="brand" href="<%= url_for summary_path %>">Toerdepoele 2012</a>
       <div class="container nav-collapse">
         <ul class="nav">
-          <li><%= link_to "Overzicht", summary_path %></li>
-          <li><%= link_to "Mijn poele", account_path %></li>
-          <li><%= link_to "Etappes", stages_path %></li>
-          <li><%= link_to "Renners", riders_path %></li>
+          <li<% if controller?("summary") %> class="active"<% end %>><%= link_to "Overzicht", summary_path%></li>
+          <li<% if controller?("account") %> class="active"<% end %>><%= link_to "Mijn poele", account_path %></li>
+          <li<% if controller?("stages") %> class="active"<% end %>><%= link_to "Etappes", stages_path %></li>
+          <li<% if controller?("riders") %> class="active"<% end %>><%= link_to "Renners", riders_path %></li>
           <% if player_signed_in? %>
-          <li><%= link_to "Deelnemers", players_path %></li>
+          <li<% if controller?("players", "player_teams") %> class="active"<% end %>><%= link_to "Deelnemers", players_path %></li>
           <% end %>
-          <li><%= link_to "Regels en puntentelling", rules_path %></li>
+          <li<% if controller?("rules") %> class="active"<% end %>><%= link_to "Regels en puntentelling", rules_path %></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>

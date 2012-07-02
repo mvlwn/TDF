@@ -3,11 +3,9 @@ class PlayerDecorator < Draper::Base
   decorates :player
   decorates_association :riders
 
-  def name_with_badge
+  def you_badge
     if player.id == h.current_player.id
-      (player.name + ' ' + h.content_tag("span", "Jij" , :class => "badge badge-info")).html_safe
-    else
-      player.name
+      h.content_tag("span", "Jij" , :class => "badge badge-info").html_safe
     end
   end
 

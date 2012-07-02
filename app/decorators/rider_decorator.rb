@@ -22,4 +22,18 @@ class RiderDecorator < Draper::Base
     end
   end
 
+  def link_to
+    if h.can? :show, rider
+      h.link_to name, h.rider_path(rider)
+    else
+      name
+    end
+  end
+
+  def team_badge
+    if h.player_signed_in? && h.current_player.rider_in_team?(rider)
+      h.content_tag("span", "team", :class => "badge badge-success")
+    end
+  end
+
 end

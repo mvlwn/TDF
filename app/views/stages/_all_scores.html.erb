@@ -1,0 +1,21 @@
+
+<% if @stage.scores.any? -%>
+
+  <h2>Scores</h2>
+
+  <% if @stage.yellow_scores.any? %>
+    <h3>Algemeen klassement</h3>
+    <%= render :partial => "scores", :locals => {:scores => ScoreDecorator.decorate(@stage.yellow_scores) } %>
+  <% end %>
+
+  <% if @stage.green_scores.any? %>
+    <h3>Punten klassement</h3>
+    <%= render :partial => "scores", :locals => {:scores => ScoreDecorator.decorate(@stage.green_scores) } %>
+  <% end %>
+
+  <% if @stage.dotted_scores.any? %>
+    <h3>Bergklassement</h3>
+    <%= render :partial => "scores", :locals => {:scores => ScoreDecorator.decorate(@stage.dotted_scores) } %>
+  <% end %>
+
+<% end -%>

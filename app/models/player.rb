@@ -75,6 +75,10 @@ class Player < ActiveRecord::Base
     MAX_RIDERS == riders.count && budget >= 0
   end
 
+  def rider_in_team?(rider)
+    rider_ids.include?(rider.id)
+  end
+
   def ranking
     Player.order("points DESC").select(:id).collect(&:id).index(id) + 1
   end

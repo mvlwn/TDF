@@ -1,19 +1,8 @@
 <%= content_for(:title, "Etappe #{@stage.number} #{@stage.name}") %>
 
-<table class="table">
-	<tr>
-		<th width="25%">Omschrijving</th>
-		<td width="75%"><%= @stage.description %></td>
-	</tr>
-	<tr>
-		<th>Afstand</th>
-		<td><%= @stage.distance %></td>
-	</tr>
-	<tr>
-		<th>Totaal aantal punten</th>
-		<td><%= @stage.points %></td>
-	</tr>
-</table>
+<%= render :partial => "navigation" %>
+
+<%= render :partial => "stage_information" %>
 
 <div class="well">
 	<% if can? :edit, Team %>
@@ -22,26 +11,14 @@
   <%= link_to "Etappeoverzicht", stages_path, :class => "btn" %>
 </div>
 
-<% if @stage.scores.any? -%>
+<div class="row">
+	<div class="span6">
+		<h2>Dagklassement</h2>
+		<%= render :partial => "player_ranking" %>
+	</div>
+	<div class="span6">
+		<h2>Rennersklassement</h2>
+		<%= render :partial => "rider_ranking" %>
+	</div>
+</div>
 
-	<h2>Dagklassement</h2>
-	<%= render :partial => "ranking" %>
-
-  <h2>Scores</h2>
-
-  <% if @stage.yellow_scores.any? %>
-    <h3>Algemeen klassement</h3>
-    <%= render :partial => "scores", :locals => {:scores => ScoreDecorator.decorate(@stage.yellow_scores) } %>
-  <% end %>
-
-  <% if @stage.green_scores.any? %>
-    <h3>Punten klassement</h3>
-    <%= render :partial => "scores", :locals => {:scores => ScoreDecorator.decorate(@stage.green_scores) } %>
-  <% end %>
-
-  <% if @stage.dotted_scores.any? %>
-    <h3>Bergklassement</h3>
-    <%= render :partial => "scores", :locals => {:scores => ScoreDecorator.decorate(@stage.dotted_scores) } %>
-  <% end %>
-
-<% end -%>

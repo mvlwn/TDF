@@ -21,7 +21,7 @@
   <% @players.each do |player| %>
   <tr>
     <td><%= player.link_to %></td>
-    <td><%= player.name_with_badge %></td>
+    <td><%= player.name %> <%= player.you_badge %></td>
     <td class="center">
       <%= player.riders_count_badge %>
     </td>

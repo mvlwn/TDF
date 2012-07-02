@@ -1,9 +1,10 @@
 <table class="table table-condensed">
   <thead>
   <tr>
-    <th></th>
-    <th>Team</th>
-    <th>Punten</th>
+    <th width="5%"></th>
+    <th width="75%">Team</th>
+    <th width="10%">Punten</th>
+		<th width="10%"></th>
   </tr>
   </thead>
   <tbody>
@@ -13,8 +14,9 @@
     <% player = sorted_player[1] %>
     <tr>
 			<td><%= i += 1 %></td>
-      <td><%= player.team_name %></td>
-			<td><%= stage_points %></td>
+      <td><%= player.link_to %></td>
+			<td class="center"><%= stage_points %></td>
+			<td class="center"><%= player.you_badge %></td>
     </tr>
   <% end %>
   </tbody>

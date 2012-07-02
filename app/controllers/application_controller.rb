@@ -33,5 +33,12 @@ class ApplicationController < ActionController::Base
     ActionMailer::Base.default_url_options = {:host => request.host_with_port}
   end
 
+  def badge(content, type, show_badge = false)
+    if show_badge
+      content_tag("span", content, :class => "badge badge-#{type}")
+    else
+      content
+    end
+  end
 
 end

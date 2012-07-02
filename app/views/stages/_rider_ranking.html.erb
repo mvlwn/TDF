@@ -1,4 +1,4 @@
-<table class="table table-condensed">
+<table class="table table-condensed table-striped">
   <thead>
   <tr>
     <th width="5%"></th>
@@ -16,7 +16,7 @@
 			<td><%= i += 1 %></td>
       <td><%= rider.link_to %></td>
 			<td class="center"><%= stage_points %></td>
-			<td class="center"><%= rider.team_badge %></td>
+			<td class="center"><%= rider.team_badge(@player) %></td>
     </tr>
   <% end %>
   </tbody>

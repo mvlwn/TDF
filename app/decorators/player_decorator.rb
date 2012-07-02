@@ -4,7 +4,7 @@ class PlayerDecorator < Draper::Base
   decorates_association :riders
 
   def you_badge
-    if player.id == h.current_player.id
+    if h.player_signed_in? && player.id == h.current_player.id
       h.content_tag("span", "Jij" , :class => "badge badge-info").html_safe
     end
   end

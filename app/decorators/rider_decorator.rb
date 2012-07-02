@@ -30,8 +30,8 @@ class RiderDecorator < Draper::Base
     end
   end
 
-  def team_badge
-    if h.player_signed_in? && h.current_player.rider_in_team?(rider)
+  def team_badge(player)
+    if player.rider_in_team?(rider)
       h.content_tag("span", "team", :class => "badge badge-success")
     end
   end

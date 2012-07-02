@@ -1,4 +1,4 @@
-<table class="table table-condensed">
+<table class="table table-condensed table-striped">
   <thead>
   <tr>
     <th width="5%"></th>
@@ -14,9 +14,11 @@
     <% player = sorted_player[1] %>
     <tr>
 			<td><%= i += 1 %></td>
-      <td><%= player.link_to %></td>
+      <td><%= player.link_to %> <%= player.you_badge %></td>
 			<td class="center"><%= stage_points %></td>
-			<td class="center"><%= player.you_badge %></td>
+			<td class="center">
+        <%= @stage.link_to_player(player) %>
+      </td>
     </tr>
   <% end %>
   </tbody>

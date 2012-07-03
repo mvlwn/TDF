@@ -29,6 +29,7 @@ class Rider < ActiveRecord::Base
   end
 
   def stage_points(stage)
+    return 0 unless stage.nil?
     scores.where(:stage_id => stage.id).sum(:points)
   end
 

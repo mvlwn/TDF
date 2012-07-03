@@ -31,7 +31,8 @@ class RiderDecorator < Draper::Base
   end
 
   def team_badge(player = nil)
-    if player && player.rider_in_team?(rider)
+    return if player.blank?
+    if player.rider_in_team?(rider)
       h.content_tag("span", "team", :class => "badge badge-success")
     end
   end

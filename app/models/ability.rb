@@ -15,11 +15,12 @@ class Ability
       can :read, Stage
       can :read, Rider
       can :read, Team
+      can :show, Player do |p|
+        Time.now() > Player::MAX_EDIT_TIME
+      end
+      
       if !player.new_record? && !player.disabled?
         can :index, Player
-        can [:show, :read], Player do |p|
-          Time.now() > Player::MAX_EDIT_TIME
-        end
         cannot [:edit, :add_rider, :remove_rider], Player do |p|
           Time.now() > Player::MAX_EDIT_TIME
         end

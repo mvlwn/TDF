@@ -1,5 +1,5 @@
 <%= content_for(:title, "Welkom bij Toerdepoele!") %>
-<% if @stage %>
+
 <ul class="nav nav-tabs">
   <li class="active"><a href="#stage_ranking" data-toggle="tab">Dagklassement etappe <%= @stage.number %></a></li>
   <li><a href="#overall_ranking" data-toggle="tab">Algemeen klassement</a></li>
@@ -38,6 +38,11 @@
   </div>
 
 </div>
-<% else %>
-<p>Er zijn nog geen uitslagen ingevoerd</p>
+
+
+<br />
+<% unless player_signed_in? %>
+<div class="well">
+   <%= link_to "Login op je poele", new_session_path(Player), :class => "btn btn-success" %>
+</div>
 <% end %>

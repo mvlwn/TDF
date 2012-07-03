@@ -7,7 +7,7 @@ class Stage < ActiveRecord::Base
   after_save :handle_results
 
   def self.last_stage
-    where("yellow_results IS NOT NULL").order("number DESC").first || order("number").first
+    where("yellow_results IS NOT NULL").order("number DESC").first
   end
 
   def previous

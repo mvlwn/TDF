@@ -10,7 +10,7 @@ class StagesController < ApplicationController
 
     @sorted_players = sort_players_by_stage_points(PlayerDecorator.decorate(Player.active), @stage)
     @sorted_riders = sort_riders_by_stage_points(RiderDecorator.decorate(Rider.active), @stage)
-    @player = PlayerDecorator.decorate(Player.find_by_id(params[:player_id]) || current_player || @sorted_players.first[1])
+    @player = PlayerDecorator.decorate(Player.find_by_id(params[:player_id]) || current_player || @sorted_players.first)
   end
 
   def edit

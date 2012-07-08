@@ -18,7 +18,7 @@
 		<td><%= link_to rider.team_name, team_path(rider.team_id) %></td>
     <td><%= rider.price %></td>
     <td class="center"><%= rider.points %></td>
-    <% if can? :destroy, rider -%>
+    <% if can? :destroy, rider && rider.number.blank? -%>
       <td class="center">
         <%= link_to content_tag("i", "", :class => "icon-remove icon-white"),
                     rider_path(rider),

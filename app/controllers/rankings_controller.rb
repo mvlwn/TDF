@@ -6,7 +6,7 @@ class RankingsController < ApplicationController
     @riders = RiderDecorator.decorate(Rider.active.order("points DESC"))
 
     # Selected player
-    player = Player.find_by_id(params[:player_id]) || current_player || @stage_players.first
+    player = Player.find_by_id(params[:player_id]) || current_player || @players.first
     @player = PlayerDecorator.decorate(player)
   end
 

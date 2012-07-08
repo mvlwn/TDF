@@ -1,8 +1,10 @@
 <table class="table">
+  <% if player_signed_in? %>
   <tr>
     <th width="25%">Manager</th>
     <td width="75%"><%= player.name %></td>
   </tr>
+  <% end %>
   <tr>
     <th>Punten</th>
     <td><%= player.points.to_i %></td>

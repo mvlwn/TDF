@@ -10,6 +10,7 @@ class RidersController < ApplicationController
 
   def show
     @rider = RiderDecorator.decorate(Rider.find(params[:id]))
+    @stages = StageDecorator.decorate(Stage.all)
   end
 
   def new

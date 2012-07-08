@@ -1,6 +1,7 @@
 # encoding: utf-8
 class RiderDecorator < Draper::Base
   decorates :rider
+  decorates_association :players
 
   def name
     model.first_name.to_s + ' ' + model.last_name.to_s
@@ -35,6 +36,10 @@ class RiderDecorator < Draper::Base
     if player.rider_in_team?(rider)
       h.content_tag("span", "team", :class => "badge badge-success")
     end
+  end
+  
+  def player_teams
+    players.collect{ |player| player.link_to }.join(", ").html_safe
   end
 
 end

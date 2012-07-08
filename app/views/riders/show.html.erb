@@ -14,8 +14,37 @@
 		<th>Aantal punten</th>
 		<td><%= @rider.points %></td>
 	</tr>
+	<tr>
+		<th>Prijs</th>
+		<td><%= @rider.price %></td>
+	</tr>
+	<tr>
+		<th>Gekozen door</th>
+		<td><%= @rider.player_teams %></td>
+	</tr>
 	</tbody>
 </table>
+
+<h3>Punten</h3>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Etappe</th>
+			<% @stages.each do |stage| %>
+			<th width="5%"><%= link_to stage.number, stage_path(stage) %></th>
+			<% end %>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Punten</th>
+			<% @stages.each do |stage| %>
+				<td width="5%"><%= @rider.stage_points(stage) %></td>
+			<% end %>
+		</tr>
+	</tbody>
+</table>
+
 
 <div class="well">
   <%= link_to "Wijzig", edit_rider_path(@rider), :class => "btn" if can? :edit, Rider %>

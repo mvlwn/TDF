@@ -1,9 +1,14 @@
 require 'test_helper'
 
 class ScoreTest < ActiveSupport::TestCase
+  setup do
 
-  test "the truth" do
-    assert true
+  end
+
+  test "The grid" do
+    score = Score.sum("points")
+
+    puts score.inspect
   end
 
 end

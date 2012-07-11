@@ -1,4 +1,10 @@
 <%= content_for(:title, "Algemeen klassement") %>
+
+<ul class="nav nav-tabs">
+	<li class="active"><%= link_to "Algemeen klassement", rankings_path %></li>
+	<li><%= link_to "Dagklassementen", scores_rankings_path %></li>
+</ul>
+
 <div class="row">
   <div class="span6">
     <h3 id="player_ranking">De ploegen</h3>

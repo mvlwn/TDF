@@ -10,4 +10,11 @@ class RankingsController < ApplicationController
     @player = PlayerDecorator.decorate(player)
   end
 
+  def scores
+    @stages = StageDecorator.decorate(Stage.order("number"))
+    @players = PlayerDecorator.decorate(Player.active.order("points DESC"))
+    @matrix = ScoreMatrixDecorator.decorate(ScoreMatrix.new)
+  end
+
+
 end

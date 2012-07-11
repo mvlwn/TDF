@@ -1,0 +1,39 @@
+<%= content_for(:title, "Scores") %>
+
+<ul class="nav nav-tabs">
+	<li><%= link_to "Algemeen klassement", rankings_path %></li>
+	<li class="active"><%= link_to "Dagklassementen", scores_rankings_path %></li>
+</ul>
+
+<div class="well">
+	<button id="toggle_score_position" class="btn btn-primary">Toon positie</button>
+</div>
+
+
+<table class="table table-bordered table-condensed table-striped">
+	<thead>
+	<tr>
+		<th></th>
+		<% @stages.each do |stage| %>
+		<th class="center"><%= link_to stage.number, stage_path(stage) %></th>
+		<% end %>
+	</tr>
+	</thead>
+	<tbody>
+	<% @players.each do |player| %>
+	<% @matrix.player_id = player.id %>
+	<tr>
+		<td><%= player.link_to %></td>
+		<% @stages.each do |stage| %>
+			<% @matrix.stage_id = stage.id %>
+			<td class="center">
+				<span class="<% if @matrix.first? %>badge badge-success<% end %>">
+					<span class="points"><%= @matrix.points %></span>
+					<span class="position hide"><%= @matrix.position %></span>
+				</span>
+			</td>
+		<% end %>
+	</tr>
+	<% end %>
+	</tbody>
+</table>

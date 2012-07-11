@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120630112102) do
+ActiveRecord::Schema.define(:version => 20120711062235) do
 
   create_table "player_riders", :force => true do |t|
     t.integer  "player_id"
@@ -52,16 +52,17 @@ ActiveRecord::Schema.define(:version => 20120630112102) do
     t.integer  "team_id"
     t.string   "team_name"
     t.integer  "number"
-    t.integer  "ad_code",                       :null => false
+    t.integer  "ad_code",                                :null => false
     t.string   "ad_role"
-    t.string   "first_name",                    :null => false
-    t.string   "last_name",                     :null => false
-    t.integer  "price",                         :null => false
-    t.integer  "points",     :default => 0
-    t.boolean  "confirmed",  :default => false
-    t.boolean  "rejected",   :default => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.string   "first_name",                             :null => false
+    t.string   "last_name",                              :null => false
+    t.integer  "price",                                  :null => false
+    t.integer  "points",              :default => 0
+    t.boolean  "confirmed",           :default => false
+    t.boolean  "rejected",            :default => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.integer  "efficiency_in_cents"
   end
 
   add_index "riders", ["ad_code"], :name => "index_riders_on_ad_code"

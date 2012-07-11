@@ -1,10 +1,15 @@
+<% overall = false unless defined?(:overall) %>
 <table class="table table-condensed table-striped">
   <thead>
   <tr>
     <th width="5%"></th>
-    <th width="75%">Renner</th>
+    <th width="45%">Renner</th>
     <th width="10%">Punten</th>
-		<th width="10%"></th>
+    <th width="10%">Gekozen</th>
+    <% if overall %>
+    <th width="15%">€ / punt</th>
+    <% end %>
+		<th width="5%"></th>
   </tr>
   </thead>
   <tbody>
@@ -14,6 +19,10 @@
 			<td><%= i += 1 %></td>
       <td><%= rider.link_to %></td>
 			<td class="center"><%= rider.sorted_points  || rider.points %></td>
+      <td class="center"><%= rider.players.count %> x</td>
+      <% if overall %>
+      <td><%= rider.efficiency %></td>
+      <% end %>
 			<td class="center"><%= rider.team_badge(@player) %></td>
     </tr>
   <% end %>

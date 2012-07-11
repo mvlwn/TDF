@@ -8,7 +8,7 @@ class RiderDecorator < Draper::Base
   end
 
   def price
-    h.number_to_euro(model.price * 100000)
+    h.number_to_euro(model.price * Player::BUDGET_MULTIPLIER)
   end
 
   def role
@@ -40,6 +40,10 @@ class RiderDecorator < Draper::Base
   
   def player_teams
     players.collect{ |player| player.link_to }.join(", ").html_safe
+  end
+
+  def efficiency
+    h.number_to_euro(rider.efficiency_in_cents / 100)
   end
 
 end

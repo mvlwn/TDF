@@ -11,7 +11,7 @@ class Rider < ActiveRecord::Base
 
   before_save :update_team_name
   before_create :set_ad_code
-  before_update :handle_number_update
+  before_update :handle_number_update, :set_efficiency
   after_update :update_player_points, :update_team_name
 
   scope :active, where(:rejected => false)
@@ -58,6 +58,10 @@ class Rider < ActiveRecord::Base
     if self.ad_code.blank?
       self.ad_code = self.class.maximum(:ad_code) + 1
     end
+  end
+
+  def set_efficiency
+    self.efficiency_in_cents = ((price * Player::BUDGET_MULTIPLIER / points) rescue price * Player::BUDGET_MULTIPLIER) * 100
   end
 
   def self.filter_riders(riders, params)

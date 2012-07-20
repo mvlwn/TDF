@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120711062235) do
+ActiveRecord::Schema.define(:version => 20120720072615) do
 
   create_table "player_riders", :force => true do |t|
     t.integer  "player_id"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20120711062235) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.integer  "efficiency_in_cents"
+    t.boolean  "withdrawn",           :default => false
   end
 
   add_index "riders", ["ad_code"], :name => "index_riders_on_ad_code"

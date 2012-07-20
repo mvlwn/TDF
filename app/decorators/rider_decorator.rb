@@ -15,6 +15,14 @@ class RiderDecorator < Draper::Base
     model.ad_role
   end
 
+  def number
+    if rider.withdrawn
+      h.content_tag("span", rider.number, :class => "badge badge-important", :title => "Renner is afgestapt")
+    else
+      h.content_tag("span", rider.number, :class => "badge badge-success", :title => "Renner is in koers")
+    end
+  end
+
   def team_name(view_mode = :normal, options = {})
     if view_mode.to_sym == :truncate
       h.truncate(model.team_name, :length => (options.delete(:length) || 20))
@@ -44,6 +52,14 @@ class RiderDecorator < Draper::Base
 
   def efficiency
     h.number_to_euro(rider.efficiency_in_cents / 100)
+  end
+
+  def withdrawn
+    rider.withdrawn ? "Ja" : "Nee"
+  end
+
+  def in_race
+    !rider.withdrawn ? "Ja" : "Nee"
   end
 
 end

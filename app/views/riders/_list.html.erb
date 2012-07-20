@@ -2,31 +2,25 @@
 <table class="table table-condensed table-striped">
   <thead>
   <tr>
-    <th width="2%"><%= link_to_sortable "Nr", :number %></th>
-    <th width="25%"><%= link_to_sortable "Voornaam", :first_name %> - <%= link_to_sortable "Achternaam", :last_name %></th>
+    <th width="2%" class="center"><%= link_to_sortable "Nr", :number %></th>
+    <th width="30%"><%= link_to_sortable "Voornaam", :first_name %> - <%= link_to_sortable "Achternaam", :last_name %></th>
 		<th width="15%"><%= link_to_sortable "Team", :team_name %></th>
     <th width="5%"><%= link_to_sortable "Prijs", :price %></th>
     <th width="5%" class="center"><%= link_to_sortable "Punten", :points %></th>
-    <th width="15%"><%= link_to_sortable "€ / pnt", :efficiency_in_cents %></th>
-    <% if can? :destroy, Rider %><th width="5%"></th><% end %>
+    <th width="5%"><%= link_to_sortable "€ / pnt", :efficiency_in_cents %></th>
+    <th width="10%" class="center">In koers</th>
   </tr>
   </thead>
   <tbody>
   <% riders.each do |rider| %>
   <tr>
-    <td><%= rider.number %></td>
+    <td class="center"><%= rider.number %></td>
     <td><%= link_to rider.name, rider_path(rider) %></td>
 		<td><%= link_to rider.team_name, team_path(rider.team_id) %></td>
     <td><%= rider.price %></td>
     <td class="center"><%= rider.points %></td>
     <td><%= rider.efficiency %></td>
-    <% if can? :destroy, rider && rider.number.blank? -%>
-      <td class="center">
-        <%= link_to content_tag("i", "", :class => "icon-remove icon-white"),
-                    rider_path(rider),
-                    {:method => :delete, :class => "btn btn-mini btn-danger", :confirm => "Weet je het zeker?"} %>
-      </td>
-    <% end -%>
+    <td class="center"><%= rider.in_race %></td>
   </tr>
   <% end %>
   </tbody>

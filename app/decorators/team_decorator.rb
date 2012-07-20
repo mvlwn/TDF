@@ -5,4 +5,9 @@ class TeamDecorator < Draper::Base
   def budget
     h.number_to_euro(team.budget * Player::BUDGET_MULTIPLIER)
   end
+
+  def points
+    team.riders.sum(:points)
+  end
+
 end

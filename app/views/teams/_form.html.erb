@@ -11,6 +11,10 @@
 	<tr>
 		<th>Renner</th>
 		<th>Nummer</th>
+    <th>Waarde</th>
+    <th>Bevestigd</th>
+    <th>Afgemeld</th>
+    <th>Afgestapt</th>
 	</tr>
 	</thead>
 	<tbody>
@@ -19,6 +23,10 @@
 		<tr>
 			<td><%= rider.name %></td>
 			<td><%= rider_form.text_field :number, :class => "input-mini" %></td>
+      <td><%= rider_form.text_field :price, :class => "input-mini" %></td>
+      <td class="center"><%= rider_form.check_box :confirmed, :class => "" %></td>
+      <td class="center"><%= rider_form.check_box :rejected, :class => "" %></td>
+      <td class="center"><%= rider_form.check_box :withdrawn, :class => "" %></td>
 		</tr>
 	<% end %>
 	</tbody>

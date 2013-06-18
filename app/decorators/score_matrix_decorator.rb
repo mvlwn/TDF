@@ -1,8 +1,9 @@
-class ScoreMatrixDecorator < Draper::Base
-  decorates :score_matrix
+class ScoreMatrixDecorator < Draper::Decorator
+
+  delegate_all
 
   def position
-    pos = score_matrix.position
+    pos = model.position
     if pos
       "#{pos}e"
     else

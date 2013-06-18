@@ -3,12 +3,12 @@ class TeamsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @teams = TeamDecorator.decorate(@teams)
+    @teams = TeamDecorator.decorate_collection(@teams)
   end
 
   def show
-    @team = TeamDecorator.decorate(@team)
-    @riders = RiderDecorator.decorate(@team.riders.order(riders_sort_order))
+    @riders = RiderDecorator.decorate_collection(@team.riders.order(riders_sort_order))
+    @team = @team.decorate
   end
 
   def edit

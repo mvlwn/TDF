@@ -1,8 +1,12 @@
 # encoding: utf-8
-class RiderDecorator < Draper::Base
-  decorates :rider
-  decorates_association :players
+class RiderDecorator < Draper::Decorator
+  delegate_all
+  # decorates_association :players
 
+  def rider
+    model
+  end
+  
   def name
     model.first_name.to_s + ' ' + model.last_name.to_s
   end
@@ -51,7 +55,7 @@ class RiderDecorator < Draper::Base
   end
 
   def efficiency
-    h.number_to_euro(rider.efficiency_in_cents / 100)
+    h.number_to_euro(rider.efficiency_in_cents.to_f / 100)
   end
 
   def withdrawn

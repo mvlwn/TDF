@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Base
-gem 'rails', '3.2.6'
+gem 'rails'
 gem 'mysql2'
 gem 'json'
 
@@ -10,6 +10,8 @@ gem 'kaminari'
 
 # Javascript && CSS
 gem 'jquery-rails'
+gem 'therubyracer'
+gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 
 # Decorator Pattern

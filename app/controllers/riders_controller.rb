@@ -5,12 +5,12 @@ class RidersController < ApplicationController
   respond_to :html
 
   def index
-    @riders = RiderDecorator.decorate(Rider.filter_riders(Rider.order(riders_sort_order), params).page(params[:page]))
+    @riders = RiderDecorator.decorate_collection(Rider.filter_riders(Rider.order(riders_sort_order), params).page(params[:page]))
   end
 
   def show
-    @rider = RiderDecorator.decorate(Rider.find(params[:id]))
-    @stages = StageDecorator.decorate(Stage.all)
+    @rider = Rider.find(params[:id]).decorate
+    @stages = StageDecorator.decorate_collection(Stage.all)
   end
 
   def new

@@ -51,7 +51,7 @@ class RiderDecorator < Draper::Decorator
   end
   
   def player_teams
-    players.collect{ |player| player.link_to }.join(", ").html_safe
+    players.collect{ |player| h.link_to(player.team_name, player) }.join(", ").html_safe
   end
 
   def efficiency

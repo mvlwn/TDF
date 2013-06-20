@@ -5,12 +5,12 @@ class PlayerTeamsController < ApplicationController
   before_filter :authenticate_player!
 
   def show
-    @player = PlayerDecorator.decorate_collection(@player)
+    @player = PlayerDecorator.decorate(@player)
     @riders = RiderDecorator.decorate_collection(@player.riders.order(riders_sort_order))
   end
 
   def edit
-    @player = PlayerDecorator.decorate_collection(@player)
+    @player = PlayerDecorator.decorate(@player)
     all_riders = Rider.active.order(riders_sort_order).page(params[:page])
     riders = Rider.filter_riders(all_riders, params)
     @riders = RiderDecorator.decorate_collection(riders)

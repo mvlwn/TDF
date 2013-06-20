@@ -21,7 +21,7 @@
 				<td><%= rider.price %></td>
 				<% if selected -%>
 					<td class="center">
-						<%= link_to content_tag("i", "", :class => "icon-minus"),
+						<%= link_to content_tag("i", " - ", :class => "icon-minus"),
 												rider_player_team_path(@player, :rider_id => rider.id),
 												:method => :delete,
 												:class => "btn btn-danger btn-mini",
@@ -30,7 +30,7 @@
 				<% else -%>
 					<td class="center">
 						<% if @player.can_pick_rider?(rider) %>
-							<%= link_to content_tag("i", "", :class => "icon-plus"),
+							<%= link_to content_tag("i", " + ", :class => "icon-plus"),
 													rider_player_team_path(@player, :rider_id => rider.id),
 													:method => :post,
 													:class => "btn btn-primary btn-mini",

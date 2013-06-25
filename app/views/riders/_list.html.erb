@@ -13,6 +13,7 @@
   </thead>
   <tbody>
   <% riders.each do |rider| %>
+  <% rider = rider.decorate %>
   <tr>
     <td class="center"><%= rider.number %></td>
     <td><%= link_to rider.name, rider_path(rider) %></td>

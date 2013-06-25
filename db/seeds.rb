@@ -35,17 +35,15 @@ player = Player.create({
   :team_name => "Tijn's Toerders",
   :email => "mail@martijnvanleeuwen.nl",
   :password => "toerdepoele",
-  :password_confirmation => "toerdepoele"
+  :password_confirmation => "toerdepoele",
+  :admin => true
 })
-
-player.update_attribute(:admin, true)
 
 player = Player.create({
   :name => "Bastiaan Langeveld",
   :team_name => "GoGesink",
   :email => "bezlangeveld@hotmail.com",
   :password => "toerdepoele",
-  :password_confirmation => "toerdepoele"
+  :password_confirmation => "toerdepoele",
+  :admin => true
 })
-
-player.update_attribute(:admin, true)

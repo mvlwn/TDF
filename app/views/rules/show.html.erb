@@ -2,7 +2,7 @@
 
 <h2>De spelopzet</h2>
 <ul>
-  <li>Elk wielerploeg heeft een budget van €12.000.000.</li>
+  <li>Elk wielerploeg heeft een budget van <%= number_to_currency Player.budget, :precision => 0, :unit => '&euro;', :separator => ',', :delimiter => '.' %>.</li>
   <li>Elke deelnemer selecteert een eigen wielerploeg van 9 rijders.</li>
   <li>Renners verdienen dagelijks punten voor hun ploeg door etappeuitslagen, bergpunten en tussensprints</li>
   <li>De deelnemer die het meeste punten haalt wint de hoofdprijs</li>
@@ -21,7 +21,7 @@
 <h2>Reglement</h2>
 <ol>
   <li>Inschrijven kan via <a href="http://www.toerdepoele.nl">www.toerdepoele.nl</a></li>
-  <li>Inschrijvingen worden geaccepteerd tot 2 juli.</li>
+  <li>Inschrijvingen worden geaccepteerd tot 29 juni 12:00.</li>
   <li>De inleg bedraagt €5,00</li>
   <li>100% van het prijzengeld gaat naar de pot</li>
   <li>Uitslagen en standen zullen zo snel mogelijk worden ingevuld en via email worden de deelnemers hiervan op de hoogte gebracht.</li>
@@ -29,7 +29,7 @@
   <li>Je emailadres wordt alleen gebruikt om te communiceren over Toerdepoele.</li>
   <li>Gewonnen prijzen kunnen niet geruild worden tegen andere prijzen en de waarde ervan kan niet in geld uitgekeerd worden.</li>
   <li>Indien bij het verdelen van prijzen 2 of meer deelnemers recht hebben op dezelfde prijs (door een gelijk aantal punten in de betreffende periode), dan zal de persoon met het hoogste aantal punten in de algemene stand van de competitie als winnaar van de prijs worden aangegeven. Als dit ook geen uitkomst brengt, dan wordt door loting bepaald wie de prijs wint. De 'verliezer' krijgt de eventuele prijs die volgt (indien beschikbaar).</li>
-  <li>De stand die wordt gepubliceerd op <a href="http://www.letour.fr">www.letour.fr</a> wordt gebruikt om punten toe te kennen. Na 24 juli 2011 24.00 worden er geen wijzigingen meer doorgevoerd. Dat betekent dat deze eindstand en tussenstanden worden gebruikt voor het bereken van de eindstand Toerdepoele.</li>
+  <li>De stand die wordt gepubliceerd op <a href="http://www.letour.fr">www.letour.fr</a> wordt gebruikt om punten toe te kennen. Na 21 juli 24.00 worden er geen wijzigingen meer doorgevoerd. Dat betekent dat deze eindstand en tussenstanden worden gebruikt voor het bereken van de eindstand Toerdepoele.</li>
   <li>Toerdepoele is ten alle tijde gerechtigd het spel geheel of gedeeltelijk stop te zetten. Mocht dit gebeuren wordt het gehele bedrag terug betaald.</li>
   <li>Indien 1 of meer bepalingen van de spelregels nietig zijn of vernietigd worden, zal Toerdepoele een vervangende regel opstellen, die zoveel mogelijk het doel en de strekking van de nietige c.q. vernietigde regel benadert en die niet nietig of vernietigbaar is.</li>
   <li>Zaken waarin het reglement van Toerdepoele niet voorziet worden bepaald door de organisatoren van Toerdepoele. De organisatoren zullen hierbij het belang van alle deelnemers zo goed mogelijk behartigen.</li>
@@ -39,9 +39,9 @@
 <h2>Prijzenpot</h2>
 <p>
 	De pot wordt verdeeld in percentages:<br />
-	1e plaats: 40% van het prijzengeld<br />
-	2e plaats: 20% van het prijzengeld<br />
-	3e plaats: 10% van het prijzengeld<br />
-	30% van het prijzengeld is gereserveerd voor dagprijzen
+	1e plaats: 30% van het prijzengeld<br />
+	2e plaats: 15% van het prijzengeld<br />
+	3e plaats: 5% van het prijzengeld<br />
+	50% van het prijzengeld is gereserveerd voor dagprijzen
 </p>
 

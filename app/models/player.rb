@@ -12,7 +12,7 @@ class Player < ActiveRecord::Base
   BUDGET = 150
   BUDGET_MULTIPLIER = 100000
   MAX_RIDERS = 9
-  MAX_EDIT_TIME = Time.parse("30-06-2012 14:00")
+  MAX_EDIT_TIME = Time.parse("29-06-2013 12:00")
 
   has_many :player_riders
   has_many :riders, :through => :player_riders
@@ -24,6 +24,10 @@ class Player < ActiveRecord::Base
   scope :active, where(:disabled => false)
 
   after_update :clear_team_if_disabled
+
+  def self.budget
+    BUDGET * BUDGET_MULTIPLIER
+  end
 
   def self.stage_points(stage)
     Player.

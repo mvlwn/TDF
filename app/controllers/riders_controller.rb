@@ -5,7 +5,8 @@ class RidersController < ApplicationController
   respond_to :html
 
   def index
-    @riders = RiderDecorator.decorate_collection(Rider.filter_riders(Rider.order(riders_sort_order), params).page(params[:page]))
+    riders = Rider.filter_riders(Rider.order(riders_sort_order), params).page(params[:page])
+    @riders = RiderDecorator.decorate_collection(riders)
   end
 
   def show

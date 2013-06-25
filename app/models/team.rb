@@ -1,6 +1,6 @@
 class Team < ActiveRecord::Base
 
-  has_many :riders
+  has_many :riders, :dependent => :destroy
 
   accepts_nested_attributes_for :riders
 

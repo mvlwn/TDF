@@ -3,8 +3,8 @@ class Rider < ActiveRecord::Base
   attr_accessor :sorted_points
 
   belongs_to :team
-  has_many :scores
-  has_many :player_riders
+  has_many :scores, :dependent => :destroy
+  has_many :player_riders, :dependent => :destroy
   has_many :players, :through => :player_riders
   
   validates :first_name, :last_name, :team_id, :price, :presence => true

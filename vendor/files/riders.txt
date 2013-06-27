@@ -187,29 +187,11 @@ Code	Voornaam	Naam	Ploeg	Type	Waarde	Actief
 495	Danny	van Poppel	Vacansoleil-DCM Pro Cycling Team	H	1,7	1													
 496	Boy	van Poppel	Vacansoleil-DCM Pro Cycling Team	H	1,7	1
 191	Ryder	Hesjedal	Garmin-Barracuda	H	31,7
-192	Tyler	Farrar	Garmin-Barracuda	H	25
 193	Daniel	Martin	Garmin-Barracuda	H	25
 194	Tom	Danielson	Garmin-Barracuda	H	20
 195	Christian	Vande Velde	Garmin-Barracuda	H	20
-196	Andreas	Klier	Garmin-Barracuda	H	18,3
-197	Nick	Nuyens	Garmin-Barracuda	H	16,7
-198	Johan	Van Summeren	Garmin-Barracuda	H	15
 199	David	Millar	Garmin-Barracuda	H	13,3
-200	Fabian	Wegmann	Garmin-Barracuda	H	13,3
-201	David	Zabriskie	Garmin-Barracuda	H	13,3
-202	Koldo	Fernandez	Garmin-Barracuda	H	11,7
-203	Robert	Hunter	Garmin-Barracuda	H	11,7
-204	Thomas	Dekker	Garmin-Barracuda	H	8,3
-205	Martijn	Maaskant	Garmin-Barracuda	H	8,3
-206	Alex	Rasmussen	Garmin-Barracuda	H	8,3
-207	Sebastien	Rosseler	Garmin-Barracuda	H	8,3
 208	Ramunas	Navardauskas	Garmin-Barracuda	H	6,7
 209	Andrew	Talansky	Garmin-Barracuda	H	6,7
 210	Jack	Bauer	Garmin-Barracuda	H	1,7
 211	Rohan	Dennis	Garmin-Barracuda	H	1,7
-212	Caleb	Fairly	Garmin-Barracuda	H	1,7
-213	Nathan	Haas	Garmin-Barracuda	H	1,7
-214	Alex	Howes	Garmin-Barracuda	H	1,7
-215	Michel	Kreder	Garmin-Barracuda	H	1,7
-216	Raymond	Kreder	Garmin-Barracuda	H	1,7
-217	Jakob	Rathe	Garmin-Barracuda	H	1,7

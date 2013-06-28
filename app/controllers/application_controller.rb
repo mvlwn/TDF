@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_mailer_host
 
-  helper_method :riders_sort_column, :riders_sort_direction
+  helper_method :riders_sort_column, :riders_sort_direction, :race_started?
 
   private
 
@@ -31,6 +31,10 @@ class ApplicationController < ActionController::Base
 
   def set_mailer_host
     ActionMailer::Base.default_url_options = {:host => request.host_with_port}
+  end
+  
+  def race_started?
+    Time.now > Player::MAX_EDIT_TIME
   end
 
   private

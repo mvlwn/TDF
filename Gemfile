@@ -12,7 +12,7 @@ gem 'kaminari'
 gem 'jquery-rails'
 gem 'therubyracer'
 gem 'less-rails'
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'twitter-bootstrap-rails', '~> 2.2.7'
 
 # Decorator Pattern
 gem 'draper'

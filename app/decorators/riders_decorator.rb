@@ -1,0 +1,3 @@
+class RidersDecorator < PaginatingDecorator
+  
+end

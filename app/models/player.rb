@@ -9,20 +9,25 @@ class Player < ActiveRecord::Base
   attr_accessible :name, :team_name, :email, :password, :password_confirmation, :remember_me, :disabled, :paid
   attr_accessor :sorted_points
 
-  BUDGET = 100
+  BUDGET = 150
   BUDGET_MULTIPLIER = 100000
   MAX_RIDERS = 9
-  MAX_EDIT_TIME = Time.parse("30-06-2012 14:00")
+  MAX_EDIT_TIME = Time.parse("29-06-2013 12:00")
 
   has_many :player_riders
   has_many :riders, :through => :player_riders
   has_many :scores, :through => :riders
 
-  validates :name, :team_name, :presence => true, :uniqueness => true
+  validates :name, :presence => true, :uniqueness => true
+  validates :team_name, :presence => true, :uniqueness => true
 
   scope :active, where(:disabled => false)
 
   after_update :clear_team_if_disabled
+
+  def self.budget
+    BUDGET * BUDGET_MULTIPLIER
+  end
 
   def self.stage_points(stage)
     Player.

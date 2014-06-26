@@ -19,7 +19,7 @@
 	</thead>
 	<tbody>
 	<%= form.fields_for :riders do |rider_form| %>
-		<% rider = RiderDecorator.decorate(rider_form.object) %>
+		<% rider = RiderDecorator.decorate_collection(rider_form.object) %>
 		<tr>
 			<td><%= rider.name %></td>
 			<td><%= rider_form.text_field :number, :class => "input-mini" %></td>

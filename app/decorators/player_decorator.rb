@@ -1,8 +1,13 @@
 # encoding: utf-8
-class PlayerDecorator < Draper::Base
-  decorates :player
-  decorates_association :riders
-
+class PlayerDecorator < Draper::Decorator
+  delegate_all
+  delegate :current_page, :total_pages, :limit_value
+  # decorates_association :riders
+  
+  def player
+    model
+  end
+  
   def you_badge
     if h.player_signed_in? && player.id == h.current_player.id
       h.content_tag("span", "Jij" , :class => "badge badge-info").html_safe

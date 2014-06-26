@@ -1,25 +1,17 @@
-
 <div class="copyright">
-  &copy; Toerdepoele 2008 - 2012	
-</div>	
+  &copy; Toerdepoele 2007 - 2014
+</div>
 
 <div class="options">
 
-	<% if player_signed_in? %>
-		<div class="signoff">
-			<%= link_to "Afmelden", destroy_player_session_path, :method => :delete, :class => "btn btn-mini btn-inverse" %>
-		</div>
+  <% if player_signed_in? %>
+    <div class="signoff">
+      <%= link_to "Afmelden", destroy_player_session_path, :method => :delete, :class => "btn btn-mini btn-inverse" %>
+    </div>
   <% else %>
     <div class="signoff">
       <%= link_to "Inloggen", new_session_path(Player), :class => "btn btn-mini btn-success" %>
     </div>
-	<% end %>
+  <% end %>
 
-	<div class="fb-like" data-href="http://www.toerdepoele.nl" data-send="true" data-layout="button_count" data-width="220" data-show-faces="false" data-font="lucida grande"></div>
-
-	<div class="twitter-share">
-		<a href="https://twitter.com/share" class="twitter-share-button" data-via="Toerdepoele" data-lang="nl" data-hashtags="toerdepoele">Tweeten</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	
-	</div>
-	
 </div>

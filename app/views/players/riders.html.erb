@@ -1,6 +1,6 @@
 <%= content_for(:title, "Renners van #{@player.team_name}") %>
 <% if @player.riders.any? %>
-  <%= render :partial => "riders/list", :locals => { :riders => RiderDecorator.decorate(@player.riders) } %>
+  <%= render :partial => "riders/list", :locals => { :riders => RiderDecorator.decorate_collection(@player.riders) } %>
 <% else %>
   <p>Het team heeft nog geen renners geselecteerd</p>
 <% end %>

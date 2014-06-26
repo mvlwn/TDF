@@ -1,6 +1,6 @@
 class Team < ActiveRecord::Base
 
-  has_many :riders
+  has_many :riders, :dependent => :destroy
 
   accepts_nested_attributes_for :riders
 
@@ -11,7 +11,7 @@ class Team < ActiveRecord::Base
   end
 
   def self.average_budget
-    budget.to_f / Team.count.to_fs
+    budget.to_f / Team.count.to_f
   end
 
   # Cached team_name

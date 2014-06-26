@@ -54,4 +54,20 @@ class ScoreMatrix
     [player_id, points]
   end
 
+  def position_string
+    if position
+      "#{position}e"
+    else
+      '-'
+    end
+  end
+
+  def points_string
+    if points.to_i > 0
+      points.to_s
+    else
+      '-'
+    end
+  end
+
 end

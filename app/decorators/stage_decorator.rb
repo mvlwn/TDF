@@ -1,6 +1,7 @@
-class StageDecorator < Draper::Base
-  decorates :stage
-  decorates_association :scores
+class StageDecorator < Draper::Decorator
+
+  delegate_all
+  # decorates_association :scores
 
   def ridden_on
     h.l model.ridden_on, :format => :short

@@ -8,7 +8,7 @@ class PlayersController < ApplicationController
     else
       players = Player.active.page(params[:page])
     end
-    @players = PlayerDecorator.decorate(players)
+    @players = PlayerDecorator.decorate_collection(players)
   end
 
   def show
@@ -44,7 +44,7 @@ class PlayersController < ApplicationController
 
   def points
     @player = PlayerDecorator.decorate(@player)
-    @stages = StageDecorator.decorate(Stage.all)
+    @stages = StageDecorator.decorate_collection(Stage.all)
   end
 
   def riders

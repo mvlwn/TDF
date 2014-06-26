@@ -1,0 +1,185 @@
+Code	Voornaam	Naam	Ploeg	Type	Waarde	Actief													
+101	Romain	Bardet	AG2R La Mondiale	H	10	1
+102	Mikael	Cherel	AG2R La Mondiale	H	10	1
+103	Samuel	Dumoulin	AG2R La Mondiale	H	10	1
+104	Ben	Gastauer	AG2R La Mondiale	H	10	1
+105	Blel	Kadri	AG2R La Mondiale	H	10	1
+106	Sébastien	Minard	AG2R La Mondiale	H	10	1
+107	Jean-Christophe	Peraud	AG2R La Mondiale	H	10	1
+108	Christophe	Riblon	AG2R La Mondiale	H	10	1
+201	Jakob	Fuglsang	Astana Pro Team	H	10	1
+202	Francesco	Gavazzi	Astana Pro Team	H	10	1
+203	Andriy	Grivko	Astana Pro Team	H	10	1
+204	Dmitriy	Gruzdev	Astana Pro Team	H	10	1
+205	Jacopo	Guarnieri	Astana Pro Team	H	10	1
+206	Tanel	Kangert	Astana Pro Team	H	10	1
+207	Vincenzo	Nibali	Astana Pro Team	H	10	1
+208	Michele	Scarponi	Astana Pro Team	H	10	1
+209	Lieuwe	Westra	Astana Pro Team	H	10	1
+301	Lars	Boom	Belkin-Pro Cycling Team	H	10	1
+302	Stef	Clement	Belkin-Pro Cycling Team	H	10	1
+303	Laurens	ten Dam	Belkin-Pro Cycling Team	H	10	1
+304	Steven	Kruijswijk	Belkin-Pro Cycling Team	H	10	1
+305	Tom	Leezer	Belkin-Pro Cycling Team	H	10	1
+306	Bauke	Mollema	Belkin-Pro Cycling Team	H	10	1
+307	Bram	Tankink	Belkin-Pro Cycling Team	H	10	1
+308	Sep	Vanmarcke	Belkin-Pro Cycling Team	H	10	1
+309	Maarten	Wynants	Belkin-Pro Cycling Team	H	10	1
+401	John	Darwin Atapuma	BMC Racing Team	H	10	1
+402	Marcus	Burghardt	BMC Racing Team	H	10	1
+403	Amaël	Moinard	BMC Racing Team	H	10	1
+404	Dominik	Nerz	BMC Racing Team	H	10	1
+405	Michael	Schar	BMC Racing Team	H	10	1
+406	Peter	Stetina	BMC Racing Team	H	10	1
+407	Greg	Van Avermaet	BMC Racing Team	H	10	1
+408	Tejay	Van Garderen	BMC Racing Team	H	10	1
+409	Peter	Velits	BMC Racing Team	H	10	1
+501	Jean Marc	Bideau	Bretagne - Séché Environment	H	10	1
+502	Anthony	Delaplace	Bretagne - Séché Environment	H	10	1
+503	Brice	Feillu	Bretagne - Séché Environment	H	10	1
+504	Romain	Feillu	Bretagne - Séché Environment	H	10	1
+505	Armindo	Fonseca	Bretagne - Séché Environment	H	10	1
+506	Arnaud	Gerard	Bretagne - Séché Environment	H	10	1
+507	Eduardo	Sepúlveda	Bretagne - Séché Environment	H	10	1
+508	Florian	Vachon	Bretagne - Séché Environment	H	10	1
+601	Marciej	Bodnar	Cannondale	H	10	1
+602	Damiano	Caruso	Cannondale	H	10	1
+603	Alessandro	De Marchi	Cannondale	H	10	1
+604	Edward	King	Cannondale	H	10	1
+605	Kristijan	Koren	Cannondale	H	10	1
+606	Matthias	Krizek	Cannondale	H	10	1
+607	Marco	Marcato	Cannondale	H	10	1
+608	Fabio	Sabatini	Cannondale	H	10	1
+609	Peter	Sagan	Cannondale	H	10	1
+701	Yoann	Bagot	Cofidis, Solutions Crédits	H	10	1
+702	Jérome	Coppel	Cofidis, Solutions Crédits	H	10	1
+703	Nicolas	Edet	Cofidis, Solutions Crédits	H	10	1
+704	Egoitz	García	Cofidis, Solutions Crédits	H	10	1
+705	Christophe	Le Mével	Cofidis, Solutions Crédits	H	10	1
+706	Luis Angel	Mate	Cofidis, Solutions Crédits	H	10	1
+707	Daniel	Navarro	Cofidis, Solutions Crédits	H	10	1
+708	Julien	Simon	Cofidis, Solutions Crédits	H	10	1
+709	Rein	Taaramäe	Cofidis, Solutions Crédits	H	10	1
+801	William	Bonnet	FDJ.fr	H	10	1
+802	Mickaël	Delage	FDJ.fr	H	10	1
+803	Arnaud	Démare	FDJ.fr	H	10	1
+804	Arnold	Jeannesson	FDJ.fr	H	10	1
+805	Matthieu	Ladagnous	FDJ.fr	H	10	1
+806	Francis	Mourey	FDJ.fr	H	10	1
+807	Thibaut	Pinot	FDJ.fr	H	10	1
+808	Jérémy	Roy	FDJ.fr	H	10	1
+809	Arthur	Vichot	FDJ.fr	H	10	1
+901	Janier Alexis	Acevedo	Garmin Sharp	H	10	1
+902	Thomas	Danielson	Garmin Sharp	H	10	1
+903	Rohan	Dennis	Garmin Sharp	H	10	1
+904	David	Millar	Garmin Sharp	H	10	1
+905	Tom-Jelte	Slagter	Garmin Sharp	H	10	1
+906	Andrew	Talansky	Garmin Sharp	H	10	1
+907	Johan	Vansummeren	Garmin Sharp	H	10	1
+1001	Sylvain	Chavanel	IAM Cycling	H	10	1
+1002	Martin	Elmiger	IAM Cycling	H	10	1
+1003	Mathias	Frank	IAM Cycling	H	10	1
+1004	Heinrich	Haussler	IAM Cycling	H	10	1
+1005	Reto	Hollenstein	IAM Cycling	H	10	1
+1006	Roger	Kluge	IAM Cycling	H	10	1
+1007	Jérome	Pineau	IAM Cycling	H	10	1
+1008	Sebastien	Reichenbach	IAM Cycling	H	10	1
+1009	Marcel	Wyss	IAM Cycling	H	10	1
+1101	Sergei	Chernetckii	Katusha Team	H	10	1
+1102	Vladimir	Isaychev	Katusha Team	H	10	1
+1103	Dmitry	Kozontchuk	Katusha Team	H	10	1
+1104	Alexander	Kristoff	Katusha Team	H	10	1
+1105	Joaquim	Rodríguez	Katusha Team	H	10	1
+1106	Egor	Silin	Katusha Team	H	10	1
+1107	Simon	Špilak	Katusha Team	H	10	1
+1108	Yuri	Trofimov	Katusha Team	H	10	1
+1109	Alexey	Tsatevich	Katusha Team	H	10	1
+1201	Matteo	Bono	Lampre - Merida	H	10	1
+1202	Davide	Cimolai	Lampre - Merida	H	10	1
+1203	Rui	Costa	Lampre - Merida	H	10	1
+1204	Kristijan	Durasek	Lampre - Merida	H	10	1
+1205	Sacha	Modolo	Lampre - Merida	H	10	1
+1206	Nelson	Oliveira	Lampre - Merida	H	10	1
+1207	Filippo	Pozzato	Lampre - Merida	H	10	1
+1208	Ariel Maximiliano	Richeze	Lampre - Merida	H	10	1
+1209	Jose Rodolfo	Serpa	Lampre - Merida	H	10	1
+1301	Lars Ytting	Bak	Lotto - Belisol	H	10	1
+1302	Bart	De Clercq	Lotto - Belisol	H	10	1
+1303	Tony	Gallopin	Lotto - Belisol	H	10	1
+1304	André	Greipel	Lotto - Belisol	H	10	1
+1305	Adam	Hansen	Lotto - Belisol	H	10	1
+1306	Gregory	Henderson	Lotto - Belisol	H	10	1
+1307	Jurgen	Roelandts	Lotto - Belisol	H	10	1
+1308	Marcel	Sieberg	Lotto - Belisol	H	10	1
+1309	Jurgen	Van den Broeck	Lotto - Belisol	H	10	1
+1401	Alex	Dowsett	Movistar Team	H	10	1
+1402	Imanol	Erviti	Movistar Team	H	10	1
+1403	John	Gadret	Movistar Team	H	10	1
+1404	Iván	Gutiérrez	Movistar Team	H	10	1
+1405	Jesús	Herrada	Movistar Team	H	10	1
+1406	Beñat	Intxausti	Movistar Team	H	10	1
+1407	Ion	Izagirre	Movistar Team	H	10	1
+1408	Juan José	Lobato	Movistar Team	H	10	1
+1409	Alejandro	Valverde	Movistar Team	H	10	1
+1501	Jan	Bakelants	Omega Pharma - Quick-Step	H	10	1
+1502	Mark	Cavendish	Omega Pharma - Quick-Step	H	10	1
+1503	Michal	Goiaś	Omega Pharma - Quick-Step	H	10	1
+1504	Michal	Kwiatkowski	Omega Pharma - Quick-Step	H	10	1
+1505	Tony	Martin	Omega Pharma - Quick-Step	H	10	1
+1506	Alessandro	Petacchi	Omega Pharma - Quick-Step	H	10	1
+1507	Mark	Renshaw	Omega Pharma - Quick-Step	H	10	1
+1508	Niki	Terpstra	Omega Pharma - Quick-Step	H	10	1
+1509	Matteo	Trentin	Omega Pharma - Quick-Step	H	10	1
+1601	Michael	Albasini	Orica GreenEDGE	H	10	1
+1602	Simon	Clarke	Orica GreenEDGE	H	10	1
+1603	Simon	Gerrans	Orica GreenEDGE	H	10	1
+1604	Matthew	Goss	Orica GreenEDGE	H	10	1
+1605	Daryl	Impey	Orica GreenEDGE	H	10	1
+1606	Brett	Lancaster	Orica GreenEDGE	H	10	1
+1607	Michael	Matthews	Orica GreenEDGE	H	10	1
+1701	Yukiya	Arashiro	Team Europcar	H	10	1
+1702	Bryan	Coquard	Team Europcar	H	10	1
+1703	Pierre	Rolland	Team Europcar	H	10	1
+1704	Thomas	Voeckler	Team Europcar	H	10	1
+1801	Nikias	Arndt	Team Giant-Shimano	H	10	1
+1802	Roy	Curvers	Team Giant-Shimano	H	10	1
+1803	John	Degenkolb	Team Giant-Shimano	H	10	1
+1804	Dries	Devenyns	Team Giant-Shimano	H	10	1
+1805	Tom	Dumoulin	Team Giant-Shimano	H	10	1
+1806	Marcel	Kittel	Team Giant-Shimano	H	10	1
+1807	Koen	de Kort	Team Giant-Shimano	H	10	1
+1808	Albert	Timmer	Team Giant-Shimano	H	10	1
+1809	Tom	Veelers	Team Giant-Shimano	H	10	1
+1901	Jan	Bárta	Team NetApp Endura	H	10	1
+1902	Cesare	Benedetti	Team NetApp Endura	H	10	1
+1903	Sam	Bennet	Team NetApp Endura	H	10	1
+1904	Iker	Camano	Team NetApp Endura	H	10	1
+1905	David	De la Cruz	Team NetApp Endura	H	10	1
+1906	Zakkari	Dempster	Team NetApp Endura	H	10	1
+1907	Bartosz	Huzarski	Team NetApp Endura	H	10	1
+1908	Leopold	König	Team NetApp Endura	H	10	1
+1909	Tiago	Machado	Team NetApp Endura	H	10	1
+2001	Christopher	Froome	Team Sky	H	10	1
+2002	Peter	Kennaugh	Team Sky	H	10	1
+2003	Vasil	Kiryienka	Team Sky	H	10	1
+2004	Mikel	Nieve	Team Sky	H	10	1
+2005	Richie	Porte	Team Sky	H	10	1
+2006	Kanstantsin	Siutsou	Team Sky	H	10	1
+2007	Geraint	Thomas	Team Sky	H	10	1
+2101	Daniele	Bennati	Tinkoff - Saxo	H	10	1
+2102	Alberto	Contador	Tinkoff - Saxo	H	10	1
+2103	Jesús	Hernández	Tinkoff - Saxo	H	10	1
+2104	Roman	Kreuziger	Tinkoff - Saxo	H	10	1
+2105	Michael	Rogers	Tinkoff - Saxo	H	10	1
+2106	Nicolas	Rouche	Tinkoff - Saxo	H	10	1
+2107	Nicki	Sørensen	Tinkoff - Saxo	H	10	1
+2201	Matthew	Busche	Trek Factory Racing	H	10	1
+2202	Fabian	Cancellara	Trek Factory Racing	H	10	1
+2203	Markel	Irizar	Trek Factory Racing	H	10	1
+2204	Bob	Jungels	Trek Factory Racing	H	10	1
+2205	Danny	van Poppel	Trek Factory Racing	H	10	1
+2206	Gregory	Rast	Trek Factory Racing	H	10	1
+2207	Andy	Schleck	Trek Factory Racing	H	10	1
+2208	Fränk	Schleck	Trek Factory Racing	H	10	1
+2209	Jens	Voigt	Trek Factory Racing	H	10	1
+2210	Haimar	Zubeldia	Trek Factory Racing	H	10	1

@@ -55,7 +55,9 @@ TDF::Application.routes.draw do
     get :scores, :on => :collection, :path => "scores"
   end
 
-  resource :summary, :only => "show", :controller => "summary", :path => 'overzicht'
+  resource :summary, :only => "show", :controller => "summary", :path => 'overzicht' do
+    get :not_found, :on => :collection, :path => "niets-gevonden"
+  end
 
   resource :account, :only => "show", :controller => "account", :path => 'mijnpoele'
   devise_for :players,

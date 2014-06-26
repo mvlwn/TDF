@@ -12,7 +12,7 @@ namespace :riders do
 
   # Load new teams and riders or update them
   def update_riders
-    riders_file = Rails.root.join("vendor", "files", "riders.txt")
+    riders_file = Rails.root.join("vendor", "files", "rennerslijst_2014.txt")
     RiderTextParser.new(File.new(riders_file, 'r').read).parse
   end
 end

@@ -2,32 +2,32 @@
 
 # Create Teams and Riders
 # Read a txt file with riders in tab delimited text format
-riders_file = Rails.root.join("vendor", "files", "riders.txt")
+riders_file = Rails.root.join("vendor", "files", "rennerslijst_2014.txt")
 RiderTextParser.new(File.new(riders_file, 'r').read).parse
 
 # Create Stages
 Stage.create([
-  {:number => 1,  :name => "Porto-Vecchio > Bastia", :ridden_on => "2013-06-29", :description => "Vlak", :distance => "212"},
-  {:number => 2,  :name => "Bastia > Ajaccio", :ridden_on => "2012-06-30", :description => "Heuvel", :distance => "154"},
-  {:number => 3,  :name => "Ajaccio > Calvi", :ridden_on => "2012-07-01", :description => "Heuvel", :distance => "145"},
-  {:number => 4,  :name => "Nice > Nice", :ridden_on => "2012-07-02", :description => "Ploegentijdrit", :distance => "25"},
-  {:number => 5,  :name => "Cagnes-sur-Mer > Marseille", :ridden_on => "2012-07-03", :description => "Vlak", :distance => "219"},
-  {:number => 6,  :name => "Aix-en-Provence > Montpellier", :ridden_on => "2012-07-04", :description => "Vlak", :distance => "176"},
-  {:number => 7,  :name => "Montpellier > Albi", :ridden_on => "2012-07-05", :description => "Vlak", :distance => "205"},
-  {:number => 8,  :name => "Castres > Ax-3 Domaines", :ridden_on => "2012-07-06", :description => "Berg", :distance => "194"},
-  {:number => 9,  :name => "Saint-Girons > Bagnères-de-Bigorre", :ridden_on => "2012-07-07", :description => "Berg", :distance => "165"},
-  {:number => 10,  :name => "Saint-Gildas-des-Bois > Saint-Malo", :ridden_on => "2012-07-09", :description => "Vlak", :distance => "193"},
-  {:number => 11, :name => "Avranches > Mont Saint-Michel", :ridden_on => "2012-07-10", :description => "Tijdrit", :distance => "33"},
-  {:number => 12, :name => "SaintFougères > Tours", :ridden_on => "2012-07-11", :description => "Vlak", :distance => "218"},
-  {:number => 13, :name => "Tours > Saint-Amand-Montrond", :ridden_on => "2012-07-12", :description => "Vlak", :distance => "173"},
-  {:number => 14, :name => "Saint-Pourçain-sur-Sioule > Lyon", :ridden_on => "2012-07-13", :description => "Vlak", :distance => "191"},
-  {:number => 15, :name => "Givors > Mont Ventoux", :ridden_on => "2012-07-14", :description => "Berg", :distance => "242"},
-  {:number => 16, :name => "Vaison-la-Romaine > Gap", :ridden_on => "2012-07-16", :description => "Heuvel", :distance => "168"},
-  {:number => 17, :name => "Embrun > Chorges", :ridden_on => "2012-07-17", :description => "Tijdrit", :distance => "32"},
-  {:number => 18, :name => "Gap > Alpe d'Huez", :ridden_on => "2012-07-18", :description => "Berg", :distance => "168"},
-  {:number => 19, :name => "Bourg d'Oisans > Le Grand Bornand", :ridden_on => "2012-07-19", :description => "Berg", :distance => "204"},
-  {:number => 20, :name => "Annecy > Annecy Semnoz", :ridden_on => "2012-07-20", :description => "Berg", :distance => "125"},
-  {:number => 21, :name => "Versailles > Parijs", :ridden_on => "2012-07-21", :description => "Vlak", :distance => "118"}
+  {:number => 1,  :name => "Leeds > Harrogate",                   :ridden_on => "2014-07-05", :description => "Vlak", :distance => "190"},
+  {:number => 2,  :name => "York > Sheffield",                    :ridden_on => "2014-07-06", :description => "Heuvel", :distance => "201"},
+  {:number => 3,  :name => "Cambridge > London",                  :ridden_on => "2014-07-07", :description => "Vlak", :distance => "155"},
+  {:number => 4,  :name => "Le Touqet-Paris-Plage > Lille",       :ridden_on => "2014-07-08", :description => "Vlak", :distance => "163"},
+  {:number => 5,  :name => "Leper > Arenberg / Porte du Hainaut", :ridden_on => "2014-07-09", :description => "Kasseien", :distance => "156"},
+  {:number => 6,  :name => "Arras > Reims",                       :ridden_on => "2014-07-10", :description => "Vlak", :distance => "194"},
+  {:number => 7,  :name => "Epernay > Nancy",                     :ridden_on => "2014-07-11", :description => "Vlak", :distance => "234"},
+  {:number => 8,  :name => "Tomblaine > Gerardmer / La Mauselaine", :ridden_on => "2014-07-12", :description => "Vlak, Bergaankomst", :distance => "161"},
+  {:number => 9,  :name => "Gerardmer > Mulhouse",                :ridden_on => "2014-07-13", :description => "Berg", :distance => "170"},
+  {:number => 10, :name => "Mulhouse > La Planche des Belles Filles", :ridden_on => "2014-07-14", :description => "Berg", :distance => "161"},
+  {:number => 11, :name => "Besancon > Oyonnax",                  :ridden_on => "2014-07-16", :description => "Vlak", :distance => "187"},
+  {:number => 12, :name => "Bourg-en-Bresse > Saint-Etienne",     :ridden_on => "2014-07-17", :description => "Vlak", :distance => "185"},
+  {:number => 13, :name => "Saint-Etienne > Chamrousse",          :ridden_on => "2014-07-18", :description => "Berg", :distance => "197"},
+  {:number => 14, :name => "Grenoble > Risoul",                   :ridden_on => "2014-07-19", :description => "Berg", :distance => "177"},
+  {:number => 15, :name => "Tallard > Nimes",                     :ridden_on => "2014-07-20", :description => "Vlak", :distance => "222"},
+  {:number => 16, :name => "Carcassonne > Bagneres-de-Luchon",    :ridden_on => "2014-07-22", :description => "Berg", :distance => "237"},
+  {:number => 17, :name => "Saint-Gaudens > Pla d'Adet",          :ridden_on => "2014-07-23", :description => "Berg", :distance => "124"},
+  {:number => 18, :name => "Pau > Hautacam",                      :ridden_on => "2014-07-24", :description => "Berg", :distance => "145"},
+  {:number => 19, :name => "Maubourguet > Bergerac",              :ridden_on => "2014-07-25", :description => "Vlak", :distance => "208"},
+  {:number => 20, :name => "Bergerac > Perigueux",                :ridden_on => "2014-07-26", :description => "Tijdrit", :distance => "54"},
+  {:number => 21, :name => "Evry > Parijs",                       :ridden_on => "2014-07-27", :description => "Vlak", :distance => "137"}
 ])
 
 player = Player.create({

@@ -6,6 +6,11 @@ class SummaryController < ApplicationController
 
     # Stage results
     stage = Stage.last_stage || Stage.order("number").first
+
+    if stage.nil?
+      redirect_to :action => :not_found and return
+    end
+
     @stage = stage.decorate
     @stage_players = sort_players_by_stage_points(PlayerDecorator.decorate_collection(Player.active), @stage).shift(10)
     @stage_riders = sort_riders_by_stage_points(RiderDecorator.decorate_collection(Rider.active), @stage).shift(10)
@@ -17,6 +22,10 @@ class SummaryController < ApplicationController
     # Selected player
     player = Player.find_by_id(params[:player_id]) || current_player || @stage_players.first
     @player = player.decorate
+  end
+
+  def not_found
+
   end
 
 end

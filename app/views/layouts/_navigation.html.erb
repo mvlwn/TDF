@@ -6,7 +6,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="<%= url_for summary_path %>">Toerdepoele 2014</a>
+      <a href="<%= url_for summary_path %>" class="logo">
+        <span class="toer">Toer</span><span class="de">de</span><span class="poele">poele</span> <span class="year">2014</span>
+      </a>
       <div class="container nav-collapse">
         <ul class="nav">
           <li<% if controller?("summary") %> class="active"<% end %>><%= link_to "Overzicht", summary_path%></li>

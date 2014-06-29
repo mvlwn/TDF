@@ -1,7 +1,7 @@
 <%= content_for(:title, "#{@player.team_name}") %>
 <h2>Mijn gegevens</h2>
 
-<%= render  :partial => "players/shared/information", :locals => {:player => @player} %>
+<%= render :partial => "players/shared/information", :locals => {:player => @player} %>
 
 <h2>Mijn team</h2>
 
@@ -17,5 +17,7 @@
 <div class="well">
   <% if can? :edit, @player %><%= link_to "Wijzig team", edit_player_path(@player), :class => "btn" %><% end %>
   <% if can? :edit, @player %><%= link_to "Kies renners", edit_player_team_path(@player), :class => "btn" %><% end %>
-  <%= link_to "Afmelden", destroy_player_session_path, :class => "btn btn-inverse", :method => :delete %>
 </div>
+
+<h2>Mijn subpools</h2>
+<%= render :partial => "subpools/list", :locals => {:subpools => @player.subpools} %>

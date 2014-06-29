@@ -18,6 +18,9 @@ class Player < ActiveRecord::Base
   has_many :riders, :through => :player_riders
   has_many :scores, :through => :riders
 
+  has_many :subpool_players
+  has_many :subpools, :through => :subpool_players
+
   validates :name, :presence => true, :uniqueness => true
   validates :team_name, :presence => true, :uniqueness => true
 

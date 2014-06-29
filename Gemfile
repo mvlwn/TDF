@@ -30,6 +30,8 @@ end
 group :test, :development do
   gem 'guard-test'
   gem 'growl'
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 group :test do

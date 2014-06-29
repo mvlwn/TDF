@@ -1,0 +1,18 @@
+<h2>Wijzig subpoele</h2>
+<%= form_for @subpool, html: { class: 'form-horizontal' } do |form| %>
+  <div class="control-group">
+    <div class="control-label">
+      <%= form.label :name, 'Subpoelenaam' %>
+    </div>
+    <div class="controls">
+      <%= form.text_field :name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <%= form.submit 'Wijzigen', class: 'btn' %>
+      <%= link_to 'Annuleren', account_path, class: 'btn' %>
+    </div>
+  </div>
+
+<% end %>

@@ -55,6 +55,12 @@ TDF::Application.routes.draw do
     get :scores, :on => :collection, :path => "scores"
   end
 
+  resources :subpools, :path => 'subpoeles' do
+
+  end
+
+  resources :subpool_players, :path => 'subpoele_spelers'
+
   resource :summary, :only => "show", :controller => "summary", :path => 'overzicht' do
     get :not_found, :on => :collection, :path => "niets-gevonden"
   end

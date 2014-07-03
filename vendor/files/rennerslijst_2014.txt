@@ -67,7 +67,7 @@ Code	Voornaam	Naam	Ploeg	Type	Waarde	Actief	Nummer
 803	Arnaud	Démare	FDJ.fr	H	7.5	1	
 804	Arnold	Jeannesson	FDJ.fr	H	10	1	
 805	Matthieu	Ladagnous	FDJ.fr	H	5	1	
-806		Pineau	FDJ.fr	H	5	1	
+806	Jerome	Pineau	FDJ.fr	H	5	1
 807	Thibaut	Pinot	FDJ.fr	H	25	1	
 808	Jérémy	Roy	FDJ.fr	H	7.5	1	
 809	Arthur	Vichot	FDJ.fr	H	7.5	1	

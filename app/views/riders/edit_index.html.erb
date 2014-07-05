@@ -1,0 +1,44 @@
+<%= content_for(:title, "Wijzig renners") %>
+
+<%= render :partial => "riders/find_form" %>
+
+<% if @riders.any? %>
+  <%= form_tag update_index_riders_path(rider_params), method: :put do %>
+  <table class="table table-condensed table-striped">
+    <thead>
+    <tr>
+      <th width="2%" class="center"><%= link_to_sortable "Nr", :number %></th>
+      <th width="15%"><%= link_to_sortable "Voornaam", :first_name %> </th>
+      <th width="15%"><%= link_to_sortable "Achternaam", :last_name %></th>
+      <th width="15%"><%= link_to_sortable "Team", :team_name %></th>
+      <th width="5%"><%= link_to_sortable "Prijs", :price %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @riders.each do |rider| %>
+      <%= fields_for 'riders[]', rider do |f| %>
+        <tr id="rider-<%= rider.id %>">
+          <td class="center">
+            <%= f.text_field :number, class: 'span1' %>
+          </td>
+          <td><%= f.text_field :first_name, class: 'span2' %></td>
+          <td><%= f.text_field :last_name, class: 'span2' %></td>
+          <td><%= rider.team_name %></td>
+          <td><%= f.text_field :price, class: 'span1' %></td>
+        </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+
+    <% if can? :create, Rider %>
+      <div class="well">
+        <%= submit_tag "Opslaan", :class => "btn btn-primary" %>
+        <%= link_to "Annuleren", riders_path(rider_params), :class => "btn" %>
+      </div>
+    <% end %>
+
+  <% end %>
+<% else %>
+  <div class="alert alert-info">Er zijn geen renners gevonden</div>
+<% end %>

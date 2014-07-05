@@ -44,6 +44,10 @@ TDF::Application.routes.draw do
 
   resources :teams
   resources :riders, :path => "wielrenners" do
+    collection do
+      get :edit_index
+      put :update_index
+    end
     member do
       put :toggle
     end

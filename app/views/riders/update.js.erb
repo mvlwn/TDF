@@ -1,0 +1,2 @@
+form = "bla<%= j render partial: 'index_form', locals: { rider: @rider } %>";
+$('#rider-<%= @rider.id %>').replaceWith(form);

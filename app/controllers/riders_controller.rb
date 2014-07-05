@@ -2,11 +2,22 @@ class RidersController < ApplicationController
 
   load_and_authorize_resource
 
-  respond_to :html
+  respond_to :html, :json
+  helper_method :rider_params
 
   def index
-    riders = Rider.filter_riders(Rider.order(riders_sort_order), params).page(params[:page])
+    riders = Rider.filter_riders(Rider.order(riders_sort_order), rider_params).page(params[:page])
     @riders = RiderDecorator.decorate_collection(riders)
+  end
+
+  def edit_index
+    riders = Rider.filter_riders(Rider.order(riders_sort_order), rider_params)
+    @riders = RiderDecorator.decorate_collection(riders)
+  end
+
+  def update_index
+    Rider.update(params[:riders].keys, params[:riders].values)
+    redirect_to riders_path(rider_params)
   end
 
   def show
@@ -28,9 +39,15 @@ class RidersController < ApplicationController
 
   def update
     if @rider.update_attributes(params[:rider])
-      redirect_to rider_path(@rider), :notice => "Renner opgeslagen"
+      respond_to do |format|
+        format.html { redirect_to rider_path(@rider), :notice => "Renner opgeslagen" }
+        format.js {}
+      end
     else
-      render :action => "edit"
+      respond_to do |format|
+        format.html { render :action => "edit" }
+        format.js {}
+      end
     end
   end
 
@@ -38,6 +55,14 @@ class RidersController < ApplicationController
     @rider.destroy
     flash[:notice] = "Renner verwijderd"
     redirect_to :back
+  end
+
+  def rider_params
+    p = {}
+    [:name, :price_from, :price_to, :team_id].each do |col|
+      p[col] = params[col]
+    end
+    p
   end
 
 end

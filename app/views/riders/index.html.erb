@@ -11,5 +11,8 @@
 <% if can? :create, Rider %>
   <div class="well">
     <%= link_to "Nieuwe renner", new_rider_path, :class => "btn" %>
+    <% if rider_params[:name].present? || rider_params[:team_id].present? %>
+      <%= link_to "Wijzig renners", edit_index_riders_path(rider_params), :class => "btn" %>
+    <% end %>
   </div>
 <% end %>

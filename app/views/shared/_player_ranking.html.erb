@@ -3,7 +3,8 @@
   <thead>
   <tr>
     <th width="5%"></th>
-    <th width="65%">Team</th>
+    <th width="35%">Team</th>
+    <th width="30%">Manager</th>
     <th width="20%">Punten</th>
     <th width="10%"></th>
 		<th width="10%"></th>
@@ -16,6 +17,7 @@
     <tr>
 			<td><%= i += 1 %></td>
       <td><%= player.link_to %> <%= player.you_badge %></td>
+      <td><%= player_signed_in? ? player.name : '..' %></td>
 			<td>
         <%= points %>
         <% if overall %>

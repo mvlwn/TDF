@@ -1,9 +1,14 @@
 <div class="copyright">
-  &copy; Toerdepoele 2007 - 2014
+  &copy; Toerdepoele 2007 - <%= Date.today.year %>
+
+
 </div>
 
 <div class="options">
-
+  <div class="fb-like">
+    &nbsp;
+    <%= link_to 'Facebook', 'https://www.facebook.com/toerdepoele', class: 'btn btn-mini' %>
+  </div>
   <% if player_signed_in? %>
     <div class="signoff">
       <%= link_to "Afmelden", destroy_player_session_path, :method => :delete, :class => "btn btn-mini btn-inverse" %>

@@ -12,10 +12,12 @@
       <td><%= link_to subpool.name, subpool_path(subpool) %></td>
       <td><%= subpool.players.count %></td>
       <td>
-        <%= link_to 'Afmelden', subpool_player_path(subpool), method: :delete, class: 'btn warning' unless subpool.creator?(current_player) %>
-        <%= link_to 'Wijzig', edit_subpool_path(subpool), class: 'btn' if subpool.creator?(current_player) %>
-        <% if subpool.creator?(current_player) %>
-          <%= link_to 'Wis', subpool_path(subpool), method: :delete, confirm: 'Weet je het zeker', class: 'btn'  %>
+        <% if can? :edit, @player %>
+          <%= link_to 'Afmelden', subpool_player_path(subpool), method: :delete, class: 'btn warning' unless subpool.creator?(current_player) %>
+          <%= link_to 'Wijzig', edit_subpool_path(subpool), class: 'btn' if subpool.creator?(current_player) %>
+          <% if subpool.creator?(current_player) %>
+            <%= link_to 'Wis', subpool_path(subpool), method: :delete, confirm: 'Weet je het zeker', class: 'btn'  %>
+          <% end %>
         <% end %>
       </td>
     </tr>

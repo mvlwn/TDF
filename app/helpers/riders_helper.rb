@@ -11,11 +11,13 @@ module RidersHelper
   end
 
   def options_for_select_price_from
-    content_tag("option") + options_for_select((Rider.minimum(:price)..Rider.maximum(:price)).step(2).to_a.map{|s| ["#{number_to_euro s.to_i * 100000}", s]}, params[:price_from].to_i)
+    value = params[:price_from].present? ? params[:price_from].to_i : nil
+    content_tag("option") + options_for_select((Rider.minimum(:price)..Rider.maximum(:price)).step(2).to_a.map{|s| ["#{number_to_euro s.to_i * 100000}", s]}, value)
   end
 
   def options_for_select_price_to
-    content_tag("option") + options_for_select((Rider.minimum(:price)..Rider.maximum(:price)).step(2).to_a.map{|s| ["#{number_to_euro s.to_i * 100000}", s]}, params[:price_to].to_i)
+    value = params[:price_to].present? ? params[:price_to].to_i : nil
+    content_tag("option") + options_for_select((Rider.minimum(:price)..Rider.maximum(:price)).step(2).to_a.map{|s| ["#{number_to_euro s.to_i * 100000}", s]}, value)
   end
 
 end

@@ -4,7 +4,9 @@
 
 <%= render :partial => "stage_information" %>
 
-<div class="fb-like" data-href="<%= stage_url(@stage) %>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+<div class="alert">
+  Wat vond jij van deze etappe? Laat je horen in het <%= link_to 'commentaar', { anchor: 'comments' }, { class: 'btn btn-primary' } %>
+</div>
 
 <% if can? :edit, Team %>
 <div class="well">
@@ -23,3 +25,12 @@
 	</div>
 </div>
 
+<div id="comments">
+  <h3>Commentaar</h3>
+  <p>
+    <div class="fb-comments" data-href="<%= stage_url(@stage) %>" data-numposts="5" data-colorscheme="light"></div>
+  </p>
+  <p>
+    <div class="fb-like" data-href="<%= stage_url(@stage) %>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+  </p>
+</div>

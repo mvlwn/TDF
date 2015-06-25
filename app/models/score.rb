@@ -3,7 +3,6 @@ class Score < ActiveRecord::Base
 
   validates_presence_of :number, :category, :ranking, :points, :rider_id
   validates_numericality_of :number, :category, :ranking, :points
-  validates_length_of :number, within: Rider.minimum(:number)..Rider.maximum(:number)
   validates_uniqueness_of :number, scope: [:category, :stage_id]
   validates_uniqueness_of :ranking, scope: [:category, :stage_id]
 

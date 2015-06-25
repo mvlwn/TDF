@@ -1,176 +1,176 @@
-1	Romain	Bardet	AG2R La Mondiale	H	2500	1
-2	Mikael	Cherel	AG2R La Mondiale	H	500	1
-3	Ben	Gastauer	AG2R La Mondiale	H	500	1
-4	Patrick	Gretsch	AG2R La Mondiale	H	750	1
-5	Jean-Christophe	Peraud	AG2R La Mondiale	H	3000	1
-6	Johan	Van Summeren	AG2R La Mondiale	H	750	1
-7	Alexis	Vuillermoz	AG2R La Mondiale	H	750	1
-8	Lars	Boom	Astana Pro Team	H	1000	1
-9	Jakob	Fuglsang	Astana Pro Team	H	3000	1
-10	Andrei	Grivko	Astana Pro Team	H	750	1
-11	Vincenzo	Nibali	Astana Pro Team	H	5000	1
-12	Michele	Scarponi	Astana Pro Team	H	1500	1
-13	Rein	Taaramae	Astana Pro Team	H	1000	1
-14	Alessandro	Vanotti	Astana Pro Team	H	500	1
-15	Lieuwe	Westra	Astana Pro Team	H	750	1
-16	Damiano	Caruso	BMC Racing Team	H	2000	1
-17	Rohan	Dennis	BMC Racing Team	H	1500	1
-18	Amaël	Moinard	BMC Racing Team	H	750	1
-19	Daniel	Oss	BMC Racing Team	H	1000	1
-20	Manuel	Quinziato	BMC Racing Team	H	750	1
-21	Samuel	Sanchez	BMC Racing Team	H	2000	1
-22	Michael	Schar	BMC Racing Team	H	750	1
-23	Greg	Van Avermaet	BMC Racing Team	H	1500	1
-24	Tejay	Van Garderen	BMC Racing Team	H	3500	1
-25	j	Barta	Bora-Argon 18	H	750	1
-26	s	Bennett	Bora-Argon 18	H	500	1
-27	e	Buchmann	Bora-Argon 18	H	500	1
-28	z	Dempster	Bora-Argon 18	H	500	1
-29	b	Huzarski	Bora-Argon 18	H	500	1
-30	j	Mendes	Bora-Argon 18	H	500	1
-31	d	Nerz	Bora-Argon 18	H	750	1
-32	a	Schillinger	Bora-Argon 18	H	500	1
-33	p	Voss	Bora-Argon 18	H	500	1
-34	a	Deplaplace	Bretagne	H	500	1
-35	p	Fedrigo	Bretagne	H	2500	1
-36	b	Feillu	Bretagne	H	1000	1
-37	a	Gerard	Bretagne	H	500	1
-38	e	Sepulveda	Bretagne	H	500	1
-39	f	Vachon	Bretagne	H	500	1
-40	a	Cardoso	Cannondale	H	750	1
-41	r	Hesjedal	Cannondale	H	2000	1
-42	s	Langeveld	Cannondale	H	500	1
-43	d	Martin	Cannondale	H	2000	1
-44	a	Talansky	Cannondale	H	2000	1
-45	d	van Baarle	Cannondale	H	500	1
-46	N	Bouhanni	Cofidis, Solutions Crédits	H	3500	1
-47	L	Mate	Cofidis, Solutions Crédits	H	500	1
-48	D	Navarro	Cofidis, Solutions Crédits	H	1500	1
-49	G	Soupe	Cofidis, Solutions Crédits	H	500	1
-50	Julian	Alaphilippe	Etixx - Quick-Step	H	1500	1
-51	Mark	Cavendish	Etixx - Quick-Step	H	4000	1
-52	Michal	Golas	Etixx - Quick-Step	H	500	1
-53	Michal	Kwiatkowski	Etixx - Quick-Step	H	2500	1
-54	Nicolas	Maes	Etixx - Quick-Step	H	500	1
-55	Tony	Martin	Etixx - Quick-Step	H	1500	1
-56	Mark	Renshaw	Etixx - Quick-Step	H	1000	1
-57		Sabatini	Etixx - Quick-Step	H	500	1
-58	Zdenek	Stybar	Etixx - Quick-Step	H	2000	1
-59	Matteo	Trentin	Etixx - Quick-Step	H	1000	1
-60	Rigoberto	Uran	Etixx - Quick-Step	H	3000	1
-61	William	Bonnet	FDJ.fr	H	500	1
-62	Sebastien	Chavanel	FDJ.fr	H	500	1
-63	Mickaël	Delage	FDJ.fr	H	750	1
-64	Arnaud	Démare	FDJ.fr	H	1500	1
-65	Alexandre	Geniez	FDJ.fr	H	1500	1
-66	Matthieu	Ladagnous	FDJ.fr	H	500	1
-67	Steve	Morabito	FDJ.fr	H	750	1
-68	Thibaut	Pinot	FDJ.fr	H	3000	1
-69	Jérémy	Roy	FDJ.fr	H	750	1
-70	Arthur	Vichot	FDJ.fr	H	750	1
-71	Matthias	Brandle	IAM Cycling	H	500	1
-72	Sylvain	Chavanel	IAM Cycling	H	1000	1
-73	Stef	Clement	IAM Cycling	H	750	1
-74	Martin	Elmiger	IAM Cycling	H	750	1
-75	Mathias	Frank	IAM Cycling	H	750	1
-76	Jarlinson	Pantano	IAM Cycling	H	500	1
-77	Marcel	Wyss	IAM Cycling	H	500	1
-78	G	Caruso	Katusha Team	H	750	1
-79	Alexander	Kristoff	Katusha Team	H	3500	1
-80	A	Losada	Katusha Team	H	500	1
-81	T	Machado	Katusha Team	H	500	1
-82	Joaquim	Rodríguez	Katusha Team	H	3500	1
-83	Davide	Cimolai	Lampre - Merida	H	500	1
-84	Rui	Costa	Lampre - Merida	H	2500	1
-85	Kristijan	Durasek	Lampre - Merida	H	500	1
-86	F	Pozzato	Lampre - Merida	H	1000	1
-87	Nelson	Santos Simoes	Lampre - Merida	H	750	1
-88	Jose Rodolfo	Serpa	Lampre - Merida	H	750	1
-89	Bart	De Clercq	Lotto - Belisol	H	750	1
-90	Tony	Gallopin	Lotto - Belisol	H	1500	1
-91	André	Greipel	Lotto - Belisol	H	4000	1
-92	Adam	Hansen	Lotto - Belisol	H	750	1
-93	Jelle	Vanendert	Lotto - Belisol	H	750	1
-94	Tim	Wellens	Lotto - Belisol	H	750	1
-95	Robert	Gesink	Lotto - Jumbo	H	1500	1
-96	Wilco	Kelderman	Lotto - Jumbo	H	2000	1
-97	Steven	Kruijswijk	Lotto - Jumbo	H	1500	1
-98	Tom	Leezer	Lotto - Jumbo	H	500	1
-99	Paul	Martens	Lotto - Jumbo	H	500	1
-100	Bram	Tankink	Lotto - Jumbo	H	500	1
-101	Laurens	ten Dam	Lotto - Jumbo	H	1500	1
-102	Jos	van Emden	Lotto - Jumbo	H	500	1
-103	Sep	Vanmarcke	Lotto - Jumbo	H	1000	1
-104	W	Anacona	Movistar Team	H	750	1
-105	John	Gadret	Movistar Team	H	1000	1
-106	Jesús	Herrada	Movistar Team	H	750	1
-107	G	Izagirre	Movistar Team	H	500	1
-108	A	Malori	Movistar Team	H	1000	1
-109	Nairo	Quintana	Movistar Team	H	4500	1
-110	José Joaquín	Rojas	Movistar Team	H	1000	1
-111	Alejandro	Valverde	Movistar Team	H	4000	1
-112	F	Ventoso	Movistar Team	H	1000	1
-113	E	Boasson Hagen	MTN - Qhubeka	H	1500	1
-114	S	Cummings	MTN - Qhubeka	H	750	1
-115	Tylar	Farrar	MTN - Qhubeka	H	1500	1
-116	J	Janse Van Rensburg	MTN - Qhubeka	H	500	1
-117	R	Janse Van Rensburg	MTN - Qhubeka	H	500	1
-118	M	Kudus	MTN - Qhubeka	H	500	1
-119	L	Meintjes	MTN - Qhubeka	H	750	1
-120	S	Pauwels	MTN - Qhubeka	H	500	1
-121	D	Teklehaymanot	MTN - Qhubeka	H	500	1
-122	Luke	Durbridge	Orica GreenEDGE	H	750	1
-123	Simon	Gerrans	Orica GreenEDGE	H	1500	1
-124	Matthew	Hayman	Orica GreenEDGE	H	500	1
-125	Jens	Keukeleire	Orica GreenEDGE	H	500	1
-126	Michael	Matthews	Orica GreenEDGE	H	3000	1
-127	Sven	Tuft	Orica GreenEDGE	H	750	1
-128	Simon	Yates	Orica GreenEDGE	H	750	1
-129	Adam	Yates	Orica GreenEDGE	H	750	1
-130	Bryan	Coquard	Team Europcar	H	2000	1
-131	Cyril	Gautier	Team Europcar	H	750	1
-132	Pierre	Rolland	Team Europcar	H	3000	1
-133	Romain	Sicard	Team Europcar	H	750	1
-134	Thomas	Voeckler	Team Europcar	H	2000	1
-135	Warren	Barguil	Team Giant - Alpecin	H	2000	1
-136	Roy	Curvers	Team Giant - Alpecin	H	500	1
-137	Bert	De Backer	Team Giant - Alpecin	H	500	1
-138	Koen	de Kort	Team Giant - Alpecin	H	750	1
-139	John	Degenkolb	Team Giant - Alpecin	H	3000	1
-140	Tom	Dumoulin	Team Giant - Alpecin	H	1500	1
-141	Johannes	Frohlinger	Team Giant - Alpecin	H	500	1
-142	Simon	Geschke	Team Giant - Alpecin	H	500	1
-143	Marcel	Kittel	Team Giant - Alpecin	H	3500	1
-144	Georg	Preidler	Team Giant - Alpecin	H	500	1
-145	Ramon	Sinkeldam	Team Giant - Alpecin	H	500	1
-146	Albert	Timmer	Team Giant - Alpecin	H	500	1
-147	Albert	Timmer	Team Giant - Alpecin	H	500	1
-148	Christopher	Froome	Team Sky	H	5000	1
-149	Sergio	Henao	Team Sky	H	1000	1
-150	Peter	Kennaugh	Team Sky	H	750	1
-151	Leopold	Konig	Team Sky	H	2500	1
-152	Mikel	Neve	Team Sky	H	1500	1
-153	Danny	Pate	Team Sky	H	500	1
-154	Wout	Poels	Team Sky	H	1500	1
-155	Richie	Porte	Team Sky	H	2000	1
-156	Luke	Rowe	Team Sky	H	500	1
-157	Ian	Stannard	Team Sky	H	500	1
-158	Geraint	Thomas	Team Sky	H	1500	1
-159	Ivan	Basso	Tinkoff - Saxo	H	1000	1
-160	Daniele	Bennati	Tinkoff - Saxo	H	1000	1
-161	Alberto	Contador	Tinkoff - Saxo	H	5000	1
-162	R	Kiserlovski	Tinkoff - Saxo	H	1500	1
-163	R	Kreuziger	Tinkoff - Saxo	H	2000	1
-164	Rafal	Majka	Tinkoff - Saxo	H	3500	1
-165	Michael	Rogers	Tinkoff - Saxo	H	1500	1
-166	Peter	Sagan	Tinkoff - Saxo	H	4000	1
-167	Michael	Valgren	Tinkoff - Saxo	H	500	1
-168	J	Arredondo	Trek Factory Racing	H	1500	1
-169	Fabian	Cancellara	Trek Factory Racing	H	2000	1
-170	Stein	Devolder	Trek Factory Racing	H	750	1
-171	Laurent	Didier	Trek Factory Racing	H	500	1
-172	Markel	Irizar	Trek Factory Racing	H	750	1
-173	Bobby	Jungels	Trek Factory Racing	H	750	1
-174	Bauke	Mollema	Trek Factory Racing	H	3000	1
-175	Gregory	Rast	Trek Factory Racing	H	500	1
-176	Haimar	Zubeldia	Trek Factory Racing	H	2000	1
+1	Romain	Bardet	AG2R La Mondiale	H	2500	1	1
+2	Mikael	Cherel	AG2R La Mondiale	H	500	1	2
+3	Ben	Gastauer	AG2R La Mondiale	H	500	1	3
+4	Patrick	Gretsch	AG2R La Mondiale	H	750	1	4
+5	Jean-Christophe	Peraud	AG2R La Mondiale	H	3000	1	5
+6	Johan	Van Summeren	AG2R La Mondiale	H	750	1	6
+7	Alexis	Vuillermoz	AG2R La Mondiale	H	750	1	7
+8	Lars	Boom	Astana Pro Team	H	1000	1	8
+9	Jakob	Fuglsang	Astana Pro Team	H	3000	1	9
+10	Andrei	Grivko	Astana Pro Team	H	750	1	10
+11	Vincenzo	Nibali	Astana Pro Team	H	5000	1	11
+12	Michele	Scarponi	Astana Pro Team	H	1500	1	12
+13	Rein	Taaramae	Astana Pro Team	H	1000	1	13
+14	Alessandro	Vanotti	Astana Pro Team	H	500	1	14
+15	Lieuwe	Westra	Astana Pro Team	H	750	1	15
+16	Damiano	Caruso	BMC Racing Team	H	2000	1	16
+17	Rohan	Dennis	BMC Racing Team	H	1500	1	17
+18	Amaël	Moinard	BMC Racing Team	H	750	1	18
+19	Daniel	Oss	BMC Racing Team	H	1000	1	19
+20	Manuel	Quinziato	BMC Racing Team	H	750	1	20
+21	Samuel	Sanchez	BMC Racing Team	H	2000	1	21
+22	Michael	Schar	BMC Racing Team	H	750	1	22
+23	Greg	Van Avermaet	BMC Racing Team	H	1500	1	23
+24	Tejay	Van Garderen	BMC Racing Team	H	3500	1	24
+25	j	Barta	Bora-Argon 18	H	750	1	25
+26	s	Bennett	Bora-Argon 18	H	500	1	26
+27	e	Buchmann	Bora-Argon 18	H	500	1	27
+28	z	Dempster	Bora-Argon 18	H	500	1	28
+29	b	Huzarski	Bora-Argon 18	H	500	1	29
+30	j	Mendes	Bora-Argon 18	H	500	1	30
+31	d	Nerz	Bora-Argon 18	H	750	1	31
+32	a	Schillinger	Bora-Argon 18	H	500	1	32
+33	p	Voss	Bora-Argon 18	H	500	1	33
+34	a	Deplaplace	Bretagne	H	500	1	34
+35	p	Fedrigo	Bretagne	H	2500	1	35
+36	b	Feillu	Bretagne	H	1000	1	36
+37	a	Gerard	Bretagne	H	500	1	37
+38	e	Sepulveda	Bretagne	H	500	1	38
+39	f	Vachon	Bretagne	H	500	1	39
+40	a	Cardoso	Cannondale	H	750	1	40
+41	r	Hesjedal	Cannondale	H	2000	1	41
+42	s	Langeveld	Cannondale	H	500	1	42
+43	d	Martin	Cannondale	H	2000	1	43
+44	a	Talansky	Cannondale	H	2000	1	44
+45	d	van Baarle	Cannondale	H	500	1	45
+46	N	Bouhanni	Cofidis, Solutions Crédits	H	3500	1	46
+47	L	Mate	Cofidis, Solutions Crédits	H	500	1	47
+48	D	Navarro	Cofidis, Solutions Crédits	H	1500	1	48
+49	G	Soupe	Cofidis, Solutions Crédits	H	500	1	49
+50	Julian	Alaphilippe	Etixx - Quick-Step	H	1500	1	50
+51	Mark	Cavendish	Etixx - Quick-Step	H	4000	1	51
+52	Michal	Golas	Etixx - Quick-Step	H	500	1	52
+53	Michal	Kwiatkowski	Etixx - Quick-Step	H	2500	1	53
+54	Nicolas	Maes	Etixx - Quick-Step	H	500	1	54
+55	Tony	Martin	Etixx - Quick-Step	H	1500	1	55
+56	Mark	Renshaw	Etixx - Quick-Step	H	1000	1	56
+57		Sabatini	Etixx - Quick-Step	H	500	1	57
+58	Zdenek	Stybar	Etixx - Quick-Step	H	2000	1	58
+59	Matteo	Trentin	Etixx - Quick-Step	H	1000	1	59
+60	Rigoberto	Uran	Etixx - Quick-Step	H	3000	1	60
+61	William	Bonnet	FDJ.fr	H	500	1	61
+62	Sebastien	Chavanel	FDJ.fr	H	500	1	62
+63	Mickaël	Delage	FDJ.fr	H	750	1	63
+64	Arnaud	Démare	FDJ.fr	H	1500	1	64
+65	Alexandre	Geniez	FDJ.fr	H	1500	1	65
+66	Matthieu	Ladagnous	FDJ.fr	H	500	1	66
+67	Steve	Morabito	FDJ.fr	H	750	1	67
+68	Thibaut	Pinot	FDJ.fr	H	3000	1	68
+69	Jérémy	Roy	FDJ.fr	H	750	1	69
+70	Arthur	Vichot	FDJ.fr	H	750	1	70
+71	Matthias	Brandle	IAM Cycling	H	500	1	71
+72	Sylvain	Chavanel	IAM Cycling	H	1000	1	72
+73	Stef	Clement	IAM Cycling	H	750	1	73
+74	Martin	Elmiger	IAM Cycling	H	750	1	74
+75	Mathias	Frank	IAM Cycling	H	750	1	75
+76	Jarlinson	Pantano	IAM Cycling	H	500	1	76
+77	Marcel	Wyss	IAM Cycling	H	500	1	77
+78	G	Caruso	Katusha Team	H	750	1	78
+79	Alexander	Kristoff	Katusha Team	H	3500	1	79
+80	A	Losada	Katusha Team	H	500	1	80
+81	T	Machado	Katusha Team	H	500	1	81
+82	Joaquim	Rodríguez	Katusha Team	H	3500	1	82
+83	Davide	Cimolai	Lampre - Merida	H	500	1	83
+84	Rui	Costa	Lampre - Merida	H	2500	1	84
+85	Kristijan	Durasek	Lampre - Merida	H	500	1	85
+86	F	Pozzato	Lampre - Merida	H	1000	1	86
+87	Nelson	Santos Simoes	Lampre - Merida	H	750	1	87
+88	Jose Rodolfo	Serpa	Lampre - Merida	H	750	1	88
+89	Bart	De Clercq	Lotto - Belisol	H	750	1	89
+90	Tony	Gallopin	Lotto - Belisol	H	1500	1	90
+91	André	Greipel	Lotto - Belisol	H	4000	1	91
+92	Adam	Hansen	Lotto - Belisol	H	750	1	92
+93	Jelle	Vanendert	Lotto - Belisol	H	750	1	93
+94	Tim	Wellens	Lotto - Belisol	H	750	1	94
+95	Robert	Gesink	Lotto - Jumbo	H	1500	1	95
+96	Wilco	Kelderman	Lotto - Jumbo	H	2000	1	96
+97	Steven	Kruijswijk	Lotto - Jumbo	H	1500	1	97
+98	Tom	Leezer	Lotto - Jumbo	H	500	1	98
+99	Paul	Martens	Lotto - Jumbo	H	500	1	99
+100	Bram	Tankink	Lotto - Jumbo	H	500	1	100
+101	Laurens	ten Dam	Lotto - Jumbo	H	1500	1	101
+102	Jos	van Emden	Lotto - Jumbo	H	500	1	102
+103	Sep	Vanmarcke	Lotto - Jumbo	H	1000	1	103
+104	W	Anacona	Movistar Team	H	750	1	104
+105	John	Gadret	Movistar Team	H	1000	1	105
+106	Jesús	Herrada	Movistar Team	H	750	1	106
+107	G	Izagirre	Movistar Team	H	500	1	107
+108	A	Malori	Movistar Team	H	1000	1	108
+109	Nairo	Quintana	Movistar Team	H	4500	1	109
+110	José Joaquín	Rojas	Movistar Team	H	1000	1	110
+111	Alejandro	Valverde	Movistar Team	H	4000	1	111
+112	F	Ventoso	Movistar Team	H	1000	1	112
+113	E	Boasson Hagen	MTN - Qhubeka	H	1500	1	113
+114	S	Cummings	MTN - Qhubeka	H	750	1	114
+115	Tylar	Farrar	MTN - Qhubeka	H	1500	1	115
+116	J	Janse Van Rensburg	MTN - Qhubeka	H	500	1	116
+117	R	Janse Van Rensburg	MTN - Qhubeka	H	500	1	117
+118	M	Kudus	MTN - Qhubeka	H	500	1	118
+119	L	Meintjes	MTN - Qhubeka	H	750	1	119
+120	S	Pauwels	MTN - Qhubeka	H	500	1	120
+121	D	Teklehaymanot	MTN - Qhubeka	H	500	1	121
+122	Luke	Durbridge	Orica GreenEDGE	H	750	1	122
+123	Simon	Gerrans	Orica GreenEDGE	H	1500	1	123
+124	Matthew	Hayman	Orica GreenEDGE	H	500	1	124
+125	Jens	Keukeleire	Orica GreenEDGE	H	500	1	125
+126	Michael	Matthews	Orica GreenEDGE	H	3000	1	126
+127	Sven	Tuft	Orica GreenEDGE	H	750	1	127
+128	Simon	Yates	Orica GreenEDGE	H	750	1	128
+129	Adam	Yates	Orica GreenEDGE	H	750	1	129
+130	Bryan	Coquard	Team Europcar	H	2000	1	130
+131	Cyril	Gautier	Team Europcar	H	750	1	131
+132	Pierre	Rolland	Team Europcar	H	3000	1	132
+133	Romain	Sicard	Team Europcar	H	750	1	133
+134	Thomas	Voeckler	Team Europcar	H	2000	1	134
+135	Warren	Barguil	Team Giant - Alpecin	H	2000	1	135
+136	Roy	Curvers	Team Giant - Alpecin	H	500	1	136
+137	Bert	De Backer	Team Giant - Alpecin	H	500	1	137
+138	Koen	de Kort	Team Giant - Alpecin	H	750	1	138
+139	John	Degenkolb	Team Giant - Alpecin	H	3000	1	139
+140	Tom	Dumoulin	Team Giant - Alpecin	H	1500	1	140
+141	Johannes	Frohlinger	Team Giant - Alpecin	H	500	1	141
+142	Simon	Geschke	Team Giant - Alpecin	H	500	1	142
+143	Marcel	Kittel	Team Giant - Alpecin	H	3500	1	143
+144	Georg	Preidler	Team Giant - Alpecin	H	500	1	144
+145	Ramon	Sinkeldam	Team Giant - Alpecin	H	500	1	145
+146	Albert	Timmer	Team Giant - Alpecin	H	500	1	146
+147	Albert	Timmer	Team Giant - Alpecin	H	500	1	147
+148	Christopher	Froome	Team Sky	H	5000	1	148
+149	Sergio	Henao	Team Sky	H	1000	1	149
+150	Peter	Kennaugh	Team Sky	H	750	1	150
+151	Leopold	Konig	Team Sky	H	2500	1	151
+152	Mikel	Neve	Team Sky	H	1500	1	152
+153	Danny	Pate	Team Sky	H	500	1	153
+154	Wout	Poels	Team Sky	H	1500	1	154
+155	Richie	Porte	Team Sky	H	2000	1	155
+156	Luke	Rowe	Team Sky	H	500	1	156
+157	Ian	Stannard	Team Sky	H	500	1	157
+158	Geraint	Thomas	Team Sky	H	1500	1	158
+159	Ivan	Basso	Tinkoff - Saxo	H	1000	1	159
+160	Daniele	Bennati	Tinkoff - Saxo	H	1000	1	160
+161	Alberto	Contador	Tinkoff - Saxo	H	5000	1	161
+162	R	Kiserlovski	Tinkoff - Saxo	H	1500	1	162
+163	R	Kreuziger	Tinkoff - Saxo	H	2000	1	163
+164	Rafal	Majka	Tinkoff - Saxo	H	3500	1	164
+165	Michael	Rogers	Tinkoff - Saxo	H	1500	1	165
+166	Peter	Sagan	Tinkoff - Saxo	H	4000	1	166
+167	Michael	Valgren	Tinkoff - Saxo	H	500	1	167
+168	J	Arredondo	Trek Factory Racing	H	1500	1	168
+169	Fabian	Cancellara	Trek Factory Racing	H	2000	1	169
+170	Stein	Devolder	Trek Factory Racing	H	750	1	170
+171	Laurent	Didier	Trek Factory Racing	H	500	1	171
+172	Markel	Irizar	Trek Factory Racing	H	750	1	172
+173	Bobby	Jungels	Trek Factory Racing	H	750	1	173
+174	Bauke	Mollema	Trek Factory Racing	H	3000	1	174
+175	Gregory	Rast	Trek Factory Racing	H	500	1	175
+176	Haimar	Zubeldia	Trek Factory Racing	H	2000	1	176

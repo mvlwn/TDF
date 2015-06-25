@@ -11,7 +11,7 @@ class RiderTextParser
   def parse
     require 'csv'
     @riders = []
-    CSV.parse(@input, :col_sep => "\t", :headers => true) do |row|
+    CSV.parse(@input, :col_sep => "\t", :headers => false) do |row|
       @riders << build_rider_and_team(row)
     end
   end
@@ -19,17 +19,19 @@ class RiderTextParser
   # 200	Jean-Christophe 	Peraud 	AG2R La Mondiale	K	15
   def build_rider_and_team(data)
     team = Team.find_or_create_by_name(data[3])
-    if data[4] != "P" # Filter ploegleiders
-      rider = Rider.find_or_create_by_ad_code(data[0])
-      unless rider.update_attributes(
-            :first_name => data[1] || 'Missing',
-            :last_name => data[2],
-            :team => team,
-            :ad_role => data[4],
-            :price => data[5]
-          )
-        raise ActiveRecord::RecordInvalid.new(rider.errors.full_messages.join(", "))
-      end
+    rider = Rider.find_or_create_by_ad_code(data[0])
+    begin
+      rider.update_attributes(
+          :first_name => data[1] || 'Missing',
+          :last_name => data[2],
+          :team => team,
+          :ad_role => data[4],
+          :price => data[5],
+          :confirmed => data[6],
+          :number => data[7]
+        )
+    rescue
+      puts rider.errors.full_messages.join(", ")
     end
   end
 

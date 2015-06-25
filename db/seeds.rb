@@ -30,7 +30,7 @@ Stage.create([
  { :number => 21, :name => "Sèvres > Parijs", :ridden_on => "2015-07-26", :description => "Vlak", :distance => "110" }
 ])
 
-player = Player.create({
+Player.create({
   :name => "Martijn van Leeuwen",
   :team_name => "Tijn's Toerders",
   :email => "mail@martijnvanleeuwen.nl",
@@ -39,7 +39,7 @@ player = Player.create({
   :admin => true
 })
 
-player = Player.create({
+Player.create({
   :name => "Bastiaan Langeveld",
   :team_name => "GoGesink",
   :email => "bezlangeveld@hotmail.com",

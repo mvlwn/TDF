@@ -10,7 +10,7 @@ class Player < ActiveRecord::Base
   attr_accessor :sorted_points
 
   BUDGET = 150
-  BUDGET_MULTIPLIER = 100000
+  BUDGET_MULTIPLIER = 1000
   MAX_RIDERS = 9
   MAX_EDIT_TIME = Time.parse("05-07-2014 12:00")
 

@@ -1,0 +1,174 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="965" measuredH="1479" mockupW="927" mockupH="1457">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="38" y="22" w="927" h="1457" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Toerdepoele%202015%0Ahttp%3A//www.toerdepoele.nl</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="61" y="121" w="-1" h="-1" measuredW="323" measuredH="43" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Toerdepoele%202015</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="89" y="346" w="266" h="-1" measuredW="79" measuredH="26" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::SubTitle" x="69" y="189" w="-1" h="-1" measuredW="692" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Meld%20je%20aan%20voor%20de%20leukste%20Tour%20de%20France%20Pool%20van%20Nederland</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="91" y="320" w="-1" h="-1" measuredW="66" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Teamnaam</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::TextInput" x="89" y="544" w="266" h="-1" measuredW="79" measuredH="26" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="91" y="518" w="-1" h="-1" measuredW="71" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Wachtwoord</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::TextInput" x="89" y="610" w="266" h="-1" measuredW="79" measuredH="26" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Label" x="91" y="584" w="-1" h="-1" measuredW="125" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Bevestig%20wachtwoord</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Button" x="89" y="658" w="-1" h="-1" measuredW="115" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Maak%20team%20aan</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Button" x="587" y="463" w="-1" h="-1" measuredW="88" measuredH="27" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Aanmelden</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::FieldSet" x="69" y="291" w="463" h="421" measuredW="200" measuredH="170" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Maak%20een%20nieuw%20team%20aan</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::FieldSet" x="572" y="291" w="352" h="227" measuredW="200" measuredH="170" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Heb%20je%20al%20een%20team%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::TextInput" x="587" y="346" w="266" h="-1" measuredW="79" measuredH="26" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Label" x="589" y="321" w="-1" h="-1" measuredW="41" measuredH="21" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>E-mail%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::TextInput" x="587" y="412" w="266" h="-1" measuredW="79" measuredH="26" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::Label" x="589" y="387" w="-1" h="-1" measuredW="71" measuredH="21" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Wachtwoord</text>
+      </controlProperties>
+    </control>
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::Button" x="703" y="463" w="-1" h="-1" measuredW="150" measuredH="27" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Wachtwoord%20vergeten</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::TextInput" x="89" y="412" w="266" h="-1" measuredW="79" measuredH="26" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::Label" x="91" y="386" w="-1" h="-1" measuredW="91" measuredH="21" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Naam%20manager</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::TextInput" x="89" y="478" w="266" h="-1" measuredW="79" measuredH="26" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::Label" x="91" y="452" w="-1" h="-1" measuredW="93" measuredH="21" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>E-mail%20manager</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::LinkBar" x="72" y="244" w="-1" h="-1" measuredW="401" measuredH="19" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Aanmelden%2C%20Spelopzet%2C%20Puntentelling%2C%20Prijzenpot%2C%20Reglement</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Paragraph" x="487" y="116" w="275" h="53" measuredW="275" measuredH="80" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>20</size>
+        <text>Dit%20jaar%20met%20reserves%20en%20%0Avernieuwde%20puntentelling%21%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::SubTitle" x="75" y="759" w="-1" h="-1" measuredW="110" measuredH="27" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Spelopzet</text>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::SubTitle" x="75" y="968" w="-1" h="-1" measuredW="144" measuredH="27" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Puntentelling</text>
+      </controlProperties>
+    </control>
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::Paragraph" x="82" y="797" w="450" h="139" measuredW="275" measuredH="80" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>*%20Elk%20wielerploeg%20heeft%20een%20budget%20van%20%u20AC%2015.000.000.%0A*%20Elke%20deelnemer%20selecteert%20een%20eigen%20wielerploeg%20van%209%20renners%20en%209%20reserves.%0A*%20Renners%20kunnen%20dagelijks%20punten%20verdienen%20voor%20hun%20team.%0A*%20Het%20team%20dat%20aan%20het%20eind%20de%20meeste%20punten%20heeft%20wint%20de%20pot.%0A*%20Elke%20dag%20wordt%20er%20een%20dagprijs%20uitgedeeld%20voor%20het%20team%20met%20de%20beste%20dagscore.</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::Paragraph" x="82" y="1010" w="450" h="269" measuredW="275" measuredH="80" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Een%20renner%20kan%20op%20de%20volgende%20manieren%20punten%20verdienen%0A%20%0A*%20*Plaats%20in%20het%20dagklassement*%0A%09Dagelijks%3A%2050%2C%2020%2C%2010%0A*%20*Plaats%20in%20het%20algemeen%20klassement*%0A%09Dagelijks%3A%20Oplopend%20van%201%20tot%2020%20punten%20voor%20de%20gele%20truidrager%0A%09Eindstand%3A%20200%2C%20100%2C%2080%2C%2070%2C%2060%2C%2050%2C%2040%2C%2030%2C%2020%2C%2010%0A*%20*Punten%20van%20het%20puntenklassement*%20%28groene%20trui%29%0A*%20*Punten%20van%20het%20bergklassement*%20%28bolletjestrui%29%0A*%20*Strijdlustigste%20renner*%0A%09Altijd%2020%20punten%20per%20dag%0A*%20*Rode%20Lantaarn*%0A%09Altijd%205%20punten%20per%20dag</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="__group__" x="571" y="975" w="338" h="302" measuredW="338" measuredH="302" zOrder="28" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::FieldSet" x="0" y="0" w="338" h="302" measuredW="200" measuredH="170" zOrder="0" locked="false" isInGroup="38">
+          <controlProperties>
+            <text>Wijzigingen%20met%20andere%20jaren</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Paragraph" x="21" y="26" w="302" h="261" measuredW="275" measuredH="80" zOrder="1" locked="false" isInGroup="38">
+          <controlProperties>
+            <text>*De%20puntentelling%20is%20eenvoudiger%20geworden.*%20Voorheen%20won%20vaak%20de%20ploeg%20met%20de%20meeste%20goedkope%20sprinters%20doordat%20deze%20punten%20sprokkelden%20met%20plek%204%20t/m%2010.%20Nu%20krijgt%20alleen%20de%20top%203%20punten.%20Voor%20de%20eindstand%20krijgt%20alleen%20de%20top%2010%20van%20het%20klassement%20nog%20punten.%20%0A%20%0A*Minder%20punten%20voor%20het%20dagelijks%20algemeen%20klassement*%0AAlleen%20de%20gele%20truidrager%20krijgt%20nog%20punten%20voor%20het%20dagelijkse%20algemeen%20klassement.%0A%20%0A*Introductie%20rode%20rugnummer%20en%20rode%20lantaarn*%0ARenners%20kunnen%20nu%20ook%20dagelijks%20punten%20halen%20als%20strijdlustigste%20renner%20en%20laatste%20in%20het%20algemeen%20klassement.</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="39" controlTypeID="__group__" x="572" y="759" w="338" h="176" measuredW="338" measuredH="176" zOrder="29" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::FieldSet" x="0" y="0" w="338" h="176" measuredW="200" measuredH="170" zOrder="0" locked="false" isInGroup="39">
+          <controlProperties>
+            <text>Wijzigingen%20met%20andere%20jaren</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Paragraph" x="21" y="26" w="302" h="110" measuredW="275" measuredH="80" zOrder="1" locked="false" isInGroup="39">
+          <controlProperties>
+            <text>*Reserves*%0AVoor%20elke%20renner%20die%20je%20hebt%20geselecteerd%20mag%20je%20optioneel%20een%20reserverenner%20aanwijzen.%20Wanneer%20je%20renner%20uitvalt%20krijgt%20je%20team%20de%20punten%20van%20de%20reserve%20renner%20vanaf%20de%20volgende%20etappe.%20</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

@@ -22,7 +22,7 @@ class RiderTextParser
     if data[4] != "P" # Filter ploegleiders
       rider = Rider.find_or_create_by_ad_code(data[0])
       unless rider.update_attributes(
-            :first_name => data[1],
+            :first_name => data[1] || 'Missing',
             :last_name => data[2],
             :team => team,
             :ad_role => data[4],

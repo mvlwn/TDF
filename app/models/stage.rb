@@ -1,10 +1,10 @@
 class Stage < ActiveRecord::Base
-  
+
   has_many :scores
+  accepts_nested_attributes_for :scores, allow_destroy: true
 
   validates :number, :uniqueness => true, :presence => true
-
-  after_save :handle_results
+  validates :name, :description, :distance, :ridden_on, presence: true
 
   def self.last_stage
     where("yellow_results IS NOT NULL").order("number DESC").first
@@ -27,15 +27,15 @@ class Stage < ActiveRecord::Base
   end
 
   def yellow_scores
-    scores.where(:category => Score::YELLOW_CATEGORY_ID)
+    scores.yellow
   end
 
   def green_scores
-    scores.where(:category => Score::GREEN_CATEGORY_ID)
+    scores.green
   end
 
   def dotted_scores
-    scores.where(:category => Score::DOTTED_CATEGORY_ID)
+    scores.dots
   end
 
   def add_scores(list_of_scores)
@@ -49,33 +49,7 @@ class Stage < ActiveRecord::Base
   end
 
   def has_results?
-    !yellow_results.blank? || !green_results.blank? || !dotted_results.blank?
-  end
-
-  def handle_results
-    parse_results(yellow_results, Score::YELLOW_CATEGORY_ID) if yellow_results_changed?
-    parse_results(green_results, Score::GREEN_CATEGORY_ID) if green_results_changed?
-    parse_results(dotted_results, Score::DOTTED_CATEGORY_ID) if dotted_results_changed?
-  end
-
-  def parse_results(text, category)
-    # Clean old scores
-    scores.where(:category => category).destroy_all
-    results = StageResultParser.new(text).parse
-    results.each do |result|
-      rider = Rider.find_by_number(result[:number])
-      scores.create({
-        :number => result[:number],
-        :rider => rider,
-        :category => category,
-        :ranking => result[:ranking],
-        :points => result[:points]
-      })
-    end
-  end
-
-  def winner
-    Player.first
+    scores.count > 0
   end
 
 end

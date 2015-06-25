@@ -12,6 +12,14 @@ TDF::Application.routes.draw do
     collection do
       get :player_points
     end
+    resources :scores,
+              path_names: {
+                index: 'overzicht',
+                new: 'nieuw',
+                show: 'bekijk',
+                edit: 'wijzig',
+                destroy: 'wis'
+              }
   end
 
   resources :players,

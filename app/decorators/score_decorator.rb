@@ -7,4 +7,8 @@ class ScoreDecorator < Draper::Decorator
     rider ? rider.name : ".."
   end
 
+  def category_name
+    Score::CATEGORIES[category]
+  end
+
 end

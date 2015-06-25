@@ -1,0 +1,19 @@
+<%= form_for [@stage, score], html: { class: 'form-inline' } do |form| %>
+
+  <%= error_messages_for(form.object) %>
+
+  <%= form.label :number %>
+  <%= form.number_field :number, :class => "input-small", min: Rider.minimum(:number), max: Rider.maximum(:number), step: 1 %>
+
+  <%= form.label :category %>
+  <%= form.select :category, score_category_options %>
+
+  <%= form.label :ranking %>
+  <%= form.number_field :ranking, :class => "input-small" %>
+
+  <%= form.label :points %>
+  <%= form.number_field :points, :class => "input-small" %>
+
+  <%= form.submit 'Opslaan', class: 'btn btn-primary' %>
+
+<% end %>

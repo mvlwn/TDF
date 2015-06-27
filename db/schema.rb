@@ -11,17 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140628132051) do
+ActiveRecord::Schema.define(:version => 20150627090548) do
 
   create_table "player_riders", :force => true do |t|
     t.integer  "player_id"
     t.integer  "rider_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.integer  "substitute_rider_id"
+    t.integer  "points"
   end
 
   add_index "player_riders", ["player_id"], :name => "index_player_riders_on_player_id"
   add_index "player_riders", ["rider_id"], :name => "index_player_riders_on_rider_id"
+  add_index "player_riders", ["substitute_rider_id"], :name => "index_player_riders_on_substitute_rider_id"
 
   create_table "players", :force => true do |t|
     t.string   "name",                   :default => "",    :null => false
@@ -48,6 +51,17 @@ ActiveRecord::Schema.define(:version => 20140628132051) do
   add_index "players", ["points"], :name => "index_players_on_points"
   add_index "players", ["reset_password_token"], :name => "index_players_on_reset_password_token", :unique => true
 
+  create_table "rider_stages", :force => true do |t|
+    t.integer  "rider_id"
+    t.integer  "stage_id"
+    t.integer  "points"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "rider_stages", ["rider_id"], :name => "index_rider_stages_on_rider_id"
+  add_index "rider_stages", ["stage_id"], :name => "index_rider_stages_on_stage_id"
+
   create_table "riders", :force => true do |t|
     t.integer  "team_id"
     t.string   "team_name"
@@ -63,11 +77,13 @@ ActiveRecord::Schema.define(:version => 20140628132051) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.integer  "efficiency_in_cents"
-    t.boolean  "withdrawn",           :default => false
+    t.boolean  "abandoned",           :default => false
+    t.integer  "stage_id"
   end
 
   add_index "riders", ["ad_code"], :name => "index_riders_on_ad_code"
   add_index "riders", ["number"], :name => "index_riders_on_number"
+  add_index "riders", ["stage_id"], :name => "index_riders_on_stage_id"
   add_index "riders", ["team_id"], :name => "index_riders_on_team_id"
 
   create_table "scores", :force => true do |t|

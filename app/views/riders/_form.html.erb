@@ -34,7 +34,6 @@
 </div>
 
 <div>
-  <%= form.label :withdrawn do %>
-    <%= form.check_box :withdrawn %> Afgestapt
-  <% end %>
+  <%= form.label :stage_id, 'Afgestapt in etappe' %>
+  <%= form.collection_select :stage_id, Stage.order('number'), :id, :name_with_number, include_blank: true %>
 </div>

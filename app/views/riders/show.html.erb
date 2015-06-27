@@ -18,6 +18,12 @@
 		<th>Prijs</th>
 		<td><%= @rider.price %></td>
 	</tr>
+  <% if @rider.last_stage %>
+  <tr>
+    <th>Afgestapt na etappe</th>
+    <td><%= @rider.last_stage.name_with_number %></td>
+  </tr>
+  <% end %>
   <% if race_started? %>
   <tr>
     <th>Efficiency</th>
@@ -37,7 +43,7 @@
 		<tr>
 			<th>Etappe</th>
 			<% @stages.each do |stage| %>
-			<th width="5%"><%= link_to stage.number, stage_path(stage) %></th>
+			<th width="5%" class="center"><%= link_to stage.number, stage_path(stage) %></th>
 			<% end %>
 		</tr>
 	</thead>
@@ -45,7 +51,7 @@
 		<tr>
 			<th>Punten</th>
 			<% @stages.each do |stage| %>
-				<td width="5%"><%= @rider.stage_points(stage) %></td>
+				<td width="5%" class="center"><%= @rider.stage_points(stage) || content_tag('span', 0, class: 'label danger') %></td>
 			<% end %>
 		</tr>
 	</tbody>

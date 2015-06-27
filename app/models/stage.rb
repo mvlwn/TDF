@@ -1,6 +1,9 @@
 class Stage < ActiveRecord::Base
 
   has_many :scores
+  has_many :rider_stages, dependent: :destroy
+  has_many :riders, through: :rider_stages
+
   accepts_nested_attributes_for :scores, allow_destroy: true
 
   validates :number, :uniqueness => true, :presence => true
@@ -8,6 +11,10 @@ class Stage < ActiveRecord::Base
 
   def self.last_stage
     where("yellow_results IS NOT NULL").order("number DESC").first
+  end
+
+  def name_with_number
+    "#{number}. #{name}"
   end
 
   def previous

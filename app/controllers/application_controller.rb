@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
 
   def sort_riders_by_stage_points(riders, stage)
     riders.each do |rider|
-      rider.sorted_points = rider.stage_points(stage)
+      rider.sorted_points = rider.stage_points(stage).to_i
     end
     riders.select{ |rider| rider.sorted_points > 0 }.sort_by{ |rider| rider.sorted_points }.reverse
   end

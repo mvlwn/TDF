@@ -1,9 +1,9 @@
-prologue:
-  number: 0
-  name: "Prologue: Liège > Liège"
-  ridden_on: 30-06-2012
-
 one:
   number: 1
-  name: "Liège > Seraing"
-  ridden_on: 01-07-2012
+  name: "Utrecht > Utrecht"
+  ridden_on: 04-07-2015
+
+two:
+  number: 2
+  name: "Utrecht > Neeltje Jans"
+  ridden_on: 05-07-2015

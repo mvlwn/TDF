@@ -1,36 +1,14 @@
 TDF::Application.routes.draw do
 
   resources :stages,
-            :path => "etappes",
-            :only => [:index, :show, :edit, :update],
-            :path_names => {
-              :index => 'overzicht',
-              :show => 'bekijk',
-              :edit => 'wijzig',
-              :player_points => 'punten'
-            } do
+            :only => [:index, :show, :edit, :update] do
     collection do
       get :player_points
     end
-    resources :scores,
-              path_names: {
-                index: 'overzicht',
-                new: 'nieuw',
-                show: 'bekijk',
-                edit: 'wijzig',
-                destroy: 'wis'
-              }
+    resources :scores
   end
 
-  resources :players,
-            :path => "deelnemers",
-            :path_names => {
-              :index => 'overzicht',
-              :edit => 'wijzig',
-              :create => 'maak',
-              :points => 'punten',
-              :riders => 'renners'
-            } do
+  resources :players do
     member do
       get :points
       get :riders
@@ -39,19 +17,15 @@ TDF::Application.routes.draw do
   end
 
   resources :player_teams,
-            :only => [:show, :edit, :update],
-            :path => 'teams_van_deelnemers',
-            :path_names => {
-              :edit => 'wijzig'
-            } do
+            :only => [:show, :edit, :update] do
     member do
-      post :rider, :action => "add_rider"
-      delete :rider, :action => "remove_rider"
+      post :rider, :action => 'add_rider'
+      delete :rider, :action => 'remove_rider'
     end
   end
 
   resources :teams
-  resources :riders, :path => "wielrenners" do
+  resources :riders do
     collection do
       get :edit_index
       put :update_index
@@ -61,34 +35,24 @@ TDF::Application.routes.draw do
     end
   end
 
-  match "/rules" => "rules#show", :as => "rules", :path => 'spelregels'
+  match '/rules' => 'rules#show', :as => 'rules'
 
-  resources :rankings, :path => 'uitslagen' do
-    get :scores, :on => :collection, :path => "scores"
+  resources :rankings do
+    get :scores, :on => :collection
   end
 
-  resources :subpools, :path => 'subpoeles' do
+  resources :subpools do
 
   end
 
-  resources :subpool_players, :path => 'subpoele_spelers'
+  resources :subpool_players
 
-  resource :summary, :only => "show", :controller => "summary", :path => 'overzicht' do
-    get :not_found, :on => :collection, :path => "niets-gevonden"
+  resource :summary, :only => 'show', :controller => 'summary' do
+    get :not_found, :on => :collection
   end
 
-  resource :account, :only => "show", :controller => "account", :path => 'mijnpoele'
-  devise_for :players,
-             :path => "mijnpoele",
-             :path_names => {
-               :sign_in => 'inloggen',
-               :sign_out => 'uitloggen',
-               :password => 'wachtwoord',
-               :confirmation => 'bevestigen',
-               :unlock => 'unblock',
-               :registration => 'registreren',
-               :sign_up => 'aanmelden'
-             }
+  resource :account, :only => 'show', :controller => 'account'
+  devise_for :players
 
   root :to => 'summary#show'
 

@@ -6,7 +6,8 @@
 <%= render :partial => "subpools/list", :locals => {:subpools => @player.subpools} %>
 
 <h2>Team</h2>
-<%= render :partial => "riders/list", :locals => {:riders => @player.riders} %>
+<%= render :partial => "player_teams/riders",
+           :locals => { :player_riders => @player.player_riders } %>
 
 <div class="well">
   <% if can? :edit, @player %>

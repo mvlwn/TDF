@@ -20,7 +20,7 @@ class RiderDecorator < Draper::Decorator
   end
 
   def number
-    if rider.withdrawn
+    if rider.abandoned
       h.content_tag("span", rider.number, :class => "badge badge-important", :title => "Renner is afgestapt")
     else
       h.content_tag("span", rider.number, :class => "badge badge-success", :title => "Renner is in koers")
@@ -58,12 +58,12 @@ class RiderDecorator < Draper::Decorator
     h.number_to_euro(rider.efficiency_in_cents.to_f / 100)
   end
 
-  def withdrawn
-    rider.withdrawn ? "Ja" : "Nee"
+  def abandoned
+    rider.abandoned ? "Ja" : "Nee"
   end
 
   def in_race
-    !rider.withdrawn ? "Ja" : "Nee"
+    !rider.abandoned ? "Ja" : "Nee"
   end
 
 end

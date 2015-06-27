@@ -1,5 +1,4 @@
 class Score < ActiveRecord::Base
-  # attr_accessible :title, :body
 
   validates_presence_of :number, :category, :ranking, :points, :rider_id
   validates_numericality_of :number, :category, :ranking, :points
@@ -31,25 +30,40 @@ class Score < ActiveRecord::Base
   validates_presence_of :ranking, :points, :category, :stage_id, :number
   validates_inclusion_of :ranking, :in => 1..50
 
-  after_create :count_points
+  after_save :count_points
   after_destroy :count_points
   before_validation :find_rider
 
   def count_points
-    if rider
-      rider.update_attribute(:points, rider.scores.sum(:points))
-    end
+    update_rider_stage_points
+    update_rider_points
+  end
+
+  def rider_stage
+    RiderStage.find_or_initialize_by_rider_id_and_stage_id(rider_id, stage_id)
   end
 
   private
 
+  def update_rider_points
+    rider.update_attributes!(points: rider.scores.sum(:points))
+  end
+
+  def update_rider_stage_points
+    score_points = Score.where(rider_id: rider_id, stage_id: stage_id).sum(:points)
+    rider_stage.update_attributes!(points: score_points)
+  end
+
   def find_rider
-    rider = Rider.where(number: self.number).first
-    if rider
-      self.rider_id = rider.id
-    else
-      self.rider_id = nil
+    if rider_id.blank? && number.present?
+      rider = Rider.where(number: self.number).first
+      if rider
+        self.rider_id = rider.id
+      else
+        self.rider_id = nil
+      end
     end
+    true
   end
 
 end

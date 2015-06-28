@@ -20,8 +20,8 @@
       <td><%= score.ranking %></td>
       <td><%= score.points %></td>
       <td>
-        <%= link_to 'Wijzig', edit_stage_score_path(@stage, score), class: 'btn btn-small' %>
-        <%= link_to 'Wis', stage_score_path(@stage, score), class: 'btn btn-danger btn-small', method: :delete, confirm: 'Weet je het zeker?' %>
+        <%= link_to 'Wijzig', edit_stage_score_path(@stage, score), class: 'btn btn-default btn-sm' %>
+        <%= link_to 'Wis', stage_score_path(@stage, score), class: 'btn btn-danger btn-sm', method: :delete, confirm: 'Weet je het zeker?' %>
       </td>
     </tr>
   <% end %>
@@ -31,4 +31,5 @@
 <h3>Nieuwe score</h3>
 <%= render partial: 'form', locals: { score: Score.new, stage: @stage } %>
 
+<hr/>
 <%= link_to 'Terug naar het etappeoverzicht', stages_path, class: 'btn btn-default' %>

@@ -4,6 +4,10 @@
 		<th width="25%">Omschrijving</th>
 		<td width="75%"><%= @stage.description %></td>
 	</tr>
+  <tr>
+    <th>Datum</th>
+    <td><%= @stage.ridden_on(:long) %></td>
+  </tr>
 	<tr>
 		<th>Afstand</th>
 		<td><%= @stage.distance %></td>

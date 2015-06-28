@@ -57,8 +57,7 @@
 	</tbody>
 </table>
 
+<br/>
 
-<div class="well">
-  <%= link_to "Wijzig", edit_rider_path(@rider), :class => "btn" if can? :edit, Rider %>
-  <%= link_to "Alle renners", riders_path, :class => "btn" %>
-</div>
+<%= link_to "Wijzig", edit_rider_path(@rider), :class => "btn btn-default" if can? :edit, Rider %>
+<%= link_to "Alle renners", riders_path, :class => "btn btn-default" %>

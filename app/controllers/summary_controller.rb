@@ -20,7 +20,12 @@ class SummaryController < ApplicationController
     @riders = RiderDecorator.decorate_collection(Rider.active.order("points DESC").limit(10))
 
     # Selected player
-    player = Player.find_by_id(params[:player_id]) || current_player || @stage_players.first
+    if params[:player_id]
+      player = Player.find_by(id: params[:player_id])
+    else
+      player = current_player || @stage_players.first
+    end
+
     @player = player.decorate
   end
 

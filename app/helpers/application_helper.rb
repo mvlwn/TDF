@@ -27,7 +27,7 @@ module ApplicationHelper
   end
 
   def bool_icon(bool)
-    content_tag("i", "", :class => (bool ? "icon-ok" : "icon-remove"))
+    content_tag("i", "", :class => (bool ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-remove"))
   end
 
   def badge(content, type, show_badge = false)
@@ -40,7 +40,16 @@ module ApplicationHelper
 
   def flash_messages
     messages = flash.collect do |key, message|
-      content_tag("div", message, :class => "alert alert-#{key}")
+      case key
+        when :notice
+          alert_class = 'alert alert-info'
+        when :error
+          alert_class = 'alert alert-error'
+        else
+          alert_class = 'alert alert-warning'
+      end
+
+      content_tag("div", message, :class => alert_class)
     end
     messages.join("\n").html_safe
   end

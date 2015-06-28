@@ -19,7 +19,7 @@ class StagesController < ApplicationController
 
   def update
     @stage = Stage.find(params[:id])
-    if @stage.update_attributes(params[:stage])
+    if @stage.update_attributes(stage_params)
       redirect_to stage_path(@stage), :notice => "Etappe aangepast"
     else
       render :action => "edit"
@@ -29,6 +29,12 @@ class StagesController < ApplicationController
   def player_points
     @stages = Stage.all
     @players = Player.all
+  end
+
+  private
+
+  def stage_params
+    params.require(:stage).permit(:number, :name, :description, :distance, :ridden_on)
   end
 
 

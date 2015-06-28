@@ -1,6 +1,5 @@
 class PlayerRider < ActiveRecord::Base
-  # attr_accessible :title, :body
-  
+
   belongs_to :player
   belongs_to :rider
   belongs_to :substitute_rider, class_name: 'Rider', foreign_key: :substitute_rider_id

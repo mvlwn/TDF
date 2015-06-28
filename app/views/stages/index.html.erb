@@ -23,7 +23,7 @@
     <td><%= stage.distance %></td>
     <td class="center"><%= bool_icon stage.has_results? %></td>
     <% if can? :edit, stage %>
-    <td><%= link_to 'Scores', stage_scores_path(stage), class: 'btn btn-default' %></td>
+    <td><%= link_to 'Uitslagen', stage_scores_path(stage), class: 'btn btn-default btn-xs' %></td>
     <% end %>
   </tr>
   <% end %>

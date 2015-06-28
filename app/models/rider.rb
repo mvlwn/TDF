@@ -17,8 +17,8 @@ class Rider < ActiveRecord::Base
   before_update :handle_number_update, :set_efficiency
   after_update :update_player_points, :update_team_name
 
-  scope :active, where(:rejected => false)
-  scope :abandoned, where(:abandoned => true)
+  scope :active, -> { where(:rejected => false) }
+  scope :abandoned, -> { where(:abandoned => true) }
 
   def self.riders_picked
     Rider.joins(:player_riders).group(:rider_id).count(:rider_id).size

@@ -34,7 +34,7 @@
     <% if can? :create, Rider %>
       <div class="well">
         <%= submit_tag "Opslaan", :class => "btn btn-primary" %>
-        <%= link_to "Annuleren", riders_path(rider_params), :class => "btn" %>
+        <%= link_to "Annuleren", riders_path(rider_params), :class => "btn btn-default" %>
       </div>
     <% end %>
 

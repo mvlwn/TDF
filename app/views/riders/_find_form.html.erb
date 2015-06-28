@@ -1,15 +1,21 @@
-<%= form_tag nil, :method => :get, :id => "riders_search", :class => "well form-inline" do %>
-	<label class="control-label" for="name">Naam</label>
-	<%= text_field_tag "name", params[:name], :class => "input-small", :id => "name" %>
-
-	<label class="control-label" for="team_id">Team</label>
-	<%= select_tag "team_id", options_for_select_team_id, :class => "input-medium" %>
-
-	<label class="control-label" for="price_from">Prijs vanaf</label>
-	<%= select_tag "price_from", options_for_select_price_from, :class => "input-medium" %>
-
-	<label class="control-label" for="price_to">Prijs tot</label>
-	<%= select_tag "price_to", options_for_select_price_to, :class => "input-medium" %>
-
-	<%= submit_tag "Zoek", :class => "btn btn-primary" %>
+<%= form_tag nil, :method => :get, :id => "riders_search", :class => "form-inline" do %>
+  <div class="form-group">
+    <label class="control-label" for="name">Naam</label>
+    <%= text_field_tag "name", params[:name], :class => "form-control input-sm", :id => "name" %>
+  </div>
+  <div class="form-group">
+    <label class="control-label" for="team_id">Team</label>
+    <%= select_tag "team_id", options_for_select_team_id, :class => "form-control input-sm" %>
+  </div>
+  <div class="form-group">
+    <label class="control-label" for="price_from">Prijs vanaf</label>
+    <%= select_tag "price_from", options_for_select_price_from, :class => "form-control input-sm" %>
+  </div>
+  <div class="form-group">
+    <label class="control-label" for="price_to">Prijs tot</label>
+    <%= select_tag "price_to", options_for_select_price_to, :class => "form-control input-sm" %>
+  </div>
+  <div class="form-group">
+    <%= submit_tag "Zoek", :class => "btn btn-primary btn-sm" %>
+  </div>
 <% end %>

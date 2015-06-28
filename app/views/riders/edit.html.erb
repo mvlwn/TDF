@@ -1,12 +1,10 @@
 <h2>Wijzig renner</h2>
 
-<%= form_for @rider do |form| %>
+<%= form_for @rider, html: { class: 'form-horizontal' } do |form| %>
 
   <%= render form %>
 
-  <div class="well">
-    <%= form.submit "Opslaan", :class => "btn btn-primary" %>
-    <%= link_to "Annuleren", rider_path(@rider), :class => "btn" %>
-  </div>
+  <%= form.submit "Opslaan", :class => "btn btn-primary" %>
+  <%= link_to "Annuleren", rider_path(@rider), :class => "btn btn-default" %>
 
 <% end %>

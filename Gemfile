@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Base
-gem 'rails'
+gem 'rails', '~> 4.2.0'
 gem 'mysql2'
 gem 'json'
 
@@ -10,9 +10,13 @@ gem 'kaminari'
 
 # Javascript && CSS
 gem 'jquery-rails'
-gem 'therubyracer'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails', '~> 2.2.7'
+# gem 'therubyracer'
+gem 'sass-rails',   '~> 5.0.0'
+gem 'coffee-rails'
+gem 'uglifier'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-kaminari-views'
 
 # Decorator Pattern
 gem 'draper'
@@ -21,10 +25,10 @@ gem 'draper'
 gem 'devise'
 gem 'cancan'
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+gem 'dotenv-rails'
+
+group :development do
+  gem 'quiet_assets'
 end
 
 group :test, :development do
@@ -32,6 +36,7 @@ group :test, :development do
   gem 'growl'
   gem 'pry'
   gem 'pry-rails'
+  gem 'spring'
 end
 
 group :test do

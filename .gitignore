@@ -30,3 +30,4 @@
 .powrc
 .DS_Store
 .rbenv-version
+.env

@@ -1,0 +1,26 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+h1{
+  margin-bottom: 10px;
+}
+
+h2{
+  margin-bottom: 5px;
+}
+
+.table th, .table td{
+  &.center{
+    text-align: center;
+  }
+  &.left{
+    text-align: left;
+  }
+  &.right{
+    text-align: right;
+  }
+}
+
+table.table-small td{
+  font-size: 12px;
+}

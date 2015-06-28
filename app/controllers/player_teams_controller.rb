@@ -10,11 +10,17 @@ class PlayerTeamsController < ApplicationController
   end
 
   def edit
-    @player = PlayerDecorator.decorate(@player)
-    all_riders = Rider.active.order(riders_sort_order).page(params[:page])
-    riders = Rider.filter_riders(all_riders, params)
-    @riders = RiderDecorator.decorate_collection(riders)
-    @player_riders = RiderDecorator.decorate_collection(@player.riders.order(riders_sort_order))
+    if @player.can_pick_riders?
+      all_riders = Rider.active.order(riders_sort_order).page(params[:page])
+      all_riders = all_riders.where(price: 0..@player.budget_left)
+      riders = Rider.filter_riders(all_riders, params)
+      @riders = RiderDecorator.decorate_collection(riders)
+    else
+      @riders = []
+    end
+
+    @player_riders = PlayerRiderDecorator.decorate_collection(@player.player_riders.joins(:rider).order('riders.price DESC'))
+    @player = @player.decorate
   end
 
   def update
@@ -24,7 +30,7 @@ class PlayerTeamsController < ApplicationController
     @rider = Rider.find(params[:rider_id])
     begin
       @player.riders << @rider
-      redirect_to :back, :notice => "Renner toegevoegd"
+      redirect_to :back
     rescue
       flash[:error] = "Renner kon niet worden toegevoegd"
       redirect_to :back
@@ -34,7 +40,7 @@ class PlayerTeamsController < ApplicationController
   def remove_rider
     @rider = Rider.find(params[:rider_id])
     if @player.riders.delete(@rider)
-      redirect_to :back, :notice => "Renner verwijderd"
+      redirect_to :back
     else
       redirect_to :back, :error => "Renner kon niet worden verwijderd"
     end

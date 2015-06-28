@@ -35,7 +35,7 @@ TDF::Application.routes.draw do
     end
   end
 
-  match '/rules' => 'rules#show', :as => 'rules'
+  get '/rules' => 'rules#show', :as => 'rules'
 
   resources :rankings do
     get :scores, :on => :collection

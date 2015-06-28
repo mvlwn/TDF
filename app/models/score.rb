@@ -27,8 +27,7 @@ class Score < ActiveRecord::Base
   scope :combativeness, -> { where(category: COMBATIVENESS_CATEGORY_ID) }
   scope :yellow_last, -> { where(category: YELLOW_LAST_CATEGORY_ID) }
 
-  validates_presence_of :ranking, :points, :category, :stage_id, :number
-  validates_inclusion_of :ranking, :in => 1..50
+  validates_presence_of :points, :category, :stage_id, :number
 
   after_save :count_points
   after_destroy :count_points

@@ -5,8 +5,6 @@ class Player < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :team_name, :email, :password, :password_confirmation, :remember_me, :disabled, :paid
   attr_accessor :sorted_points
 
   BUDGET = 15000
@@ -24,7 +22,7 @@ class Player < ActiveRecord::Base
   validates :name, :presence => true, :uniqueness => true
   validates :team_name, :presence => true, :uniqueness => true
 
-  scope :active, where(:disabled => false)
+  scope :active, -> { where(:disabled => false) }
 
   after_update :clear_team_if_disabled
 
@@ -53,11 +51,19 @@ class Player < ActiveRecord::Base
   end
 
   def budget
-    BUDGET - expenses
+    BUDGET
   end
 
   def expenses
     riders.sum(:price)
+  end
+
+  def budget_left
+    budget - expenses
+  end
+
+  def max_riders
+    MAX_RIDERS
   end
 
   def riders_to_pick

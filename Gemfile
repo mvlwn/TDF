@@ -10,7 +10,7 @@ gem 'kaminari'
 
 # Javascript && CSS
 gem 'jquery-rails'
-# gem 'therubyracer'
+gem 'therubyracer'
 gem 'sass-rails',   '~> 5.0.0'
 gem 'coffee-rails'
 gem 'uglifier'
@@ -55,6 +55,8 @@ end
 
 # Deploy with Capistrano
 gem 'capistrano'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
 
 # To use debugger
-# gem 'ruby-debug'
+# gem 'ruby-debug4

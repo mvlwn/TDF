@@ -1,5 +1,7 @@
 TDF::Application.routes.draw do
 
+  devise_for :players
+
   resources :stages,
             :only => [:index, :show, :edit, :update] do
     collection do
@@ -52,7 +54,6 @@ TDF::Application.routes.draw do
   end
 
   resource :account, :only => 'show', :controller => 'account'
-  devise_for :players
 
   root :to => 'summary#show'
 

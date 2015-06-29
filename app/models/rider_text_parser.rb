@@ -18,8 +18,8 @@ class RiderTextParser
 
   # 200	Jean-Christophe 	Peraud 	AG2R La Mondiale	K	15
   def build_rider_and_team(data)
-    team = Team.find_or_create_by_name(data[3])
-    rider = Rider.find_or_create_by_ad_code(data[0])
+    team = Team.find_or_create_by(name: data[3])
+    rider = Rider.find_or_create_by(ad_code: data[0])
     begin
       rider.update_attributes(
           :first_name => data[1] || 'Missing',

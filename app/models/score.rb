@@ -39,7 +39,7 @@ class Score < ActiveRecord::Base
   end
 
   def rider_stage
-    RiderStage.find_or_initialize_by_rider_id_and_stage_id(rider_id, stage_id)
+    RiderStage.find_or_initialize_by(rider_id: rider_id, stage_id: stage_id)
   end
 
   private

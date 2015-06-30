@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+
   protect_from_forgery
 
   rescue_from CanCan::AccessDenied do
@@ -11,6 +13,10 @@ class ApplicationController < ActionController::Base
   helper_method :riders_sort_column, :riders_sort_direction, :race_started?
 
   private
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << [:name, :team_name]
+  end
 
   # Help for CanCan
   def current_ability

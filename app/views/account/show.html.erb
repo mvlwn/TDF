@@ -15,7 +15,9 @@
   <%= link_to "Wijzig team", edit_player_team_path(@player), :class => "btn btn-default" %>
 <% end %>
 
+<h2>Mijn subpoeles</h2>
+<%= render :partial => "subpools/list", :locals => {:subpools => @player.subpools} %>
+
+
 <h2>Mijn gegevens</h2>
 <%= render :partial => "players/shared/information", :locals => {:player => @player} %>
-
-<%= render :partial => "subpools/list", :locals => {:subpools => @player.subpools} %>

@@ -27,7 +27,7 @@
         <td>
           <%= link_to rider.name, rider_path(rider) %>
         </td>
-        <td><%= link_to rider.team_name, team_path(rider.team_id) %></td>
+        <td><%= link_to rider.team_name, riders_path(team_id: rider.team_id) %></td>
         <td><%= link_to substitute.name, rider_path(rider) %></td>
         <td><%= rider.price %></td>
         <td class="center"><%= rider.points %></td>

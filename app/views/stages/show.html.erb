@@ -2,20 +2,23 @@
 
 <%= render :partial => "navigation" %>
 
-<%= render :partial => "stage_information" %>
-
-<% if can? :edit, Stage %>
-  <%= link_to "Wijzig", edit_stage_path(@stage), :class => "btn btn-default" %>
-  <%= link_to "Scores", stage_scores_path(@stage), :class => "btn btn-default" %>
-<% end %>
-
 <div class="row">
-	<div class="span6">
+  <div class="col-md-3 col-sm-12">
+    <h2>Gegevens</h2>
+    <%= render :partial => "stage_information" %>
+    <% if can? :edit, Stage %>
+      <%= link_to "Wijzig", edit_stage_path(@stage), :class => "btn btn-default" %>
+      <%= link_to "Scores", stage_scores_path(@stage), :class => "btn btn-default" %>
+    <% end %>
+  </div>
+  <div class="col-md-5 col-sm-6">
 		<h2 id="player_ranking">De ploegen</h2>
 		<%= render :partial => "shared/player_ranking", :locals => {:players => @sorted_players, :stage => @stage} %>
 	</div>
-	<div class="span6">
-		<h2 id="rider_ranking">De renners</h2>
-		<%= render :partial => "shared/rider_ranking", :locals => {:riders => @sorted_riders, :stage => @stage} %>
+	<div class="col-md-4 col-sm-6">
+    <% if @sorted_riders.any? %>
+		  <h2 id="rider_ranking">De renners</h2>
+		  <%= render :partial => "shared/rider_ranking", :locals => {:riders => @sorted_riders, :stage => @stage} %>
+    <% end %>
 	</div>
 </div>

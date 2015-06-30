@@ -15,8 +15,8 @@ class ScoresController < ApplicationController
   end
 
   def create
-    @score = Score.new(stage: @stage)
-    if @score.update_attributes(params[:score])
+    @score = Score.new(score_params)
+    if @score.save
       flash[:notice] = 'Punten opgeslagen'
       redirect_to stage_scores_path(@stage)
     else
@@ -28,7 +28,7 @@ class ScoresController < ApplicationController
   end
 
   def update
-    if @score.update_attributes(params[:score])
+    if @score.update_attributes(score_params)
       flash[:notice] = 'Punten opgeslagen'
       redirect_to stage_scores_path(@stage)
     else
@@ -42,6 +42,11 @@ class ScoresController < ApplicationController
   end
 
   private
+
+  def score_params
+    params[:score][:stage_id] = params[:stage_id]
+    params.require(:score).permit(:number, :category, :points, :stage_id)
+  end
 
   def set_stage
     @stage = Stage.find(params[:stage_id]).decorate

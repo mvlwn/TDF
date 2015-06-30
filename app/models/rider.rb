@@ -48,7 +48,7 @@ class Rider < ActiveRecord::Base
   # Update all scores where no rider_id is present, and where the number corresponds. Set the rider_id, and update the points
   def handle_number_update
     if number_changed?
-      Score.update_all("rider_id = #{self.id}", { :number => self.number })
+      Score.where(number: self.number).update_all(rider_id: self.id)
       self.points = scores.sum(:points)
     end
   end

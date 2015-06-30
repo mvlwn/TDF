@@ -4,7 +4,7 @@
 	<tbody>
 	<tr>
 		<th width="25%">Team</th>
-		<td width="75%"><%= link_to @rider.team_name, team_path(@rider.team) %></td>
+		<td width="75%"><%= link_to @rider.team_name, riders_path(team_id: @rider.team_id) %></td>
 	</tr>
 	<tr>
 		<th>Wedstrijdnummer</th>

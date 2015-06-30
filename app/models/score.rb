@@ -1,9 +1,8 @@
 class Score < ActiveRecord::Base
 
-  validates_presence_of :number, :category, :ranking, :points, :rider_id
-  validates_numericality_of :number, :category, :ranking, :points
+  validates_presence_of :number, :category, :points, :rider_id
+  validates_numericality_of :number, :category, :points
   validates_uniqueness_of :number, scope: [:category, :stage_id]
-  validates_uniqueness_of :ranking, scope: [:category, :stage_id]
 
   belongs_to :stage
   belongs_to :rider
@@ -16,6 +15,7 @@ class Score < ActiveRecord::Base
     5 => 'Rode Lantaarn'
   }
   YELLOW_CATEGORY_ID = 1
+
   GREEN_CATEGORY_ID = 2
   DOTTED_CATEGORY_ID = 3
   COMBATIVENESS_CATEGORY_ID = 4

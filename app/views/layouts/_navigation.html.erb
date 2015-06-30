@@ -16,12 +16,14 @@
         <li<% if controller?("account") %> class="active"<% end %>><%= link_to "Mijn poele", account_path %></li>
         <li<% if controller?("rankings") %> class="active"<% end %>><%= link_to "Klassement", rankings_path %></li>
         <li<% if controller?("stages") %> class="active"<% end %>><%= link_to "Etappes", stages_path %></li>
+        <% if can? :edit, Team %>
         <li<% if controller?("teams") %> class="active"<% end %>><%= link_to "Teams", teams_path %></li>
+        <% end %>
         <li<% if controller?("riders") %> class="active"<% end %>><%= link_to "Renners", riders_path %></li>
         <% if player_signed_in? %>
           <li<% if controller?("players", "player_teams") %> class="active"<% end %>><%= link_to "Deelnemers", players_path %></li>
         <% end %>
-        <li<% if controller?("rules") %> class="active"<% end %>><%= link_to "Regels en puntentelling", rules_path %></li>
+        <li<% if controller?("rules") %> class="active"<% end %>><%= link_to "Spelregels", rules_path %></li>
       </ul>
     </div>
   </div>

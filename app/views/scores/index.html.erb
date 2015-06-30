@@ -1,35 +1,39 @@
-<%= content_for(:title, "Rit #{@stage.number} punten") %>
+<%= content_for(:title, "#{@stage.number}: #{@stage.name}") %>
 
-<table class="table">
-  <thead>
-  <tr>
-    <th>Nummer</th>
-    <th>Renner</th>
-    <th>Categorie</th>
-    <th>Uitslag</th>
-    <th>Punten</th>
-    <th></th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @scores.each do |score| %>
-    <tr>
-      <td><%= score.number %></td>
-      <td><%= score.rider_name %></td>
-      <td><%= score.category_name %></td>
-      <td><%= score.ranking %></td>
-      <td><%= score.points %></td>
-      <td>
-        <%= link_to 'Wijzig', edit_stage_score_path(@stage, score), class: 'btn btn-default btn-sm' %>
-        <%= link_to 'Wis', stage_score_path(@stage, score), class: 'btn btn-danger btn-sm', method: :delete, confirm: 'Weet je het zeker?' %>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<h3>Nieuwe score</h3>
-<%= render partial: 'form', locals: { score: Score.new, stage: @stage } %>
+<div class="row">
+  <div class="col-md-8 col-xs-12">
+    <h2>Scores</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Nummer</th>
+        <th>Renner</th>
+        <th>Categorie</th>
+        <th class="center">Punten</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @scores.each do |score| %>
+        <tr>
+          <td><%= score.number %></td>
+          <td><%= score.rider_name %></td>
+          <td><%= score.category_name %></td>
+          <td class="center"><%= score.points %></td>
+          <td>
+            <%= link_to 'Wijzig', edit_stage_score_path(@stage, score), class: 'btn btn-default btn-xs' %>
+            <%= link_to 'Wis', stage_score_path(@stage, score), class: 'btn btn-danger btn-xs', method: :delete, confirm: 'Weet je het zeker?' %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-4 col-sm-6 col-xs-8">
+    <h2>Nieuwe score</h2>
+    <%= render partial: 'form', locals: { score: Score.new, stage: @stage } %>
+  </div>
+</div>
 
 <hr/>
 <%= link_to 'Terug naar het etappeoverzicht', stages_path, class: 'btn btn-default' %>

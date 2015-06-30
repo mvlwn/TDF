@@ -10,7 +10,7 @@ class SubpoolsController < ApplicationController
   end
 
   def create
-    @subpool = Subpool.new(params[:subpool])
+    @subpool = Subpool.new(subpool_params)
     @subpool.creator = current_player
     if @subpool.save
       SubpoolPlayer.create(subpool: @subpool, player: current_player)
@@ -37,7 +37,7 @@ class SubpoolsController < ApplicationController
       flash[:error] = 'Je mag deze subpoele niet wijzigen'
       redirect_to account_path
     end
-    if @subpool.update_attributes(params[:subpool])
+    if @subpool.update_attributes(subpool_params)
       flash[:notice] = "Subpoele gewijzigd"
       redirect_to account_path
     else
@@ -60,6 +60,12 @@ class SubpoolsController < ApplicationController
       flash[:error] = 'Subpool bestaat niet'
     end
     redirect_to account_path
+  end
+
+  private
+
+  def subpool_params
+    params.require(:subpool).permit(:name)
   end
 
 end

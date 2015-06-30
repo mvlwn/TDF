@@ -16,7 +16,7 @@ class TeamsController < ApplicationController
   end
 
   def update
-    if @team.update_attributes(params[:team])
+    if @team.update_attributes(team_params)
       flash[:notice] = "Team aangepast"
       redirect_to team_path(@team)
     else
@@ -24,5 +24,13 @@ class TeamsController < ApplicationController
     end
 
   end
+
+  private
+
+  def team_params
+    params.require(:team).permit(:name, { riders_attributes: [ :price, :number, :confirmed, :rejected, :abandoned, :id] })
+  end
+
+
 
 end

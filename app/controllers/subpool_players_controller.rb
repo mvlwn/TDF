@@ -10,7 +10,7 @@ class SubpoolPlayersController < ApplicationController
   end
 
   def create
-    @subpool_player = SubpoolPlayer.new(params[:subpool_player])
+    @subpool_player = SubpoolPlayer.new(subpool_player_params)
     @subpool_player.player = current_player
     if @subpool_player.save
       flash[:notice] = "Aangemeld bij Subpoele"
@@ -40,6 +40,12 @@ class SubpoolPlayersController < ApplicationController
       flash[:notice] = "Subpoele bestaat niet"
     end
     redirect_to account_path
+  end
+
+  private
+
+  def subpool_player_params
+    params.require(:subpool_player).permit(:subpool_id)
   end
 
 end

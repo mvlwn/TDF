@@ -1,9 +1,11 @@
 
 <%= error_messages_for(form.object) %>
 
-<div>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
+<div class="form-group">
+  <%= form.label :name, class: 'control-label col-xs-2' %>
+  <div class="col-xs-4">
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
 </div>
 
 <table class="table table-condensed" style="width: auto;">
@@ -19,11 +21,12 @@
 	</thead>
 	<tbody>
 	<%= form.fields_for :riders do |rider_form| %>
-		<% rider = RiderDecorator.decorate_collection(rider_form.object) %>
+    <%= rider_form.hidden_field :id %>
+		<% rider = rider_form.object.decorate %>
 		<tr>
 			<td><%= rider.name %></td>
-			<td><%= rider_form.text_field :number, :class => "input-mini" %></td>
-      <td><%= rider_form.text_field :price, :class => "input-mini" %></td>
+			<td><%= rider_form.text_field :number, :class => "form-control input-xs" %></td>
+      <td><%= rider_form.text_field :price, :class => "form-control input-xs" %></td>
       <td class="center"><%= rider_form.check_box :confirmed, :class => "" %></td>
       <td class="center"><%= rider_form.check_box :rejected, :class => "" %></td>
       <td class="center"><%= rider_form.check_box :abandoned, :class => "" %></td>

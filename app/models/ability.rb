@@ -15,6 +15,7 @@ class Ability
       can :read, Stage
       can :read, Rider
       can :read, Team
+      can :read, Score
       can :show, Player do |p|
         Time.now() > Player::MAX_EDIT_TIME
       end

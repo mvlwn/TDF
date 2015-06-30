@@ -12,12 +12,10 @@
  *= require_tree .
  *= require bootstrap-datepicker3
  */
-@import url(http://fonts.googleapis.com/css?family=Anton);
-
 
 @media (max-width: 979px) {
   .content{
-    padding-top: 0px;
+    padding: 0px 20px;
   }
 }
 
@@ -45,7 +43,6 @@ a.logo .poele{
 a.logo .year{
   color: yellow;
 }
-
 
 .quiet{
   color: #aaa;

@@ -4,9 +4,8 @@
   <tr>
     <th width="5%"></th>
     <th width="35%">Team</th>
-    <th width="30%">Manager</th>
-    <th width="20%">Punten</th>
-    <th width="10%"></th>
+    <th width="35%">Manager</th>
+    <th width="15%">Punten</th>
 		<th width="10%"></th>
   </tr>
   </thead>
@@ -24,7 +23,6 @@
         <span class="quiet small">+<%= points - player.points_till_stage(@stage.previous) %></span>
         <% end %>
       </td>
-      <td></td>
 			<td class="center">
         <%= link_to_player_result(player, @player, stage) if stage %>
       </td>

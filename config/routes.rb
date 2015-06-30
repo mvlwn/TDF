@@ -50,6 +50,7 @@ TDF::Application.routes.draw do
   resources :subpool_players
 
   resource :summary, :only => 'show', :controller => 'summary' do
+    get :signup, on: :collection
     get :not_found, :on => :collection
   end
 

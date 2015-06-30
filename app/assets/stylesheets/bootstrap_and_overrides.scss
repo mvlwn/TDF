@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Francois+One);
 //@import "bootstrap_variables";
 
 $font-family-sans-serif:  Lato, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
@@ -7,6 +8,11 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 
+//$headings-font-family:    inherit !default;
+$headings-font-family:  'Francois One', $font-family-sans-serif;
+$headings-font-weight:    700 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -33,4 +39,9 @@ h2{
 
 table.table-small td{
   font-size: 12px;
+}
+
+.jumbotron{
+  background-color: lighten(#FFDF13, 40%);
+  border: 1px #FFDF13 solid;
 }

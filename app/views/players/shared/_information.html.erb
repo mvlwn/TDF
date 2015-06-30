@@ -29,9 +29,14 @@
   <tr>
     <th>Geld overgemaakt</th>
     <td>
-			<%= player.paid %>
-			<% unless player.paid? %>
-				<span class="label label-warning">Het bedrag van €5,- kan overgemaakt worden naar rekeningnummer 155086073 t.n.v. B. Langeveld </span>
+			<% if player.paid? %>
+        <div class="alert alert-success">
+          Het bedrag is overgemaakt
+        </div>
+      <% else %>
+				<div class="alert alert-info">
+          Het bedrag van €5,- kan overgemaakt worden naar IBAN NL92RABO0155086073 t.n.v. B. Langeveld
+        </div>
 			<% end %>
 		</td>
   </tr>

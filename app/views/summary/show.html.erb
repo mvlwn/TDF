@@ -1,4 +1,4 @@
-<%= content_for(:title, "Welkom bij Toerdepoele!") %>
+<%= content_for(:title, "Overzicht") %>
 <ul class="nav nav-tabs">
   <li class="active"><a href="#stage_ranking" data-toggle="tab">Dagklassement etappe <%= @stage.number %></a></li>
   <li><a href="#overall_ranking" data-toggle="tab">Algemeen klassement</a></li>
@@ -43,6 +43,7 @@
 </div>
 
 <br />
+
 <% unless player_signed_in? %>
 <div class="well">
   <%= link_to "Meld je aan", new_registration_path(Player), :class => "btn btn-warning" %>

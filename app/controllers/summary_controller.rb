@@ -1,6 +1,9 @@
 class SummaryController < ApplicationController
 
+  before_filter :check_sign_in, only: [:show]
+
   def show
+
     @riders_count = Rider.count
     @stages = StageDecorator.decorate_collection(Stage.order("id"))
 
@@ -29,8 +32,22 @@ class SummaryController < ApplicationController
     @player = player.decorate
   end
 
+  def signup
+    @players = PlayerDecorator.decorate_collection Player.active
+  end
+
   def not_found
 
+  end
+
+  private
+
+  def check_sign_in
+    if player_signed_in?
+      true
+    else
+      redirect_to signup_summary_path
+    end
   end
 
 end

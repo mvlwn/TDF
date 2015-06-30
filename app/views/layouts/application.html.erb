@@ -27,7 +27,9 @@
       <div class="content">
         <div class="row">
           <div class="span12">
+            <% if content_for?(:title) %>
             <h1><%= yield(:title) %></h1>
+            <% end %>
             <%= flash_messages %>
             <%= yield %>
           </div>

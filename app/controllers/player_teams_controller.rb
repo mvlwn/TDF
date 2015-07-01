@@ -23,6 +23,41 @@ class PlayerTeamsController < ApplicationController
     @player = @player.decorate
   end
 
+  def pick_substitute
+    player_rider = PlayerRider.find(params[:player_rider_id])
+    all_riders = Rider.active.order(riders_sort_order).page(params[:page])
+    all_riders = all_riders.where(price: 0..player_rider.rider.substitute_price)
+    riders = Rider.filter_riders(all_riders, params)
+    @player_rider = player_rider.decorate
+    @riders = RiderDecorator.decorate_collection(riders)
+    @player = @player.decorate
+  end
+
+  def add_substitute
+    @player_rider = PlayerRider.find(params[:player_rider_id])
+    @rider = Rider.find(params[:rider_id])
+    @player_rider.substitute_rider = @rider
+    if @player_rider.save
+      redirect_to edit_player_team_path(@player)
+    else
+      flash[:error] = "Renner kon niet worden toegevoegd"
+      redirect_to :back
+    end
+  end
+
+  def remove_substitute
+    @player_rider = PlayerRider.find(params[:player_rider_id])
+    @rider = Rider.find(params[:substitute_rider_id])
+    @player_rider.substitute_rider = nil
+
+    if @player_rider.save
+      redirect_to edit_player_team_path(@player)
+    else
+      flash[:error] = "Renner kon niet worden verwijderd"
+      redirect_to :back
+    end
+  end
+
   def update
   end
 

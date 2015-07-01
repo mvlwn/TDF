@@ -1,0 +1,75 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      Kies reserverenner voor <%= @player_rider.rider.name %>
+      <span class="label label-primary"><%= @player_rider.rider.substitute_price %></span>
+    </h3>
+  </div>
+  <div class="panel-body">
+
+    <% if @player.can_pick_riders? && @player.budget_left? %>
+
+      <%= form_tag nil, :method => :get, :id => "riders_search", :class => "well" do %>
+        <%= hidden_field_tag 'player_rider_id', params[:player_rider_id] %>
+        <div class="row">
+          <label class="input-sm col-xs-1" for="name">Naam</label>
+          <div class="col-xs-4">
+            <%= text_field_tag 'name', params[:name], :class => "form-control input-sm", :id => "name" %>
+          </div>
+
+          <label class="input-sm col-xs-1" for="team_id col-xs-1">Team</label>
+          <div class="col-xs-5">
+            <%= select_tag 'team_id', options_for_select_team_id, :class => "form-control input-sm col-xs-5" %>
+          </div>
+        </div>
+
+        <div class="row">
+          <label class="input-sm col-xs-1" for="price_from">Prijs</label>
+          <div class="col-xs-4">
+            <%= select_tag "price_from", options_for_select_price_from, :class => "form-control input-sm" %>
+          </div>
+          <label class="input-sm col-xs-1" for="price_to">t/m</label>
+          <div class="col-xs-4">
+            <%= select_tag "price_to", options_for_select_price_to, :class => "form-control input-sm" %>
+          </div>
+          <div class="col-xs-2">
+            <%= submit_tag 'Zoek', class: 'btn btn-default btn-sm' %>
+          </div>
+        </div>
+      <% end %>
+      <% if @riders.any? %>
+        <% @riders.each do |rider| %>
+
+          <div class="row" style="margin-top: 4px;">
+            <div class="col-xs-10">
+              <div class="row">
+                <div class="col-xs-5 col-sm-12 col-lg-5"><b><%= rider.name %></b></div>
+                <div class="col-xs-4 col-sm-6 col-lg-4"><small><%= rider.team_name %></small></div>
+                <div class="col-xs-3 col-sm-6 col-lg-3"><%= rider.price %></div>
+              </div>
+            </div>
+            <div class="col-xs-2">
+              <%= link_to content_tag("span", "", :class => "glyphicon glyphicon-plus"),
+                          substitute_player_team_path(@player, player_rider_id: @player_rider.id, rider_id: rider.id),
+                          :method => :post,
+                          :class => "btn btn-primary btn-xs",
+                          :title => "Kies renner" %>
+            </div>
+          </div>
+        <% end %>
+
+        <%= paginate @riders, theme: 'twitter-bootstrap-3' %>
+
+      <% else %>
+        <div class="alert alert-info">
+          Geen renners gevonden
+        </div>
+      <% end %>
+    <% else %>
+      <div class="alert alert-info">
+        <b>Geen renners</b>
+        <p>Er zijn geen renners gevonden. Dit komt omdat je team compleet is of omdat je budget op is.</p>
+      </div>
+    <% end %>
+  </div>
+</div>

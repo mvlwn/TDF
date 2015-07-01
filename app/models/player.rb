@@ -63,6 +63,10 @@ class Player < ActiveRecord::Base
     budget - expenses
   end
 
+  def budget_left?
+    budget_left > 0
+  end
+
   def max_riders
     MAX_RIDERS
   end

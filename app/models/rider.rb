@@ -39,6 +39,15 @@ class Rider < ActiveRecord::Base
     end
   end
 
+  def substitute_price
+    p = price.to_i * 0.5
+    if p > 500
+      p
+    else
+      500
+    end
+  end
+
   def update_player_points
     PlayerRider.where('rider_id = ? OR substitute_rider_id = ?', id, id).each do |player_rider|
       player_rider.count_points

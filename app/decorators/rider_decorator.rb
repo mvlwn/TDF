@@ -16,7 +16,7 @@ class RiderDecorator < Draper::Decorator
   end
 
   def substitute_price
-    h.number_to_euro(model.price * 0.80 * Player::BUDGET_MULTIPLIER)
+    h.number_to_euro(model.substitute_price * Player::BUDGET_MULTIPLIER)
   end
 
   def role

@@ -21,6 +21,9 @@ TDF::Application.routes.draw do
   resources :player_teams,
             :only => [:show, :edit, :update] do
     member do
+      get :pick_substitute, action: 'pick_substitute'
+      post :substitute, action: 'add_substitute'
+      delete :substitute, :action => 'remove_substitute'
       post :rider, :action => 'add_rider'
       delete :rider, :action => 'remove_rider'
     end

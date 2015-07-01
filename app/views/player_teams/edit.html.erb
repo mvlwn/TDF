@@ -38,41 +38,35 @@
         <h3 class="panel-title">Mijn Reserves</h3>
       </div>
       <div class="panel-body">
-
-        <% if 1 == 0 %>
-          <div class="row">
-            <div class="col-xs-1"></div>
-            <div class="col-xs-4">Naam</div>
-            <div class="col-xs-3">Team</div>
-            <div class="col-xs-3">Waarde/Budget</div>
-          </div>
-          <% @player_riders.each_with_index do |player_rider, index| %>
-            <div class="row">
-              <div class="col-xs-1"><span class="badge"><%= index + 1 %></span></div>
+        <% @player_riders.each_with_index do |player_rider, index| %>
+          <div class="row" style="margin-top: 4px;">
+            <div class="col-xs-1"><span class="badge"><%= index + 1 %></span></div>
+            <div class="col-xs-9">
+              <div class="row">
+                <% if player_rider.substitute_rider %>
+                  <div class="col-xs-5 col-sm-12 col-lg-5"><b><%= player_rider.substitute_rider.name %></b></div>
+                  <div class="col-xs-4 col-sm-6 col-lg-4"><small><%= player_rider.substitute_rider.team_name %></small></div>
+                  <div class="col-xs-3 col-sm-6 col-lg-3"><%= player_rider.substitute_rider.price %></div>
+                <% else %>
+                  <div class="col-xs-8 col-sm-12 col-lg-8">Reserve voor <b><%= player_rider.rider.name %></b></div>
+                  <div class="col-xs-4 col-sm-12 col-lg-4">t.w.v. <%= player_rider.rider.substitute_price %></div>
+                <% end %>
+              </div>
+            </div>
+            <div class="col-xs-2">
               <% if player_rider.substitute_rider %>
-                <div class="col-xs-4"><b><%= player_rider.substitute_rider.name %></b></div>
-                <div class="col-xs-3"><small><%= player_rider.substitute_rider.team_name %></small></div>
-                <div class="col-xs-3"><%= player_rider.substitute_rider.price %></div>
-                <div class="col-xs-1">
-                  <%= link_to content_tag('span', '', class: 'glyphicon glyphicon-minus' ),
-                              rider_player_team_path(@player, :substitute_rider_id => player_rider.substitute_rider.id),
-                              :method => :delete,
-                              :class => "btn btn-danger btn-xs",
-                              :title => "Haal renner uit team" %>
-                </div>
+                <%= link_to content_tag('span', '', class: 'glyphicon glyphicon-minus' ),
+                            substitute_player_team_path(@player, player_rider_id: player_rider.id, substitute_rider_id: player_rider.substitute_rider.id),
+                            :method => :delete,
+                            :class => "btn btn-danger btn-xs",
+                            :title => "Haal renner uit team" %>
               <% else %>
-                <div class="col-xs-4"></div>
-                <div class="col-xs-3"></div>
-                <div class="col-xs-3"><%= player_rider.rider.substitute_price %></div>
-                <div class="col-xs-1">
-                  <%= link_to 'Kies', '#', class: 'btn btn-default btn-xs' %>
-                </div>
+                <%= link_to 'Kies',
+                            pick_substitute_player_team_path(@player, :player_rider_id => player_rider.id),
+                            class: 'btn btn-default btn-xs',
+                            title: 'Kies een reserverenner' %>
               <% end %>
             </div>
-          <% end %>
-        <% else %>
-          <div class="alert alert-warning">
-            <b>Reserverenners kunnen worden gekozen wanneer de rennerslijst definitief is</b>
           </div>
         <% end %>
 
@@ -89,7 +83,7 @@
       </div>
       <div class="panel-body">
 
-        <% if @riders.any? %>
+        <% if @player.can_pick_riders? && @player.budget_left? %>
 
 
           <%= form_tag nil, :method => :get, :id => "riders_search", :class => "well" do %>
@@ -120,24 +114,32 @@
               </div>
             </div>
           <% end %>
+          <% if @riders.any? %>
+            <% @riders.each do |rider| %>
 
-          <% @riders.each do |rider| %>
-
-            <div class="row" style="margin-top: 4px;">
-              <div class="col-xs-10">
-                <div class="row">
-                  <div class="col-xs-5 col-sm-12 col-lg-5"><b><%= rider.name %></b></div>
-                  <div class="col-xs-4 col-sm-6 col-lg-4"><small><%= rider.team_name %></small></div>
-                  <div class="col-xs-3 col-sm-6 col-lg-3"><%= rider.price %></div>
+              <div class="row" style="margin-top: 4px;">
+                <div class="col-xs-10">
+                  <div class="row">
+                    <div class="col-xs-5 col-sm-12 col-lg-5"><b><%= rider.name %></b></div>
+                    <div class="col-xs-4 col-sm-6 col-lg-4"><small><%= rider.team_name %></small></div>
+                    <div class="col-xs-3 col-sm-6 col-lg-3"><%= rider.price %></div>
+                  </div>
+                </div>
+                <div class="col-xs-2">
+                  <%= link_to content_tag("span", "", :class => "glyphicon glyphicon-plus"),
+                              rider_player_team_path(@player, :rider_id => rider.id),
+                              :method => :post,
+                              :class => "btn btn-primary btn-xs",
+                              :title => "Kies renner" %>
                 </div>
               </div>
-              <div class="col-xs-2">
-                <%= link_to content_tag("span", "", :class => "glyphicon glyphicon-plus"),
-                            rider_player_team_path(@player, :rider_id => rider.id),
-                            :method => :post,
-                            :class => "btn btn-primary btn-xs",
-                            :title => "Kies renner" %>
-              </div>
+            <% end %>
+
+            <%= paginate @riders, theme: 'twitter-bootstrap-3' %>
+
+          <% else %>
+            <div class="alert alert-info">
+              Geen renners gevonden
             </div>
           <% end %>
         <% else %>

@@ -1,7 +1,7 @@
 <div class="jumbotron">
   <div class="container">
     <h1>Wie wint de tour van 2015?</h1>
-    <p>Meld je aan voor de leukste Tour de France Pool van Nederland</p>
+    <p>Meld je aan voor de leukste Tour de France pool van Nederland</p>
     <div class="row hidden-xs">
       <div class="col-sm-4 text-center">
         <h4>Alberto Contador</h4>
@@ -18,10 +18,10 @@
     </div>
 
     <% unless player_signed_in? %>
-      <h3>Meld je nu aan of login op je poele</h3>
-      <p>De regels zijn simpel, 9 renners 9 reservers 5 euro in de pot en alles wordt uitgekeerd.</p>
+      <h3>Meld je nu aan of login op je pool</h3>
+      <p>De regels zijn simpel, 9 renners 9 reserverenners 5 euro in de pot en alles wordt uitgekeerd.</p>
       <%= link_to "Meld je aan", new_registration_path(Player), :class => "btn btn-primary btn-lg" %>
-      <%= link_to "Login op je poele", new_session_path(Player), :class => "btn btn-default btn-lg" %>
+      <%= link_to "Login op je pool", new_session_path(Player), :class => "btn btn-default btn-lg" %>
     <% end %>
   </div>
 </div>

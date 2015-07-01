@@ -22,10 +22,10 @@ class Ability
       
       if !player.new_record? && !player.disabled?
         can :index, Player
-        cannot [:edit, :add_rider, :remove_rider], Player do |p|
+        cannot [:edit, :pick_substitute, :add_substitute, :remove_substitute, :add_rider, :remove_rider], Player do |p|
           Time.now() > Player::MAX_EDIT_TIME
         end
-        can [:show, :edit, :update, :add_rider, :remove_rider], Player do |p|
+        can [:show, :edit, :update, :pick_substitute, :add_substitute, :remove_substitute, :add_rider, :remove_rider], Player do |p|
           player.try(:id) == p.id && Time.now() < Player::MAX_EDIT_TIME
         end
       end

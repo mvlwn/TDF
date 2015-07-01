@@ -23,8 +23,16 @@
       <%= link_to "Meld je aan", new_registration_path(Player), :class => "btn btn-primary btn-lg" %>
       <%= link_to "Login op je pool", new_session_path(Player), :class => "btn btn-default btn-lg" %>
     <% end %>
+
+    <br>
+    <br>
+    <p>
+      <b>En zoek je nog goede redenen om naar de Tour van 2015 uit te kijken?</b><br>
+      <%= link_to 'Lees dan hier 99 redenen om niets van de Tour de France te missen', 'http://www.hpdetijd.nl/2015-06-29/99-redenen-om-niets-de-tour-france-willen-missen/', target: '_blank' %>
+    </p>
+
   </div>
 </div>
 
-<h3>Aangemelde teams</h3>
+<h3>De volgende teams hebben zich aangemeld</h3>
 <%= @players.collect{|p| p.team_name }.join(', ') %>

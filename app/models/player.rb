@@ -22,6 +22,7 @@ class Player < ActiveRecord::Base
   validates :name, :presence => true, :uniqueness => true
   validates :team_name, :presence => true, :uniqueness => true
 
+
   scope :active, -> { where(:disabled => false) }
 
   after_update :clear_team_if_disabled

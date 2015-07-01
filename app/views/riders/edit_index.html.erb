@@ -3,7 +3,7 @@
 <%= render :partial => "riders/find_form" %>
 
 <% if @riders.any? %>
-  <%= form_tag update_index_riders_path(rider_params), method: :put do %>
+  <%= form_tag update_index_riders_path(filter_rider_params), method: :put do %>
   <table class="table table-condensed table-striped">
     <thead>
     <tr>
@@ -34,7 +34,7 @@
     <% if can? :create, Rider %>
       <div class="well">
         <%= submit_tag "Opslaan", :class => "btn btn-primary" %>
-        <%= link_to "Annuleren", riders_path(rider_params), :class => "btn btn-default" %>
+        <%= link_to "Annuleren", riders_path(filter_rider_params), :class => "btn btn-default" %>
       </div>
     <% end %>
 

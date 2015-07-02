@@ -25,7 +25,7 @@ class PlayerTeamsController < ApplicationController
 
   def pick_substitute
     player_rider = PlayerRider.find(params[:player_rider_id])
-    all_riders = Rider.active.where.not(id: @player.rider_ids).order(riders_sort_order).page(params[:page])
+    all_riders = Rider.active.where.not(id: @player.rider_ids + @player.substitute_rider_ids).order(riders_sort_order).page(params[:page])
     all_riders = all_riders.where(price: 0..player_rider.rider.substitute_price)
     riders = Rider.filter_riders(all_riders, params)
     @player_rider = player_rider.decorate
@@ -35,20 +35,14 @@ class PlayerTeamsController < ApplicationController
 
   def add_substitute
     @player_rider = PlayerRider.find(params[:player_rider_id])
-    @rider = Rider.active.where.not(id: @player.rider_ids).find(params[:rider_id])
-    if @rider
-      @player_rider.substitute_rider = @rider
-      if @player_rider.save
-        redirect_to edit_player_team_path(@player)
-      else
-        flash[:error] = "Renner kon niet worden toegevoegd"
-        redirect_to :back
-      end
+    @rider = Rider.find(params[:rider_id])
+    @player_rider.substitute_rider = @rider
+    if @player_rider.save
+      redirect_to edit_player_team_path(@player)
     else
-      flash[:error] = "Renner kon niet worden toegevoegd"
+      flash[:error] = "#{@player_rider.errors.full_messages.join(', ')}"
       redirect_to :back
     end
-
   end
 
   def remove_substitute
@@ -69,11 +63,11 @@ class PlayerTeamsController < ApplicationController
 
   def add_rider
     @rider = Rider.find(params[:rider_id])
-    begin
-      @player.riders << @rider
+    player_rider = PlayerRider.new(player_id: @player.id, rider_id: @rider.id)
+    if player_rider.save
       redirect_to :back
-    rescue
-      flash[:error] = "Renner kon niet worden toegevoegd"
+    else
+      flash[:error] = "#{player_rider.errors.full_messages.join(', ')}"
       redirect_to :back
     end
   end

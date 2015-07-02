@@ -14,6 +14,7 @@ class Player < ActiveRecord::Base
 
   has_many :player_riders
   has_many :riders, :through => :player_riders
+  has_many :substitute_riders, :through => :player_riders
   has_many :scores, :through => :riders
 
   has_many :subpool_players

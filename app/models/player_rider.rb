@@ -7,7 +7,7 @@ class PlayerRider < ActiveRecord::Base
   validates :rider_id, :player_id, presence: true
   validates :rider_id, uniqueness: { scope: :player_id }
   validates :player_id, uniqueness: { scope: :rider_id }
-  validate :enough_budget
+  validate :enough_budget, :valid_rider, :valid_substitute_rider
 
   after_create :count_points
 
@@ -33,6 +33,31 @@ class PlayerRider < ActiveRecord::Base
   def enough_budget
     if rider.price > player.budget
       errors.add(:rider_id, "is te duur")
+    end
+  end
+
+  def valid_rider
+    if new_record?
+      if rider.rejected?
+        errors.add(:rider_id, "doet niet mee")
+      elsif player.rider_ids.include?(rider_id)
+        errors.add(:rider_id, "is al gekozen")
+      elsif player.substitute_rider_ids.include?(rider_id)
+        errors.add(:rider_id, "is al gekozen als reserverenner")
+      end
+    end
+  end
+
+  def valid_substitute_rider
+    if substitute_rider_id
+      if substitute_rider.rejected?
+        errors.add(:substitute_rider_id, "doet niet mee")
+      elsif player.rider_ids.include?(substitute_rider_id)
+        binding.pry
+        errors.add(:substitute_rider_id, "is al gekozen")
+      elsif player.substitute_rider_ids.include?(substitute_rider_id)
+        errors.add(:substitute_rider_id, "is al gekozen als reserverenner")
+      end
     end
   end
 

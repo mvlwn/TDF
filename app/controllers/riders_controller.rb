@@ -68,7 +68,7 @@ class RidersController < ApplicationController
   end
 
   def rider_params
-    params.require(:rider).permit(:first_name, :last_name, :number, :price, :stage_id, :rejected, :confirmed, :ad_code, :ad_role)
+    params.require(:rider).permit(:first_name, :last_name, :number, :price, :stage_id, :team_id, :rejected, :confirmed, :ad_code, :ad_role)
   end
 
 end

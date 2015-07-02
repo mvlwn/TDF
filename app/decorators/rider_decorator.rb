@@ -63,11 +63,11 @@ class RiderDecorator < Draper::Decorator
   end
 
   def abandoned
-    rider.abandoned ? "Ja" : "Nee"
+    rider.abandoned? ? "Ja" : "Nee"
   end
 
   def in_race
-    !rider.abandoned ? "Ja" : "Nee"
+    !rider.abandoned? && !rider.rejected? ? "Ja" : "Nee"
   end
 
 end

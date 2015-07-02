@@ -1,6 +1,7 @@
 class SummaryController < ApplicationController
 
   before_filter :check_sign_in, only: [:show]
+  before_filter :check_race_started, only: [:show]
 
   def show
 
@@ -47,6 +48,14 @@ class SummaryController < ApplicationController
       true
     else
       redirect_to signup_summary_path
+    end
+  end
+
+  def check_race_started
+    if race_started?
+      true
+    else
+      redirect_to account_path
     end
   end
 

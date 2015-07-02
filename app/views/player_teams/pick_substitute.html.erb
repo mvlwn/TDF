@@ -35,17 +35,22 @@
       </div>
     <% end %>
     <% if @riders.any? %>
+      <div class="row">
+        <div class="col-xs-1"><%= link_to_sortable "Nr", :number %></div>
+        <div class="col-xs-4"><%= link_to_sortable "Voornaam", :first_name %> - <%= link_to_sortable "Achternaam", :last_name %></div>
+        <div class="col-xs-3"><%= link_to_sortable "Team", :team_name %></div>
+        <div class="col-xs-3"><%= link_to_sortable "Prijs", :price %></div>
+      </div>
       <% @riders.each do |rider| %>
 
         <div class="row" style="margin-top: 4px;">
-          <div class="col-xs-10">
-            <div class="row">
-              <div class="col-xs-5 col-sm-12 col-lg-5"><b><%= rider.name %></b></div>
-              <div class="col-xs-4 col-sm-6 col-lg-4"><small><%= rider.team_name %></small></div>
-              <div class="col-xs-3 col-sm-6 col-lg-3"><%= rider.price %></div>
-            </div>
+          <div class="col-xs-1"><%= rider.number %></div>
+          <div class="col-xs-4"><b><%= rider.name %></b></div>
+          <div class="col-xs-3">
+            <small><%= rider.team_name %></small>
           </div>
-          <div class="col-xs-2">
+          <div class="col-xs-3"><%= rider.price %></div>
+          <div class="col-xs-1">
             <%= link_to content_tag("span", "", :class => "glyphicon glyphicon-plus"),
                         substitute_player_team_path(@player, player_rider_id: @player_rider.id, rider_id: rider.id),
                         :method => :post,

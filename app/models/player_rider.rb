@@ -53,7 +53,6 @@ class PlayerRider < ActiveRecord::Base
       if substitute_rider.rejected?
         errors.add(:substitute_rider_id, "doet niet mee")
       elsif player.rider_ids.include?(substitute_rider_id)
-        binding.pry
         errors.add(:substitute_rider_id, "is al gekozen")
       elsif player.substitute_rider_ids.include?(substitute_rider_id)
         errors.add(:substitute_rider_id, "is al gekozen als reserverenner")

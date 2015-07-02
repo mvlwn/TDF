@@ -54,7 +54,7 @@ class PlayerRider < ActiveRecord::Base
         errors.add(:substitute_rider_id, "doet niet mee")
       elsif player.rider_ids.include?(substitute_rider_id)
         errors.add(:substitute_rider_id, "is al gekozen")
-      elsif player.substitute_rider_ids.include?(substitute_rider_id)
+      elsif player.player_riders.where.not(id: self.id).pluck(:substitute_rider_id).include?(substitute_rider_id)
         errors.add(:substitute_rider_id, "is al gekozen als reserverenner")
       end
     end

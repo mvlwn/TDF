@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << [:name, :team_name]
+    devise_parameter_sanitizer.for(:sign_up) << [:name, :team_name, :reset_password_token]
   end
 
   # Help for CanCan

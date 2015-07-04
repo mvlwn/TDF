@@ -10,7 +10,7 @@ class Player < ActiveRecord::Base
   BUDGET = 15000
   BUDGET_MULTIPLIER = 1000
   MAX_RIDERS = 9
-  MAX_EDIT_TIME = Time.parse("04-07-2015 12:00")
+  MAX_EDIT_TIME = Time.parse("04-07-2015 14:00")
 
   has_many :player_riders
   has_many :riders, :through => :player_riders

@@ -12,7 +12,7 @@
       <th width="15%">Reserve</th>
       <th width="5%"><%= link_to_sortable "Prijs", :price %></th>
       <th width="5%" class="center"><%= link_to_sortable "Punten", :points %></th>
-      <th width="5%"><%= link_to_sortable "€ / pnt", :efficiency_in_cents %></th>
+      <!--<th width="5%"><%= link_to_sortable "€ / pnt", :efficiency_in_cents %></th>-->
       <th width="10%" class="center">In koers</th>
     </tr>
     </thead>
@@ -20,7 +20,7 @@
     <% player_riders.each do |player_rider| %>
       <%
          rider = player_rider.rider.decorate
-         substitute = player_rider.rider.decorate
+         substitute = player_rider.substitute_rider.try(:decorate)
       %>
       <tr>
         <td class="center"><%= rider.number %></td>
@@ -28,10 +28,10 @@
           <%= link_to rider.name, rider_path(rider) %>
         </td>
         <td><%= link_to rider.team_name, riders_path(team_id: rider.team_id) %></td>
-        <td><%= link_to substitute.name, rider_path(rider) %></td>
+        <td><%= link_to substitute.name, rider_path(rider) if substitute %></td>
         <td><%= rider.price %></td>
         <td class="center"><%= rider.points %></td>
-        <td><%= rider.efficiency %></td>
+        <!--<td><%= rider.efficiency %></td>-->
         <td class="center"><%= rider.in_race %></td>
       </tr>
     <% end %>

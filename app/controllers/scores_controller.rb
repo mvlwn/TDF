@@ -6,7 +6,7 @@ class ScoresController < ApplicationController
   before_filter :set_score, only: [:edit, :update, :destroy]
 
   def index
-    scores = @stage.scores.order('category', 'points')
+    scores = @stage.scores.order('category', 'points DESC')
     @scores = ScoreDecorator.decorate_collection(scores)
   end
 

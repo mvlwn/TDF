@@ -61,7 +61,7 @@ class RidersController < ApplicationController
 
   def filter_rider_params
     p = {}
-    [:name, :price_from, :price_to, :team_id].each do |col|
+    [:name, :price_from, :price_to, :team_id, :active].each do |col|
       p[col] = params[col]
     end
     p

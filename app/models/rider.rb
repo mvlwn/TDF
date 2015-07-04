@@ -104,6 +104,16 @@ class Rider < ActiveRecord::Base
       @search = true
     end
 
+    if params[:active].present?
+      if params[:active].to_i == 1
+        riders = riders.where('rejected = ? AND abandoned = ? AND stage_id IS NULL', false, false)
+      else
+        riders = riders.where('rejected = ? OR abandoned = ? OR stage_id IS NOT NULL', true, true)
+      end
+
+      @search = true
+    end
+
     riders
 
   end

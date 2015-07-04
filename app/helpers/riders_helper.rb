@@ -20,4 +20,9 @@ module RidersHelper
     content_tag("option") + options_for_select((Rider.minimum(:price)..Rider.maximum(:price)).step(250).to_a.map{|s| ["#{number_to_euro s.to_i * Player::BUDGET_MULTIPLIER}", s]}, value)
   end
 
+  def options_for_select_active
+    value = params[:active].present? ? params[:active].to_i : 1
+    content_tag("option") + options_for_select([['Ja', 1], ['Nee', 0]], value)
+  end
+
 end

@@ -16,6 +16,10 @@
     <%= select_tag "price_to", options_for_select_price_to, :class => "form-control input-sm" %>
   </div>
   <div class="form-group">
+    <label class="control-label" for="price_to">Actief</label>
+    <%= select_tag "active", options_for_select_active, :class => "form-control input-sm" %>
+  </div>
+  <div class="form-group">
     <%= submit_tag "Zoek", :class => "btn btn-primary btn-sm" %>
   </div>
 <% end %>

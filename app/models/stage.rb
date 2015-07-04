@@ -10,7 +10,7 @@ class Stage < ActiveRecord::Base
   validates :name, :description, :distance, :ridden_on, presence: true
 
   def self.last_stage
-    where("yellow_results IS NOT NULL").order("number DESC").first
+    joins(:scores).order("number DESC").first
   end
 
   def name_with_number

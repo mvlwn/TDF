@@ -1,9 +1,13 @@
 <table class="table">
-  <% if player_signed_in? %>
-  <tr>
-    <th width="25%">Manager</th>
-    <td width="75%"><%= player.name %></td>
-  </tr>
+  <% if can? :edit, @player %>
+    <tr>
+      <th>Email</th>
+      <td><%= player.email %></td>
+    </tr>
+    <tr>
+      <th width="25%">Manager</th>
+      <td width="75%"><%= player.name %></td>
+    </tr>
   <% end %>
   <tr>
     <th>Punten</th>
@@ -20,28 +24,28 @@
     <th>Renners afgestapt</th>
     <td><%= player.riders.abandoned.count %></td>
   </tr>
-	<tr>
-   <th>Budget</th>
-   <td><%= player.budget %></td>
- </tr>
+  <tr>
+    <th>Budget</th>
+    <td><%= player.budget %></td>
+  </tr>
   <tr>
     <th>Uitgegeven</th>
     <td><%= player.expenses %></td>
   </tr>
   <% if player == current_player %>
-  <tr>
-    <th>Geld overgemaakt</th>
-    <td>
-			<% if player.paid? %>
-        <div class="alert alert-success">
-          Het bedrag is overgemaakt
-        </div>
-      <% else %>
-				<div class="alert alert-info">
-          Het bedrag van €5,- kan overgemaakt worden naar IBAN NL92RABO0155086073 t.n.v. B. Langeveld
-        </div>
-			<% end %>
-		</td>
-  </tr>
+    <tr>
+      <th>Geld overgemaakt</th>
+      <td>
+        <% if player.paid? %>
+          <div class="alert alert-success">
+            Het bedrag is overgemaakt
+          </div>
+        <% else %>
+          <div class="alert alert-info">
+            Het bedrag van €5,- kan overgemaakt worden naar IBAN NL92RABO0155086073 t.n.v. B. Langeveld
+          </div>
+        <% end %>
+      </td>
+    </tr>
   <% end %>
 </table>

@@ -2,25 +2,27 @@ class Score < ActiveRecord::Base
 
   validates_presence_of :number, :category, :points, :rider_id
   validates_numericality_of :number, :category, :points
-  validates_uniqueness_of :number, scope: [:category, :stage_id]
 
   belongs_to :stage
   belongs_to :rider
 
   CATEGORIES = {
+    0 => 'Dagklassement',
     1 => 'Gele trui',
     2 => 'Groene trui',
     3 => 'Bolletjes trui',
     4 => 'Rode rugnummers',
     5 => 'Rode Lantaarn'
   }
-  YELLOW_CATEGORY_ID = 1
 
+  DAY_CATEGORY_ID = 0
+  YELLOW_CATEGORY_ID = 1
   GREEN_CATEGORY_ID = 2
   DOTTED_CATEGORY_ID = 3
   COMBATIVENESS_CATEGORY_ID = 4
   YELLOW_LAST_CATEGORY_ID = 5
 
+  scope :day, -> { where(category: DAY_CATEGORY_ID) }
   scope :yellow, -> { where(category: YELLOW_CATEGORY_ID) }
   scope :green, -> { where(category: GREEN_CATEGORY_ID) }
   scope :dots, -> { where(category: DOTTED_CATEGORY_ID) }

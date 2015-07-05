@@ -22,5 +22,4 @@ class RankingsController < ApplicationController
     @matrix = ScoreMatrix.new
   end
 
-
 end

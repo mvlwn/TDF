@@ -7,6 +7,9 @@ TDF::Application.routes.draw do
     collection do
       get :player_points
     end
+    member do
+      get :email
+    end
     resources :scores
   end
 

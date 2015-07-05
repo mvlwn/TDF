@@ -40,7 +40,7 @@ www.toerdepoele.nl<br />
     <tr>
       <td width="30"><%= index + 1 %></td>
       <td width="300"><%= rider.name %></td>
-      <td width="30"><%= rider.rider_stages.where(stage_id: @stage.id).first.points %></td>
+      <td width="30"><%= rider.sorted_points %></td>
     </tr>
   <% end %>
 </table>

@@ -36,7 +36,7 @@ class StagesController < ApplicationController
     @players = PlayerDecorator.decorate_collection(Player.active.order('points DESC'))
     @riders = RiderDecorator.decorate_collection(Rider.active.where('points > 0').order('points DESC'))
     @sorted_players = sort_players_by_stage_points(@players, @stage)
-    @sorted_riders = RiderDecorator.decorate_collection(Rider.joins(:rider_stages).order('rider_stages.points DESC'))
+    @sorted_riders = sort_riders_by_stage_points(@riders, @stage)
   end
 
   private

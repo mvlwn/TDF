@@ -33,7 +33,7 @@ class Rider < ActiveRecord::Base
   end
 
   def stage_points(stage)
-    if last_stage && stage.number <= last_stage.number
+    if !last_stage || stage.number <= last_stage.number
       rider_stage = rider_stages.where(stage_id = stage.id).first
       rider_stage.points if rider_stage
     end

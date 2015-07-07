@@ -56,14 +56,13 @@ class Score < ActiveRecord::Base
   end
 
   def find_rider
-    if rider_id.blank? && number.present?
-      rider = Rider.where(number: self.number).first
-      if rider
-        self.rider_id = rider.id
-      else
-        self.rider_id = nil
-      end
+    if number.present?
+      rider_from_number = Rider.where(number: self.number).first
+      self.rider_id = rider_from_number.try(:id)
+    else
+      self.rider_id = nil
     end
+
     true
   end
 

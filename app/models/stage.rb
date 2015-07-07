@@ -4,7 +4,7 @@ class Stage < ActiveRecord::Base
   has_many :rider_stages, dependent: :destroy
   has_many :riders, through: :rider_stages
 
-  accepts_nested_attributes_for :scores, allow_destroy: true
+  accepts_nested_attributes_for :scores, allow_destroy: true, reject_if: proc{ |attributes| attributes[:number].blank? }
 
   validates :number, :uniqueness => true, :presence => true
   validates :name, :description, :distance, :ridden_on, presence: true

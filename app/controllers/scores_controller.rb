@@ -11,12 +11,12 @@ class ScoresController < ApplicationController
   end
 
   def new
-
+    quantity = params[:quantity].to_i > 0 ? params[:quantity].to_i : 1
+    @scores = [Score.new(stage_id: @stage.id, category: params[:category].to_i)] * quantity
   end
 
   def create
-    @score = Score.new(score_params)
-    if @score.save
+    if @stage.update_attributes(stage_params)
       flash[:notice] = 'Punten opgeslagen'
       redirect_to stage_scores_path(@stage)
     else
@@ -36,12 +36,29 @@ class ScoresController < ApplicationController
     end
   end
 
+  def bulk_edit
+
+  end
+
+  def bulk_update
+    if @stage.update_attributes(stage_params)
+      flash[:notice] = 'Punten opgeslagen'
+      redirect_to stage_scores_path(@stage)
+    else
+      render :bulk_edit
+    end
+  end
+
   def destroy
     @score.destroy
     redirect_to stage_scores_path(@stage)
   end
 
   private
+
+  def stage_params
+    params.require(:stage).permit(scores_attributes: [:id, :number, :points, :category])
+  end
 
   def score_params
     params[:score][:stage_id] = params[:stage_id]

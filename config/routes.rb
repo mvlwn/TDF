@@ -10,7 +10,12 @@ TDF::Application.routes.draw do
     member do
       get :email
     end
-    resources :scores
+    resources :scores do
+      collection do
+        get :bulk_edit
+        patch :bulk_update
+      end
+    end
   end
 
   resources :players do

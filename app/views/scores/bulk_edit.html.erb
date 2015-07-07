@@ -1,14 +1,17 @@
 <%= content_for(:title, "Nieuwe punten") %>
 <% i = 0 %>
-<%= form_for(@stage, url: stage_scores_path(@stage, quantity: params[:quantity], category: params[:category]), method: :post, class: 'form-horizontal') do |form| %>
+<%= form_for(@stage, url: bulk_update_stage_scores_path(@stage), class: 'form-horizontal') do |form| %>
   <%= error_messages_for(@stage) %>
   <div class="row">
     <div class="col-xs-1">Rank</div>
     <div class="col-xs-2">Renner</div>
     <div class="col-xs-2">Punten</div>
+    <div class="col-xs-3">Categorie</div>
+    <div class="col-xs-1">Wis</div>
   </div>
-  <%= form.fields_for :scores, @scores do |score_form| %>
+  <%= form.fields_for :scores do |score_form| %>
     <% i += 1 %>
+    <%= score_form.hidden_field :id %>
     <div class="form-group row">
       <label for="" class="control-label col-xs-1"><%= i %></label>
       <div class="col-xs-2">
@@ -19,6 +22,9 @@
       </div>
       <div class="col-xs-3">
         <%= score_form.select :category, score_category_options, {}, { class: 'form-control' } %>
+      </div>
+      <div class="col-xs-1">
+        <%= score_form.check_box '_destroy' %>
       </div>
     </div>
   <% end %>

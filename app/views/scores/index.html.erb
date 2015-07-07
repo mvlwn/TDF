@@ -1,39 +1,48 @@
 <%= content_for(:title, "#{@stage.number}: #{@stage.name}") %>
 
-<div class="row">
-  <div class="col-md-8 col-xs-12">
-    <h2>Scores</h2>
-    <table class="table">
-      <thead>
-      <tr>
-        <th>Nummer</th>
-        <th>Renner</th>
-        <th>Categorie</th>
-        <th class="center">Punten</th>
-        <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @scores.each do |score| %>
-        <tr>
-          <td><%= score.number %></td>
-          <td><%= score.rider_name %></td>
-          <td><%= score.category_name %></td>
-          <td class="center"><%= score.points %></td>
-          <td>
-            <%= link_to 'Wijzig', edit_stage_score_path(@stage, score), class: 'btn btn-default btn-xs' %>
-            <%= link_to 'Wis', stage_score_path(@stage, score), class: 'btn btn-danger btn-xs', method: :delete, confirm: 'Weet je het zeker?' %>
-          </td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
+<h2>Scores</h2>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Nummer</th>
+    <th>Renner</th>
+    <th>Categorie</th>
+    <th class="center">Punten</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @scores.each do |score| %>
+    <tr>
+      <td><%= score.number %></td>
+      <td><%= score.rider_name %></td>
+      <td><%= score.category_name %></td>
+      <td class="center"><%= score.points %></td>
+      <td>
+        <%= link_to 'Wijzig', edit_stage_score_path(@stage, score), class: 'btn btn-default btn-xs' %>
+        <%= link_to 'Wis', stage_score_path(@stage, score), class: 'btn btn-danger btn-xs', method: :delete, confirm: 'Weet je het zeker?' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Wijzig scores', bulk_edit_stage_scores_path(@stage), class: 'btn btn-default' %>
+
+<h2>Nieuwe score</h2>
+<%= form_tag(new_stage_score_path(@stage), method: :get, class: 'form-inline') do %>
+  <div class="form-group">
+    <label for="scores_quantity" class="control-label">Aantal scores</label>
+    <%= number_field_tag :quantity, 1, id: 'scores_quantity', class: 'form-control', style: 'width: 70px;' %>
   </div>
-  <div class="col-md-4 col-sm-6 col-xs-8">
-    <h2>Nieuwe score</h2>
-    <%= render partial: 'form', locals: { score: Score.new, stage: @stage } %>
+  <div class="form-group">
+    <label for="scores_category" class="control-label">met categorie</label>
+    <%= select_tag :category, options_for_select(score_category_options), { id: 'scores_category', class: 'form-control' } %>
   </div>
-</div>
+  <div class="form-group">
+    <%= submit_tag 'Zoek', class: 'btn btn-primary' %>
+  </div>
+<% end %>
 
 <hr/>
 <%= link_to 'Terug naar het etappeoverzicht', stages_path, class: 'btn btn-default' %>

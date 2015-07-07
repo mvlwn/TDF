@@ -9,7 +9,8 @@
 
       </th>
       <th width="10%"><%= link_to_sortable "Team", :team_name %></th>
-      <th width="15%">Reserve</th>
+      <th width="2%">Nr</th>
+      <th width="13%">Reserve</th>
       <th width="5%"><%= link_to_sortable "Prijs", :price %></th>
       <th width="5%" class="center"><%= link_to_sortable "Punten", :points %></th>
       <!--<th width="5%"><%= link_to_sortable "€ / pnt", :efficiency_in_cents %></th>-->
@@ -28,9 +29,10 @@
           <%= link_to rider.name, rider_path(rider) %>
         </td>
         <td><%= link_to rider.team_name, riders_path(team_id: rider.team_id) %></td>
-        <td><%= link_to substitute.name, rider_path(rider) if substitute %></td>
+        <td><%= substitute.number if substitute %></td>
+        <td><%= link_to substitute.name, rider_path(substitute) if substitute %></td>
         <td><%= rider.price %></td>
-        <td class="center"><%= rider.points %></td>
+        <td class="center"><%= player_rider.points %></td>
         <!--<td><%= rider.efficiency %></td>-->
         <td class="center"><%= rider.in_race %></td>
       </tr>

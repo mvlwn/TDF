@@ -30,6 +30,20 @@ class PlayerRider < ActiveRecord::Base
     player.update_attribute(:points, player.player_riders.sum(:points))
   end
 
+  def stage_points(stage)
+    if rider.last_stage.nil? || rider.last_stage.number >= stage.number
+      rider_stage_points(rider, stage)
+    elsif substitute_rider
+      if substitute_rider.last_stage.nil? || substitute_rider.last_stage.number >= stage.number
+        rider_stage_points(substitute_rider, stage)
+      else
+        0
+      end
+    else
+      0
+    end
+  end
+
   def enough_budget
     if rider.price > player.budget
       errors.add(:rider_id, "is te duur")
@@ -66,6 +80,10 @@ class PlayerRider < ActiveRecord::Base
     rider_stages = RiderStage.joins(:stage).where(rider_id: rider.id)
     rider_stages = rider_stages.where(stages: { number: stage_number_range }) if stage_number_range
     rider_stages.sum(:points)
+  end
+
+  def rider_stage_points(rider, stage)
+    RiderStage.where(rider_id: rider.id, stage_id: stage.id).first.try(:points)
   end
 
 end

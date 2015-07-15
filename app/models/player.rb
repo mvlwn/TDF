@@ -42,7 +42,11 @@ class Player < ActiveRecord::Base
   end
 
   def stage_points(stage)
-    riders.joins(:scores).where("scores.stage_id" => stage.id).sum("scores.points")
+    points = 0
+    player_riders.each do |pr|
+      points += pr.stage_points(stage).to_i
+    end
+    points
   end
 
   def points_till_stage(stage)

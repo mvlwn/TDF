@@ -65,7 +65,7 @@ class PlayerRider < ActiveRecord::Base
   def valid_substitute_rider
     if substitute_rider_id
       if substitute_rider.rejected?
-        errors.add(:substitute_rider_id, "doet niet mee")
+        errors.add(:substitute_rider_id, "doet niet mee") if Time.now < Player::MAX_EDIT_TIME
       elsif player.rider_ids.include?(substitute_rider_id)
         errors.add(:substitute_rider_id, "is al gekozen")
       elsif player.player_riders.where.not(id: self.id).pluck(:substitute_rider_id).include?(substitute_rider_id)

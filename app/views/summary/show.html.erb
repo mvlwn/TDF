@@ -1,4 +1,4 @@
-<%= content_for(:title, "Welkom bij Toerdepoele!") %>
+<%= content_for(:title, "Overzicht") %>
 <ul class="nav nav-tabs">
   <li class="active"><a href="#stage_ranking" data-toggle="tab">Dagklassement etappe <%= @stage.number %></a></li>
   <li><a href="#overall_ranking" data-toggle="tab">Algemeen klassement</a></li>
@@ -9,12 +9,12 @@
   <div class="tab-pane active" id="stage_ranking">
     <h2>Dagklassement Top 10</h2>
     <div class="row">
-      <div class="span6">
+      <div class="col-sm-6">
         <h3 id="player_ranking">De ploegen</h3>
         <%= render :partial => "shared/player_ranking", :locals => {:players => @stage_players, :stage => false} %>
       </div>
       <% if race_started? %>
-      <div class="span6">
+      <div class="col-sm-6">
         <h3 id="rider_ranking">De renners</h3>
         <%= render :partial => "shared/rider_ranking", :locals => {:riders => @stage_riders, :stage => false} %>
       </div>
@@ -26,12 +26,12 @@
   <div class="tab-pane" id="overall_ranking">
     <h2>Algemeen klassement top 10</h2>
     <div class="row">
-      <div class="span6">
+      <div class="col-sm-6">
         <h3 id="player_ranking">De ploegen</h3>
         <%= render :partial => "shared/player_ranking", :locals => {:players => @players, :stage => false, :overall => true} %>
       </div>
       <% if race_started? %>
-      <div class="span6">
+      <div class="col-sm-6">
         <h3 id="rider_ranking">De renners</h3>
         <%= render :partial => "shared/rider_ranking", :locals => {:riders => @riders, :stage => false, :overall => true} %>
       </div>
@@ -43,19 +43,10 @@
 </div>
 
 <br />
+
 <% unless player_signed_in? %>
 <div class="well">
   <%= link_to "Meld je aan", new_registration_path(Player), :class => "btn btn-warning" %>
   <%= link_to "Login op je poele", new_session_path(Player), :class => "btn btn-success" %>
 </div>
 <% end %>
-
-<div id="comments">
-  <h3>Commentaar</h3>
-  <p>
-    <div class="fb-comments" data-href="<%= summary_url %>" data-numposts="5" data-colorscheme="light"></div>
-  </p>
-  <p>
-    <div class="fb-like" data-href="http://www.toerdepoele.nl" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-  </p>
-</div>

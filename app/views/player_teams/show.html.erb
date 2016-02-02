@@ -1,8 +1,8 @@
 <%= content_for(:title, "De renners van #{@player.team_name}") %>
 
-<%= render :partial => "riders/list", :locals => {:riders => @riders } %>
+<%= render :partial => "riders", :locals => { :riders => @riders } %>
 
 <div class="well">
-	<% if can? :edit, Player %><%= link_to "Wijzig team", edit_player_team_path(@player), :class => "btn" %><% end %>
-	<%= link_to "Alle deelnemers", players_path, :class => "btn" %>
+	<% if can? :edit, Player %><%= link_to "Wijzig team", edit_player_team_path(@player), :class => "btn btn-default" %><% end %>
+	<%= link_to "Alle deelnemers", players_path, :class => "btn btn-default" %>
 </div>

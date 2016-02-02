@@ -22,17 +22,18 @@ class PlayerDecorator < Draper::Decorator
     h.number_to_euro model.budget * Player::BUDGET_MULTIPLIER
   end
 
-  def riders_count_badge
-    badge_class = team_ready? ? "badge-success" : "badge-warning"
-    h.content_tag("span", player.riders.count.to_s + " renners", :class => "badge #{badge_class}")
+  def budget_left
+    h.number_to_euro model.budget_left * Player::BUDGET_MULTIPLIER
   end
 
-  def paid
-    h.bool_icon model.paid
+  def riders_count_label
+    badge_class = team_ready? ? "label-success" : "label-danger"
+    h.content_tag("span", player.player_riders.count.to_s + " renners", :class => "label #{badge_class}")
   end
 
-  def paid
-    h.bool_icon model.paid
+  def substitutes_count_label
+    badge_class = team_ready? ? "label-success" : "label-warning"
+    h.content_tag("span", player.player_riders.where('substitute_rider_id IS NOT NULL').count.to_s + " reserverenners", :class => "label #{badge_class}")
   end
 
   def paid

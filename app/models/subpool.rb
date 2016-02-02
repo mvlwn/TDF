@@ -1,5 +1,4 @@
 class Subpool < ActiveRecord::Base
-  # attr_accessible :title, :body
 
   has_many :subpool_players, dependent: :destroy
   has_many :players, :through => :subpool_players

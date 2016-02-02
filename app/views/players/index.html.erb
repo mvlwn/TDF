@@ -1,6 +1,7 @@
 <%= content_for(:title, "Deelnemers") %>
 
-<%= paginate @players %>
+<%= paginate @players, theme: 'twitter-bootstrap-3' %>
+
 <table class="table">
   <thead>
   <tr>
@@ -23,7 +24,7 @@
     <td><%= player.link_to %></td>
     <td><%= player.name %> <%= player.you_badge %></td>
     <td class="center">
-      <%= player.riders_count_badge %>
+      <%= player.riders_count_label %>
     </td>
     <td class="center"><%= player.points %></td>
     <td><%= player.expenses %></td>
@@ -38,8 +39,10 @@
   </tbody>
 </table>
 
+<%= paginate @players, theme: 'twitter-bootstrap-3' %>
+
+<hr/>
+
 <% if can? :create, Player %>
-	<div class="well">
-		<%= link_to "Nieuwe deelnemer", new_player_path, :class => "btn" %>
-	</div>
+  <%= link_to "Nieuwe deelnemer", new_player_path, :class => "btn btn-default" %>
 <% end %>

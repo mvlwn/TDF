@@ -1,16 +1,27 @@
 class ApplicationController < ActionController::Base
 
   protect_from_forgery
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter :set_mailer_host
+
+  # Patch CanCan
+  before_filter do
+    resource = controller_name.singularize.to_sym
+    method = "#{resource}_params"
+    params[resource] &&= send(method) if respond_to?(method, true)
+  end
 
   rescue_from CanCan::AccessDenied do
     redirect_to summary_path, :notice => "Deze pagina is niet toegankelijk"
   end
 
-  before_filter :set_mailer_host
-
   helper_method :riders_sort_column, :riders_sort_direction, :race_started?
 
   private
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << [:name, :team_name, :reset_password_token]
+  end
 
   # Help for CanCan
   def current_ability
@@ -47,10 +58,15 @@ class ApplicationController < ActionController::Base
   end
 
   def sort_riders_by_stage_points(riders, stage)
+    sorted_riders = []
     riders.each do |rider|
-      rider.sorted_points = rider.stage_points(stage)
+      stage_points = rider.stage_points(stage)
+      if stage_points
+        rider.sorted_points = stage_points
+        sorted_riders << rider
+      end
     end
-    riders.select{ |rider| rider.sorted_points > 0 }.sort_by{ |rider| rider.sorted_points }.reverse
+    sorted_riders.sort_by{ |rider| rider.sorted_points }.reverse
   end
 
 

@@ -10,11 +10,52 @@ class PlayerTeamsController < ApplicationController
   end
 
   def edit
-    @player = PlayerDecorator.decorate(@player)
-    all_riders = Rider.active.order(riders_sort_order).page(params[:page])
+    if @player.can_pick_riders?
+      all_riders = Rider.active.order(riders_sort_order).page(params[:page])
+      all_riders = all_riders.where(price: 0..@player.budget_left)
+      riders = Rider.filter_riders(all_riders, params)
+      @riders = RiderDecorator.decorate_collection(riders)
+    else
+      @riders = []
+    end
+
+    @player_riders = PlayerRiderDecorator.decorate_collection(@player.player_riders.joins(:rider).order('riders.price DESC'))
+    @player = @player.decorate
+  end
+
+  def pick_substitute
+    player_rider = PlayerRider.find(params[:player_rider_id])
+    all_riders = Rider.active.where.not(id: @player.rider_ids + @player.substitute_rider_ids).order(riders_sort_order).page(params[:page])
+    all_riders = all_riders.where(price: 0..player_rider.rider.substitute_price)
     riders = Rider.filter_riders(all_riders, params)
+    @player_rider = player_rider.decorate
     @riders = RiderDecorator.decorate_collection(riders)
-    @player_riders = RiderDecorator.decorate_collection(@player.riders.order(riders_sort_order))
+    @player = @player.decorate
+  end
+
+  def add_substitute
+    @player_rider = PlayerRider.find(params[:player_rider_id])
+    @rider = Rider.find(params[:rider_id])
+    @player_rider.substitute_rider = @rider
+    if @player_rider.save
+      redirect_to edit_player_team_path(@player)
+    else
+      flash[:error] = "#{@player_rider.errors.full_messages.join(', ')}"
+      redirect_to :back
+    end
+  end
+
+  def remove_substitute
+    @player_rider = PlayerRider.find(params[:player_rider_id])
+    @rider = Rider.find(params[:substitute_rider_id])
+    @player_rider.substitute_rider = nil
+
+    if @player_rider.save
+      redirect_to edit_player_team_path(@player)
+    else
+      flash[:error] = "Renner kon niet worden verwijderd"
+      redirect_to :back
+    end
   end
 
   def update
@@ -22,11 +63,11 @@ class PlayerTeamsController < ApplicationController
 
   def add_rider
     @rider = Rider.find(params[:rider_id])
-    begin
-      @player.riders << @rider
-      redirect_to :back, :notice => "Renner toegevoegd"
-    rescue
-      flash[:error] = "Renner kon niet worden toegevoegd"
+    player_rider = PlayerRider.new(player_id: @player.id, rider_id: @rider.id)
+    if player_rider.save
+      redirect_to :back
+    else
+      flash[:error] = "#{player_rider.errors.full_messages.join(', ')}"
       redirect_to :back
     end
   end
@@ -34,7 +75,7 @@ class PlayerTeamsController < ApplicationController
   def remove_rider
     @rider = Rider.find(params[:rider_id])
     if @player.riders.delete(@rider)
-      redirect_to :back, :notice => "Renner verwijderd"
+      redirect_to :back
     else
       redirect_to :back, :error => "Renner kon niet worden verwijderd"
     end

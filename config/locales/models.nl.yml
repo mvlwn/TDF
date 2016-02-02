@@ -16,7 +16,7 @@ nl:
         email: E-mail
         points: Punten
         password: Wachtwoord
-        password_confirmation: Bevestiging wachtwoord
+        password_confirmation: Bevestig wachtwoord
         remember_me: Onthoud mij
       rider:
         name: Naam

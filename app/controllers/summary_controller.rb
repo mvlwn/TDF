@@ -1,6 +1,10 @@
 class SummaryController < ApplicationController
 
+  before_filter :check_sign_in, only: [:show]
+  before_filter :check_race_started, only: [:show]
+
   def show
+
     @riders_count = Rider.count
     @stages = StageDecorator.decorate_collection(Stage.order("id"))
 
@@ -20,12 +24,39 @@ class SummaryController < ApplicationController
     @riders = RiderDecorator.decorate_collection(Rider.active.order("points DESC").limit(10))
 
     # Selected player
-    player = Player.find_by_id(params[:player_id]) || current_player || @stage_players.first
+    if params[:player_id]
+      player = Player.find_by(id: params[:player_id])
+    else
+      player = current_player || @stage_players.first
+    end
+
     @player = player.decorate
+  end
+
+  def signup
+    @players = PlayerDecorator.decorate_collection Player.active
   end
 
   def not_found
 
+  end
+
+  private
+
+  def check_sign_in
+    if player_signed_in?
+      true
+    else
+      redirect_to signup_summary_path
+    end
+  end
+
+  def check_race_started
+    if race_started?
+      true
+    else
+      redirect_to account_path
+    end
   end
 
 end

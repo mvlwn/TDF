@@ -22,9 +22,10 @@
     <td><%= stage.description %></td>
     <td><%= stage.distance %></td>
     <td class="center"><%= bool_icon stage.has_results? %></td>
+    <% if can? :edit, stage %>
+    <td><%= link_to 'Uitslagen', stage_scores_path(stage), class: 'btn btn-default btn-xs' %></td>
+    <% end %>
   </tr>
   <% end %>
   </tbody>
 </table>
-
-<div class="fb-like" data-href="<%= stages_url %>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>

@@ -30,7 +30,7 @@ class PlayersController < ApplicationController
   end
 
   def update
-    if @player.update_attributes(params[:player])
+    if @player.update_attributes(player_params)
       redirect_to player_path(@player), :notice => "Wijzigingen opgeslagen"
     else
       render :action => "edit"
@@ -56,6 +56,12 @@ class PlayersController < ApplicationController
     @player.save
     flash[:notice] = "Deelnemer aangepast"
     redirect_to :back
+  end
+
+  private
+
+  def player_params
+    params.require(:player).permit(:name, :team_name, :email, :paid, :disabled)
   end
 
 end

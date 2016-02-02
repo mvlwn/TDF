@@ -34,9 +34,9 @@ class ScoreMatrix
     matrix = {}
 
     scores = Player.joins(:scores).
-              group("players.id, stage_id").
-              select("players.id AS player_id, stage_id, SUM(scores.points) AS player_points").
-              order("stage_id, SUM(scores.points) DESC")
+              group("players.id, scores.stage_id").
+              select("players.id AS player_id, scores.stage_id, SUM(scores.points) AS player_points").
+              order("scores.stage_id, SUM(scores.points) DESC")
 
     scores.each do |score|
       matrix[score.stage_id.to_i] = {} unless matrix.has_key?(score.stage_id.to_i)

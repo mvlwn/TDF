@@ -6,7 +6,7 @@
 
 <div class="well">
 	<% if can? :edit, Team  %>
-		<%= link_to "Wijzig", edit_team_path(@team), :class => "btn" %>
+		<%= link_to "Wijzig", edit_team_path(@team), :class => "btn btn-default" %>
 	<% end  %>
-	<%= link_to "Alle teams", teams_path, :class => "btn" %>
+	<%= link_to "Alle teams", teams_path, :class => "btn btn-default" %>
 </div>

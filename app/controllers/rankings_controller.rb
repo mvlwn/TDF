@@ -12,7 +12,7 @@ class RankingsController < ApplicationController
     @riders = RiderDecorator.decorate_collection(Rider.active.order("points DESC"))
 
     # Selected player
-    player = Player.find_by_id(params[:player_id]) || current_player || @players.first
+    player = Player.where(id: params[:player_id]).first || current_player || @players.first
     @player = player.decorate
   end
 
@@ -21,6 +21,5 @@ class RankingsController < ApplicationController
     @players = PlayerDecorator.decorate_collection(Player.active.order("points DESC"))
     @matrix = ScoreMatrix.new
   end
-
 
 end

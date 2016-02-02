@@ -1,0 +1,36 @@
+<%= content_for(:title, "Nieuwe punten") %>
+<% i = 0 %>
+<%= form_for(@stage, url: stage_scores_path(@stage, quantity: params[:quantity], category: params[:category]), method: :post, class: 'form-horizontal') do |form| %>
+  <%= error_messages_for(@stage) %>
+  <div class="row">
+    <div class="col-xs-1">Rank</div>
+    <div class="col-xs-2">Renner</div>
+    <div class="col-xs-2">Punten</div>
+  </div>
+  <%= form.fields_for :scores, @scores do |score_form| %>
+    <% i += 1 %>
+    <div class="form-group row">
+      <label for="" class="control-label col-xs-1"><%= i %></label>
+      <div class="col-xs-2">
+        <%= score_form.number_field :number, :class => 'form-control', min: Rider.minimum(:number), max: Rider.maximum(:number), step: 1 %>
+      </div>
+      <div class="col-xs-2">
+        <%= score_form.number_field :points, class: 'form-control' %>
+      </div>
+      <div class="col-xs-3">
+        <%= score_form.select :category, score_category_options, {}, { class: 'form-control' } %>
+      </div>
+    </div>
+  <% end %>
+  <br />
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-4">
+      <%= form.submit 'Opslaan', class: 'btn btn-primary' %>
+      <%= link_to 'Annuleren', stage_scores_path(@stage), class: 'btn btn-default' %>
+    </div>
+  </div>
+
+
+<% end %>
+
+<%#= render partial: 'form', locals: { score: @score, stage: @stage } %>

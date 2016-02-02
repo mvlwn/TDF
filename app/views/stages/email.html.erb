@@ -1,0 +1,58 @@
+<h2>Toerdepoele etappe <%= @stage.number %> <%= @stage.name %></h2>
+
+Beste Toerdepoeler,<br />
+<br />
+<%= Kramdown::Document.new(highlight_teams(@stage.email_text)).to_html.html_safe %>
+
+Met vriendelijke wielergroet,<br />
+<br />
+Organisatie Toerdepoele<br />
+Bastiaan en Martijn<br />
+<br />
+info@toerdepoele.nl<br />
+www.toerdepoele.nl<br />
+
+<h3>Dagklassement</h3>
+<table>
+  <% @sorted_players.each_with_index do |player, index| %>
+  <tr>
+    <td width="30"><%= index + 1 %></td>
+    <td width="300"><%= player.team_name %></td>
+    <td width="30"><%= player.stage_points(@stage) %></td>
+  </tr>
+  <% end %>
+</table>
+
+<h3>Algemeen klassement</h3>
+<table>
+  <% @players.each_with_index do |player, index| %>
+    <tr>
+      <td width="30"><%= index + 1 %></td>
+      <td width="300"><%= player.team_name %></td>
+      <td width="30"><%= player.points %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h3>Dagscore Renners</h3>
+<table>
+  <% @sorted_riders.each_with_index do |rider, index| %>
+    <tr>
+      <td width="30"><%= index + 1 %></td>
+      <td width="300"><%= rider.name %></td>
+      <td width="30"><%= rider.sorted_points %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h3>Scores Renners</h3>
+<table>
+  <% @riders.each_with_index do |rider, index| %>
+    <tr>
+      <td width="30"><%= index + 1 %></td>
+      <td width="300"><%= rider.name %></td>
+      <td width="30"><%= rider.points %></td>
+    </tr>
+  <% end %>
+</table>
+

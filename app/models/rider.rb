@@ -2,20 +2,23 @@ class Rider < ActiveRecord::Base
 
   attr_accessor :sorted_points
 
-  belongs_to :team
   has_many :scores, :dependent => :destroy
   has_many :player_riders, :dependent => :destroy
   has_many :players, :through => :player_riders
+  has_many :rider_stages, dependent: :destroy
+  has_many :stages, through: :rider_stages
+  belongs_to :team
+  belongs_to :last_stage, class_name: 'Stage', foreign_key: :stage_id
   
   validates :first_name, :last_name, :team_id, :price, :presence => true
 
-  before_save :update_team_name
+  before_save :update_team_name, :update_abandoned
   before_create :set_ad_code
   before_update :handle_number_update, :set_efficiency
   after_update :update_player_points, :update_team_name
 
-  scope :active, where(:rejected => false)
-  scope :withdrawn, where(:withdrawn => true)
+  scope :active, -> { where(:rejected => false) }
+  scope :abandoned, -> { where(:abandoned => true) }
 
   def self.riders_picked
     Rider.joins(:player_riders).group(:rider_id).count(:rider_id).size
@@ -30,21 +33,31 @@ class Rider < ActiveRecord::Base
   end
 
   def stage_points(stage)
-    scores.where(:stage_id => stage.id).sum(:points)
+    if last_stage.nil? || stage.number <= last_stage.number
+      rider_stage = rider_stages.where(stage_id: stage.id).first
+      rider_stage.points if rider_stage
+    end
+  end
+
+  def substitute_price
+    p = price.to_i * 0.5
+    if p > 500
+      p
+    else
+      500
+    end
   end
 
   def update_player_points
-    if points_changed?
-      players.each do |player|
-        player.update_attribute(:points, player.riders.sum(:points))
-      end
+    PlayerRider.where('rider_id = ? OR substitute_rider_id = ?', id, id).each do |player_rider|
+      player_rider.count_points
     end
   end
 
   # Update all scores where no rider_id is present, and where the number corresponds. Set the rider_id, and update the points
   def handle_number_update
     if number_changed?
-      Score.update_all("rider_id = #{self.id}", { :number => self.number })
+      Score.where(number: self.number).update_all(rider_id: self.id)
       self.points = scores.sum(:points)
     end
   end
@@ -53,6 +66,11 @@ class Rider < ActiveRecord::Base
     if team_id_changed?
       self.team_name = self.team.name
     end
+  end
+
+  def update_abandoned
+    self.abandoned = stage_id.present?
+    true
   end
 
   def set_ad_code
@@ -83,6 +101,16 @@ class Rider < ActiveRecord::Base
 
     if params[:price_to].present?
       riders = riders.where(["price <= ?", params[:price_to]])
+      @search = true
+    end
+
+    if params[:active].present?
+      if params[:active].to_i == 1
+        riders = riders.where('rejected = ? AND abandoned = ? AND riders.stage_id IS NULL', false, false)
+      else
+        riders = riders.where('rejected = ? OR abandoned = ? OR riders.stage_id IS NOT NULL', true, true)
+      end
+
       @search = true
     end
 

@@ -1,49 +1,44 @@
-<% if riders.any? %>
-	<table class="table table-condensed table-striped">
-			<thead>
-			<tr>
-				<th width="5%"><%= link_to_sortable "Nr", :number %></th>
-				<th width="25%">
-					<%= link_to_sortable "Voornaam", :first_name %> -
-					<%= link_to_sortable "Achternaam", :last_name %>
-				</th>
-				<th width="25%"><%= link_to_sortable "Team", :team_name %></th>
-				<th width="25%"><%= link_to_sortable "Prijs", :price %></th>
-				<th width="20%"></th>
-			</tr>
-			</thead>
-			<tbody>
-			<% riders.each do |rider| %>
-			<tr>
-				<td><%= rider.number %></td>
-				<td><%= rider.name %></td>
-				<td><%= rider.team_name %></td>
-				<td><%= rider.price %></td>
-				<% if selected -%>
-					<td class="center">
-						<%= link_to content_tag("i", "", :class => "icon-minus"),
-												rider_player_team_path(@player, :rider_id => rider.id),
-												:method => :delete,
-												:class => "btn btn-danger btn-mini",
-												:title => "Haal renner uit team" %>
-					</td>
-				<% else -%>
-					<td class="center">
-						<% if @player.can_pick_rider?(rider) %>
-							<%= link_to content_tag("i", "", :class => "icon-plus"),
-													rider_player_team_path(@player, :rider_id => rider.id),
-													:method => :post,
-													:class => "btn btn-primary btn-mini",
-													:title => "Kies renner" %>
-            <% else %>
-              <i class="icon-ban-circle"></i>
-						<% end %>
-					</td>
-				<% end -%>
-			</tr>
-			<% end %>
-			</tbody>
-		</table>
+<% if player_riders.any? %>
+  <table class="table table-condensed table-striped">
+    <thead>
+    <tr>
+      <th width="2%" class="center"><%= link_to_sortable "Nr", :number %></th>
+      <th width="20%">
+        <%= link_to_sortable "Voornaam", :first_name %> -
+        <%= link_to_sortable "Achternaam", :last_name %>
+
+      </th>
+      <th width="10%"><%= link_to_sortable "Team", :team_name %></th>
+      <th width="2%">Nr</th>
+      <th width="13%">Reserve</th>
+      <th width="5%"><%= link_to_sortable "Prijs", :price %></th>
+      <th width="5%" class="center"><%= link_to_sortable "Punten", :points %></th>
+      <!--<th width="5%"><%= link_to_sortable "€ / pnt", :efficiency_in_cents %></th>-->
+      <th width="10%" class="center">In koers</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% player_riders.each do |player_rider| %>
+      <%
+         rider = player_rider.rider.decorate
+         substitute = player_rider.substitute_rider.try(:decorate)
+      %>
+      <tr>
+        <td class="center"><%= rider.number %></td>
+        <td>
+          <%= link_to rider.name, rider_path(rider) %>
+        </td>
+        <td><%= link_to rider.team_name, riders_path(team_id: rider.team_id) %></td>
+        <td><%= substitute.number if substitute %></td>
+        <td><%= link_to substitute.name, rider_path(substitute) if substitute %></td>
+        <td><%= rider.price %></td>
+        <td class="center"><%= player_rider.points %></td>
+        <!--<td><%= rider.efficiency %></td>-->
+        <td class="center"><%= rider.in_race %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 <% else %>
-	<div class="alert alert-info">Er zijn geen renners gevonden</div>
+  <div class="alert alert-info">Er zijn geen renners gevonden</div>
 <% end %>

@@ -1,40 +1,55 @@
 
 <%= error_messages_for(form.object) %>
 
-<div>
-  <%= form.label :number %>
-  <%= form.text_field :number, :class => "input-small" %>
+<div class="form-group">
+  <%= form.label :number, class: 'col-xs-2' %>
+  <div class="col-xs-10">
+    <%= form.text_field :number, class: 'form-control' %>
+  </div>
 </div>
 
-<div>
- <%= form.label :first_name %>
- <%= form.text_field :first_name %>
+<div class="form-group">
+  <%= form.label :first_name, class: 'col-xs-2' %>
+  <div class="col-xs-10">
+    <%= form.text_field :first_name, class: 'form-control' %>
+  </div>
 </div>
 
-<div>
- <%= form.label :last_name %>
- <%= form.text_field :last_name %>
+<div class="form-group">
+  <%= form.label :last_name, class: 'col-xs-2' %>
+  <div class="col-xs-10">
+    <%= form.text_field :last_name, class: 'form-control' %>
+  </div>
 </div>
 
-<div>
- <%= form.label :team %>
- <%= form.collection_select :team_id, Team.select("id, name"), :id, :name %>
+<div class="form-group">
+  <%= form.label :team, class: 'col-xs-2' %>
+  <div class="col-xs-10">
+    <%= form.collection_select :team_id, Team.select("id, name"), :id, :name, {}, { class: 'form-control' } %>
+  </div>
 </div>
 
-<div>
- <%= form.label :price %>
- <%= form.text_field :price %>
+<div class="form-group">
+  <%= form.label :price, class: 'col-xs-2' %>
+  <div class="col-xs-10">
+    <%= form.text_field :price, class: 'form-control' %>
+  </div>
 </div>
 
-<div>
- <%= form.label :rejected do  %>
-  <%= form.check_box :rejected %>
-  Afgevallen
- <% end %>
+<div class="form-group">
+  <%= form.label :stage_id, 'Afgestapt in etappe', class: 'col-xs-2' %>
+  <div class="col-xs-10">
+    <%= form.collection_select :stage_id, Stage.order('number'), :id, :name_with_number, { include_blank: true }, { class: 'form-control' } %>
+  </div>
 </div>
 
-<div>
-  <%= form.label :withdrawn do %>
-    <%= form.check_box :withdrawn %> Afgestapt
-  <% end %>
+<div class="form-group">
+  <div class="col-xs-offset-2 col-xs-10">
+    <div class="checkbox">
+      <%= form.label :rejected do  %>
+        <%= form.check_box :rejected %>
+        Afgevallen
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -1,18 +1,24 @@
 <%= content_for(:title, "Renners") %>
 
-<%= render :partial => "riders/find_form" %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= render :partial => "riders/find_form" %>
+  </div>
+</div>
 
-<%= paginate @riders %>
+
+<%= paginate @riders, theme: 'twitter-bootstrap-3' %>
 
 <%= render :partial => "riders/list", :locals => { :riders => @riders, :teams => false } %>
 
-<%= paginate @riders %>
+<%= paginate @riders, theme: 'twitter-bootstrap-3' %>
 
-<% if can? :create, Rider %>
-  <div class="well">
-    <%= link_to "Nieuwe renner", new_rider_path, :class => "btn" %>
-    <% if rider_params[:name].present? || rider_params[:team_id].present? %>
-      <%= link_to "Wijzig renners", edit_index_riders_path(rider_params), :class => "btn" %>
+<div class="clear">
+  <% if can? :create, Rider %>
+    <%= link_to "Nieuwe renner", new_rider_path, :class => "btn btn-default" %>
+    <% if filter_rider_params[:name].present? || filter_rider_params[:team_id].present? %>
+      <%= link_to "Wijzig renners", edit_index_riders_path(filter_rider_params), :class => "btn btn-default" %>
     <% end %>
-  </div>
-<% end %>
+  <% end %>
+
+</div>

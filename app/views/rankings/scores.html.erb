@@ -27,7 +27,7 @@
 		<% @stages.each do |stage| %>
 			<% @matrix.stage_id = stage.id %>
 			<td class="center">
-				<span class="<% if @matrix.first? %>badge badge-success<% end %>">
+				<span class="<% if @matrix.first? %>label label-success<% end %>">
 					<span class="points"><%= @matrix.points_string %></span>
 					<span class="position hide"><%= @matrix.position_string %></span>
 				</span>

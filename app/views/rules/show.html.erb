@@ -1,6 +1,6 @@
-<%= content_for(:title, "Regels en puntentelling") %>
+<%= content_for(:title, "De Spelregels") %>
 <div class="row">
-  <div class="span3">
+  <div class="col-sm-3">
     <br />
     <ul>
       <li><a href="#opzet">De spelopzet</a></li>
@@ -9,51 +9,114 @@
       <li><a href="#prijzen">De prijzenpot</a></li>
     </ul>
   </div>
-  <div class="span5">
-    <h2 id="opzet">De spelopzet</h2>
-    <ul>
-      <li>Elk wielerploeg heeft een budget van <%= number_to_currency Player.budget, :precision => 0, :unit => '&euro;', :separator => ',', :delimiter => '.' %>.</li>
-      <li>Elke deelnemer selecteert een eigen wielerploeg van 9 renners.</li>
-      <li>Renners verdienen dagelijks punten voor hun ploeg door etappeuitslagen, bergpunten en tussensprints</li>
-      <li>De deelnemer die het meeste punten haalt wint de hoofdprijs</li>
-      <li>Elke dag wordt er een dagprijs uitgedeeld</li>
-      <li>Een deelnemer kan niet meer dan 2 dagprijzen winnen, de volgende rechthebbende deelnemer zal de dagprijs in ontvangst nemen</li>
-    </ul>
+  <div class="col-sm-9">
+    <div class="row">
+      <div class="col-md-7">
+        <h2 id="opzet">De spelopzet</h2>
+        <ul>
+          <li>Elk wielerploeg heeft een budget van <%= number_to_currency Player.budget, :precision => 0, :unit => '&euro;'.html_safe, :separator => ',', :delimiter => '.' %>.</li>
+          <li>Elke deelnemer selecteert een eigen wielerploeg van 9 renners.</li>
+          <li>Renners verdienen dagelijks punten voor hun ploeg door etappeuitslagen, bergpunten en tussensprints</li>
+          <li>De deelnemer die het meeste punten haalt wint de hoofdprijs</li>
+          <li>Elke dag wordt er een dagprijs uitgedeeld</li>
+          <li>Een deelnemer kan niet meer dan 2 dagprijzen winnen, de volgende rechthebbende deelnemer zal de dagprijs in ontvangst nemen</li>
+        </ul>
+      </div>
+      <div class="col-md-5">
+        <div class="alert alert-info">
+          <h4>Wijzigingen</h4>
+          <b>Reserves</b>
+          Voor elke renner die je hebt geselecteerd mag je optioneel een reserverenner aanwijzen. Wanneer je renner uitvalt krijgt je team de punten van de reserve renner vanaf de volgende etappe.
+        </div>
+      </div>
+    </div>
 
-    <h2 id="puntentelling">De puntentelling</h2>
-    <ul>
-      <li>Een renner verdient punten met het punten- en de bergklassement. Hiervoor worden de punten van de organisatie gebruikt</li>
-      <li>De eerste 25 renners verdienen dagelijks punten met hun stand in het dagklassement. (50, 25, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 1, 1) </li>
-      <li>De eerste 12 renners verdienen dagelijks punten met hun stand in het algemeen klassement. (15, 12, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1) </li>
-      <li>De eerste 25 renners verdienen punten met de eindstand van de tour. (200, 100, 80, 76, 72, 68, 64, 60, 56, 52, 48, 44, 40, 36, 32, 28, 24, 20, 16, 12, 8, 4, 4, 4, 4)</li>
-    </ul>
+    <div class="row">
+      <div class="col-md-7">
+        <h2 id="puntentelling">De puntentelling</h2>
+
+        Een renner kan op de volgende manieren punten verdienen
+
+        <ul>
+          <li>
+            <b>Plaats in het dagklassement</b><br />
+            Dagelijks: 50, 20, 10
+          </li>
+          <li>
+            <b>Plaats in het algemeen klassement</b><br />
+            Dagelijks: Oplopend van 1 tot 20 punten voor de gele truidrager<br />
+            Eindstand: 200, 100, 80, 70, 60, 50, 40, 30, 20, 10
+          </li>
+          <li>
+            <b>Punten van het puntenklassement</b> (groene trui)<br/>
+          </li>
+          <li>
+            <b>Punten van het bergklassement</b> (bolletjestrui)<br/>
+          </li>
+          <li>
+            <b>Strijdlustigste renner</b><br />
+            Altijd 20 punten per dag
+          </li>
+          <li>
+            <b>Rode Lantaarn</b><br />
+            Altijd 5 punten per dag
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-5">
+        <div class="alert alert-info">
+          <h4>Wijzigingen</h4>
+          <b>De puntentelling is eenvoudiger geworden.</b><br />
+          Voorheen won vaak de ploeg met de meeste goedkope sprinters doordat deze punten sprokkelden met plek 4 t/m 10. Nu krijgt alleen de top 3 punten. Voor de eindstand krijgt alleen de top 10 van het klassement nog punten.
+          <br />
+          <br />
+          <b>Minder punten voor het dagelijks algemeen klassement</b><br />
+          Alleen de gele truidrager krijgt nog punten voor het dagelijkse algemeen klassement.
+          <br />
+          <br />
+          <b>Introductie rode rugnummer en rode lantaarn</b><br />
+          Renners kunnen nu ook dagelijks punten halen als strijdlustigste renner en laatste in het algemeen klassement.
+        </div>
+      </div>
+    </div>
+
 
     <h2 id="reglement">Reglement</h2>
-    <ol>
-      <li>Inschrijven kan via <a href="http://www.toerdepoele.nl">www.toerdepoele.nl</a></li>
-      <li>Inschrijvingen worden geaccepteerd tot 5 juli 12:00.</li>
-      <li>De inleg bedraagt €5,00</li>
-      <li>100% van het prijzengeld gaat naar de pot</li>
-      <li>Uitslagen en standen zullen zo snel mogelijk worden ingevuld en via email worden de deelnemers hiervan op de hoogte gebracht.</li>
-      <li>Toerdepoele neemt contact op met prijswinnaars via email.</li>
-      <li>Je emailadres wordt alleen gebruikt om te communiceren over Toerdepoele.</li>
-      <li>Gewonnen prijzen kunnen niet geruild worden tegen andere prijzen en de waarde ervan kan niet in geld uitgekeerd worden.</li>
-      <li>Indien bij het verdelen van prijzen 2 of meer deelnemers recht hebben op dezelfde prijs (door een gelijk aantal punten in de betreffende periode), dan zal de persoon met het hoogste aantal punten in de algemene stand van de competitie als winnaar van de prijs worden aangegeven. Als dit ook geen uitkomst brengt, dan wordt door loting bepaald wie de prijs wint. De 'verliezer' krijgt de eventuele prijs die volgt (indien beschikbaar).</li>
-      <li>De stand die wordt gepubliceerd op <a href="http://www.letour.fr">www.letour.fr</a> wordt gebruikt om punten toe te kennen. Na 21 juli 24.00 worden er geen wijzigingen meer doorgevoerd. Dat betekent dat deze eindstand en tussenstanden worden gebruikt voor het bereken van de eindstand Toerdepoele.</li>
-      <li>Toerdepoele is ten alle tijde gerechtigd het spel geheel of gedeeltelijk stop te zetten. Mocht dit gebeuren wordt het gehele bedrag terug betaald.</li>
-      <li>Indien 1 of meer bepalingen van de spelregels nietig zijn of vernietigd worden, zal Toerdepoele een vervangende regel opstellen, die zoveel mogelijk het doel en de strekking van de nietige c.q. vernietigde regel benadert en die niet nietig of vernietigbaar is.</li>
-      <li>Zaken waarin het reglement van Toerdepoele niet voorziet worden bepaald door de organisatoren van Toerdepoele. De organisatoren zullen hierbij het belang van alle deelnemers zo goed mogelijk behartigen.</li>
-      <li>Deelnemers moeten minimaal 16 jaar oud zijn.</li>
-    </ol>
+    <div class="row">
+      <div class="col-md-7">
+        <ol>
+          <li>Inschrijven kan via <a href="http://www.toerdepoele.nl">www.toerdepoele.nl</a></li>
+          <li>Inschrijvingen worden geaccepteerd tot 4 juli 12:00.</li>
+          <li>De inleg bedraagt €5,00<br />
+            <b>Het bedrag van €5,- kan overgemaakt worden naar IBAN NL92RABO0155086073 t.n.v. B. Langeveld</b>
+          </li>
+          <li>100% van het prijzengeld gaat naar de pot</li>
+          <li>Uitslagen en standen zullen zo snel mogelijk worden ingevuld en via email worden de deelnemers hiervan op de hoogte gebracht.</li>
+          <li>Toerdepoele neemt contact op met prijswinnaars via email.</li>
+          <li>Je emailadres wordt alleen gebruikt om te communiceren over Toerdepoele.</li>
+          <li>Gewonnen prijzen kunnen niet geruild worden tegen andere prijzen en de waarde ervan kan niet in geld uitgekeerd worden.</li>
+          <li>Indien bij het verdelen van prijzen 2 of meer deelnemers recht hebben op dezelfde prijs (door een gelijk aantal punten in de betreffende periode), dan zal de persoon met het hoogste aantal punten in de algemene stand van de competitie als winnaar van de prijs worden aangegeven. Als dit ook geen uitkomst brengt, dan wordt door loting bepaald wie de prijs wint. De 'verliezer' krijgt de eventuele prijs die volgt (indien beschikbaar).</li>
+          <li>De stand die wordt gepubliceerd op <a href="http://www.letour.fr">www.letour.fr</a> wordt gebruikt om punten toe te kennen. Na 21 juli 24.00 worden er geen wijzigingen meer doorgevoerd. Dat betekent dat deze eindstand en tussenstanden worden gebruikt voor het bereken van de eindstand Toerdepoele.</li>
+          <li>Toerdepoele is ten alle tijde gerechtigd het spel geheel of gedeeltelijk stop te zetten. Mocht dit gebeuren wordt het gehele bedrag terug betaald.</li>
+          <li>Indien 1 of meer bepalingen van de spelregels nietig zijn of vernietigd worden, zal Toerdepoele een vervangende regel opstellen, die zoveel mogelijk het doel en de strekking van de nietige c.q. vernietigde regel benadert en die niet nietig of vernietigbaar is.</li>
+          <li>Zaken waarin het reglement van Toerdepoele niet voorziet worden bepaald door de organisatoren van Toerdepoele. De organisatoren zullen hierbij het belang van alle deelnemers zo goed mogelijk behartigen.</li>
+          <li>Deelnemers moeten minimaal 16 jaar oud zijn.</li>
+        </ol>
+      </div>
+    </div>
 
     <h2 id="prijzen">De Prijzenpot</h2>
-    <p>
-      De pot wordt verdeeld in percentages:<br />
-      1e plaats: 40% van het prijzengeld<br />
-      2e plaats: 20% van het prijzengeld<br />
-      3e plaats: 10% van het prijzengeld<br />
-      30% van het prijzengeld is gereserveerd voor dagprijzen
-    </p>
+    <div class="row">
+      <div class="col-md-7">
+        <p>
+          De pot wordt verdeeld in percentages:<br />
+          1e plaats: 40% van het prijzengeld<br />
+          2e plaats: 20% van het prijzengeld<br />
+          3e plaats: 10% van het prijzengeld<br />
+          30% van het prijzengeld is gereserveerd voor dagprijzen
+        </p>
+      </div>
+    </div>
 
   </div>
 </div>

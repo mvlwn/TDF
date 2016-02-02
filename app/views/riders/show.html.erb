@@ -4,7 +4,7 @@
 	<tbody>
 	<tr>
 		<th width="25%">Team</th>
-		<td width="75%"><%= link_to @rider.team_name, team_path(@rider.team) %></td>
+		<td width="75%"><%= link_to @rider.team_name, riders_path(team_id: @rider.team_id) %></td>
 	</tr>
 	<tr>
 		<th>Wedstrijdnummer</th>
@@ -18,6 +18,12 @@
 		<th>Prijs</th>
 		<td><%= @rider.price %></td>
 	</tr>
+  <% if @rider.last_stage %>
+  <tr>
+    <th>Afgestapt na etappe</th>
+    <td><%= @rider.last_stage.name_with_number %></td>
+  </tr>
+  <% end %>
   <% if race_started? %>
   <tr>
     <th>Efficiency</th>
@@ -37,7 +43,7 @@
 		<tr>
 			<th>Etappe</th>
 			<% @stages.each do |stage| %>
-			<th width="5%"><%= link_to stage.number, stage_path(stage) %></th>
+			<th width="5%" class="center"><%= link_to stage.number, stage_path(stage) %></th>
 			<% end %>
 		</tr>
 	</thead>
@@ -45,14 +51,13 @@
 		<tr>
 			<th>Punten</th>
 			<% @stages.each do |stage| %>
-				<td width="5%"><%= @rider.stage_points(stage) %></td>
+				<td width="5%" class="center"><%= @rider.stage_points(stage) || content_tag('span', 0, class: 'label danger') %></td>
 			<% end %>
 		</tr>
 	</tbody>
 </table>
 
+<br/>
 
-<div class="well">
-  <%= link_to "Wijzig", edit_rider_path(@rider), :class => "btn" if can? :edit, Rider %>
-  <%= link_to "Alle renners", riders_path, :class => "btn" %>
-</div>
+<%= link_to "Wijzig", edit_rider_path(@rider), :class => "btn btn-default" if can? :edit, Rider %>
+<%= link_to "Alle renners", riders_path, :class => "btn btn-default" %>

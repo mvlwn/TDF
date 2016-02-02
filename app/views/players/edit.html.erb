@@ -1,12 +1,12 @@
 <%= content_for(:title, "Wijzig deelnemer") %>
 
-<%= form_for @player do |form| %>
+<%= form_for @player, html: { class: 'form-horizontal' } do |form| %>
 
   <%= render form %>
 
   <div class="well">
     <%= form.submit "Opslaan", :class => "btn btn-primary" %>
-    <%= link_to "Annuleren", player_path(@player), :class => "btn" %>
+    <%= link_to "Annuleren", player_path(@player), :class => "btn btn-default" %>
   </div>
 
 <% end %>

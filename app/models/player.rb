@@ -5,17 +5,16 @@ class Player < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :team_name, :email, :password, :password_confirmation, :remember_me, :disabled, :paid
   attr_accessor :sorted_points
 
-  BUDGET = 150
-  BUDGET_MULTIPLIER = 100000
+  BUDGET = 15000
+  BUDGET_MULTIPLIER = 1000
   MAX_RIDERS = 9
-  MAX_EDIT_TIME = Time.parse("05-07-2014 12:00")
+  MAX_EDIT_TIME = Time.parse("04-07-2015 14:00")
 
   has_many :player_riders
   has_many :riders, :through => :player_riders
+  has_many :substitute_riders, :through => :player_riders
   has_many :scores, :through => :riders
 
   has_many :subpool_players
@@ -24,7 +23,8 @@ class Player < ActiveRecord::Base
   validates :name, :presence => true, :uniqueness => true
   validates :team_name, :presence => true, :uniqueness => true
 
-  scope :active, where(:disabled => false)
+
+  scope :active, -> { where(:disabled => false) }
 
   after_update :clear_team_if_disabled
 
@@ -42,7 +42,11 @@ class Player < ActiveRecord::Base
   end
 
   def stage_points(stage)
-    riders.joins(:scores).where("scores.stage_id" => stage.id).sum("scores.points")
+    points = 0
+    player_riders.each do |pr|
+      points += pr.stage_points(stage).to_i
+    end
+    points
   end
 
   def points_till_stage(stage)
@@ -53,11 +57,23 @@ class Player < ActiveRecord::Base
   end
 
   def budget
-    BUDGET - expenses
+    BUDGET
   end
 
   def expenses
     riders.sum(:price)
+  end
+
+  def budget_left
+    budget - expenses
+  end
+
+  def budget_left?
+    budget_left > 0
+  end
+
+  def max_riders
+    MAX_RIDERS
   end
 
   def riders_to_pick

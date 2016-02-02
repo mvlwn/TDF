@@ -1,17 +1,27 @@
 <%= content_for(:title, "#{@player.team_name}") %>
-<h2>Informatie</h2>
+
+<h2>Team</h2>
+<%= render :partial => "player_teams/riders",
+           :locals => { :player_riders => @player.player_riders } %>
+
+<% if can? :edit, @player %>
+  <%= link_to "Wijzig team", edit_player_team_path(@player), :class => "btn btn-default" %>
+<% end %>
+
+<hr/>
+
+<h2>Gegevens</h2>
 <%= render :partial => "players/shared/information", :locals => {:player => @player} %>
+
+<% if can? :edit, @player %>
+  <%= link_to "Wijzig gegevens", edit_player_path(@player), :class => "btn btn-default" %>
+<% end %>
+
+<hr/>
 
 <h2>Subpools</h2>
 <%= render :partial => "subpools/list", :locals => {:subpools => @player.subpools} %>
 
-<h2>Team</h2>
-<%= render :partial => "riders/list", :locals => {:riders => @player.riders} %>
+<hr/>
 
-<div class="well">
-  <% if can? :edit, @player %>
-    <%= link_to "Wijzig deelnemer", edit_player_path(@player), :class => "btn" %>
-    <%= link_to "Kies renners", edit_player_team_path(@player), :class => "btn" %>
-  <% end %>
-  <%= link_to "Alle deelnemers", players_path, :class => "btn" %>
-</div>
+<%= link_to "Bekijk alle deelnemers", players_path, :class => "btn btn-default" %>

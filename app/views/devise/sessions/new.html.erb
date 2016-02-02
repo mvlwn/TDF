@@ -1,22 +1,40 @@
 <h2>Inloggen</h2>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %>
-  <%= f.email_field :email %></div>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { class: 'form-horizontal' }) do |f| %>
+  <div class="form-group">
+    <%= f.label :email, class: 'col-xs-2 control-label' %>
+    <div class="col-xs-4">
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+  </div>
 
-  <div><%= f.label :password %>
-  <%= f.password_field :password %></div>
+  <div class="form-group">
+    <%= f.label :password, class: 'col-xs-2 control-label' %>
+    <div class="col-xs-4">
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+  </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div>
-      <label for="remember_me" class="checkbox">
-        <%= f.check_box :remember_me %>
-        Onthoud mij
-      </label>
+    <div class="form-group">
+      <div class="col-xs-offset-2 col-xs-4">
+        <div class="checkbox">
+          <label class="checkbox">
+            <%= f.check_box :remember_me %>
+            Onthoud mij
+          </label>
+        </div>
+      </div>
     </div>
   <% end -%>
 
-  <div><%= f.submit "Inloggen", :class => "btn btn-primary" %></div>
+  <div class="form-group">
+    <div class="col-xs-offset-2 col-xs-4">
+      <%= f.submit "Inloggen", :class => "btn btn-primary" %>
+    </div>
+  </div>
 <% end %>
+
+<hr/>
 
 <%= render "devise/shared/links" %>

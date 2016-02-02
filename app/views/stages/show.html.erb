@@ -2,35 +2,24 @@
 
 <%= render :partial => "navigation" %>
 
-<%= render :partial => "stage_information" %>
-
-<div class="alert">
-  Wat vond jij van deze etappe? Laat je horen in het <%= link_to 'commentaar', { anchor: 'comments' }, { class: 'btn btn-primary' } %>
-</div>
-
-<% if can? :edit, Team %>
-<div class="well">
-  <%= link_to "Wijzig", edit_stage_path(@stage), :class => "btn" %>
-</div>
-<% end %>
-
 <div class="row">
-	<div class="span6">
+  <div class="col-md-3 col-sm-12">
+    <h2>Gegevens</h2>
+    <%= render :partial => "stage_information" %>
+    <% if can? :edit, Stage %>
+      <%= link_to "Wijzig", edit_stage_path(@stage), :class => "btn btn-default" %>
+      <%= link_to "Scores", stage_scores_path(@stage), :class => "btn btn-default" %>
+      <%= link_to "Email", email_stage_path(@stage), :class => "btn btn-default" %>
+    <% end %>
+  </div>
+  <div class="col-md-5 col-sm-6">
 		<h2 id="player_ranking">De ploegen</h2>
 		<%= render :partial => "shared/player_ranking", :locals => {:players => @sorted_players, :stage => @stage} %>
 	</div>
-	<div class="span6">
-		<h2 id="rider_ranking">De renners</h2>
-		<%= render :partial => "shared/rider_ranking", :locals => {:riders => @sorted_riders, :stage => @stage} %>
+	<div class="col-md-4 col-sm-6">
+    <% if @sorted_riders.any? %>
+		  <h2 id="rider_ranking">De renners</h2>
+		  <%= render :partial => "shared/rider_ranking", :locals => {:riders => @sorted_riders, :stage => @stage} %>
+    <% end %>
 	</div>
-</div>
-
-<div id="comments">
-  <h3>Commentaar</h3>
-  <p>
-    <div class="fb-comments" data-href="<%= stage_url(@stage) %>" data-numposts="5" data-colorscheme="light"></div>
-  </p>
-  <p>
-    <div class="fb-like" data-href="<%= stage_url(@stage) %>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-  </p>
 </div>

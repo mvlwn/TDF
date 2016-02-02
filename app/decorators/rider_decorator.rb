@@ -15,15 +15,19 @@ class RiderDecorator < Draper::Decorator
     h.number_to_euro(model.price * Player::BUDGET_MULTIPLIER)
   end
 
+  def substitute_price
+    h.number_to_euro(model.substitute_price * Player::BUDGET_MULTIPLIER)
+  end
+
   def role
     model.ad_role
   end
 
   def number
-    if rider.withdrawn
-      h.content_tag("span", rider.number, :class => "badge badge-important", :title => "Renner is afgestapt")
+    if rider.abandoned
+      h.content_tag("span", rider.number, :class => "label label-danger", :title => "Renner is uit koers")
     else
-      h.content_tag("span", rider.number, :class => "badge badge-success", :title => "Renner is in koers")
+      h.content_tag("span", rider.number, :class => "label label-success", :title => "Renner is in koers")
     end
   end
 
@@ -58,12 +62,12 @@ class RiderDecorator < Draper::Decorator
     h.number_to_euro(rider.efficiency_in_cents.to_f / 100)
   end
 
-  def withdrawn
-    rider.withdrawn ? "Ja" : "Nee"
+  def abandoned
+    rider.abandoned? ? "Ja" : "Nee"
   end
 
   def in_race
-    !rider.withdrawn ? "Ja" : "Nee"
+    !rider.abandoned? && !rider.rejected? ? "Ja" : "Nee"
   end
 
 end

@@ -1,11 +1,12 @@
 <%= content_for(:title, "Renners van #{@player.team_name}") %>
+
 <% if @player.riders.any? %>
-  <%= render :partial => "riders/list", :locals => { :riders => RiderDecorator.decorate_collection(@player.riders) } %>
+  <%= render :partial => "player_teams/riders", :locals => { :riders => RiderDecorator.decorate_collection(@player.riders) } %>
 <% else %>
   <p>Het team heeft nog geen renners geselecteerd</p>
 <% end %>
 
 <div class="well">
-  <%= link_to "Terug", player_path(@player), :class => "btn" %>
-  <%= link_to "Wijzig selectie", pick_player_path(@player), :class => "btn" %>
+  <%= link_to "Terug", player_path(@player), :class => "btn btn-default" %>
+  <%= link_to "Wijzig selectie", pick_player_path(@player), :class => "btn btn-default" %>
 </div>

@@ -1,45 +1,55 @@
-<table class="table">
-  <thead>
-  <tr>
-    <th>Naam</th>
-    <th>Deelnemers</th>
-    <th>Opties</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% subpools.each do |subpool| %>
-    <tr>
-      <td><%= link_to subpool.name, subpool_path(subpool) %></td>
-      <td><%= subpool.players.count %></td>
-      <td>
-        <% if can? :edit, @player %>
-          <%= link_to 'Afmelden', subpool_player_path(subpool), method: :delete, class: 'btn warning' unless subpool.creator?(current_player) %>
-          <%= link_to 'Wijzig', edit_subpool_path(subpool), class: 'btn' if subpool.creator?(current_player) %>
-          <% if subpool.creator?(current_player) %>
-            <%= link_to 'Wis', subpool_path(subpool), method: :delete, confirm: 'Weet je het zeker', class: 'btn'  %>
-          <% end %>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<% if can? :edit, @player %>
   <div class="row">
-    <div class="span6">
-      <h4>Aanmelden bij subpoele</h4>
-      <%= form_for @subpool_player ||= SubpoolPlayer.new, html: { class: 'form-inline' } do |form| %>
-        <%= render partial: 'subpool_players/form', object: form %>
-        <%= form.submit 'Aanmelden', class: 'btn primary' %>
+    <div class="col-md-6">
+      <% if subpools.any? %>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Naam</th>
+            <th>Deelnemers</th>
+            <th>Opties</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% subpools.each do |subpool| %>
+            <tr>
+              <td><%= link_to subpool.name, subpool_path(subpool), class: 'btn btn-primary' %></td>
+              <td class="center"><%= subpool.players.count %></td>
+              <td>
+                <%= link_to 'Bekijk', subpool_path(subpool), class: 'btn btn-default' %>
+                <% if can? :edit, @player %>
+                  <%= link_to 'Afmelden', subpool_player_path(subpool), method: :delete, class: 'btn btn-warning' unless subpool.creator?(current_player) %>
+                  <%= link_to 'Wijzig', edit_subpool_path(subpool), class: 'btn btn-default' if subpool.creator?(current_player) %>
+                  <% if subpool.creator?(current_player) %>
+                    <%= link_to 'Wis', subpool_path(subpool), method: :delete, confirm: 'Weet je het zeker', class: 'btn btn-warning'  %>
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <div class="alert alert-info">Je hebt je niet aangemeld bij een subpoele</div>
       <% end %>
     </div>
-    <div class="span6">
-      <h4>Aanmaken subpoele</h4>
-      <%= form_for @subpool ||= Subpool.new, html: { class: 'form-inline' } do |form| %>
-        <%= render partial: 'subpools/form', object: form %>
-        <%= form.submit 'Aanmaken', class: 'btn primary' %>
+    <div class="col-md-6">
+      <% if can? :edit, @player %>
+        <% if available_subpools(current_player).any? %>
+          <h4>Aanmelden bij subpoele</h4>
+          <%= form_for @subpool_player ||= SubpoolPlayer.new, html: { class: 'form-inline' } do |form| %>
+            <%= render partial: 'subpool_players/form', object: form %>
+            <div class="form-group">
+              <%= form.submit 'Aanmelden', class: 'btn btn-primary' %>
+            </div>
+          <% end %>
+        <% end %>
+
+        <h4>Aanmaken subpoele</h4>
+        <%= form_for @subpool ||= Subpool.new, html: { class: 'form-inline' } do |form| %>
+          <%= render partial: 'subpools/form', object: form %>
+          <%= form.submit 'Aanmaken', class: 'btn btn-primary' %>
+        <% end %>
+
       <% end %>
     </div>
   </div>
-<% end %>

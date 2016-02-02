@@ -3,13 +3,6 @@
 <%= render :partial => "shared/player_ranking",
            :locals => { :players => @players, :stage => false, :overall => false } %>
 
-<div id="comments">
-  <h3>Commentaar</h3>
-  <p>
-    <div class="fb-comments" data-href="<%= subpool_url(@subpool) %>" data-numposts="5" data-colorscheme="light"></div>
-  </p>
-  <p>
-    <div class="fb-like" data-href="<%= subpool_url(@subpool) %>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-  </p>
-</div>
+<hr/>
 
+<%= link_to 'Terug naar je team', account_path, class: 'btn btn-default' %>

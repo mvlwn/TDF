@@ -1,0 +1,199 @@
+1	Nairo	Quintana	Movistar	H	5000	1
+2	Christopher	Froome	Team SKY	H	5000	1
+3	Alberto	Contador	Tinkoff Team	H	5000	1
+4	Peter	Sagan	Tinkoff Team	H	5000	1
+5	Marcel	Kittel	Etixx - Quick-Step	H	4500	1
+6	Andrei	Greipel	Lotto Soudal	H	4500	1
+7	Fabio	Aru	Astana	H	4500	1
+8	Nacer	Bouhanni	Cofidis	H	3500	1
+9	Mark	Cavendish	Dimension Data	H	3500	1
+10	Thibaut	Pinot	FDJ	H	3500	1
+11	Alexander	Kristoff	Katusha	H	3500	1
+12	Alejandro	Valverde	Movistar	H	3500	1
+13	Michael	Matthews	Orica - GreenEDGE	H	3500	1
+14	Romain	Bardet	AG2R	H	3000	1
+15	Vincenzo	Nibali	Astana	H	3000	1
+16	Tejay	Van Garderen	BMC Racing	H	3000	1
+17	Bryan	Coquard	Direct Energy	H	3000	1
+18	Mikel	Landa	Team SKY	H	3000	1
+19	Richie	Porte	BMC Racing	H	2500	1
+20	Pierre	Rolland	Cannondale	H	2500	1
+21	John	Degenkolb	Giant - Alpecin	H	2500	1
+22	Ilnur	Zakarin	Katusha	H	2500	1
+23	Rafal	Majka	Tinkoff Team	H	2500	1
+24	Bauke	Mollema	Trek-Segafredo	H	2500	1
+25	Domenico	Pozzovivo	AG2R	H	2000	1
+26	Warren	Barguil	Giant - Alpecin	H	2000	1
+27	Tom	Dumoulin	Giant - Alpecin	H	2000	1
+28	Joaquim	Rodriguez	Katusha	H	2000	1
+29	Davide	Cimolai	Lampre-Merida	H	2000	1
+30	Wilco	Kelderman	LottoNL - Jumbo	H	2000	1
+31	Geraint	Thomas	Team SKY	H	2000	1
+32	Jakob	Fuglsang	Astana	H	1500	1
+33	Greg	Van Avermaet	BMC Racing	H	1500	1
+34	Edvald	Boasson Hagen	Dimension Data	H	1500	1
+35	Julian	Alaphilippe	Etixx - Quick-Step	H	1500	1
+36	Mathias	Frank	IAM Cycling	H	1500	1
+37	Rui	Costa	Lampre-Merida	H	1500	1
+38	Louis	Meintjes	Lampre-Merida	H	1500	1
+39	Adam	Yates	Orica - GreenEDGE	H	1500	1
+40	Wout	Poels	Team SKY	H	1500	1
+41	Jasper	Stuyven	Trek-Segafredo	H	1500	1
+42	Alexis	Vuillermoz	AG2R	H	1000	1
+43	Tanel	Kangert	Astana	H	1000	1
+44	Damiano	Caruso	BMC Racing	H	1000	1
+45	Rohan	Dennis	BMC Racing	H	1000	1
+46	Sam	Bennett	Bora-Argon 18	H	1000	1
+47	Borut	Bozic	Cofidis	H	1000	1
+48	Tylar	Farrar	Dimension Data	H	1000	1
+49	Mark	Renshaw	Dimension Data	H	1000	1
+50	Yohann	Gene	Direct Energy	H	1000	1
+51	Tony	Martin	Etixx - Quick-Step	H	1000	1
+52	Daniel	Martin	Etixx - Quick-Step	H	1000	1
+53	Maximiliano	Richeze	Etixx - Quick-Step	H	1000	1
+54	Jurgen	Van den Broeck	Katusha	H	1000	1
+55	Jens	Debusschere	Lotto Soudal	H	1000	1
+56	Tony	Gallopin	Lotto Soudal	H	1000	1
+57	Dylan	Groenewegen	LottoNL - Jumbo	H	1000	1
+58	Daniel	Moreno	Movistar	H	1000	1
+59	Daryl	Impey	Orica - GreenEDGE	H	1000	1
+60	Sergio	Henao	Team SKY	H	1000	1
+61	Vasil	Kiryienka	Team SKY	H	1000	1
+62	Mikel	Nieve	Team SKY	H	1000	1
+63	Daniele	Bennati	Tinkoff Team	H	1000	1
+64	Roman	Kreuziger	Tinkoff Team	H	1000	1
+65	Joeri	Trofimov	Tinkoff Team	H	1000	1
+66	Frank	Schleck	Trek-Segafredo	H	1000	1
+67	Jan	Bakelants	AG2R	H	750	1
+68	Mikael	Cherel	AG2R	H	750	1
+69	Dario	Cataldo	Astana	H	750	1
+70	Andrei	Grivko	Astana	H	750	1
+71	Aleksej	Lutsenko	Astana	H	750	1
+72	Diego	Rosa	Astana	H	750	1
+73	Paolo	Tiralongo	Astana	H	750	1
+74	Jan	Barta	Bora-Argon 18	H	750	1
+75	Tom-Jelte	Slagter	Cannondale	H	750	1
+76	Arnold	Jeannesson	Cofidis	H	750	1
+77	Daniel	Navarro	Cofidis	H	750	1
+78	Steve	Cummings	Dimension Data	H	750	1
+79	Serge	Pauwels	Dimension Data	H	750	1
+80	Daniel	Teklehaymanot	Dimension Data	H	750	1
+81	Sebastien	Chavanel	Direct Energy	H	750	1
+82	Fabrice	Jeandesboz	Direct Energy	H	750	1
+83	Romain	Sicard	Direct Energy	H	750	1
+84	Thomas	Voeckler	Direct Energy	H	750	1
+85	Steve	Morabito	FDJ	H	750	1
+86	Sebastien	Reichenbach	FDJ	H	750	1
+87	Brice	Feillu	Fortuneo - Vital Concept	H	750	1
+88	Eduardo	Sepulveda	Fortuneo - Vital Concept	H	750	1
+89	Chris Anker	Sorensen	Fortuneo - Vital Concept	H	750	1
+90	Georg	Preidler	Giant - Alpecin	H	750	1
+91	Laurens	Ten Dam	Giant - Alpecin	H	750	1
+92	Stef	Clement	IAM Cycling	H	750	1
+93	Jerome	Coppel	IAM Cycling	H	750	1
+94	Jarlinson	Pantano	IAM Cycling	H	750	1
+95	Thomas	De Gendt	Lotto Soudal	H	750	1
+96	Sep	Vanmarcke	LottoNL - Jumbo	H	750	1
+97	Winner Andrew	Anacona	Movistar	H	750	1
+98	Jonathan	Castroviejo	Movistar	H	750	1
+99	Alex	Dowsett	Movistar	H	750	1
+100	Imanol	Erviti	Movistar	H	750	1
+101	Jes√∫s	Herrada	Movistar	H	750	1
+102	Gorka	Izagirre	Movistar	H	750	1
+103	Ion	Izagirre	Movistar	H	750	1
+104	Nelson	Oliveira	Movistar	H	750	1
+105	Francesco	Ventoso	Movistar	H	750	1
+106	Michael	Albasini	Orica - GreenEDGE	H	750	1
+107	Luke	Durbridge	Orica - GreenEDGE	H	750	1
+108	Simon	Gerrans	Orica - GreenEDGE	H	750	1
+109	Ruben	Plaza	Orica - GreenEDGE	H	750	1
+110	Luke	Rowe	Team SKY	H	750	1
+111	Ian	Stannard	Team SKY	H	750	1
+112	Matteo	Tosatto	Tinkoff Team	H	750	1
+113	Michael	Valgren	Tinkoff Team	H	750	1
+114	Cyril	Gautier	AG2R	H	500	1
+115	Alexis	Gougeard	AG2R	H	500	1
+116	Brent	Bookwalter	BMC Racing	H	500	1
+117	Marcus	Burghardt	BMC Racing	H	500	1
+118	Amael	Moinard	BMC Racing	H	500	1
+119	Michael	Schar	BMC Racing	H	500	1
+120	Shane	Archbold	Bora-Argon 18	H	500	1
+121	Cesare	Benedetti	Bora-Argon 18	H	500	1
+122	Emanuel	Buchmann	Bora-Argon 18	H	500	1
+123	Bartosz	Huzarski	Bora-Argon 18	H	500	1
+124	Patrick	Konrad	Bora-Argon 18	H	500	1
+125	Andreas	Schillinger	Bora-Argon 18	H	500	1
+126	Paul	Voss	Bora-Argon 18	H	500	1
+127	Jack	Bauer	Cannondale	H	500	1
+128	Sebastian	Langeveld	Cannondale	H	500	1
+129	Dylan	Van Baarle	Cannondale	H	500	1
+130	Christophe	Laporte	Cofidis	H	500	1
+131	Cyril	Lemoine	Cofidis	H	500	1
+132	Rudy	Molard	Cofidis	H	500	1
+133	Geoffrey	Soupe	Cofidis	H	500	1
+134	Kenneth	Vanbilsen	Cofidis	H	500	1
+135	Natnael	Berhane	Dimension Data	H	500	1
+136	Bernhard	Eisel	Dimension Data	H	500	1
+137	Jacques	Janse Van Rensburg	Dimension Data	H	500	1
+138	Reinardt	Janse Van Rensburg	Dimension Data	H	500	1
+139	Youcef	Reguigui	Dimension Data	H	500	1
+140	Jacopo	Venter	Dimension Data	H	500	1
+141	Antoine	Duchesne	Direct Energy	H	500	1
+142	Tony	Hurel	Direct Energy	H	500	1
+143	Bryan	Nauleau	Direct Energy	H	500	1
+144	Adrien	Petit	Direct Energy	H	500	1
+145	Perrig	Quemeneur	Direct Energy	H	500	1
+146	Angelo	Tulik	Direct Energy	H	500	1
+147	Iljo	Keisse	Etixx - Quick-Step	H	500	1
+148	Fabio	Sabatini	Etixx - Quick-Step	H	500	1
+149	Petr	Vakoc	Etixx - Quick-Step	H	500	1
+150	Julien	Vermote	Etixx - Quick-Step	H	500	1
+151	William	Bonnet	FDJ	H	500	1
+152	Matthieu	Ladagnous	FDJ	H	500	1
+153	Cedric	Pineau	FDJ	H	500	1
+154	Anthony	Roux	FDJ	H	500	1
+155	J√©r√©my	Roy	FDJ	H	500	1
+156	Arthur	Vichot	FDJ	H	500	1
+157	Vegard	Breen	Fortuneo - Vital Concept	H	500	1
+158	Anthony	Delaplace	Fortuneo - Vital Concept	H	500	1
+159	Armindo	Fonseca	Fortuneo - Vital Concept	H	500	1
+160	Arnaud	Gerard	Fortuneo - Vital Concept	H	500	1
+161	Kevin	Ledanois	Fortuneo - Vital Concept	H	500	1
+162	Francis	Mourey	Fortuneo - Vital Concept	H	500	1
+163	Pierre-Luc	Perichon	Fortuneo - Vital Concept	H	500	1
+164	Florian	Vachon	Fortuneo - Vital Concept	H	500	1
+165	Roy	Curvers	Giant - Alpecin	H	500	1
+166	Simon	Geschke	Giant - Alpecin	H	500	1
+167	Ramon	Sinkeldam	Giant - Alpecin	H	500	1
+168	Albert	Timmer	Giant - Alpecin	H	500	1
+169	Dries	Devenyns	IAM Cycling	H	500	1
+170	Martin	Elmiger	IAM Cycling	H	500	1
+171	Sondre Holst	Enger	IAM Cycling	H	500	1
+172	Reto	Hollenstein	IAM Cycling	H	500	1
+173	Oliver	Naesen	IAM Cycling	H	500	1
+174	Jacopo	Guarnieri	Katusha	H	500	1
+175	Marco	Haller	Katusha	H	500	1
+176	Alberto	Losada	Katusha	H	500	1
+177	Michael	Morkov	Katusha	H	500	1
+178	Angelo	Vicioso	Katusha	H	500	1
+179	Yukiya	Arashiro	Lampre-Merida	H	500	1
+180	Matteo	Bono	Lampre-Merida	H	500	1
+181	Kristijan	Durasek	Lampre-Merida	H	500	1
+182	Tsgabu	Grmay	Lampre-Merida	H	500	1
+183	Luka	Pibernik	Lampre-Merida	H	500	1
+184	Jan	Polanc	Lampre-Merida	H	500	1
+185	Lars	Bak	Lotto Soudal	H	500	1
+186	Adam	Hansen	Lotto Soudal	H	500	1
+187	Greg	Henderson	Lotto Soudal	H	500	1
+188	Jurgen	Roelandts	Lotto Soudal	H	500	1
+189	Marcel	Sieberg	Lotto Soudal	H	500	1
+190	George	Bennett	LottoNL - Jumbo	H	500	1
+191	Bert-Jan	Lindeman	LottoNL - Jumbo	H	500	1
+192	Paul	Martens	LottoNL - Jumbo	H	500	1
+193	Timo	Roosen	LottoNL - Jumbo	H	500	1
+194	Robert	Wagner	LottoNL - Jumbo	H	500	1
+195	Maarten	Wynants	LottoNL - Jumbo	H	500	1
+196	Matthew	Hayman	Orica - GreenEDGE	H	500	1
+197	Christopher	Juul-Jensen	Orica - GreenEDGE	H	500	1
+198	Peter	Stetina	Trek-Segafredo	H	500	1
+199	Haimar	Zubeldia	Trek-Segafredo	H	500	1

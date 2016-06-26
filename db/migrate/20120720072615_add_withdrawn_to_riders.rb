@@ -1,5 +1,5 @@
-class AddabandonedToRiders < ActiveRecord::Migration
+class AddWithdrawnToRiders < ActiveRecord::Migration
   def change
-    add_column :riders, :abandoned, :boolean, :default => false
+    add_column :riders, :withdrawn, :boolean, :default => false
   end
 end

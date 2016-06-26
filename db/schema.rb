@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20150705194626) do
   create_table "player_riders", force: :cascade do |t|
     t.integer  "player_id",           limit: 4
     t.integer  "rider_id",            limit: 4
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "substitute_rider_id", limit: 4
     t.integer  "points",              limit: 4
   end
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20150705194626) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean  "disabled",                           default: false
   end
 
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 20150705194626) do
     t.integer  "rider_id",   limit: 4
     t.integer  "stage_id",   limit: 4
     t.integer  "points",     limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "rider_stages", ["rider_id"], name: "index_rider_stages_on_rider_id", using: :btree
@@ -74,8 +74,8 @@ ActiveRecord::Schema.define(version: 20150705194626) do
     t.integer  "points",              limit: 4,   default: 0
     t.boolean  "confirmed",                       default: false
     t.boolean  "rejected",                        default: false
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "efficiency_in_cents", limit: 4
     t.boolean  "abandoned",                       default: false
     t.integer  "stage_id",            limit: 4
@@ -93,8 +93,8 @@ ActiveRecord::Schema.define(version: 20150705194626) do
     t.integer  "category",   limit: 4
     t.integer  "ranking",    limit: 4
     t.integer  "points",     limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "scores", ["category"], name: "index_scores_on_category", using: :btree
@@ -111,8 +111,8 @@ ActiveRecord::Schema.define(version: 20150705194626) do
     t.text     "yellow_results", limit: 65535
     t.text     "green_results",  limit: 65535
     t.text     "dotted_results", limit: 65535
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.text     "email_text",     limit: 65535
   end
 
@@ -122,8 +122,8 @@ ActiveRecord::Schema.define(version: 20150705194626) do
   create_table "subpool_players", force: :cascade do |t|
     t.integer  "subpool_id", limit: 4
     t.integer  "player_id",  limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "subpool_players", ["player_id"], name: "index_subpool_players_on_player_id", using: :btree
@@ -132,16 +132,16 @@ ActiveRecord::Schema.define(version: 20150705194626) do
   create_table "subpools", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.integer  "creator_id", limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "subpools", ["creator_id"], name: "index_subpools_on_creator_id", using: :btree
 
   create_table "teams", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

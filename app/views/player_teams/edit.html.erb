@@ -17,14 +17,13 @@
           <% @player_riders.each_with_index do |player_rider, index| %>
             <div class="row" style="margin-top: 4px;">
               <div class="col-xs-1"><span class="badge"><%= index + 1 %></span></div>
-              <div class="col-xs-9">
-                <div class="row">
-                  <div class="col-xs-5 col-sm-12 col-lg-5"><b><%= player_rider.rider.name %></b></div>
-                  <div class="col-xs-4 col-sm-7 col-lg-4">
-                    <small><%= player_rider.rider.team_name %></small>
-                  </div>
-                  <div class="col-xs-3 col-sm-5 col-lg-3"><%= player_rider.rider.price %></div>
-                </div>
+              <div class="col-xs-5">
+                <b><%= player_rider.rider.name %></b>
+                <br />
+                <small><%= player_rider.rider.team_name %></small>
+              </div>
+              <div class="col-xs-4">
+                <%= player_rider.rider.price %>
               </div>
               <div class="col-xs-1">
                 <%= link_to content_tag('span', '', class: 'glyphicon glyphicon-minus'),
@@ -48,19 +47,21 @@
         <% @player_riders.each_with_index do |player_rider, index| %>
           <div class="row" style="margin-top: 4px;">
             <div class="col-xs-1"><span class="badge"><%= index + 1 %></span></div>
-            <div class="col-xs-9">
-              <div class="row">
-                <% if player_rider.substitute_rider %>
-                  <div class="col-xs-5 col-sm-12 col-lg-5"><b><%= player_rider.substitute_rider.name %></b></div>
-                  <div class="col-xs-4 col-sm-7 col-lg-4">
-                    <small><%= player_rider.substitute_rider.team_name %></small>
-                  </div>
-                  <div class="col-xs-3 col-sm-5 col-lg-3"><%= player_rider.substitute_rider.price %></div>
-                <% else %>
-                  <div class="col-xs-8 col-sm-12 col-lg-8">Reserve voor <b><%= player_rider.rider.name %></b></div>
-                  <div class="col-xs-4 col-sm-12 col-lg-4">t.w.v. <%= player_rider.rider.substitute_price %></div>
-                <% end %>
-              </div>
+            <div class="col-xs-5">
+              <% if player_rider.substitute_rider %>
+                <b><%= player_rider.substitute_rider.name %></b><br />
+                <small><%= player_rider.substitute_rider.team_name %></small>
+              <% else %>
+                <small>Reserve voor </small><br />
+                <b><%= player_rider.rider.name %></b>
+              <% end %>
+            </div>
+            <div class="col-xs-4">
+              <% if player_rider.substitute_rider %>
+                <%= player_rider.substitute_rider.price %>
+              <% else %>
+                t.w.v. <%= player_rider.rider.substitute_price %>
+              <% end %>
             </div>
             <div class="col-xs-1">
               <% if player_rider.substitute_rider %>

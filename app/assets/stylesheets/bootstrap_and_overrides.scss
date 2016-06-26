@@ -1,21 +1,58 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic);
-@import url(http://fonts.googleapis.com/css?family=Francois+One);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed);
 //@import "bootstrap_variables";
 
-$font-family-sans-serif:  Lato, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  'Open Sans', Helvetica, Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 
 //$headings-font-family:    inherit !default;
-$headings-font-family:  'Francois One', $font-family-sans-serif;
+$headings-font-family:  'Open Sans Condensed', $font-family-sans-serif;
 $headings-font-weight:    700 !default;
 $headings-line-height:    1.1 !default;
 $headings-color:          inherit !default;
+$yellow:                  #F9B202;
+$black:                   #000;
+$white:                   #fff;
+$blue:                    #0073A0;
+$light-grey:              #eee;
+
+
+$link-color: $blue;
+$btn-primary-color: $black;
+$btn-primary-bg: $yellow;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  background-color: $light-grey;
+}
+
+header, main, footer {
+  background-color: $white;
+}
+
+nav.container {
+  background-color: $yellow;
+}
+
+header {
+  .logo {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 0 10px 0;
+  }
+}
+
+main {
+  .content {
+    padding: 20px;
+  }
+}
 
 h1{
   margin-bottom: 10px;
@@ -44,4 +81,154 @@ table.table-small td{
 .jumbotron{
   background-color: lighten(#FFDF13, 40%);
   border: 1px #FFDF13 solid;
+}
+
+.navbar-yellow {
+  background-color: $yellow;
+  margin: 0;
+  padding: 0;
+
+  .navbar-header,
+  .navbar-nav,
+  .navbar-toggle {
+    background-color: $yellow;
+
+    > li > a {
+      font-size: 18px;
+      color: black;
+      font-weight: 700;
+      &:hover {
+        background-color: darken($yellow, 2%);
+      }
+    }
+    .active {
+      a {
+        background-color: darken($yellow, 5%);
+        color: $black;
+      }
+    }
+  }
+  .navbar-toggle {
+    border-color: darken($yellow, 10%);
+    .icon-bar {
+      background-color: darken($yellow, 20%);
+    }
+    &:hover, &:focus {
+      background-color: darken($yellow, 5%);
+      border-color: darken($yellow, 10%);
+      .icon-bar {
+        background-color: darken($yellow, 20%);
+      }
+    }
+  }
+
+  .navbar-collapse {
+    //background-color: darken($yellow, 5%);
+    border-color: darken($yellow, 10%);
+  }
+}
+
+.leader {
+  position: relative;
+  margin: -20px -20px 40px -20px;
+  padding-bottom: 20px;
+  background-color: $blue;
+
+  @media screen and (min-width: $screen-sm) {
+    background-image: image-url('homepage-leader.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+}
+
+.leader-title {
+  text-align: center;
+  background-image: image-url('leader-title.png');
+  background-size: 250px auto;
+  background-position: 50% 80%;
+  background-repeat: no-repeat;
+  height: 80px;
+
+  @media screen and (min-width: $screen-sm) {
+    background-position: 50% 80%;
+    background-size: auto;
+    height: 200px;
+  }
+  @media screen and (min-width: $screen-md) {
+    height: 320px;
+  }
+  @media screen and (min-width: $screen-lg) {
+    height: 320px;
+  }
+}
+
+.leader-body {
+  @media screen and (min-width: $screen-lg) {
+    display: flex;
+  }
+}
+
+.leader-login {
+  background-color: rgba($white, 0.8);
+  padding: 20px;
+  border-radius: 20px;
+  margin: 25px;
+
+  @media screen and (min-width: $screen-lg) {
+    margin: 0 25px 50px 50px;
+    padding: 20px 30px;
+    width: 50%;
+  }
+
+  hr {
+    border-color: $black;
+    border-style: dotted;
+  }
+}
+
+
+.leader-signup {
+  background-color: rgba($black, 0.5);
+  border-radius: 20px;
+  font-family: $headings-font-family;
+  font-size: 52px;
+  color: white;
+  text-shadow: 3px 3px $black;
+  padding: 40px;
+  text-align: center;
+  margin: 25px;
+  @media screen and (min-width: $screen-md) {
+    padding: 40px;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    margin: 0 50px 50px 25px;
+    padding: 20px 30px;
+    width: 50%;
+    text-align: left;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .btn {
+    margin-top: 20px;
+    text-shadow: none;
+    font-size: 52px;
+  }
+
+}
+
+.login-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  font-family: $headings-font-family;
+  font-weight: 700;
+  font-size: 18px;
 }

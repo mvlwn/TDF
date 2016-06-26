@@ -34,7 +34,7 @@ class SummaryController < ApplicationController
   end
 
   def signup
-    @players = PlayerDecorator.decorate_collection Player.active
+    redirect_to new_session_path(:player)
   end
 
   def not_found
@@ -47,7 +47,7 @@ class SummaryController < ApplicationController
     if player_signed_in?
       true
     else
-      redirect_to signup_summary_path
+      redirect_to new_session_path(:player)
     end
   end
 

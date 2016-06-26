@@ -21,26 +21,33 @@
   </head>
   <body>
 
-    <%= render :partial => "layouts/navigation" %>
+    <header class="container">
+      <a href="<%= url_for summary_path %>">
+        <%= image_tag 'logo.png', class: 'logo' %>
+      </a>
+    </header>
 
-    <div class="container">
+    <nav class="container">
+      <%= render :partial => "layouts/navigation" %>
+    </nav>
+
+    <main class="container">
       <div class="content">
         <div class="row">
           <div class="span12">
             <% if content_for?(:title) %>
-            <h1><%= yield(:title) %></h1>
+              <h1><%= yield(:title) %></h1>
             <% end %>
             <%= flash_messages %>
             <%= yield %>
           </div>
         </div><!--/row-->
       </div><!--/content-->
+    </main>
 
-      <footer>				
-        <%= render :partial => "layouts/footer" %>
-      </footer>
-
-    </div> <!-- /container -->
+    <footer class="container">
+      <%= render :partial => "layouts/footer" %>
+    </footer>
 
     <!-- Javascripts
     ================================================== -->

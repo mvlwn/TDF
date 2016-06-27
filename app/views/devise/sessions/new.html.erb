@@ -36,19 +36,14 @@
           <% end -%>
 
           <div class="form-group">
-            <div class="col-sm-offset-6 col-xs-4">
+            <div class="col-sm-offset-6 col-sm-6">
               <%= f.submit "Inloggen", :class => "btn btn-default btn-block" %><br />
-
+              <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+                <%= link_to "Wachtwoord vergeten?", new_password_path(resource_name) %>
+              <% end -%>
             </div>
           </div>
 
-          <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
-            <div class="form-group">
-              <div class="col-sm-offset-6 col-sm-6">
-                  <%= link_to "Wachtwoord vergeten?", new_password_path(resource_name) %>
-              </div>
-            </div>
-          <% end -%>
           <hr>
 
           <div class="form-group">

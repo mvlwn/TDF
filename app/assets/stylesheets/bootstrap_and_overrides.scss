@@ -143,9 +143,9 @@ table.table-small td{
   text-align: center;
   background-image: image-url('leader-title.png');
   background-size: 250px auto;
-  background-position: 50% 80%;
+  background-position: center bottom;
   background-repeat: no-repeat;
-  height: 80px;
+  height: 60px;
 
   @media screen and (min-width: $screen-sm) {
     background-position: 50% 80%;
@@ -189,14 +189,20 @@ table.table-small td{
   background-color: rgba($black, 0.5);
   border-radius: 20px;
   font-family: $headings-font-family;
-  font-size: 52px;
+  font-size: 26px;
   color: white;
   text-shadow: 3px 3px $black;
-  padding: 40px;
+  padding: 20px;
   text-align: center;
   margin: 25px;
+
+  @media screen and (min-width: $screen-sm) {
+    padding: 40px;
+  }
+
   @media screen and (min-width: $screen-md) {
     padding: 40px;
+    font-size: 52px;
   }
 
   @media screen and (min-width: $screen-lg) {
@@ -214,7 +220,7 @@ table.table-small td{
   .btn {
     margin-top: 20px;
     text-shadow: none;
-    font-size: 52px;
+    font-size: inherit;
   }
 
 }

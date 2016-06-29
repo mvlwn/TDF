@@ -7,7 +7,7 @@ module RidersHelper
   end
 
   def options_for_select_team_id
-    content_tag("option") + options_from_collection_for_select(Team.all, :id, :name, params[:team_id].to_i)
+    content_tag("option") + options_from_collection_for_select(Team.order(:name), :id, :name, params[:team_id].to_i)
   end
 
   def options_for_select_price_from

@@ -3,7 +3,15 @@ class PlayerDecorator < Draper::Decorator
   delegate_all
   delegate :current_page, :total_pages, :limit_value
   # decorates_association :riders
-  
+
+  def name
+    h.truncate(model.name, length: 20)
+  end
+
+  def team_name
+    h.truncate(model.name, length: 20)
+  end
+
   def player
     model
   end
@@ -42,9 +50,9 @@ class PlayerDecorator < Draper::Decorator
 
   def link_to
     if h.can? :show, player
-      h.link_to model.team_name, h.player_path(player)
+      h.link_to h.truncate(model.team_name, 20), h.player_path(player)
     else
-      model.team_name
+      h.truncate(model.team_name, 20)
     end
   end
 

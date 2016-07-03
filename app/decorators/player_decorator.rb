@@ -9,7 +9,7 @@ class PlayerDecorator < Draper::Decorator
   end
 
   def team_name
-    h.truncate(model.name, length: 20)
+    h.truncate(model.team_name, length: 20)
   end
 
   def player

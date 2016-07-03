@@ -5,11 +5,11 @@ class PlayerDecorator < Draper::Decorator
   # decorates_association :riders
 
   def name
-    h.truncate(model.name, length: 20)
+    h.truncate(model.name, length: 30)
   end
 
   def team_name
-    h.truncate(model.team_name, length: 20)
+    h.truncate(model.team_name, length: 35)
   end
 
   def player
@@ -50,9 +50,9 @@ class PlayerDecorator < Draper::Decorator
 
   def link_to
     if h.can? :show, player
-      h.link_to h.truncate(model.team_name, length: 20), h.player_path(player)
+      h.link_to h.truncate(model.team_name, length: 30), h.player_path(player)
     else
-      h.truncate(model.team_name, length: 20)
+      h.truncate(model.team_name, length: 30)
     end
   end
 

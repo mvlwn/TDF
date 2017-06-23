@@ -11,6 +11,7 @@ gem 'kaminari'
 # Javascript && CSS
 gem 'jquery-rails'
 gem 'therubyracer'
+gem 'libv8', '~> 3.16.14.19'
 gem 'sass-rails',   '~> 5.0.0'
 gem 'coffee-rails'
 gem 'uglifier'

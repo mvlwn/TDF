@@ -2,21 +2,71 @@
 
 <table class="table">
 	<tbody>
+  <tr>
+    <th>Wedstrijdnummer</th>
+    <td><%= if @rider.number.present? then @rider.number else "nog niet bekend" end %></td>
+  </tr>
+  <tr>
+    <th>Nationaliteit</th>
+    <td>
+      <%= @rider.nationality_flag %>
+      <%= @rider.nationality %>
+    </td>
+  </tr>
 	<tr>
 		<th width="25%">Team</th>
-		<td width="75%"><%= link_to @rider.team_name, riders_path(team_id: @rider.team_id) %></td>
+		<td width="75%">
+      <%= link_to @rider.team_jersey, riders_path(team_id: @rider.team_id) %>
+      <%= link_to @rider.team_name, riders_path(team_id: @rider.team_id) %>
+    </td>
 	</tr>
-	<tr>
-		<th>Wedstrijdnummer</th>
-		<td><%= if @rider.number.present? then @rider.number else "nog niet bekend" end %></td>
-	</tr>
+  <tr>
+    <th>Leeftijd</th>
+    <td><%= @rider.age %></td>
+  </tr>
+  <tr>
+    <th>Gewicht</th>
+    <td><%= @rider.weight %> kg</td>
+  </tr>
+  <tr>
+    <th>Lengte</th>
+    <td><%= @rider.height %> cm</td>
+  </tr>
+  <tr>
+    <th>Prijs</th>
+    <td><%= @rider.price %></td>
+  </tr>
+  <tr>
+    <th>Klassement</th>
+    <td><%= skill_stars(@rider.overall_skill) %></td>
+  </tr>
+  <tr>
+    <th>Tijdrit</th>
+    <td><%= skill_stars(@rider.time_trial_skill) %></td>
+  </tr>
+  <tr>
+    <th>Klimmen</th>
+    <td><%= skill_stars(@rider.climbing_skill) %></td>
+  </tr>
+  <tr>
+    <th>Sprinten</th>
+    <td><%= skill_stars(@rider.sprinting_skill) %></td>
+  </tr>
+  <tr>
+    <th>Punchen</th>
+    <td><%= skill_stars(@rider.punching_skill) %></td>
+  </tr>
+  <tr>
+    <th>Heuvels</th>
+    <td><%= skill_stars(@rider.hills_skill) %></td>
+  </tr>
+  <tr>
+    <th>Kasseien</th>
+    <td><%= skill_stars(@rider.cobblestones_skill) %></td>
+  </tr>
 	<tr>
 		<th>Aantal punten</th>
 		<td><%= @rider.points %></td>
-	</tr>
-	<tr>
-		<th>Prijs</th>
-		<td><%= @rider.price %></td>
 	</tr>
   <% if @rider.last_stage %>
   <tr>
@@ -38,23 +88,17 @@
 </table>
 
 <h3>Punten</h3>
-<table class="table table-bordered">
-	<thead>
-		<tr>
-			<th>Etappe</th>
-			<% @stages.each do |stage| %>
-			<th width="5%" class="center"><%= link_to stage.number, stage_path(stage) %></th>
-			<% end %>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th>Punten</th>
-			<% @stages.each do |stage| %>
-				<td width="5%" class="center"><%= @rider.stage_points(stage) || content_tag('span', 0, class: 'label danger') %></td>
-			<% end %>
-		</tr>
-	</tbody>
+
+
+
+<table class="table table-auto-width">
+  <% @stages.each do |stage| %>
+    <tr>
+      <th width="10%" class="center"><%= link_to stage.number, stage_path(stage) %></th>
+      <td width="30%"><%= link_to stage.name, stage_path(stage) %></td>
+      <td width="60%"><%= @rider.stage_points(stage) || content_tag('span', 0, class: 'label danger') %></td>
+    </tr>
+  <% end %>
 </table>
 
 <br/>

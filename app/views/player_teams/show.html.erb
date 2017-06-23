@@ -1,4 +1,4 @@
-<%= content_for(:title, "De renners van #{@player.team_name}") %>
+<%= content_for(:title, "De renners van #{@player.team_name}".html_safe) %>
 
 <%= render :partial => "riders", :locals => { :riders => @riders } %>
 

@@ -1,4 +1,4 @@
-<%= content_for(:title, "Renners van #{@player.team_name}") %>
+<%= content_for(:title, "Renners van #{@player.team_name}".html_safe) %>
 
 <% if @player.riders.any? %>
   <%= render :partial => "player_teams/riders", :locals => { :riders => RiderDecorator.decorate_collection(@player.riders) } %>

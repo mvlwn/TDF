@@ -2,7 +2,8 @@
 	<table class="table table-condensed table-striped">
 			<thead>
 			<tr>
-				<th width="5%"><%= link_to_sortable "Nr", :number %></th>
+				<th width="3%"><%= link_to_sortable "Nr", :number %></th>
+        <th width="2%"><%= link_to_sortable "Land", :nationality %></th>
 				<th width="25%">
 					<%= link_to_sortable "Voornaam", :first_name %> -
 					<%= link_to_sortable "Achternaam", :last_name %>
@@ -16,8 +17,12 @@
 			<% riders.each do |rider| %>
 			<tr>
 				<td><%= rider.number %></td>
+        <td><%= rider.nationality_flag%></td>
 				<td><%= rider.name %></td>
-				<td><%= rider.team_name %></td>
+				<td>
+          <%= rider.team_jersey %>
+          <%= rider.team_name %>
+        </td>
 				<td><%= rider.price %></td>
 				<% if selected -%>
 					<td class="center">

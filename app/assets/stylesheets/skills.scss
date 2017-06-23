@@ -1,0 +1,31 @@
+.skills {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+}
+.skill {
+  font-size: 11px;
+}
+.skill--highlight {
+  font-weight: bold;
+  .skill-value {
+    background-color: black;
+    color: gold;
+    font-size: 120%;
+    padding: 0 5px;
+    border-radius: 15px;
+  }
+}
+.skill-category {
+
+}
+.skill-value {
+  font-weight: bold;
+}

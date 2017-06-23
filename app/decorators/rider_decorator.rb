@@ -6,10 +6,6 @@ class RiderDecorator < Draper::Decorator
   def rider
     model
   end
-  
-  def name
-    model.first_name.to_s + ' ' + model.last_name.to_s
-  end
 
   def price
     h.number_to_euro(model.price * Player::BUDGET_MULTIPLIER)
@@ -20,7 +16,15 @@ class RiderDecorator < Draper::Decorator
   end
 
   def role
-    model.ad_role
+    'REIMPLEMENT'
+  end
+
+  def nationality_flag
+    h.image_tag rider.nationality_flag_url, class: 'rider-flag'
+  end
+
+  def team_jersey
+    h.image_tag rider.team_jersey_url, class: 'rider-jersey'
   end
 
   def number

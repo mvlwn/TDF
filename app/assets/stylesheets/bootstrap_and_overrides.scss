@@ -134,7 +134,7 @@ table.table-small td{
   background-color: $blue;
 
   @media screen and (min-width: $screen-sm) {
-    background-image: image-url('homepage-leader.png');
+    background-image: image-url('homepage-leader2017.png');
     background-repeat: no-repeat;
     background-size: 100% auto;
   }
@@ -149,15 +149,15 @@ table.table-small td{
   height: 60px;
 
   @media screen and (min-width: $screen-sm) {
-    background-position: 50% 80%;
+    background-position: 50% 40%;
     background-size: auto;
     height: 200px;
   }
   @media screen and (min-width: $screen-md) {
-    height: 320px;
+    height: 250px;
   }
   @media screen and (min-width: $screen-lg) {
-    height: 320px;
+    height: 280px;
   }
 }
 

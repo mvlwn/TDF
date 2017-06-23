@@ -1,6 +1,8 @@
 # encoding: utf-8
 module ApplicationHelper
 
+  include SkillsHelper
+
   def controller?(*names)
     names.include?(params[:controller])
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150705194626) do
+ActiveRecord::Schema.define(version: 20170623213735) do
 
   create_table "player_riders", force: :cascade do |t|
     t.integer  "player_id",           limit: 4
@@ -63,26 +63,44 @@ ActiveRecord::Schema.define(version: 20150705194626) do
   add_index "rider_stages", ["stage_id"], name: "index_rider_stages_on_stage_id", using: :btree
 
   create_table "riders", force: :cascade do |t|
-    t.integer  "team_id",             limit: 4
-    t.string   "team_name",           limit: 255
-    t.integer  "number",              limit: 4
-    t.integer  "ad_code",             limit: 4,                   null: false
-    t.string   "ad_role",             limit: 255
-    t.string   "first_name",          limit: 255,                 null: false
-    t.string   "last_name",           limit: 255,                 null: false
-    t.integer  "price",               limit: 4,                   null: false
-    t.integer  "points",              limit: 4,   default: 0
-    t.boolean  "confirmed",                       default: false
-    t.boolean  "rejected",                        default: false
+    t.integer  "team_id",              limit: 4
+    t.string   "team_name",            limit: 255
+    t.integer  "number",               limit: 4
+    t.string   "first_name",           limit: 255,                   null: false
+    t.string   "last_name",            limit: 255,                   null: false
+    t.integer  "price",                limit: 4,                     null: false
+    t.integer  "points",               limit: 4,     default: 0
+    t.boolean  "confirmed",                          default: false
+    t.boolean  "rejected",                           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "efficiency_in_cents", limit: 4
-    t.boolean  "abandoned",                       default: false
-    t.integer  "stage_id",            limit: 4
+    t.integer  "efficiency_in_cents",  limit: 4
+    t.boolean  "abandoned",                          default: false
+    t.integer  "stage_id",             limit: 4
+    t.integer  "scorito_id",           limit: 4
+    t.integer  "scorito_team_id",      limit: 4
+    t.string   "name",                 limit: 255
+    t.string   "short_name",           limit: 255
+    t.string   "last_name_prefix",     limit: 255
+    t.integer  "age",                  limit: 4
+    t.integer  "weight",               limit: 4
+    t.integer  "height",               limit: 4
+    t.string   "nationality",          limit: 255
+    t.string   "nationality_flag_url", limit: 255
+    t.string   "team_jersey_url",      limit: 255
+    t.integer  "overall_skill",        limit: 4
+    t.integer  "time_trial_skill",     limit: 4
+    t.integer  "sprinting_skill",      limit: 4
+    t.integer  "punching_skill",       limit: 4
+    t.integer  "climbing_skill",       limit: 4
+    t.integer  "hills_skill",          limit: 4
+    t.integer  "cobblestones_skill",   limit: 4
+    t.text     "description",          limit: 65535
   end
 
-  add_index "riders", ["ad_code"], name: "index_riders_on_ad_code", using: :btree
   add_index "riders", ["number"], name: "index_riders_on_number", using: :btree
+  add_index "riders", ["scorito_id"], name: "index_riders_on_scorito_id", using: :btree
+  add_index "riders", ["scorito_team_id"], name: "index_riders_on_scorito_team_id", using: :btree
   add_index "riders", ["stage_id"], name: "index_riders_on_stage_id", using: :btree
   add_index "riders", ["team_id"], name: "index_riders_on_team_id", using: :btree
 
@@ -142,6 +160,9 @@ ActiveRecord::Schema.define(version: 20150705194626) do
     t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "scorito_id", limit: 4
   end
+
+  add_index "teams", ["scorito_id"], name: "index_teams_on_scorito_id", using: :btree
 
 end

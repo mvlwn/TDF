@@ -1,8 +1,6 @@
 gesink:
   team: rabobank
   number: 11
-  ad_code: 100
-  ad_role: K
   first_name: Robert
   last_name: Gesink
   price: 28
@@ -11,8 +9,6 @@ gesink:
 hoogerland:
   team: vacansoleil
   number: 45
-  ad_code: 101
-  ad_role: H
   first_name: Johnny
   last_name: Hoogerland
   price: 14

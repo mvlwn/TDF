@@ -3,33 +3,32 @@
 # Create Teams and Riders
 # Read a txt file with riders in tab delimited text format
 puts "Creating or updating teams and riders"
-riders_file = Rails.root.join("vendor", "files", "rennerslijst_2016.txt")
-RiderTextParser.new(File.new(riders_file, 'r').read).parse
+SyncScoritoRiders.new.sync!(use_cache: false)
 
 puts "Creating or updating stages"
 # Create Stages
 [
-  { :number => 1, :name => "Mont Saint-Michel > Utah Beach", :ridden_on => "2016-07-02", :description => "Vlak", :distance => "188" },
-  { :number => 2, :name => "Saint Lô > Cherbourg-Octeville", :ridden_on => "2016-07-03", :description => "Vlak, Finish heuvelop", :distance => "183" },
-  { :number => 3, :name => "Granville > Angers", :ridden_on => "2016-07-04", :description => "Vlak", :distance => "223" },
-  { :number => 4, :name => "Saumur > Limoges", :ridden_on => "2016-07-05", :description => "Vlak", :distance => "237" },
-  { :number => 5, :name => "Limoges > Le Lioran", :ridden_on => "2016-07-06", :description => "Heuvel", :distance => "216" },
-  { :number => 6, :name => "Arpajon-sur-Cère > Montauban", :ridden_on => "2016-07-07", :description => "Heuvel, vlakke finale", :distance => "190" },
-  { :number => 7, :name => "L'Isle-Jourdain > Lac de Payolle", :ridden_on => "2016-07-08", :description => "Bergen, vlakke aanloop", :distance => "162" },
-  { :number => 8, :name => "Pau > Bagnères-de-Luchon", :ridden_on => "2016-07-09", :description => "Bergen", :distance => "184" },
-  { :number => 9, :name => "Vielha (Spa) > Arcalis (And)", :ridden_on => "2016-07-10", :description => "Bergen", :distance => "184" },
-  { :number => 10, :name => "Escaldes-Engordany (And) > Revel", :ridden_on => "2016-07-12", :description => "Bergen, vlakke finale", :distance => "197" },
-  { :number => 11, :name => "Carcassonne > Montpellier", :ridden_on => "2016-07-13", :description => "vlak", :distance => "162" },
-  { :number => 12, :name => "Montpellier > Mont Ventoux", :ridden_on => "2016-07-14", :description => "Bergen", :distance => "184" },
-  { :number => 13, :name => "Bourg-Saint-Andéol > Vallon Pont d'Arc", :ridden_on => "2016-07-15", :description => "Tijdrit", :distance => "37" },
-  { :number => 14, :name => "Montélimar > Villard-les-Dombes", :ridden_on => "2016-07-16", :description => "Vlak", :distance => "208" },
-  { :number => 15, :name => "Bourg-en-Bresse > Culoz", :ridden_on => "2016-07-17", :description => "Bergen", :distance => "160" },
-  { :number => 16, :name => "Moirans-en-Montagne > Bern (Zwi)", :ridden_on => "2016-07-18", :description => "Vlak", :distance => "209" },
-  { :number => 17, :name => "Bern (Zwi) > Finhaut-Emosson (Zwi)", :ridden_on => "2016-07-20", :description => "Bergen", :distance => "184" },
-  { :number => 18, :name => "Sallanches > Mégève", :ridden_on => "2016-07-21", :description => "Klimtijdrit", :distance => "17" },
-  { :number => 19, :name => "Albertville > Saint-Gervais Mont Blanc", :ridden_on => "2016-07-22", :description => "Bergen", :distance => "146" },
-  { :number => 20, :name => "Mégève > Morzine", :ridden_on => "2016-07-23", :description => "Bergen", :distance => "146" },
-  { :number => 21, :name => "Chantilly > Paris", :ridden_on => "2016-07-24", :description => "Vlak", :distance => "113" }
+  { :number => 1, :name => "Düsseldorf - Düsseldorf", :ridden_on => "2017-07-01", :description => "Tijdrit", :distance => "14" },
+  { :number => 2, :name => "Düsseldorf (Dui) – Luik (Bel)", :ridden_on => "2017-07-02", :description => "Vlak", :distance => "203" },
+  { :number => 3, :name => "Verviers (Bel) – Longwy", :ridden_on => "2017-07-03", :description => "Aankomst heuvelop", :distance => "212" },
+  { :number => 4, :name => "Mondorf les Bains (Lux) – Vittel", :ridden_on => "2017-07-04", :description => "Vlak", :distance => "207" },
+  { :number => 5, :name => "Vittel – La Planche des Belles Filles", :ridden_on => "2017-07-05", :description => "Aankomst bergop", :distance => "160" },
+  { :number => 6, :name => "Vesoul – Troyes", :ridden_on => "2017-07-06", :description => "Vlak", :distance => "216" },
+  { :number => 7, :name => "	Troyes – Nuits Saint Georges", :ridden_on => "2017-07-07", :description => "Vlak", :distance => "213" },
+  { :number => 8, :name => "Dole – Station des Rousses", :ridden_on => "2017-07-08", :description => "Bergen", :distance => "187" },
+  { :number => 9, :name => "Nantua – Chambery", :ridden_on => "2017-07-9", :description => "Bergen", :distance => "181" },
+  { :number => 10, :name => "Périgueux – Bergerac", :ridden_on => "2017-07-11", :description => "Vlak", :distance => "178" },
+  { :number => 11, :name => "Eymet – Pau", :ridden_on => "2017-07-12", :description => "vlak", :distance => "203" },
+  { :number => 12, :name => "Pau – Peyragudes", :ridden_on => "2017-07-13", :description => "Bergen", :distance => "214" },
+  { :number => 13, :name => "	Saint Girons – Foix", :ridden_on => "2017-07-14", :description => "Bergen", :distance => "101" },
+  { :number => 14, :name => "Blagnac – Rodez", :ridden_on => "2017-07-15", :description => "Heuvels", :distance => "181" },
+  { :number => 15, :name => "	Laissac Sévérac l’Église – Le Puy en Velay", :ridden_on => "2017-07-16", :description => "Heuvels", :distance => "189" },
+  { :number => 16, :name => "Le Puy en Velay – Romans sur Isère", :ridden_on => "2017-07-18", :description => "Heuvels, vlak slot", :distance => "165" },
+  { :number => 17, :name => "	La Mure – Serre Chevalier", :ridden_on => "2017-07-19", :description => "Bergen", :distance => "183" },
+  { :number => 18, :name => "Briançon – Izoard	", :ridden_on => "2017-07-20", :description => "Bergen", :distance => "179" },
+  { :number => 19, :name => "Embrun – Salon de Provence", :ridden_on => "2017-07-21", :description => "Vlak", :distance => "222" },
+  { :number => 20, :name => "Marseille - Marseille", :ridden_on => "2017-07-22", :description => "Tijdrit", :distance => "22" },
+  { :number => 21, :name => "Montgeron – Parijs", :ridden_on => "2017-07-23", :description => "Vlak", :distance => "103" }
 ].each do |stage_attributes|
   stage = Stage.find_or_initialize_by(number: stage_attributes[:number])
   stage.update_attributes(stage_attributes)

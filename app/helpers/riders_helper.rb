@@ -12,17 +12,23 @@ module RidersHelper
 
   def options_for_select_price_from
     value = params[:price_from].present? ? params[:price_from].to_i : nil
-    content_tag("option") + options_for_select((Rider.minimum(:price)..Rider.maximum(:price)).step(250).to_a.map{|s| ["#{number_to_euro s.to_i * Player::BUDGET_MULTIPLIER}", s]}, value)
+    content_tag("option") + options_for_select((Rider.minimum(:price)..Rider.maximum(:price)).step(250_000).to_a.map{|s| ["#{number_to_euro s.to_i * Player::BUDGET_MULTIPLIER}", s]}, value)
   end
 
   def options_for_select_price_to
     value = params[:price_to].present? ? params[:price_to].to_i : nil
-    content_tag("option") + options_for_select((Rider.minimum(:price)..Rider.maximum(:price)).step(250).to_a.map{|s| ["#{number_to_euro s.to_i * Player::BUDGET_MULTIPLIER}", s]}, value)
+    content_tag("option") + options_for_select((Rider.minimum(:price)..Rider.maximum(:price)).step(250_000).to_a.map{|s| ["#{number_to_euro s.to_i * Player::BUDGET_MULTIPLIER}", s]}, value)
   end
 
   def options_for_select_active
     value = params[:active].present? ? params[:active].to_i : 1
     content_tag("option") + options_for_select([['Ja', 1], ['Nee', 0]], value)
+  end
+
+  def skill_stars(skill = 0)
+    skill.times.map do
+      content_tag("i", "", :class => "glyphicon glyphicon-star")
+    end.join(' ').html_safe
   end
 
 end

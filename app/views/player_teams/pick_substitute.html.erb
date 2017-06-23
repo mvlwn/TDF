@@ -45,8 +45,13 @@
 
         <div class="row" style="margin-top: 4px;">
           <div class="col-xs-1"><%= rider.number %></div>
-          <div class="col-xs-4"><b><%= rider.name %></b></div>
+          <div class="col-xs-4">
+            <%= rider.nationality_flag %>&nbsp;
+            <b><%= rider.name %></b><br />
+            <%= render partial: 'shared/skills', locals: { rider: rider } %>
+          </div>
           <div class="col-xs-3">
+            <%= rider.team_jersey %>
             <small><%= rider.team_name %></small>
           </div>
           <div class="col-xs-3"><%= rider.price %></div>

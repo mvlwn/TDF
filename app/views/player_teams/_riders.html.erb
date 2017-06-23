@@ -3,10 +3,10 @@
     <thead>
     <tr>
       <th width="2%" class="center"><%= link_to_sortable "Nr", :number %></th>
+      <th width="2%"></th>
       <th width="20%">
         <%= link_to_sortable "Voornaam", :first_name %> -
         <%= link_to_sortable "Achternaam", :last_name %>
-
       </th>
       <th width="10%"><%= link_to_sortable "Team", :team_name %></th>
       <th width="2%">Nr</th>
@@ -25,13 +25,19 @@
       %>
       <tr>
         <td class="center"><%= rider.number %></td>
+        <td><%= rider.nationality_flag %></td>
         <td>
-          <%= link_to rider.name, rider_path(rider) %>
+          <%= link_to rider.name, rider_path(rider) %><br />
+          <%= render partial: 'shared/skills', locals: { rider: rider } %>
+
         </td>
-        <td><%= link_to rider.team_name, riders_path(team_id: rider.team_id) %></td>
+        <td class="nowrap">
+          <%= rider.team_jersey %>
+          <%= link_to rider.team_name, riders_path(team_id: rider.team_id) %>
+        </td>
         <td><%= substitute.number if substitute %></td>
         <td><%= link_to substitute.name, rider_path(substitute) if substitute %></td>
-        <td><%= rider.price %></td>
+        <td class="nowrap"><%= rider.price %></td>
         <td class="center"><%= player_rider.points %></td>
         <!--<td><%= rider.efficiency %></td>-->
         <td class="center"><%= rider.in_race %></td>

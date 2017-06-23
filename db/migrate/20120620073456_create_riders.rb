@@ -15,9 +15,9 @@ class CreateRiders < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index(:riders, :ad_code)
-    add_index(:riders, :team_id)
-    add_index(:riders, :number)
-    
+    add_index "riders", ["ad_code"], name: "index_riders_on_ad_code", using: :btree
+    add_index "riders", ["number"], name: "index_riders_on_number", using: :btree
+    add_index "riders", ["stage_id"], name: "index_riders_on_stage_id", using: :btree
+    add_index "riders", ["team_id"], name: "index_riders_on_team_id", using: :btree
   end
 end

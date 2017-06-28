@@ -10,6 +10,7 @@ module Scorito
     def initialize
       @url = "https://www.scorito.com/cyclingmanager/teamselectionsearch/byprice?marketId=75&min=0&max=5000000&maxNumberOfResults=500&culture=nl-nl"
       @tmp_file = Rails.root.join('tmp', 'riders.json')
+      @file = Rails.root.join('vendor', 'files', 'riders.json')
     end
 
     def riders
@@ -18,6 +19,11 @@ module Scorito
 
     def clear_cache
       File.delete(@tmp_file) if File.exist?(@tmp_file)
+    end
+
+    def save_cache
+      source = get_source
+      save_to_cache_file(source.force_encoding('UTF-8')) if source
     end
 
     private
@@ -34,11 +40,10 @@ module Scorito
     end
 
     def riders_data
-      if File.exist?(@tmp_file)
-        source = File.read(@tmp_file)
+      if File.exist?(@file)
+        source = File.read(@file)
       else
-        source = get_source
-        save_to_cache_file(source.force_encoding('UTF-8')) if source
+        source = nil
       end
 
       JSON.parse(source) if source

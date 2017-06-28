@@ -3,7 +3,7 @@
 # Create Teams and Riders
 # Read a txt file with riders in tab delimited text format
 puts "Creating or updating teams and riders"
-SyncScoritoRiders.new.sync!(false)
+SyncScoritoRiders.new.sync!
 
 puts "Creating or updating stages"
 # Create Stages

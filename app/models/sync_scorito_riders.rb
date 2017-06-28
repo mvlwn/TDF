@@ -4,8 +4,7 @@ class SyncScoritoRiders
     @scorito_client = Scorito::Client.new
   end
 
-  def sync!(use_cache = true)
-    @scorito_client.clear_cache unless use_cache
+  def sync!
     @scorito_client.riders.each do |scorito_rider|
       team = Team.find_or_create_by(scorito_id: scorito_rider.team_id)
       team.update!(name: scorito_rider.team_name)

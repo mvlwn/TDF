@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
   end
 
   def riders_sort_column
-    Rider.column_names.include?(params[:sort]) ? params[:sort] : "number ASC, last_name"
+    Rider.column_names.include?(params[:sort]) ? params[:sort] : ['rejected', 'number', 'price DESC', 'last_name'].join(', ')
   end
 
   def riders_sort_direction

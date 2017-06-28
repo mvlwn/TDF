@@ -14,7 +14,7 @@ module Scorito
     end
 
     def riders
-      riders_data.map{ |rider_data| Rider.new(rider_data) }
+      riders_data.map{ |rider_data| Scorito::Rider.new(rider_data) }
     end
 
     def clear_cache

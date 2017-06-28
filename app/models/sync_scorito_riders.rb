@@ -5,6 +5,8 @@ class SyncScoritoRiders
   end
 
   def sync!
+    Rider.update_all(rejected: true, confirmed: false)
+
     @scorito_client.riders.each do |scorito_rider|
       team = Team.find_or_create_by(scorito_id: scorito_rider.team_id)
       team.update!(name: scorito_rider.team_name)
@@ -31,7 +33,9 @@ class SyncScoritoRiders
         climbing_skill:       scorito_rider.climbing_skill,
         hills_skill:          scorito_rider.hills_skill,
         cobblestones_skill:   scorito_rider.cobblestones_skill,
-        description:          scorito_rider.description
+        description:          scorito_rider.description,
+        rejected:             false,
+        confirmed:            true
       )
     end
   end

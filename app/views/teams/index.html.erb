@@ -5,6 +5,7 @@
   <tr>
     <th>Naam</th>
     <th>Budget</th>
+    <th>Renners</th>
     <th class="center">Punten</th>
   </tr>
   </thead>
@@ -13,6 +14,7 @@
   <tr>
     <td><%= link_to team.name, team_path(team) %></td>
     <td><%= team.budget %></td>
+    <td><%= team.riders.count %></td>
     <td class="center"><%= team.points %></td>
   </tr>
   <% end %>

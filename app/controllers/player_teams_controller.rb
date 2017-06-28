@@ -12,7 +12,7 @@ class PlayerTeamsController < ApplicationController
   def edit
     if @player.can_pick_riders?
       all_riders = Rider.active.order(riders_sort_order).page(params[:page])
-      all_riders = all_riders.where(price: 0..@player.budget_left)
+      all_riders = all_riders.where(price: 0..@player.budget_left_for_purchases)
       riders = Rider.filter_riders(all_riders, params)
       @riders = RiderDecorator.decorate_collection(riders)
     else

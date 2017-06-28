@@ -64,8 +64,16 @@ class Player < ActiveRecord::Base
     riders.sum(:price)
   end
 
+  def minimal_expected_expenses
+    (MAX_RIDERS - riders.count - 1) * 500_000
+  end
+
   def budget_left
     budget - expenses
+  end
+
+  def budget_left_for_purchases
+    budget_left - minimal_expected_expenses
   end
 
   def budget_left?

@@ -20,7 +20,9 @@
 			<td>
         <%= points %>
         <% if overall %>
-        <span class="quiet small">+<%= points - player.points_till_stage(@stage.previous) %></span>
+          <span class="quiet small">
+            +<%= player.stage_points(@stage) %>
+          </span>
         <% end %>
       </td>
 			<td class="center">

@@ -58,6 +58,11 @@ class PlayersController < ApplicationController
     redirect_to :back
   end
 
+  def stage_points
+    @stage = StageDecorator.decorate(Stage.find(params[:stage_id]))
+    @player_rider_stage_points = @player.player_rider_stage_points(@stage)
+  end
+
   private
 
   def player_params

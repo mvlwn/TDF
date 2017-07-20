@@ -2,6 +2,10 @@ class SubpoolsController < ApplicationController
 
   respond_to :html
 
+  def index
+    @subpools = Subpool.order('name')
+  end
+
   def show
     @subpool = Subpool.find(params[:id])
 

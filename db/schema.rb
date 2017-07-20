@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170623213735) do
+ActiveRecord::Schema.define(version: 20170720192742) do
+
+  create_table "player_rider_stage_points", force: :cascade do |t|
+    t.integer "player_id",    limit: 4
+    t.integer "stage_id",     limit: 4
+    t.integer "rider_id",     limit: 4
+    t.integer "points",       limit: 4
+    t.integer "total_points", limit: 4
+    t.integer "stage_number", limit: 4
+  end
 
   create_table "player_riders", force: :cascade do |t|
     t.integer  "player_id",           limit: 4
@@ -25,6 +34,14 @@ ActiveRecord::Schema.define(version: 20170623213735) do
   add_index "player_riders", ["player_id"], name: "index_player_riders_on_player_id", using: :btree
   add_index "player_riders", ["rider_id"], name: "index_player_riders_on_rider_id", using: :btree
   add_index "player_riders", ["substitute_rider_id"], name: "index_player_riders_on_substitute_rider_id", using: :btree
+
+  create_table "player_stage_points", force: :cascade do |t|
+    t.integer "player_id",    limit: 4
+    t.integer "stage_id",     limit: 4
+    t.integer "points",       limit: 4
+    t.integer "total_points", limit: 4
+    t.integer "stage_number", limit: 4
+  end
 
   create_table "players", force: :cascade do |t|
     t.string   "name",                   limit: 255, default: "",    null: false

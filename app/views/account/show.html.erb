@@ -21,3 +21,7 @@
 
 <h2>Mijn gegevens</h2>
 <%= render :partial => "players/shared/information", :locals => {:player => @player} %>
+
+
+<h2>Uitslagen per etappe</h2>
+<%= render :partial => "players/points_per_stage", :locals => {:player => @player} %>

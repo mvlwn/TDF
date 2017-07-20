@@ -6,9 +6,9 @@
 </ul>
 
 <div class="well">
-	<button id="toggle_score_position" class="btn btn-primary">Toon positie</button>
+	<button id="toggle_stage_scores" class="btn btn-primary">Toon dagscores</button>
+  <button id="toggle_scores" class="btn btn-default">Toon totaal scores</button>
 </div>
-
 
 <table class="table table-bordered table-condensed table-striped">
 	<thead>
@@ -21,19 +21,18 @@
 	</thead>
 	<tbody>
 	<% @players.each do |player| %>
-	<% @matrix.player_id = player.id %>
-	<tr>
-		<td><%= player.link_to %></td>
-		<% @stages.each do |stage| %>
-			<% @matrix.stage_id = stage.id %>
-			<td class="center">
-				<span class="<% if @matrix.first? %>label label-success<% end %>">
-					<span class="points"><%= @matrix.points_string %></span>
-					<span class="position hide"><%= @matrix.position_string %></span>
-				</span>
-			</td>
-		<% end %>
-	</tr>
+    <tr>
+      <td><%= player.link_to %></td>
+      <% @stages.each do |stage| %>
+        <% player_stage_points = player.player_stage_points.detect{|psp| psp.stage_id == stage.id } %>
+        <td class="center">
+          <span class="">
+            <span class="stage_points"><%= player_stage_points.points %></span>
+            <span class="total_points" style="display: none;"><%= player_stage_points.total_points if stage.scores.any? %></span>
+          </span>
+        </td>
+      <% end %>
+    </tr>
 	<% end %>
 	</tbody>
 </table>

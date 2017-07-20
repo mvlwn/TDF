@@ -12,7 +12,8 @@ class Score < ActiveRecord::Base
     2 => 'Groene trui',
     3 => 'Bolletjes trui',
     4 => 'Rode rugnummers',
-    5 => 'Rode Lantaarn'
+    5 => 'Rode Lantaarn',
+    6 => 'Witte trui'
   }
 
   DAY_CATEGORY_ID = 0
@@ -21,6 +22,7 @@ class Score < ActiveRecord::Base
   DOTTED_CATEGORY_ID = 3
   COMBATIVENESS_CATEGORY_ID = 4
   YELLOW_LAST_CATEGORY_ID = 5
+  WHITE_CATEGORY_ID = 6
 
   scope :day, -> { where(category: DAY_CATEGORY_ID) }
   scope :yellow, -> { where(category: YELLOW_CATEGORY_ID) }
@@ -28,6 +30,7 @@ class Score < ActiveRecord::Base
   scope :dots, -> { where(category: DOTTED_CATEGORY_ID) }
   scope :combativeness, -> { where(category: COMBATIVENESS_CATEGORY_ID) }
   scope :yellow_last, -> { where(category: YELLOW_LAST_CATEGORY_ID) }
+  scope :white, -> { where(category: WHITE_CATEGORY_ID) }
 
   validates_presence_of :points, :category, :stage_id, :number
 

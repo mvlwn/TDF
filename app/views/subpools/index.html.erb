@@ -1,0 +1,18 @@
+<%= content_for(:title, "Subpoeles") %>
+
+<table class="table table-condensed table-striped">
+  <thead>
+  <tr>
+    <th>Naam</th>
+    <th>Deelnemers</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @subpools.each do |subpool| %>
+    <tr>
+      <td><%= link_to subpool.name, subpool_path(subpool) %></td>
+      <td><%= subpool.players.count %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

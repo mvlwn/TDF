@@ -1,0 +1,20 @@
+<table class="table table-auto-width">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Etappe</th>
+    <th>Punten</th>
+    <th>Totaal</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% player.player_stage_points.includes(:stage).order(:stage_number).each do |player_stage_points| %>
+    <tr>
+      <td><%= link_to player_stage_points.stage_number, stage_path(player_stage_points.stage) %></td>
+      <td><%= link_to player_stage_points.stage.name, stage_path(player_stage_points.stage) %></td>
+      <td><%= link_to player_stage_points.points, stage_points_player_path(player, stage_id: player_stage_points.stage_id) %></td>
+      <td><%= player_stage_points.total_points %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

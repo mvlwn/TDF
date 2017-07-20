@@ -3,6 +3,8 @@ class Stage < ActiveRecord::Base
   has_many :scores
   has_many :rider_stages, dependent: :destroy
   has_many :riders, through: :rider_stages
+  has_many :player_stage_points
+  has_many :player_rider_stage_points
 
   accepts_nested_attributes_for :scores, allow_destroy: true, reject_if: proc{ |attributes| attributes[:number].blank? }
 

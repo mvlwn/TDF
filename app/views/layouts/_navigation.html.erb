@@ -18,6 +18,7 @@
       <li<% if controller?("riders") %> class="active"<% end %>><%= link_to "Renners", riders_path %></li>
       <% if player_signed_in? %>
         <li<% if controller?("players", "player_teams") %> class="active"<% end %>><%= link_to "Deelnemers", players_path %></li>
+        <li<% if controller?("subpools") %> class="active"<% end %>><%= link_to "Subpoeles", subpools_path %></li>
       <% end %>
       <li<% if controller?("rules") %> class="active"<% end %>><%= link_to "Spelregels", rules_path %></li>
     </ul>

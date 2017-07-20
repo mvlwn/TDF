@@ -2,14 +2,20 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $ ->
-  $("#toggle_score_position")
+  $("#toggle_stage_scores")
 		.on "click", () ->
-      if($(".points").first().is(":visible"))
-        $(".points").hide()
-        $(".position").show()
-        $(this).text("Toon score")
-      else
-        $(".points").show()
-        $(".position").hide()
-        $(this).text("Toon positie")
+      $(".total_points").hide()
+      $(".stage_points").show()
+      $(this).removeClass('btn-default')
+      $(this).addClass('btn-primary')
+      $("#toggle_scores").removeClass('btn-primary')
+      $("#toggle_scores").addClass('btn-default')
 
+  $("#toggle_scores")
+    .on "click", () ->
+      $(".total_points").show()
+      $(".stage_points").hide()
+      $(this).removeClass('btn-default')
+      $(this).addClass('btn-primary')
+      $("#toggle_stage_scores").removeClass('btn-primary')
+      $("#toggle_stage_scores").addClass('btn-default')

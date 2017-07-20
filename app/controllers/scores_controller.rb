@@ -17,6 +17,7 @@ class ScoresController < ApplicationController
 
   def create
     if @stage.update_attributes(stage_params)
+      StagePointsCalculator.calculate!(@stage)
       flash[:notice] = 'Punten opgeslagen'
       redirect_to stage_scores_path(@stage)
     else
@@ -29,6 +30,7 @@ class ScoresController < ApplicationController
 
   def update
     if @score.update_attributes(score_params)
+      StagePointsCalculator.calculate!(@stage)
       flash[:notice] = 'Punten opgeslagen'
       redirect_to stage_scores_path(@stage)
     else
@@ -42,6 +44,7 @@ class ScoresController < ApplicationController
 
   def bulk_update
     if @stage.update_attributes(stage_params)
+      StagePointsCalculator.calculate!(@stage)
       flash[:notice] = 'Punten opgeslagen'
       redirect_to stage_scores_path(@stage)
     else
@@ -51,6 +54,7 @@ class ScoresController < ApplicationController
 
   def destroy
     @score.destroy
+    StagePointsCalculator.calculate!(@stage)
     redirect_to stage_scores_path(@stage)
   end
 

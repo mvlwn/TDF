@@ -7,6 +7,7 @@ class Rider < ActiveRecord::Base
   has_many :players, :through => :player_riders
   has_many :rider_stages, dependent: :destroy
   has_many :stages, through: :rider_stages
+  has_many :player_rider_stage_points
   belongs_to :team
   belongs_to :last_stage, class_name: 'Stage', foreign_key: :stage_id
   

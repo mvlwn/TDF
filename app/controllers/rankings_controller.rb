@@ -18,8 +18,7 @@ class RankingsController < ApplicationController
 
   def scores
     @stages = StageDecorator.decorate_collection(Stage.order("number"))
-    @players = PlayerDecorator.decorate_collection(Player.active.order("points DESC"))
-    @matrix = ScoreMatrix.new
+    @players = PlayerDecorator.decorate_collection(Player.active.includes(:player_stage_points).order("points DESC"))
   end
 
 end

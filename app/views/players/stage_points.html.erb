@@ -1,0 +1,23 @@
+<%= content_for(:title, "#{@player.team_name} etappe #{@stage.number} #{@stage.name}".html_safe) %>
+
+<table class="table table-auto-width">
+  <thead>
+  <tr>
+    <th>Renner</th>
+    <th>Punten</th>
+    <th>Totaal</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @player.player_rider_stage_points.where(stage_id: @stage.id).includes(:rider).each do |prsp| %>
+    <tr>
+      <td><%= link_to prsp.rider.name, rider_path(prsp.rider) %></td>
+      <td><%= prsp.points %></td>
+      <td><%= prsp.total_points %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<hr />
+<%= link_to "Bekijk #{@player.team_name}", player_path(@player), :class => "btn btn-default" %>

@@ -24,4 +24,7 @@
 
 <hr/>
 
+<h2>Uitslagen per etappe</h2>
+<%= render :partial => "players/points_per_stage", :locals => {:player => @player} %>
+
 <%= link_to "Bekijk alle deelnemers", players_path, :class => "btn btn-default" %>

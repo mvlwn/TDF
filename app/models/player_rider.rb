@@ -16,9 +16,13 @@ class PlayerRider < ActiveRecord::Base
       self.points = rider_points(rider, Stage.minimum(:number)..rider.last_stage.number)
       if substitute_rider
         if substitute_rider.last_stage
-          self.points += rider_points(substitute_rider, rider.last_stage.number + 1..substitute_rider.last_stage.number)
+          self.points +=
+            rider_points(substitute_rider,
+                         rider.last_stage.number + 1..substitute_rider.last_stage.number)
         else
-          self.points += rider_points(substitute_rider, rider.last_stage.number + 1..Stage.maximum(:number))
+          self.points +=
+            rider_points(substitute_rider,
+                         rider.last_stage.number + 1..Stage.maximum(:number))
         end
       end
     else

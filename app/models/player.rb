@@ -13,6 +13,8 @@ class Player < ActiveRecord::Base
   MAX_EDIT_TIME = Time.parse("01-07-2017 14:30")
 
   has_many :player_riders
+  has_many :player_stage_points
+  has_many :player_rider_stage_points
   has_many :riders, :through => :player_riders
   has_many :substitute_riders, :through => :player_riders
   has_many :scores, :through => :riders
@@ -42,18 +44,26 @@ class Player < ActiveRecord::Base
   end
 
   def stage_points(stage)
-    points = 0
-    player_riders.each do |pr|
-      points += pr.stage_points(stage).to_i
-    end
-    points
+    player_stage_points_by_stage(stage).points
   end
 
-  def points_till_stage(stage)
-    riders.
-      joins(:scores, "INNER JOIN stages ON scores.stage_id = stages.id").
-      where(["SELECT stages.number <= ?", stage.number]).
-      sum("scores.points")
+  def player_stage_points_by_stage(stage)
+    player_stage_points.where(stage_id: stage.id).first
+  end
+
+
+  def active_riders(stage)
+    riders = player_riders.map do |player_rider|
+      rider = player_rider.rider
+      substitute_rider = player_rider.substitute_rider
+      if rider.last_stage.nil? || rider.last_stage.number >= stage.number
+        rider
+      else
+        if substitute_rider && (substitute_rider.last_stage.nil? || substitute_rider.last_stage.number >= stage.number)
+          substitute_rider
+        end
+      end
+    end.compact
   end
 
   def budget

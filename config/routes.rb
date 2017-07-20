@@ -23,6 +23,7 @@ TDF::Application.routes.draw do
       get :points
       get :riders
       put :toggle
+      get :stage_points
     end
   end
 

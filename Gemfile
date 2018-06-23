@@ -60,6 +60,7 @@ end
 gem 'capistrano'
 gem 'capistrano-bundler'
 gem 'capistrano-rails'
+gem 'capistrano-rvm'
 
 # To use debugger
 # gem 'ruby-debug4

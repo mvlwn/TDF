@@ -96,6 +96,14 @@ module Scorito
       qualities('Kasseien')
     end
 
+    def top_skill
+      skills = {
+        overall_skill: overall_skill,
+        sprinting_skill: sprinting_skill,
+        climbing_skill: climbing_skill
+      }
+    end
+
     private
 
     def qualities(name)

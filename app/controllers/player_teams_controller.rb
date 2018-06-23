@@ -11,8 +11,10 @@ class PlayerTeamsController < ApplicationController
 
   def edit
     if @player.can_pick_riders?
-      all_riders = Rider.active.order(riders_sort_order).page(params[:page])
+      picked_rider_ids = @player.rider_ids + @player.substitute_rider_ids
+      all_riders = Rider.active.where.not(id: picked_rider_ids).order(riders_sort_order).page(params[:page])
       all_riders = all_riders.where(price: 0..@player.budget_left_for_purchases)
+
       riders = Rider.filter_riders(all_riders, params)
       @riders = RiderDecorator.decorate_collection(riders)
     else
@@ -25,7 +27,9 @@ class PlayerTeamsController < ApplicationController
 
   def pick_substitute
     player_rider = PlayerRider.find(params[:player_rider_id])
+    rider = player_rider.rider
     all_riders = Rider.active.where.not(id: @player.rider_ids + @player.substitute_rider_ids).order(riders_sort_order).page(params[:page])
+    all_riders = all_riders.where('climbing_skill <= ? AND sprinting_skill <= ?', rider.climbing_skill, rider.sprinting_skill)
     all_riders = all_riders.where(price: 0..player_rider.rider.substitute_price)
     riders = Rider.filter_riders(all_riders, params)
     @player_rider = player_rider.decorate

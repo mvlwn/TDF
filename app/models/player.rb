@@ -9,8 +9,8 @@ class Player < ActiveRecord::Base
 
   BUDGET = 20_000_000
   BUDGET_MULTIPLIER = 1
-  MAX_RIDERS = 9
-  MAX_EDIT_TIME = Time.parse("01-07-2017 14:30")
+  MAX_RIDERS = 8
+  MAX_EDIT_TIME = Time.parse("07-07-2018 10:30")
 
   has_many :player_riders
   has_many :player_stage_points
@@ -44,7 +44,7 @@ class Player < ActiveRecord::Base
   end
 
   def stage_points(stage)
-    player_stage_points_by_stage(stage).points
+    player_stage_points_by_stage(stage)&.points
   end
 
   def player_stage_points_by_stage(stage)
@@ -100,6 +100,10 @@ class Player < ActiveRecord::Base
 
   def can_pick_riders?
     MAX_RIDERS > riders.count
+  end
+
+  def riders_left_to_pick
+    MAX_RIDERS - riders.count
   end
 
   def can_pick_rider?(rider)

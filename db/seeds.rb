@@ -8,27 +8,27 @@ SyncScoritoRiders.new.sync!
 puts "Creating or updating stages"
 # Create Stages
 [
-  { :number => 1, :name => "Düsseldorf - Düsseldorf", :ridden_on => "2017-07-01", :description => "Tijdrit", :distance => "14" },
-  { :number => 2, :name => "Düsseldorf (Dui) – Luik (Bel)", :ridden_on => "2017-07-02", :description => "Vlak", :distance => "203" },
-  { :number => 3, :name => "Verviers (Bel) – Longwy", :ridden_on => "2017-07-03", :description => "Aankomst heuvelop", :distance => "212" },
-  { :number => 4, :name => "Mondorf les Bains (Lux) – Vittel", :ridden_on => "2017-07-04", :description => "Vlak", :distance => "207" },
-  { :number => 5, :name => "Vittel – La Planche des Belles Filles", :ridden_on => "2017-07-05", :description => "Aankomst bergop", :distance => "160" },
-  { :number => 6, :name => "Vesoul – Troyes", :ridden_on => "2017-07-06", :description => "Vlak", :distance => "216" },
-  { :number => 7, :name => "	Troyes – Nuits Saint Georges", :ridden_on => "2017-07-07", :description => "Vlak", :distance => "213" },
-  { :number => 8, :name => "Dole – Station des Rousses", :ridden_on => "2017-07-08", :description => "Bergen", :distance => "187" },
-  { :number => 9, :name => "Nantua – Chambery", :ridden_on => "2017-07-9", :description => "Bergen", :distance => "181" },
-  { :number => 10, :name => "Périgueux – Bergerac", :ridden_on => "2017-07-11", :description => "Vlak", :distance => "178" },
-  { :number => 11, :name => "Eymet – Pau", :ridden_on => "2017-07-12", :description => "vlak", :distance => "203" },
-  { :number => 12, :name => "Pau – Peyragudes", :ridden_on => "2017-07-13", :description => "Bergen", :distance => "214" },
-  { :number => 13, :name => "	Saint Girons – Foix", :ridden_on => "2017-07-14", :description => "Bergen", :distance => "101" },
-  { :number => 14, :name => "Blagnac – Rodez", :ridden_on => "2017-07-15", :description => "Heuvels", :distance => "181" },
-  { :number => 15, :name => "	Laissac Sévérac l’Église – Le Puy en Velay", :ridden_on => "2017-07-16", :description => "Heuvels", :distance => "189" },
-  { :number => 16, :name => "Le Puy en Velay – Romans sur Isère", :ridden_on => "2017-07-18", :description => "Heuvels, vlak slot", :distance => "165" },
-  { :number => 17, :name => "	La Mure – Serre Chevalier", :ridden_on => "2017-07-19", :description => "Bergen", :distance => "183" },
-  { :number => 18, :name => "Briançon – Izoard	", :ridden_on => "2017-07-20", :description => "Bergen", :distance => "179" },
-  { :number => 19, :name => "Embrun – Salon de Provence", :ridden_on => "2017-07-21", :description => "Vlak", :distance => "222" },
-  { :number => 20, :name => "Marseille - Marseille", :ridden_on => "2017-07-22", :description => "Tijdrit", :distance => "22" },
-  { :number => 21, :name => "Montgeron – Parijs", :ridden_on => "2017-07-23", :description => "Vlak", :distance => "103" }
+  { :number => 1,  :ridden_on => "2018-07-07", :name => "Noirmoutier-en-l’Île – Fontenay-le-Comte", :description => "Vlak", :distance => "201" },
+  { :number => 2,  :ridden_on => "2018-07-08", :name => "Mouilleron-Saint-Germain – La-Roche-sur-Yon", :description => "Vlak", :distance => "182,5" },
+  { :number => 3,  :ridden_on => "2018-07-09", :name => "Cholet – Cholet", :description => "Ploegentijdrit", :distance => "35,5" },
+  { :number => 4,  :ridden_on => "2018-07-10", :name => "La Baule – Sarzeau", :description => "Vlak", :distance => "195" },
+  { :number => 5,  :ridden_on => "2018-07-11", :name => "Lorient – Quimper", :description => "Heuvels", :distance => "204,5" },
+  { :number => 6,  :ridden_on => "2018-07-12", :name => "Brest – Mûr de Bretagne", :description => "Heuvels", :distance => "181" },
+  { :number => 7,  :ridden_on => "2018-07-13", :name => "Fougéres – Chartres", :description => "Vlak", :distance => "231" },
+  { :number => 8,  :ridden_on => "2018-07-14", :name => "Dreux – Amiens", :description => "Vlak", :distance => "181" },
+  { :number => 9,  :ridden_on => "2018-07-15", :name => "Arras – Roubaix", :description => "Kasseien", :distance => "156,5" },
+  { :number => 10, :ridden_on => "2018-07-17", :name => "Annecy – Le Grand-Bornand", :description => "Bergen", :distance => "158,5" },
+  { :number => 11, :ridden_on => "2018-07-18", :name => "Albertville – La Rosière", :description => "Bergen", :distance => "108,5" },
+  { :number => 12, :ridden_on => "2018-07-19", :name => "Bourg-Saint-Maurice – Alpe d’Huez", :description => "Bergen", :distance => "175,5" },
+  { :number => 13, :ridden_on => "2018-07-20", :name => "Bourg d’Oisans – Valence", :description => "Vlak", :distance => "169,5" },
+  { :number => 14, :ridden_on => "2018-07-21", :name => "Saint-Paul-Trois-Chateaux – Mende", :description => "Heuvels/Vlak", :distance => "188" },
+  { :number => 15, :ridden_on => "2018-07-22", :name => "Millau – Carcassonne", :description => "Heuvels", :distance => "181,5" },
+  { :number => 16, :ridden_on => "2018-07-24", :name => "Carcassonne – Bagnères-de-Luchon", :description => "Bergen/Vlak", :distance => "218" },
+  { :number => 17, :ridden_on => "2018-07-25", :name => "Bagnères-de-Luchon – Col de Portet", :description => "Bergen", :distance => "65" },
+  { :number => 18, :ridden_on => "2018-07-26", :name => "Trie-sur-Baïse – Pau	", :description => "Vlak", :distance => "171" },
+  { :number => 19, :ridden_on => "2018-07-27", :name => "Lourdes – Laruns", :description => "Bergen", :distance => "200,5" },
+  { :number => 20, :ridden_on => "2018-07-28", :name => "Saint-Pée-sur-Nivelle – Espelette", :description => "Tijdrit", :distance => "31" },
+  { :number => 21, :ridden_on => "2018-07-29", :name => "Houilles – Champs-Élysées (Parijs)", :description => "Vlak", :distance => "116" }
 ].each do |stage_attributes|
   stage = Stage.find_or_initialize_by(number: stage_attributes[:number])
   stage.update_attributes(stage_attributes)

@@ -8,7 +8,7 @@ module Scorito
     end
 
     def initialize
-      @url = "https://www.scorito.com/cyclingmanager/teamselectionsearch/byprice?marketId=75&min=0&max=5000000&maxNumberOfResults=500&culture=nl-nl"
+      @url = "https://www.scorito.com/cyclingmanager/teamselectionsearch/byprice?marketId=99&min=0&max=5000000&maxNumberOfResults=500&culture=nl-nl"
       @tmp_file = Rails.root.join('tmp', 'riders.json')
       @file = Rails.root.join('vendor', 'files', 'riders.json')
     end

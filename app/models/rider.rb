@@ -40,12 +40,7 @@ class Rider < ActiveRecord::Base
   end
 
   def substitute_price
-    p = price.to_i * 0.5
-    if p > 500_000
-      p
-    else
-      500_000
-    end
+    price
   end
 
   def update_player_points

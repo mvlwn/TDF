@@ -1,50 +1,90 @@
 <% if player_riders.any? %>
-  <table class="table table-condensed table-striped">
-    <thead>
-    <tr>
-      <th width="2%" class="center"><%= link_to_sortable "Nr", :number %></th>
-      <th width="2%"></th>
-      <th width="20%">
-        <%= link_to_sortable "Voornaam", :first_name %> -
-        <%= link_to_sortable "Achternaam", :last_name %>
-      </th>
-      <th width="10%"><%= link_to_sortable "Team", :team_name %></th>
-      <th width="2%">Nr</th>
-      <th width="13%">Reserve</th>
-      <th width="5%"><%= link_to_sortable "Prijs", :price %></th>
-      <th width="5%" class="center"><%= link_to_sortable "Punten", :points %></th>
-      <!--<th width="5%"><%= link_to_sortable "€ / pnt", :efficiency_in_cents %></th>-->
-      <th width="10%" class="center">In koers</th>
-    </tr>
-    </thead>
-    <tbody>
+  <div class="pr">
+    <div class="pr-riders">
+      <div class="pr-main-rider">
+        <b>Renner</b>
+      </div>
+      <div class="pr-substitute-rider">
+        <b>Reserve</b>
+      </div>
+    </div>
+    <div class="pr-points pr-points-header">Punten</div>
+  </div>
     <% player_riders.each do |player_rider| %>
       <%
          rider = player_rider.rider.decorate
          substitute = player_rider.substitute_rider.try(:decorate)
       %>
-      <tr>
-        <td class="center"><%= rider.number %></td>
-        <td><%= rider.nationality_flag %></td>
-        <td>
-          <%= link_to rider.name, rider_path(rider) %><br />
-          <%= render partial: 'shared/skills', locals: { rider: rider } %>
-
-        </td>
-        <td class="nowrap">
-          <%= rider.team_jersey %>
-          <%= link_to rider.team_name, riders_path(team_id: rider.team_id) %>
-        </td>
-        <td><%= substitute.number if substitute %></td>
-        <td><%= link_to substitute.name, rider_path(substitute) if substitute %></td>
-        <td class="nowrap"><%= rider.price %></td>
-        <td class="center"><%= player_rider.points %></td>
-        <!--<td><%= rider.efficiency %></td>-->
-        <td class="center"><%= rider.in_race %></td>
-      </tr>
+      <div class="pr<%= " pr-out-of-race" if rider.out_of_race? %>">
+        <div class="pr-riders">
+          <div class="pr-main-rider">
+            <div class="pr-rider-team">
+              <div class="pr-rider">
+                <div class="pr-rider-flag">
+                  <%= rider.nationality_flag %>
+                </div>
+                <div class="pr-rider-name">
+                  <%= link_to rider.name, rider_path(rider) %>
+                </div>
+              </div>
+              <div class="pr-team">
+                <div class="pr-team-jersey">
+                  <%= rider.team_jersey %>
+                </div>
+                <div class="pr-team-name">
+                  <%= rider.team_name %>
+                </div>
+              </div>
+            </div>
+            <div class="pr-info">
+              <div class="pr-info-price">
+                <%= rider.price %>
+              </div>
+              <div class="pr-info-skills">
+                <%= render partial: 'shared/skills', locals: { rider: rider } %>
+              </div>
+            </div>
+          </div>
+          <% if substitute %>
+            <div class="pr-substitute-rider <%= " pr-out-of-race" if substitute.out_of_race? %>">
+              <div class="pr-rider-team">
+                <div class="pr-rider">
+                  <div class="pr-rider-flag">
+                    <%= substitute.nationality_flag %>
+                  </div>
+                  <div class="pr-rider-name">
+                    <%= link_to substitute.name, rider_path(substitute) %>
+                  </div>
+                </div>
+                <div class="pr-team">
+                  <div class="pr-team-jersey">
+                    <%= substitute.team_jersey %>
+                  </div>
+                  <div class="pr-team-name">
+                    <%= substitute.team_name %>
+                  </div>
+                </div>
+              </div>
+              <div class="pr-info">
+                <div class="pr-info-price">
+                  <%= substitute.price %>
+                </div>
+                <div class="pr-info-skills">
+                  <%= render partial: 'shared/skills', locals: { rider: substitute } %>
+                </div>
+              </div>
+            </div>
+          <% else %>
+          <div class="pr-substitute-rider">
+            <b>Niet gekozen</b>
+          </div>
+          <% end %>
+        </div>
+        <div class="pr-points">
+          <%= player_rider.points %>
+        </div>
+      </div>
     <% end %>
-    </tbody>
-  </table>
 <% else %>
   <div class="alert alert-info">Er zijn geen renners gevonden</div>
 <% end %>

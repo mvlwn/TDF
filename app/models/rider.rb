@@ -68,6 +68,14 @@ class Rider < ActiveRecord::Base
     true
   end
 
+  def out_of_race?
+    abandoned? || rejected?
+  end
+
+  def in_race?
+    !out_of_race?
+  end
+
   def set_efficiency
     self.efficiency_in_cents = ((price * Player::BUDGET_MULTIPLIER / points) rescue price * Player::BUDGET_MULTIPLIER) * 100
   end

@@ -50,8 +50,27 @@
   .pr-main-rider,
   .pr-substitute-rider {
 
+    .pr-flag {
+      width: 30px;
+      float: left;
+    }
+
+    .pr-rider-team,
+    .pr-info {
+      margin-left: 30px;
+    }
+
     @media (min-width: 768px) {
       display: flex;
+
+      .pr-flag {
+        float: none;
+      }
+
+      .pr-rider-team,
+      .pr-info {
+        margin-left: 0px;
+      }
 
       .pr-rider-team {
         flex-grow: 1;
@@ -114,11 +133,6 @@
       align-self: center;
     }
 
-    @media (min-width: 768px) {
-      .pr-rider-flag{
-        margin-right: 10px;
-      }
-    }
   }
 
 

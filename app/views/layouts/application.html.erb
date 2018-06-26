@@ -24,8 +24,7 @@
 
     <header class="container">
       <a href="<%= url_for summary_path %>">
-        <%#= image_tag 'logo.png', class: 'logo' %>
-        2018
+        <%= image_tag 'logo-2018.png', class: 'logo', srcset: image_path('logo-2018@2x.png') %>
       </a>
     </header>
 

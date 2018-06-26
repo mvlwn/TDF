@@ -18,11 +18,11 @@
       <div class="pr<%= " pr-out-of-race" if rider.out_of_race? %>">
         <div class="pr-riders">
           <div class="pr-main-rider">
+            <div class="pr-flag">
+              <%= rider.nationality_flag %>
+            </div>
             <div class="pr-rider-team">
               <div class="pr-rider">
-                <div class="pr-rider-flag">
-                  <%= rider.nationality_flag %>
-                </div>
                 <div class="pr-rider-name">
                   <%= link_to rider.name, rider_path(rider) %>
                 </div>
@@ -47,11 +47,11 @@
           </div>
           <% if substitute %>
             <div class="pr-substitute-rider <%= " pr-out-of-race" if substitute.out_of_race? %>">
+              <div class="pr-flag">
+                <%= substitute.nationality_flag %>
+              </div>
               <div class="pr-rider-team">
                 <div class="pr-rider">
-                  <div class="pr-rider-flag">
-                    <%= substitute.nationality_flag %>
-                  </div>
                   <div class="pr-rider-name">
                     <%= link_to substitute.name, rider_path(substitute) %>
                   </div>

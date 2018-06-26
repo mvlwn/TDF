@@ -1,25 +1,39 @@
 <%= content_for(:title, "Teams") %>
 
-<table class="table table-condensed table-striped">
-  <thead>
-  <tr>
-    <th>Naam</th>
-    <th>Budget</th>
-    <th>Renners</th>
-    <th class="center">Punten</th>
-  </tr>
-  </thead>
-  <tbody>
+<div class="teams-list">
+  <div class="team team-header">
+    <div class="team-jersey"></div>
+    <div class="team-info">
+      <div class="team-name">
+        Naam
+      </div>
+      <div class="team-budget">
+        Budget
+      </div>
+    </div>
+    <div class="team-points">
+      Punten
+    </div>
+  </div>
   <% @teams.each do |team| %>
-  <tr>
-    <td><%= link_to team.name, team_path(team) %></td>
-    <td><%= team.budget %></td>
-    <td><%= team.riders.count %></td>
-    <td class="center"><%= team.points %></td>
-  </tr>
+    <div class="team">
+      <div class="team-jersey">
+        <%= image_tag team.riders.first.team_jersey_url, class: 'rider-jersey' %>
+      </div>
+      <div class="team-info">
+        <div class="team-name">
+          <%= link_to team.name, team_path(team) %>
+        </div>
+        <div class="team-budget">
+          <%= team.budget %>
+        </div>
+      </div>
+      <div class="team-points">
+        <%= team.points %>
+      </div>
+    </div>
   <% end %>
-  </tbody>
-</table>
+</div>
 
 <% if can? :create, Team %>
 	<div class="well">

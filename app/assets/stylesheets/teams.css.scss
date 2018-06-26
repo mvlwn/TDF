@@ -1,3 +1,60 @@
 // Place all the styles related to the teams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.teams-list {
+
+  .team {
+    display: flex;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px #eee solid;
+
+    .team-jersey {
+      flex: 0 0 30px;
+    }
+    .team-info {
+      flex: 1 1 90%;
+    }
+    .team-points {
+      min-width: 100px;
+      font-weight: bold;
+      text-align: center;
+    }
+    &.team-header {
+      display: none;
+      font-weight: bold;
+    }
+  }
+
+  @media (min-width: 600px) {
+    .team {
+      &.team-header {
+        display: flex;
+      }
+    }
+  }
+
+  .team-info {
+    .team-name {
+
+    }
+    .team-budget {
+
+    }
+  }
+
+  @media (min-width: 600px) {
+    .team-info {
+      display: flex;
+      .team-name {
+        flex: 1 1 60%;
+      }
+      .team-budget {
+        flex: 1 1 40%;
+      }
+    }
+  }
+
+}

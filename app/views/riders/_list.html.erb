@@ -1,42 +1,66 @@
 <% if riders.any? %>
-<table class="table table-condensed table-striped">
-  <thead>
-  <tr>
-    <th width="2%" class="center"><%= link_to_sortable "Nr", :number %></th>
-    <th width="2%"><%= link_to_sortable "N", :nationality %></th>
-    <th width="30%"><%= link_to_sortable "Voornaam", :first_name %> - <%= link_to_sortable "Achternaam", :last_name %></th>
-		<th width="20%"><%= link_to_sortable "Team", :team_name %></th>
-    <th width="5%"><%= link_to_sortable "Prijs", :price %></th>
-    <th width="5%"><%= link_to_sortable "Leeftijd", :age %></th>
-    <th width="5%"><%= link_to_sortable "Gewicht", :weight %></th>
-    <th width="5%"><%= link_to_sortable "Lengte", :height %></th>
-    <th width="5%" class="center">In koers</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% riders.each do |rider| %>
-  <% rider = rider.decorate %>
-  <tr>
-    <td class="center"><%= rider.number %></td>
-    <td><%= rider.nationality_flag %></td>
-    <td class="nowrap">
-      <%= link_to rider.name, rider_path(rider) %><br />
-      <%= render partial: 'shared/skills', locals: { rider: rider } %>
-    </td>
-    <td class="nowrap">
-      <%= rider.team_jersey %>
-		  <%= link_to rider.team_name, riders_path(team_id: rider.team_id) %>
-    </td>
-    <td class="nowrap"><%= rider.price %></td>
-    <td><%= rider.age %></td>
-    <td><%= rider.weight %> kg</td>
-    <td><%= rider.height %> cm</td>
+  <div class="rider-list">
+    <div class="rider rider-header">
+      <div class="rider-nr-flag"></div>
+      <div class="rider-info">Renner</div>
+      <div class="rider-in-race">Actief</div>
+    </div>
+    <% riders.each do |rider| %>
+      <% rider = rider.decorate %>
+      <div class="rider">
+        <div class="rider-nr-flag">
+          <div class="rider-nr">
+            <span class="badge">
+              <%= rider.number.to_i %>
+            </span>
+          </div>
+          <div class="rider-flag">
+            <%= rider.nationality_flag %>
+          </div>
+        </div>
+        <div class="rider-info">
+          <div class="rider-name-team-price">
+            <div class="rider-name-team">
+              <div class="rider-name">
+                <%= link_to rider.name, rider_path(rider) %>
+              </div>
+              <div class="rider-team">
+                <div class="rider-team-jersey">
+                  <%= rider.team_jersey %>
+                </div>
+                <div class="rider-team-name">
+                  <%= rider.team_name %>
+                </div>
+              </div>
+            </div>
+            <div class="rider-price">
+              <%= rider.price %>
+            </div>
+          </div>
+          <div class="rider-stats">
+            <div class="rider-stats-skills">
+              <%= render partial: 'shared/skills', locals: { rider: rider } %>
+            </div>
+            <div class="rider-stats-extra">
+              <div class="rider-stats-age">
+                <%= rider.age %>y
+              </div>
+              <div class="rider-stats-weight">
+                <%= rider.weight %>kg
+              </div>
+              <div class="rider-stats-height">
+                <%= rider.height %>cm
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rider-in-race">
+          <%= rider.in_race_text %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-    <td class="center"><%= rider.in_race_text %></td>
-  </tr>
-  <% end %>
-  </tbody>
-</table>
 <% else %>
 	<div class="alert alert-info">Er zijn geen renners gevonden</div>
 <% end %>

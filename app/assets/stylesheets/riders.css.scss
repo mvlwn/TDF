@@ -10,3 +10,156 @@
   height: 22px;
 }
 
+.rider-list {
+  // Positioning
+  .rider {
+    display: flex;
+    .rider-nr-flag {
+      flex: 0 0 30px;
+    }
+    .rider-info {
+      flex: 1 1 calc(100% - 60px);
+    }
+    .rider-in-race {
+      flex: 0 0 30px;
+    }
+
+    @media (min-width: 768px) {
+      .rider-nr-flag {
+        flex-basis: 60px;
+      }
+
+      .rider-info {
+        flex-basis: calc(100% - 90px);
+      }
+    }
+  }
+
+  .rider-info {
+    @media (min-width: 992px) {
+      display: flex;
+      .rider-name-team-price {
+        flex: 1 1 70%;
+      }
+      .rider-stats {
+        flex: 1 1 30%;
+      }
+    }
+  }
+
+  .rider-name-team-price {
+    display: flex;
+
+    .rider-name-team {
+      flex: 1 1 60%;
+    }
+    .rider-price {
+      flex: 1 1 40%;
+    }
+
+    @media (min-width: 768px) {
+      .rider-name-team {
+        flex-basis: 70%;
+      }
+      .rider-price {
+        flex-basis: 30%;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .rider-nr-flag {
+      display: flex;
+      .rider-nr {
+        flex-basis: 50%;
+      }
+      .rider-flag {
+        flex-basis: 50%;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .rider-name-team {
+      display: flex;
+      .rider-name {
+        flex: 1 1 50%;
+      }
+      .rider-team {
+        flex: 1 1 50%;
+      }
+    }
+  }
+
+  .rider-team {
+    .rider-team-jersey {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      display: flex;
+      .rider-team-jersey {
+        display: block;
+        flex-basis: 30px;
+      }
+    }
+  }
+
+  
+  .rider-stats {
+    display: flex;
+    width: 100%;
+
+    .rider-stats-skills {
+      flex: 0 0 60%;
+    }
+    .rider-stats-extra {
+      flex: 0 0 40%;
+      align-self: center;
+    }
+
+    @media (min-width: 768px) {
+      width: 70%;
+    }
+    @media (min-width: 992px) {
+      width: 100%;
+      .rider-stats-skills {
+        flex-basis: 50%;
+      }
+      .rider-stats-extra {
+        flex-basis: 50%;
+      }
+    }
+  }
+
+  .rider-stats-extra {
+    display: flex;
+    > * {
+      margin-right: 10px;
+    }
+  }
+
+  // Styling
+
+  .rider {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px #ccc solid;
+  }
+
+  .rider-header {
+    font-weight: bold;
+  }
+
+  .rider-team {
+    font-size: 11px;
+    @media (min-width: 768px) {
+      font-size: inherit;
+    }
+  }
+
+  .rider-stats-extra {
+    font-size: 11px;
+  }
+
+}

@@ -2,30 +2,37 @@
 
 <%= render :partial => "navigation" %>
 
-<table class="table">
-  <thead>
-  <tr>
-    <th>rit</th>
-    <th>datum</th>
-    <th>van > naar</th>
-    <th>type</th>
-    <th>afstand</th>
-    <th class="center">uitslagen?</th>
-  </tr>
-  </thead>
-  <tbody>
+<div class="stage-list">
+  <div class="stage">
+    <div class="stage-nr"></div>
+    <div class="stage-date"></div>
+    <div class="stage-name"></div>
+    <div class="stage-description"></div>
+    <div class="stage-distance"></div>
+    <div class="stage-has-results"></div>
+    <div class="stage-edit"></div>
+  </div>
   <% @stages.each do |stage| %>
-  <tr>
-    <td><%= stage.number %></td>
-    <td><%= stage.ridden_on %></td>
-    <td><%= link_to stage.name, stage_path(stage) %></td>
-    <td><%= stage.description %></td>
-    <td><%= stage.distance %></td>
-    <td class="center"><%= bool_icon stage.has_results? %></td>
-    <% if can? :edit, stage %>
-    <td><%= link_to 'Uitslagen', stage_scores_path(stage), class: 'btn btn-default btn-xs' %></td>
-    <% end %>
-  </tr>
+    <div class="stage">
+      <div class="stage-nr">
+        <span class="badge"><%= stage.number %></span>
+      </div>
+      <div class="stage-info">
+        <div class="stage-name"><%= link_to stage.name, stage_path(stage) %></div>
+        <div class="stage-extra-info">
+          <div class="stage-date">
+            <%= stage.ridden_on(:short) %>
+          </div>
+          <div class="stage-description"><%= stage.description %></div>
+          <div class="stage-distance"><%= stage.distance %></div>
+        </div>
+      </div>
+      <div class="stage-has-results"><%= bool_icon stage.has_results? %></div>
+      <div class="stage-edit">
+        <% if can? :edit, stage %>
+          <%= link_to 'Uitslagen', stage_scores_path(stage), class: 'btn btn-default btn-xs' %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
-  </tbody>
-</table>
+</div>

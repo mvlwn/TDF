@@ -1,3 +1,90 @@
 // Place all the styles related to the stages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.stage-list {
+
+  .stage {
+    display: flex;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px #eee solid;
+
+    .stage-nr {
+      flex: 0 0 40px;
+    }
+    .stage-info {
+      flex: 1 1 calc(100% - 35px);
+    }
+    .stage-date {
+      flex: 1;
+    }
+    .stage-has-results {
+      display: none;
+    }
+    .stage-edit {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .stage-info {
+        flex-basis: calc(100% - 150px);
+      }
+      .stage-has-results {
+        display: block;
+        flex: 1 1 40px;
+      }
+      .stage-edit {
+        display: block;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .stage-info {
+        display: flex;
+      }
+      .stage-name {
+        flex: 1 1 60%;
+      }
+      .stage-extra-info {
+        flex: 0 0 40%;
+      }
+
+    }
+
+
+
+    .stage-extra-info {
+      display: flex;
+
+      .stage-date {
+        flex: 0 0 50px;
+      }
+      .stage-description {
+        flex: 1 1 calc(100% - 130px);
+      }
+      .stage-distance {
+        flex: 0 0 80px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .stage-info {
+        flex-basis: calc(100% - 150px);
+      }
+      .stage-has-results {
+        display: block;
+        flex: 1 1 40px;
+      }
+      .stage-edit {
+        display: block;
+      }
+    }
+
+
+    .stage-extra-info {
+      color: #aaa;
+    }
+  }
+
+}

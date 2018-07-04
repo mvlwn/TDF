@@ -1,0 +1,9 @@
+
+<h2>Nieuwe subpoele aanmaken</h2>
+<%= form_for @subpool ||= Subpool.new, html: { class: 'form-inline' } do |form| %>
+  <%= render partial: 'subpools/form', object: form %>
+  <%= form.submit 'Aanmaken', class: 'btn btn-primary' %>
+  <%= link_to "Annuleren", account_path, class: 'btn btn-default' %>
+<% end %>
+
+

@@ -13,6 +13,10 @@ class SubpoolsController < ApplicationController
     @players = PlayerDecorator.decorate_collection(@subpool.players.active.order("points DESC"))
   end
 
+  def new
+
+  end
+
   def create
     @subpool = Subpool.new(subpool_params)
     @subpool.creator = current_player
@@ -23,7 +27,7 @@ class SubpoolsController < ApplicationController
     else
       @player = PlayerDecorator.decorate(current_player)
       @riders = RiderDecorator.decorate_collection(@player.riders.order(riders_sort_order))
-      render 'account/show'
+      render :new
     end
   end
 
@@ -47,7 +51,7 @@ class SubpoolsController < ApplicationController
     else
       @player = PlayerDecorator.decorate(current_player)
       @riders = RiderDecorator.decorate_collection(@player.riders.order(riders_sort_order))
-      render 'account/show'
+      render :new
     end
   end
 
@@ -64,6 +68,15 @@ class SubpoolsController < ApplicationController
       flash[:error] = 'Subpool bestaat niet'
     end
     redirect_to account_path
+  end
+
+  def subscribe
+    @subpool = Subpool.find(params[:id])
+    if @subpool.available?(current_player)
+      @subpool.players << current_player
+      flash[:notice] = 'Je hebt je aangemeld bij de subpoele'
+    end
+    redirect_to subpool_path(@subpool)
   end
 
   private

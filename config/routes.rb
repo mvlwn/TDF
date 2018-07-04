@@ -56,10 +56,12 @@ TDF::Application.routes.draw do
   end
 
   resources :subpools do
-
+    post :subscribe, on: :member
   end
 
-  resources :subpool_players
+  resources :subpool_players do
+
+  end
 
   resource :summary, :only => 'show', :controller => 'summary' do
     get :signup, on: :collection

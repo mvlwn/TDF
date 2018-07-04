@@ -51,7 +51,7 @@ module ApplicationHelper
           alert_class = 'alert alert-warning'
       end
 
-      content_tag("div", message, :class => alert_class) + content_tag('br')
+      content_tag("div", message, :class => alert_class)
     end
     messages.join("\n").html_safe
   end

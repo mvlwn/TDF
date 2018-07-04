@@ -11,4 +11,8 @@ class Subpool < ActiveRecord::Base
     creator.id == player.id
   end
 
+  def available?(player)
+    (Subpool.all - player.subpools).include?(self)
+  end
+
 end

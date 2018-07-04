@@ -1,17 +1,22 @@
 <%= content_for(:title, "Subpoeles") %>
 
-<table class="table table-condensed table-striped">
+<table class="table table-striped">
   <thead>
   <tr>
     <th>Naam</th>
-    <th>Deelnemers</th>
+    <th class="center">Deelnemers</th>
   </tr>
   </thead>
   <tbody>
   <% @subpools.each do |subpool| %>
     <tr>
       <td><%= link_to subpool.name, subpool_path(subpool) %></td>
-      <td><%= subpool.players.count %></td>
+      <td class="center"><%= subpool.players.count %></td>
+      <td>
+        <% if subpool.available?(current_player) %>
+          <%= link_to 'Aanmelden', subscribe_subpool_path(subpool), method: :post, class: 'btn btn-warning btn-xs'  %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
   </tbody>

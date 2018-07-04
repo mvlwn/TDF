@@ -5,4 +5,14 @@
 
 <hr/>
 
-<%= link_to 'Terug naar je team', account_path, class: 'btn btn-default' %>
+<div class="well">
+  <% if can? :edit, @player %>
+    <%= link_to 'Afmelden', subpool_player_path(@subpool), method: :delete, class: 'btn btn-warning' unless @subpool.creator?(current_player) %>
+    <%= link_to 'Wijzig', edit_subpool_path(@subpool), class: 'btn btn-default' if @subpool.creator?(current_player) %>
+    <% if @subpool.creator?(current_player) %>
+      <%= link_to 'Wis', subpool_path(@subpool), method: :delete, data: { confirm: 'Weet je het zeker' }, class: 'btn btn-warning' %>
+    <% end %>
+  <% end %>
+  <%= link_to 'Terug naar mijn team', account_path, class: 'btn btn-default' %>
+</div>
+

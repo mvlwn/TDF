@@ -1,0 +1,46 @@
+.player-ranking-list {
+  .player-ranking {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+
+    .player-ranking-rank {
+      min-width: 30px;
+      max-width: 60px;
+      flex-basis: 5%;
+    }
+    .player-ranking-team {
+      flex: 1 1 calc(100% - 60px);
+    }
+    .player-ranking-points {
+      min-width: 30px;
+      max-width: 100px;
+      flex-basis: 5%;
+    }
+  }
+
+  .player-ranking-team {
+    .player-ranking-team-name {
+
+    }
+    .player-ranking-team-manager {
+
+    }
+  }
+
+  .player-ranking {
+    margin-bottom: 5px;
+    border-bottom: 1px #eee solid;
+    padding-bottom: 5px;
+  }
+
+  .player-ranking-team-manager {
+    font-size: 11px;
+  }
+
+  .player-ranking-points {
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+

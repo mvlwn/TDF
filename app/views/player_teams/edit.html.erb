@@ -1,91 +1,11 @@
-<%= content_for(:title, "Wijzig team #{@player.team_name}".html_safe) %>
+<%= content_for(:title, "Wijzig team".html_safe) %>
 
-<div class="row">
-  <div class="col-sm-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          Mijn Team
-          <span class="label
-            <% if @player.model.can_pick_riders? %>label-danger
-            <% else %>label-success
-            <% end %>"><%= @player.riders.count %></span>
-        </h3>
-      </div>
-      <div class="panel-body">
-        <div class="player-riders">
-          <% @player_riders.each_with_index do |player_rider, index| %>
-            <div class="row" style="margin-top: 4px;">
-              <div class="col-xs-1"><span class="badge"><%= index + 1 %></span></div>
-              <div class="col-xs-5">
-                <%= player_rider.rider.nationality_flag %>
-                <b><%= player_rider.rider.name %></b>
-                <br />
-                <small><%= player_rider.rider.team_name %></small>
-              </div>
-              <div class="col-xs-4">
-                <%= player_rider.rider.price %>
-              </div>
-              <div class="col-xs-1">
-                <%= link_to content_tag('span', '', class: 'glyphicon glyphicon-minus'),
-                            rider_player_team_path(@player, :rider_id => player_rider.rider.id),
-                            :method => :delete,
-                            :class => "btn btn-danger btn-xs",
-                            :title => "Haal renner uit team" %>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Mijn Reserves</h3>
-      </div>
-      <div class="panel-body">
-        <% @player_riders.each_with_index do |player_rider, index| %>
-          <div class="row" style="margin-top: 4px;">
-            <div class="col-xs-1"><span class="badge"><%= index + 1 %></span></div>
-            <div class="col-xs-5">
-              <% if player_rider.substitute_rider %>
-                <%= player_rider.substitute_rider.nationality_flag %>
-                <b><%= player_rider.substitute_rider.name %></b><br />
-                <small><%= player_rider.substitute_rider.team_name %></small>
-              <% else %>
-                <small>Reserve voor </small><br />
-                <b><%= player_rider.rider.name %></b>
-              <% end %>
-            </div>
-            <div class="col-xs-4">
-              <% if player_rider.substitute_rider %>
-                <%= player_rider.substitute_rider.price %>
-              <% else %>
-                t.w.v. <%= player_rider.rider.substitute_price %>
-              <% end %>
-            </div>
-            <div class="col-xs-1">
-              <% if player_rider.substitute_rider %>
-                <%= link_to content_tag('span', '', class: 'glyphicon glyphicon-minus'),
-                            substitute_player_team_path(@player, player_rider_id: player_rider.id, substitute_rider_id: player_rider.substitute_rider.id),
-                            :method => :delete,
-                            :class => "btn btn-danger btn-xs",
-                            :title => "Haal renner uit team" %>
-              <% else %>
-                <%= link_to 'Kies',
-                            pick_substitute_player_team_path(@player, :player_rider_id => player_rider.id),
-                            class: 'btn btn-primary btn-xs',
-                            title: 'Kies een reserverenner' %>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
+<%= render :partial => "player_teams/riders",
+           locals: {
+             player_riders: @player.player_riders.joins(:rider).order('riders.price DESC'),
+             editable: true
+           } %>
 
-      </div>
-    </div>
-  </div>
-</div>
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">
@@ -103,54 +23,54 @@
       <%= form_tag nil, :method => :get, :id => "riders_search", :class => "well" do %>
 
         <div class="row">
-          <label class="input-sm col-xs-1" for="name">Naam</label>
+          <label class="input-sm col-sm-1" for="name">Naam</label>
 
-          <div class="col-xs-4">
+          <div class="col-sm-4">
             <%= text_field_tag 'name', params[:name], :class => "form-control input-sm", :id => "name" %>
           </div>
 
-          <label class="input-sm col-xs-1" for="team_id col-xs-1">Team</label>
+          <label class="input-sm col-sm-1" for="team_id col-sm-1">Team</label>
 
-          <div class="col-xs-5">
-            <%= select_tag 'team_id', options_for_select_team_id, :class => "form-control input-sm col-xs-5" %>
+          <div class="col-sm-5">
+            <%= select_tag 'team_id', options_for_select_team_id, :class => "form-control input-sm col-sm-5" %>
           </div>
         </div>
 
         <div class="row">
-          <label class="input-sm col-xs-1" for="price_from">Prijs</label>
+          <label class="input-sm col-sm-1" for="price_from">Prijs</label>
 
-          <div class="col-xs-4">
+          <div class="col-sm-4">
             <%= select_tag "price_from", options_for_select_price_from, :class => "form-control input-sm" %>
           </div>
-          <label class="input-sm col-xs-1" for="price_to">t/m</label>
+          <label class="input-sm col-sm-1" for="price_to">t/m</label>
 
-          <div class="col-xs-4">
+          <div class="col-sm-4">
             <%= select_tag "price_to", options_for_select_price_to, :class => "form-control input-sm" %>
           </div>
-          <div class="col-xs-2">
+          <div class="col-sm-2">
             <%= submit_tag 'Zoek', class: 'btn btn-default btn-sm' %>
           </div>
         </div>
       <% end %>
       <% if @riders.any? %>
         <div class="row">
-          <div class="col-xs-4"><%= link_to_sortable "Voornaam", :first_name %> - <%= link_to_sortable "Achternaam", :last_name %></div>
-          <div class="col-xs-4"><%= link_to_sortable "Team", :team_name %></div>
-          <div class="col-xs-3"><%= link_to_sortable "Prijs", :price %></div>
+          <div class="col-sm-4"><%= link_to_sortable "Voornaam", :first_name %> - <%= link_to_sortable "Achternaam", :last_name %></div>
+          <div class="col-sm-4"><%= link_to_sortable "Team", :team_name %></div>
+          <div class="col-sm-3"><%= link_to_sortable "Prijs", :price %></div>
         </div>
         <% @riders.each do |rider| %>
           <div class="row" style="margin-top: 4px;">
-            <div class="col-xs-4 nowrap">
+            <div class="col-sm-4 nowrap">
               <%= rider.nationality_flag %>&nbsp;
               <%= link_to rider.name, rider_path(rider) %><br />
               <%= render partial: 'shared/skills', locals: { rider: rider } %>
             </div>
-            <div class="col-xs-4 nowrap">
+            <div class="col-sm-4 nowrap">
               <%= rider.team_jersey %>
               <small><%= link_to rider.team_name, team_path(rider.team) %></small>
             </div>
-            <div class="col-xs-3"><%= rider.price %></div>
-            <div class="col-xs-1">
+            <div class="col-sm-3"><%= rider.price %></div>
+            <div class="col-sm-1">
               <%= link_to content_tag("span", "", :class => "glyphicon glyphicon-plus"),
                           rider_player_team_path(@player, :rider_id => rider.id),
                           :method => :post,

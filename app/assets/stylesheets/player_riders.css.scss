@@ -52,6 +52,7 @@
 
     .pr-flag {
       width: 30px;
+      min-width: 30px;
       float: left;
     }
 
@@ -149,4 +150,8 @@
     display: none;
   }
 
+  .pr-edit {
+    text-align: center;
+    min-width: 50px;
+  }
 }

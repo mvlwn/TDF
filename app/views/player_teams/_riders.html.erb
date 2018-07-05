@@ -2,10 +2,14 @@
   <div class="pr">
     <div class="pr-riders">
       <div class="pr-main-rider">
-        <b>Renner</b>
+        <b>Team</b>
+        <span class="label
+                    <% if @player.model.can_pick_riders? %>label-danger
+                    <% else %>label-success
+                    <% end %>"><%= @player.riders.count %></span>
       </div>
       <div class="pr-substitute-rider">
-        <b>Reserve</b>
+        <b>Reserves</b>
       </div>
     </div>
     <div class="pr-points pr-points-header">Punten</div>
@@ -44,6 +48,15 @@
                 <%= render partial: 'shared/skills', locals: { rider: rider } %>
               </div>
             </div>
+            <% if editable %>
+            <div class="pr-edit">
+              <%= link_to 'Wis',
+                          rider_player_team_path(@player, :rider_id => player_rider.rider.id),
+                          :method => :delete,
+                          :class => "btn btn-danger btn-xs",
+                          :title => "Haal renner uit team" %>
+            </div>
+            <% end %>
           </div>
           <% if substitute %>
             <div class="pr-substitute-rider <%= " pr-out-of-race" if substitute.out_of_race? %>">
@@ -73,10 +86,40 @@
                   <%= render partial: 'shared/skills', locals: { rider: substitute } %>
                 </div>
               </div>
+              <% if editable %>
+                <div class="pr-edit">
+                  <%= link_to 'Wis',
+                              substitute_player_team_path(@player, player_rider_id: player_rider.id, substitute_rider_id: player_rider.substitute_rider.id),
+                              :method => :delete,
+                              :class => "btn btn-danger btn-xs",
+                              :title => "Haal renner uit team" %>
+                </div>
+              <% end %>
             </div>
           <% else %>
           <div class="pr-substitute-rider">
-            <b>Niet gekozen</b>
+            <div class="pr-flag"></div>
+            <div class="pr-rider-team">
+              <div class="pr-rider">Reserve</div>
+              <div class="pr-team">-</div>
+            </div>
+            <div class="pr-info">
+              <div class="pr-info-price">
+                <% if player_rider.substitute_rider %>
+                  <%= player_rider.substitute_rider.price %>
+                <% else %>
+                  t.w.v. <%= number_to_euro(player_rider.rider.substitute_price) %>
+                <% end %>
+              </div>
+            </div>
+            <% if editable %>
+              <div class="pr-edit">
+                <%= link_to 'Kies',
+                            pick_substitute_player_team_path(@player, :player_rider_id => player_rider.id),
+                            class: 'btn btn-primary btn-xs',
+                            title: 'Kies een reserverenner' %>
+              </div>
+            <% end %>
           </div>
           <% end %>
         </div>

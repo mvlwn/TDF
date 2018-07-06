@@ -34,15 +34,28 @@ header, main, footer {
 }
 
 nav.container {
-  background-color: $yellow;
+  background-color: $white;
+  @media (min-width: 768px) {
+    background-color: $yellow;
+  }
 }
 
 header {
+  display: none;
+  position: relative;
+  @media screen and (min-width: $screen-sm) {
+    display: block;
+  }
   .logo {
     display: block;
     width: 100%;
     max-width: 320px;
     padding: 16px 0 10px 0;
+  }
+  .current-player-team {
+    position: absolute;
+    right: 20px;
+    top: 20px;
   }
 }
 
@@ -82,14 +95,35 @@ table.table-small td{
 }
 
 .navbar-yellow {
-  background-color: $yellow;
+  background-color: $white;
+  border-bottom: 2px $yellow solid;
   margin: 0;
   padding: 0;
   font-family: $headings-font-family;
 
-  .navbar-header,
-  .navbar-nav,
-  .navbar-toggle {
+  .navbar-brand {
+    padding: 10px 0;
+    width: 70%;
+    display: flex;
+    img {
+      width: 100%;
+      max-width: 300px;
+      align-self: center;
+    }
+  }
+
+  @media (min-width: 768px) {
+    background-color: $yellow;
+
+    .navbar-brand {
+      display: none;
+    }
+    .navbar-header {
+      background-color: $yellow;
+    }
+  }
+
+  .navbar-nav {
     background-color: $yellow;
 
     > li > a {
@@ -107,17 +141,15 @@ table.table-small td{
       }
     }
   }
+
   .navbar-toggle {
-    border-color: darken($yellow, 10%);
+    background-color: $white;
+    border-color: $black;
     .icon-bar {
-      background-color: darken($yellow, 20%);
+      background-color: $black;
     }
     &:hover, &:focus {
-      background-color: darken($yellow, 5%);
-      border-color: darken($yellow, 10%);
-      .icon-bar {
-        background-color: darken($yellow, 20%);
-      }
+      background-color: $yellow;
     }
   }
 

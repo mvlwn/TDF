@@ -26,6 +26,11 @@
       <a href="<%= url_for summary_path %>">
         <%= image_tag 'logo-2018.png', class: 'logo', srcset: image_path('logo-2018@2x.png') %>
       </a>
+
+      <div class="current-player-team">
+        Team: <b><%= current_player.team_name %></b>
+      </div>
+
     </header>
 
     <nav class="container">

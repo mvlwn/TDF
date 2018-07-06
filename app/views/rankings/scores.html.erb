@@ -26,10 +26,10 @@
       <% @stages.each do |stage| %>
         <% player_stage_points = player.player_stage_points.detect{|psp| psp.stage_id == stage.id } %>
         <td class="center">
-          <span class="">
+          <% if player_stage_points %>
             <span class="stage_points"><%= player_stage_points.points %></span>
             <span class="total_points" style="display: none;"><%= player_stage_points.total_points if stage.scores.any? %></span>
-          </span>
+          <% end %>
         </td>
       <% end %>
     </tr>

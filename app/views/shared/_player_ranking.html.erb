@@ -9,15 +9,19 @@
       </div>
       <div class="player-ranking-team">
         <div class="player-ranking-team-name">
-          <%= player.link_to %> -
-          <%= link_to_player_result(player, @player, stage) if stage %>
+          <%= player.link_to %>
+          <% if stage %>
+            - <%= link_to_player_result(player, @player, stage) %>
+          <% end %>
         </div>
         <div class="player-ranking-team-manager">
           <%= player_signed_in? ? player.name : '..' %>
         </div>
       </div>
       <div class="player-ranking-points">
-        <%= points %>
+        <div class="player-ranking-points-total">
+          <%= points %>
+        </div>
 
         <% if overall %>
           <% stage_points = player.stage_points(@stage).to_i %>

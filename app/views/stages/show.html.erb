@@ -3,7 +3,7 @@
 <%= render :partial => "navigation" %>
 
 <div class="row">
-  <div class="col-md-3 col-sm-12">
+  <div class="col-md-4 col-sm-12">
     <h2>Gegevens</h2>
     <%= render :partial => "stage_information" %>
     <% if can? :edit, Stage %>
@@ -12,7 +12,7 @@
       <%= link_to "Email", email_stage_path(@stage), :class => "btn btn-default" %>
     <% end %>
   </div>
-  <div class="col-md-5 col-sm-6">
+  <div class="col-md-4 col-sm-6">
 		<h2 id="player_ranking">De ploegen</h2>
 		<%= render :partial => "shared/player_ranking", :locals => {:players => @sorted_players, :stage => @stage} %>
 	</div>

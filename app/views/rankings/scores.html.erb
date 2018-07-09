@@ -1,14 +1,16 @@
 <%= content_for(:title, "Scores") %>
 
-<ul class="nav nav-tabs">
+<ul class="nav nav-pills">
 	<li><%= link_to "Algemeen klassement", rankings_path %></li>
 	<li class="active"><%= link_to "Dagklassementen", scores_rankings_path %></li>
 </ul>
 
-<div class="well">
-	<button id="toggle_stage_scores" class="btn btn-primary">Toon dagscores</button>
+<br />
+
+<p>
+  <button id="toggle_stage_scores" class="btn btn-primary">Toon dagscores</button>
   <button id="toggle_scores" class="btn btn-default">Toon totaal scores</button>
-</div>
+</p>
 
 <table class="table table-bordered table-condensed table-striped">
 	<thead>

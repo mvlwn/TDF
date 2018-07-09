@@ -5,11 +5,12 @@
     <% points = player.sorted_points || player.points %>
     <div class="player-ranking">
       <div class="player-ranking-rank">
-        <span class="badge"><%= i + 1 %></span>
+        <span class="rank<%= ' rank-team' if player == @player %>"><%= i + 1 %></span>
       </div>
       <div class="player-ranking-team">
         <div class="player-ranking-team-name">
-          <%= player.link_to %> <%= player.you_badge %>
+          <%= player.link_to %> -
+          <%= link_to_player_result(player, @player, stage) if stage %>
         </div>
         <div class="player-ranking-team-manager">
           <%= player_signed_in? ? player.name : '..' %>
@@ -17,15 +18,15 @@
       </div>
       <div class="player-ranking-points">
         <%= points %>
+
         <% if overall %>
-          <span class="quiet small">
-            +<%= player.stage_points(@stage) %>
-          </span>
+          <% stage_points = player.stage_points(@stage).to_i %>
+          <div class="player-ranking-points-stage">
+            <% if stage_points > 0 %>+ <%= stage_points %><% end %>
+          </div>
         <% end %>
       </div>
-      <div class="player-ranking-stage">
-        <%= link_to_player_result(player, @player, stage) if stage %>
-      </div>
+
     </div>
   <% end %>
 </div>

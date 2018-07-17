@@ -44,7 +44,9 @@
   }
 
   .pr-out-of-race {
-    background-color: #eee;
+    * {
+      text-decoration: line-through;
+    }
   }
 
   .pr-main-rider,

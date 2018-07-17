@@ -19,9 +19,9 @@
          rider = player_rider.rider.decorate
          substitute = player_rider.substitute_rider.try(:decorate)
       %>
-      <div class="pr<%= " pr-out-of-race" if rider.out_of_race? %>">
+      <div class="pr">
         <div class="pr-riders">
-          <div class="pr-main-rider">
+          <div class="pr-main-rider<%= " pr-out-of-race" if rider.out_of_race? %>">
             <div class="pr-flag">
               <%= rider.nationality_flag %>
             </div>
